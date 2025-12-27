@@ -1,6 +1,7 @@
 syntax = "proto3";
 package clh_proto.msg;
 option go_package = "github.com/sydneyowl/clh-server/clh-proto";
+option csharp_namespace = "CloudlogHelper.CLHProto";
 
 // Server will pack all cached message and send to client at once.
 message WsjtxMessagePacked{
