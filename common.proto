@@ -1,5 +1,5 @@
 syntax = "proto3";
-package clh-proto.msg;
+package clh_proto.msg;
 option go_package = "github.com/sydneyowl/clh-server/clh-proto";
 
 message CommonResponse{
