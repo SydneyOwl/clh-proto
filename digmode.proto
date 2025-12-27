@@ -1,6 +1,6 @@
 syntax = "proto3";
-package msgproto.msg;
-option go_package = "github.com/sydneyowl/clh-server/msgproto";
+package clh-proto.msg;
+option go_package = "github.com/sydneyowl/clh-server/clh-proto";
 
 // Server will pack all cached message and send to client at once.
 message WsjtxMessagePacked{
