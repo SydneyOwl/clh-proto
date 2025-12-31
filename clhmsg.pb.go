@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v6.33.2
-// source: digmode.proto
+// source: clhmsg.proto
 
 package clh_proto
 
@@ -66,11 +66,11 @@ func (x SpecialOperationMode) String() string {
 }
 
 func (SpecialOperationMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_digmode_proto_enumTypes[0].Descriptor()
+	return file_clhmsg_proto_enumTypes[0].Descriptor()
 }
 
 func (SpecialOperationMode) Type() protoreflect.EnumType {
-	return &file_digmode_proto_enumTypes[0]
+	return &file_clhmsg_proto_enumTypes[0]
 }
 
 func (x SpecialOperationMode) Number() protoreflect.EnumNumber {
@@ -79,34 +79,35 @@ func (x SpecialOperationMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SpecialOperationMode.Descriptor instead.
 func (SpecialOperationMode) EnumDescriptor() ([]byte, []int) {
-	return file_digmode_proto_rawDescGZIP(), []int{0}
+	return file_clhmsg_proto_rawDescGZIP(), []int{0}
 }
 
 // Server will pack all cached message and send to client at once.
-type WsjtxMessagePacked struct {
+type PackedMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Status        *Status                `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
-	Decodes       []*Decode              `protobuf:"bytes,2,rep,name=decodes,proto3" json:"decodes,omitempty"`
-	WsprDecodes   []*WSPRDecode          `protobuf:"bytes,3,rep,name=wspr_decodes,json=wsprDecodes,proto3" json:"wspr_decodes,omitempty"`
+	DigiStatus    *Status                `protobuf:"bytes,1,opt,name=digi_status,json=digiStatus,proto3" json:"digi_status,omitempty"`
+	RigData       *RigData               `protobuf:"bytes,2,opt,name=rig_data,json=rigData,proto3" json:"rig_data,omitempty"`
+	Decodes       []*Decode              `protobuf:"bytes,3,rep,name=decodes,proto3" json:"decodes,omitempty"`
+	WsprDecodes   []*WSPRDecode          `protobuf:"bytes,4,rep,name=wspr_decodes,json=wsprDecodes,proto3" json:"wspr_decodes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WsjtxMessagePacked) Reset() {
-	*x = WsjtxMessagePacked{}
-	mi := &file_digmode_proto_msgTypes[0]
+func (x *PackedMessage) Reset() {
+	*x = PackedMessage{}
+	mi := &file_clhmsg_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WsjtxMessagePacked) String() string {
+func (x *PackedMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WsjtxMessagePacked) ProtoMessage() {}
+func (*PackedMessage) ProtoMessage() {}
 
-func (x *WsjtxMessagePacked) ProtoReflect() protoreflect.Message {
-	mi := &file_digmode_proto_msgTypes[0]
+func (x *PackedMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_clhmsg_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -117,30 +118,137 @@ func (x *WsjtxMessagePacked) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WsjtxMessagePacked.ProtoReflect.Descriptor instead.
-func (*WsjtxMessagePacked) Descriptor() ([]byte, []int) {
-	return file_digmode_proto_rawDescGZIP(), []int{0}
+// Deprecated: Use PackedMessage.ProtoReflect.Descriptor instead.
+func (*PackedMessage) Descriptor() ([]byte, []int) {
+	return file_clhmsg_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *WsjtxMessagePacked) GetStatus() *Status {
+func (x *PackedMessage) GetDigiStatus() *Status {
 	if x != nil {
-		return x.Status
+		return x.DigiStatus
 	}
 	return nil
 }
 
-func (x *WsjtxMessagePacked) GetDecodes() []*Decode {
+func (x *PackedMessage) GetRigData() *RigData {
+	if x != nil {
+		return x.RigData
+	}
+	return nil
+}
+
+func (x *PackedMessage) GetDecodes() []*Decode {
 	if x != nil {
 		return x.Decodes
 	}
 	return nil
 }
 
-func (x *WsjtxMessagePacked) GetWsprDecodes() []*WSPRDecode {
+func (x *PackedMessage) GetWsprDecodes() []*WSPRDecode {
 	if x != nil {
 		return x.WsprDecodes
 	}
 	return nil
+}
+
+type RigData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Provider      string                 `protobuf:"bytes,1,opt,name=provider,proto3" json:"provider,omitempty"`
+	RigName       string                 `protobuf:"bytes,2,opt,name=rig_name,json=rigName,proto3" json:"rig_name,omitempty"`
+	Frequency     uint64                 `protobuf:"varint,3,opt,name=frequency,proto3" json:"frequency,omitempty"`
+	Mode          string                 `protobuf:"bytes,4,opt,name=mode,proto3" json:"mode,omitempty"`
+	FrequencyRx   uint64                 `protobuf:"varint,5,opt,name=frequency_rx,json=frequencyRx,proto3" json:"frequency_rx,omitempty"`
+	ModeRx        string                 `protobuf:"bytes,6,opt,name=mode_rx,json=modeRx,proto3" json:"mode_rx,omitempty"`
+	Split         bool                   `protobuf:"varint,7,opt,name=split,proto3" json:"split,omitempty"`
+	Power         uint32                 `protobuf:"varint,8,opt,name=power,proto3" json:"power,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RigData) Reset() {
+	*x = RigData{}
+	mi := &file_clhmsg_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RigData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RigData) ProtoMessage() {}
+
+func (x *RigData) ProtoReflect() protoreflect.Message {
+	mi := &file_clhmsg_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RigData.ProtoReflect.Descriptor instead.
+func (*RigData) Descriptor() ([]byte, []int) {
+	return file_clhmsg_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *RigData) GetProvider() string {
+	if x != nil {
+		return x.Provider
+	}
+	return ""
+}
+
+func (x *RigData) GetRigName() string {
+	if x != nil {
+		return x.RigName
+	}
+	return ""
+}
+
+func (x *RigData) GetFrequency() uint64 {
+	if x != nil {
+		return x.Frequency
+	}
+	return 0
+}
+
+func (x *RigData) GetMode() string {
+	if x != nil {
+		return x.Mode
+	}
+	return ""
+}
+
+func (x *RigData) GetFrequencyRx() uint64 {
+	if x != nil {
+		return x.FrequencyRx
+	}
+	return 0
+}
+
+func (x *RigData) GetModeRx() string {
+	if x != nil {
+		return x.ModeRx
+	}
+	return ""
+}
+
+func (x *RigData) GetSplit() bool {
+	if x != nil {
+		return x.Split
+	}
+	return false
+}
+
+func (x *RigData) GetPower() uint32 {
+	if x != nil {
+		return x.Power
+	}
+	return 0
 }
 
 type WsjtxMessage struct {
@@ -158,7 +266,7 @@ type WsjtxMessage struct {
 
 func (x *WsjtxMessage) Reset() {
 	*x = WsjtxMessage{}
-	mi := &file_digmode_proto_msgTypes[1]
+	mi := &file_clhmsg_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -170,7 +278,7 @@ func (x *WsjtxMessage) String() string {
 func (*WsjtxMessage) ProtoMessage() {}
 
 func (x *WsjtxMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_digmode_proto_msgTypes[1]
+	mi := &file_clhmsg_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -183,7 +291,7 @@ func (x *WsjtxMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WsjtxMessage.ProtoReflect.Descriptor instead.
 func (*WsjtxMessage) Descriptor() ([]byte, []int) {
-	return file_digmode_proto_rawDescGZIP(), []int{1}
+	return file_clhmsg_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *WsjtxMessage) GetPayload() isWsjtxMessage_Payload {
@@ -266,7 +374,7 @@ type Decode struct {
 
 func (x *Decode) Reset() {
 	*x = Decode{}
-	mi := &file_digmode_proto_msgTypes[2]
+	mi := &file_clhmsg_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -278,7 +386,7 @@ func (x *Decode) String() string {
 func (*Decode) ProtoMessage() {}
 
 func (x *Decode) ProtoReflect() protoreflect.Message {
-	mi := &file_digmode_proto_msgTypes[2]
+	mi := &file_clhmsg_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -291,7 +399,7 @@ func (x *Decode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Decode.ProtoReflect.Descriptor instead.
 func (*Decode) Descriptor() ([]byte, []int) {
-	return file_digmode_proto_rawDescGZIP(), []int{2}
+	return file_clhmsg_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Decode) GetNew() bool {
@@ -375,7 +483,7 @@ type WSPRDecode struct {
 
 func (x *WSPRDecode) Reset() {
 	*x = WSPRDecode{}
-	mi := &file_digmode_proto_msgTypes[3]
+	mi := &file_clhmsg_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -387,7 +495,7 @@ func (x *WSPRDecode) String() string {
 func (*WSPRDecode) ProtoMessage() {}
 
 func (x *WSPRDecode) ProtoReflect() protoreflect.Message {
-	mi := &file_digmode_proto_msgTypes[3]
+	mi := &file_clhmsg_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -400,7 +508,7 @@ func (x *WSPRDecode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WSPRDecode.ProtoReflect.Descriptor instead.
 func (*WSPRDecode) Descriptor() ([]byte, []int) {
-	return file_digmode_proto_rawDescGZIP(), []int{3}
+	return file_clhmsg_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *WSPRDecode) GetNew() bool {
@@ -502,7 +610,7 @@ type Status struct {
 
 func (x *Status) Reset() {
 	*x = Status{}
-	mi := &file_digmode_proto_msgTypes[4]
+	mi := &file_clhmsg_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -514,7 +622,7 @@ func (x *Status) String() string {
 func (*Status) ProtoMessage() {}
 
 func (x *Status) ProtoReflect() protoreflect.Message {
-	mi := &file_digmode_proto_msgTypes[4]
+	mi := &file_clhmsg_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -527,7 +635,7 @@ func (x *Status) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Status.ProtoReflect.Descriptor instead.
 func (*Status) Descriptor() ([]byte, []int) {
-	return file_digmode_proto_rawDescGZIP(), []int{4}
+	return file_clhmsg_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Status) GetDialFrequencyHz() uint64 {
@@ -677,15 +785,26 @@ func (x *Status) GetTxMessage() string {
 	return ""
 }
 
-var File_digmode_proto protoreflect.FileDescriptor
+var File_clhmsg_proto protoreflect.FileDescriptor
 
-const file_digmode_proto_rawDesc = "" +
+const file_clhmsg_proto_rawDesc = "" +
 	"\n" +
-	"\rdigmode.proto\x12\rclh_proto.msg\"\xb2\x01\n" +
-	"\x12WsjtxMessagePacked\x12-\n" +
-	"\x06status\x18\x01 \x01(\v2\x15.clh_proto.msg.StatusR\x06status\x12/\n" +
-	"\adecodes\x18\x02 \x03(\v2\x15.clh_proto.msg.DecodeR\adecodes\x12<\n" +
-	"\fwspr_decodes\x18\x03 \x03(\v2\x19.clh_proto.msg.WSPRDecodeR\vwsprDecodes\"\xd7\x01\n" +
+	"\fclhmsg.proto\x12\rclh_proto.msg\"\xe9\x01\n" +
+	"\rPackedMessage\x126\n" +
+	"\vdigi_status\x18\x01 \x01(\v2\x15.clh_proto.msg.StatusR\n" +
+	"digiStatus\x121\n" +
+	"\brig_data\x18\x02 \x01(\v2\x16.clh_proto.msg.RigDataR\arigData\x12/\n" +
+	"\adecodes\x18\x03 \x03(\v2\x15.clh_proto.msg.DecodeR\adecodes\x12<\n" +
+	"\fwspr_decodes\x18\x04 \x03(\v2\x19.clh_proto.msg.WSPRDecodeR\vwsprDecodes\"\xda\x01\n" +
+	"\aRigData\x12\x1a\n" +
+	"\bprovider\x18\x01 \x01(\tR\bprovider\x12\x19\n" +
+	"\brig_name\x18\x02 \x01(\tR\arigName\x12\x1c\n" +
+	"\tfrequency\x18\x03 \x01(\x04R\tfrequency\x12\x12\n" +
+	"\x04mode\x18\x04 \x01(\tR\x04mode\x12!\n" +
+	"\ffrequency_rx\x18\x05 \x01(\x04R\vfrequencyRx\x12\x17\n" +
+	"\amode_rx\x18\x06 \x01(\tR\x06modeRx\x12\x14\n" +
+	"\x05split\x18\a \x01(\bR\x05split\x12\x14\n" +
+	"\x05power\x18\b \x01(\rR\x05power\"\xd7\x01\n" +
 	"\fWsjtxMessage\x12/\n" +
 	"\x06status\x18\x01 \x01(\v2\x15.clh_proto.msg.StatusH\x00R\x06status\x12/\n" +
 	"\x06decode\x18\x02 \x01(\v2\x15.clh_proto.msg.DecodeH\x00R\x06decode\x12<\n" +
@@ -753,48 +872,50 @@ const file_digmode_proto_rawDesc = "" +
 	"\x05HOUND\x10\aBEZ)github.com/sydneyowl/clh-server/clh-proto\xaa\x02\x17CloudlogHelper.CLHProtob\x06proto3"
 
 var (
-	file_digmode_proto_rawDescOnce sync.Once
-	file_digmode_proto_rawDescData []byte
+	file_clhmsg_proto_rawDescOnce sync.Once
+	file_clhmsg_proto_rawDescData []byte
 )
 
-func file_digmode_proto_rawDescGZIP() []byte {
-	file_digmode_proto_rawDescOnce.Do(func() {
-		file_digmode_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_digmode_proto_rawDesc), len(file_digmode_proto_rawDesc)))
+func file_clhmsg_proto_rawDescGZIP() []byte {
+	file_clhmsg_proto_rawDescOnce.Do(func() {
+		file_clhmsg_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_clhmsg_proto_rawDesc), len(file_clhmsg_proto_rawDesc)))
 	})
-	return file_digmode_proto_rawDescData
+	return file_clhmsg_proto_rawDescData
 }
 
-var file_digmode_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_digmode_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_digmode_proto_goTypes = []any{
-	(SpecialOperationMode)(0),  // 0: clh_proto.msg.SpecialOperationMode
-	(*WsjtxMessagePacked)(nil), // 1: clh_proto.msg.WsjtxMessagePacked
-	(*WsjtxMessage)(nil),       // 2: clh_proto.msg.WsjtxMessage
-	(*Decode)(nil),             // 3: clh_proto.msg.Decode
-	(*WSPRDecode)(nil),         // 4: clh_proto.msg.WSPRDecode
-	(*Status)(nil),             // 5: clh_proto.msg.Status
+var file_clhmsg_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_clhmsg_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_clhmsg_proto_goTypes = []any{
+	(SpecialOperationMode)(0), // 0: clh_proto.msg.SpecialOperationMode
+	(*PackedMessage)(nil),     // 1: clh_proto.msg.PackedMessage
+	(*RigData)(nil),           // 2: clh_proto.msg.RigData
+	(*WsjtxMessage)(nil),      // 3: clh_proto.msg.WsjtxMessage
+	(*Decode)(nil),            // 4: clh_proto.msg.Decode
+	(*WSPRDecode)(nil),        // 5: clh_proto.msg.WSPRDecode
+	(*Status)(nil),            // 6: clh_proto.msg.Status
 }
-var file_digmode_proto_depIdxs = []int32{
-	5, // 0: clh_proto.msg.WsjtxMessagePacked.status:type_name -> clh_proto.msg.Status
-	3, // 1: clh_proto.msg.WsjtxMessagePacked.decodes:type_name -> clh_proto.msg.Decode
-	4, // 2: clh_proto.msg.WsjtxMessagePacked.wspr_decodes:type_name -> clh_proto.msg.WSPRDecode
-	5, // 3: clh_proto.msg.WsjtxMessage.status:type_name -> clh_proto.msg.Status
-	3, // 4: clh_proto.msg.WsjtxMessage.decode:type_name -> clh_proto.msg.Decode
-	4, // 5: clh_proto.msg.WsjtxMessage.wspr_decode:type_name -> clh_proto.msg.WSPRDecode
-	0, // 6: clh_proto.msg.Status.special_operation_mode:type_name -> clh_proto.msg.SpecialOperationMode
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+var file_clhmsg_proto_depIdxs = []int32{
+	6, // 0: clh_proto.msg.PackedMessage.digi_status:type_name -> clh_proto.msg.Status
+	2, // 1: clh_proto.msg.PackedMessage.rig_data:type_name -> clh_proto.msg.RigData
+	4, // 2: clh_proto.msg.PackedMessage.decodes:type_name -> clh_proto.msg.Decode
+	5, // 3: clh_proto.msg.PackedMessage.wspr_decodes:type_name -> clh_proto.msg.WSPRDecode
+	6, // 4: clh_proto.msg.WsjtxMessage.status:type_name -> clh_proto.msg.Status
+	4, // 5: clh_proto.msg.WsjtxMessage.decode:type_name -> clh_proto.msg.Decode
+	5, // 6: clh_proto.msg.WsjtxMessage.wspr_decode:type_name -> clh_proto.msg.WSPRDecode
+	0, // 7: clh_proto.msg.Status.special_operation_mode:type_name -> clh_proto.msg.SpecialOperationMode
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
-func init() { file_digmode_proto_init() }
-func file_digmode_proto_init() {
-	if File_digmode_proto != nil {
+func init() { file_clhmsg_proto_init() }
+func file_clhmsg_proto_init() {
+	if File_clhmsg_proto != nil {
 		return
 	}
-	file_digmode_proto_msgTypes[1].OneofWrappers = []any{
+	file_clhmsg_proto_msgTypes[2].OneofWrappers = []any{
 		(*WsjtxMessage_Status)(nil),
 		(*WsjtxMessage_Decode)(nil),
 		(*WsjtxMessage_WsprDecode)(nil),
@@ -803,18 +924,18 @@ func file_digmode_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_digmode_proto_rawDesc), len(file_digmode_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_clhmsg_proto_rawDesc), len(file_clhmsg_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   5,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_digmode_proto_goTypes,
-		DependencyIndexes: file_digmode_proto_depIdxs,
-		EnumInfos:         file_digmode_proto_enumTypes,
-		MessageInfos:      file_digmode_proto_msgTypes,
+		GoTypes:           file_clhmsg_proto_goTypes,
+		DependencyIndexes: file_clhmsg_proto_depIdxs,
+		EnumInfos:         file_clhmsg_proto_enumTypes,
+		MessageInfos:      file_clhmsg_proto_msgTypes,
 	}.Build()
-	File_digmode_proto = out.File
-	file_digmode_proto_goTypes = nil
-	file_digmode_proto_depIdxs = nil
+	File_clhmsg_proto = out.File
+	file_clhmsg_proto_goTypes = nil
+	file_clhmsg_proto_depIdxs = nil
 }

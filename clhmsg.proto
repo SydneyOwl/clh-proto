@@ -4,10 +4,22 @@ option go_package = "github.com/sydneyowl/clh-server/clh-proto";
 option csharp_namespace = "CloudlogHelper.CLHProto";
 
 // Server will pack all cached message and send to client at once.
-message WsjtxMessagePacked{
-  Status status = 1;
-  repeated Decode decodes = 2;
-  repeated WSPRDecode wspr_decodes = 3;
+message PackedMessage{
+  Status digi_status = 1;
+  RigData rig_data = 2;
+  repeated Decode decodes = 3;
+  repeated WSPRDecode wspr_decodes = 4;
+}
+
+message RigData{
+  string provider = 1;
+  string rig_name = 2;
+  uint64 frequency = 3;
+  string mode = 4;
+  uint64 frequency_rx = 5;
+  string mode_rx = 6;
+  bool split = 7;
+  uint32 power = 8;
 }
 
 message WsjtxMessage {
