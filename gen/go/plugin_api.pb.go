@@ -29,7 +29,7 @@ type PluginRegisterInfo struct {
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	RpcPort       string                 `protobuf:"bytes,5,opt,name=rpc_port,json=rpcPort,proto3" json:"rpc_port,omitempty"`
+	RpcPort       uint32                 `protobuf:"varint,5,opt,name=rpc_port,json=rpcPort,proto3" json:"rpc_port,omitempty"`
 	Capabilities  []string               `protobuf:"bytes,6,rep,name=capabilities,proto3" json:"capabilities,omitempty"`
 	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -94,11 +94,11 @@ func (x *PluginRegisterInfo) GetDescription() string {
 	return ""
 }
 
-func (x *PluginRegisterInfo) GetRpcPort() string {
+func (x *PluginRegisterInfo) GetRpcPort() uint32 {
 	if x != nil {
 		return x.RpcPort
 	}
-	return ""
+	return 0
 }
 
 func (x *PluginRegisterInfo) GetCapabilities() []string {
@@ -125,7 +125,7 @@ const file_plugin_api_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
 	"\aversion\x18\x03 \x01(\tR\aversion\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x19\n" +
-	"\brpc_port\x18\x05 \x01(\tR\arpcPort\x12\"\n" +
+	"\brpc_port\x18\x05 \x01(\rR\arpcPort\x12\"\n" +
 	"\fcapabilities\x18\x06 \x03(\tR\fcapabilities\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp2\xac\x01\n" +
 	"\x13CLHPluginAPIService\x12F\n" +

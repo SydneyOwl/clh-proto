@@ -15,7 +15,7 @@ message PluginRegisterInfo {
   string name = 2;
   string version = 3;
   string description = 4;
-  string rpc_port = 5;
+  uint32 rpc_port = 5;
   repeated string capabilities = 6;
   google.protobuf.Timestamp timestamp = 999 [json_name = "timestamp"];
 }
