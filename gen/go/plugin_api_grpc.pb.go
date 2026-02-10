@@ -20,7 +20,6 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CLHPluginAPIService_GetPluginInfo_FullMethodName       = "/clh_proto.plugin.CLHPluginAPIService/GetPluginInfo"
 	CLHPluginAPIService_ForwardRigMessage_FullMethodName   = "/clh_proto.plugin.CLHPluginAPIService/ForwardRigMessage"
 	CLHPluginAPIService_ForwardWsjtxMessage_FullMethodName = "/clh_proto.plugin.CLHPluginAPIService/ForwardWsjtxMessage"
 )
@@ -29,7 +28,6 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CLHPluginAPIServiceClient interface {
-	GetPluginInfo(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*PluginInfo, error)
 	ForwardRigMessage(ctx context.Context, in *RigData, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	ForwardWsjtxMessage(ctx context.Context, in *WsjtxMessage, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
@@ -40,16 +38,6 @@ type cLHPluginAPIServiceClient struct {
 
 func NewCLHPluginAPIServiceClient(cc grpc.ClientConnInterface) CLHPluginAPIServiceClient {
 	return &cLHPluginAPIServiceClient{cc}
-}
-
-func (c *cLHPluginAPIServiceClient) GetPluginInfo(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*PluginInfo, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(PluginInfo)
-	err := c.cc.Invoke(ctx, CLHPluginAPIService_GetPluginInfo_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *cLHPluginAPIServiceClient) ForwardRigMessage(ctx context.Context, in *RigData, opts ...grpc.CallOption) (*emptypb.Empty, error) {
@@ -76,7 +64,6 @@ func (c *cLHPluginAPIServiceClient) ForwardWsjtxMessage(ctx context.Context, in 
 // All implementations must embed UnimplementedCLHPluginAPIServiceServer
 // for forward compatibility.
 type CLHPluginAPIServiceServer interface {
-	GetPluginInfo(context.Context, *emptypb.Empty) (*PluginInfo, error)
 	ForwardRigMessage(context.Context, *RigData) (*emptypb.Empty, error)
 	ForwardWsjtxMessage(context.Context, *WsjtxMessage) (*emptypb.Empty, error)
 	mustEmbedUnimplementedCLHPluginAPIServiceServer()
@@ -89,9 +76,6 @@ type CLHPluginAPIServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedCLHPluginAPIServiceServer struct{}
 
-func (UnimplementedCLHPluginAPIServiceServer) GetPluginInfo(context.Context, *emptypb.Empty) (*PluginInfo, error) {
-	return nil, status.Error(codes.Unimplemented, "method GetPluginInfo not implemented")
-}
 func (UnimplementedCLHPluginAPIServiceServer) ForwardRigMessage(context.Context, *RigData) (*emptypb.Empty, error) {
 	return nil, status.Error(codes.Unimplemented, "method ForwardRigMessage not implemented")
 }
@@ -117,24 +101,6 @@ func RegisterCLHPluginAPIServiceServer(s grpc.ServiceRegistrar, srv CLHPluginAPI
 		t.testEmbeddedByValue()
 	}
 	s.RegisterService(&CLHPluginAPIService_ServiceDesc, srv)
-}
-
-func _CLHPluginAPIService_GetPluginInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CLHPluginAPIServiceServer).GetPluginInfo(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: CLHPluginAPIService_GetPluginInfo_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CLHPluginAPIServiceServer).GetPluginInfo(ctx, req.(*emptypb.Empty))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _CLHPluginAPIService_ForwardRigMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -180,10 +146,6 @@ var CLHPluginAPIService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "clh_proto.plugin.CLHPluginAPIService",
 	HandlerType: (*CLHPluginAPIServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetPluginInfo",
-			Handler:    _CLHPluginAPIService_GetPluginInfo_Handler,
-		},
 		{
 			MethodName: "ForwardRigMessage",
 			Handler:    _CLHPluginAPIService_ForwardRigMessage_Handler,
