@@ -25,10 +25,11 @@ const (
 
 type PluginInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Version       string                 `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
-	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Capabilities  []string               `protobuf:"bytes,4,rep,name=capabilities,proto3" json:"capabilities,omitempty"`
+	Uuid          string                 `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Capabilities  []string               `protobuf:"bytes,5,rep,name=capabilities,proto3" json:"capabilities,omitempty"`
 	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -62,6 +63,13 @@ func (x *PluginInfo) ProtoReflect() protoreflect.Message {
 // Deprecated: Use PluginInfo.ProtoReflect.Descriptor instead.
 func (*PluginInfo) Descriptor() ([]byte, []int) {
 	return file_plugin_api_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *PluginInfo) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 func (x *PluginInfo) GetName() string {
@@ -103,13 +111,14 @@ var File_plugin_api_proto protoreflect.FileDescriptor
 
 const file_plugin_api_proto_rawDesc = "" +
 	"\n" +
-	"\x10plugin_api.proto\x12\x10clh_proto.plugin\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rrig_msg.proto\x1a\x0fwsjtx_msg.proto\"\xbb\x01\n" +
+	"\x10plugin_api.proto\x12\x10clh_proto.plugin\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rrig_msg.proto\x1a\x0fwsjtx_msg.proto\"\xcf\x01\n" +
 	"\n" +
 	"PluginInfo\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12\x18\n" +
-	"\aversion\x18\x02 \x01(\tR\aversion\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\"\n" +
-	"\fcapabilities\x18\x04 \x03(\tR\fcapabilities\x129\n" +
+	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
+	"\aversion\x18\x03 \x01(\tR\aversion\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\"\n" +
+	"\fcapabilities\x18\x05 \x03(\tR\fcapabilities\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp2\xf3\x01\n" +
 	"\x13CLHPluginAPIService\x12E\n" +
 	"\rGetPluginInfo\x12\x16.google.protobuf.Empty\x1a\x1c.clh_proto.plugin.PluginInfo\x12F\n" +

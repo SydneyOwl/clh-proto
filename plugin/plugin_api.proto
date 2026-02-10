@@ -11,10 +11,11 @@ import "rig_msg.proto";
 import "wsjtx_msg.proto";
 
 message PluginInfo {
-  string name = 1;
-  string version = 2;
-  string description = 3;
-  repeated string capabilities = 4;
+  string uuid = 1;
+  string name = 2;
+  string version = 3;
+  string description = 4;
+  repeated string capabilities = 5;
   google.protobuf.Timestamp timestamp = 999 [json_name = "timestamp"];
 }
 
