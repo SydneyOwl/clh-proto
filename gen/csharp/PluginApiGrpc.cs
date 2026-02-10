@@ -46,21 +46,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SydneyOwl.CLHProto.Plugin.PluginInfo> __Marshaller_clh_proto_plugin_PluginInfo = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SydneyOwl.CLHProto.Plugin.PluginInfo.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SydneyOwl.CLHProto.Plugin.RigData> __Marshaller_clh_proto_plugin_RigData = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SydneyOwl.CLHProto.Plugin.RigData.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage> __Marshaller_clh_proto_plugin_WsjtxMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SydneyOwl.CLHProto.Plugin.WsjtxMessage.Parser));
-
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::SydneyOwl.CLHProto.Plugin.PluginInfo> __Method_GetPluginInfo = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::SydneyOwl.CLHProto.Plugin.PluginInfo>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "GetPluginInfo",
-        __Marshaller_google_protobuf_Empty,
-        __Marshaller_clh_proto_plugin_PluginInfo);
+    static readonly grpc::Marshaller<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage> __Marshaller_clh_proto_plugin_WsjtxMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SydneyOwl.CLHProto.Plugin.WsjtxMessage.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::SydneyOwl.CLHProto.Plugin.RigData, global::Google.Protobuf.WellKnownTypes.Empty> __Method_ForwardRigMessage = new grpc::Method<global::SydneyOwl.CLHProto.Plugin.RigData, global::Google.Protobuf.WellKnownTypes.Empty>(
@@ -88,12 +78,6 @@ namespace SydneyOwl.CLHProto.Plugin {
     [grpc::BindServiceMethod(typeof(CLHPluginAPIService), "BindService")]
     public abstract partial class CLHPluginAPIServiceBase
     {
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::SydneyOwl.CLHProto.Plugin.PluginInfo> GetPluginInfo(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> ForwardRigMessage(global::SydneyOwl.CLHProto.Plugin.RigData request, grpc::ServerCallContext context)
       {
@@ -135,26 +119,6 @@ namespace SydneyOwl.CLHProto.Plugin {
       {
       }
 
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::SydneyOwl.CLHProto.Plugin.PluginInfo GetPluginInfo(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return GetPluginInfo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::SydneyOwl.CLHProto.Plugin.PluginInfo GetPluginInfo(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_GetPluginInfo, null, options, request);
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::SydneyOwl.CLHProto.Plugin.PluginInfo> GetPluginInfoAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return GetPluginInfoAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::SydneyOwl.CLHProto.Plugin.PluginInfo> GetPluginInfoAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_GetPluginInfo, null, options, request);
-      }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::Google.Protobuf.WellKnownTypes.Empty ForwardRigMessage(global::SydneyOwl.CLHProto.Plugin.RigData request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
@@ -209,7 +173,6 @@ namespace SydneyOwl.CLHProto.Plugin {
     public static grpc::ServerServiceDefinition BindService(CLHPluginAPIServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetPluginInfo, serviceImpl.GetPluginInfo)
           .AddMethod(__Method_ForwardRigMessage, serviceImpl.ForwardRigMessage)
           .AddMethod(__Method_ForwardWsjtxMessage, serviceImpl.ForwardWsjtxMessage).Build();
     }
@@ -221,7 +184,6 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CLHPluginAPIServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetPluginInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::SydneyOwl.CLHProto.Plugin.PluginInfo>(serviceImpl.GetPluginInfo));
       serviceBinder.AddMethod(__Method_ForwardRigMessage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SydneyOwl.CLHProto.Plugin.RigData, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.ForwardRigMessage));
       serviceBinder.AddMethod(__Method_ForwardWsjtxMessage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.ForwardWsjtxMessage));
     }

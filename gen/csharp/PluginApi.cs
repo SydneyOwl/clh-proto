@@ -26,13 +26,12 @@ namespace SydneyOwl.CLHProto.Plugin {
           string.Concat(
             "ChBwbHVnaW5fYXBpLnByb3RvEhBjbGhfcHJvdG8ucGx1Z2luGhtnb29nbGUv",
             "cHJvdG9idWYvZW1wdHkucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3Rh",
-            "bXAucHJvdG8aDXJpZ19tc2cucHJvdG8aD3dzanR4X21zZy5wcm90byKfAQoK",
-            "UGx1Z2luSW5mbxIMCgR1dWlkGAEgASgJEgwKBG5hbWUYAiABKAkSDwoHdmVy",
-            "c2lvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIUCgxjYXBhYmlsaXRp",
-            "ZXMYBSADKAkSOQoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5wcm90b2J1",
-            "Zi5UaW1lc3RhbXBSCXRpbWVzdGFtcDLzAQoTQ0xIUGx1Z2luQVBJU2Vydmlj",
-            "ZRJFCg1HZXRQbHVnaW5JbmZvEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Ghwu",
-            "Y2xoX3Byb3RvLnBsdWdpbi5QbHVnaW5JbmZvEkYKEUZvcndhcmRSaWdNZXNz",
+            "bXAucHJvdG8aDXJpZ19tc2cucHJvdG8aD3dzanR4X21zZy5wcm90byK5AQoS",
+            "UGx1Z2luUmVnaXN0ZXJJbmZvEgwKBHV1aWQYASABKAkSDAoEbmFtZRgCIAEo",
+            "CRIPCgd2ZXJzaW9uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhAKCHJw",
+            "Y19wb3J0GAUgASgJEhQKDGNhcGFiaWxpdGllcxgGIAMoCRI5Cgl0aW1lc3Rh",
+            "bXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdGltZXN0",
+            "YW1wMqwBChNDTEhQbHVnaW5BUElTZXJ2aWNlEkYKEUZvcndhcmRSaWdNZXNz",
             "YWdlEhkuY2xoX3Byb3RvLnBsdWdpbi5SaWdEYXRhGhYuZ29vZ2xlLnByb3Rv",
             "YnVmLkVtcHR5Ek0KE0ZvcndhcmRXc2p0eE1lc3NhZ2USHi5jbGhfcHJvdG8u",
             "cGx1Z2luLldzanR4TWVzc2FnZRoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eUJK",
@@ -41,23 +40,23 @@ namespace SydneyOwl.CLHProto.Plugin {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.RigMsgReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PluginInfo), global::SydneyOwl.CLHProto.Plugin.PluginInfo.Parser, new[]{ "Uuid", "Name", "Version", "Description", "Capabilities", "Timestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PluginRegisterInfo), global::SydneyOwl.CLHProto.Plugin.PluginRegisterInfo.Parser, new[]{ "Uuid", "Name", "Version", "Description", "RpcPort", "Capabilities", "Timestamp" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class PluginInfo : pb::IMessage<PluginInfo>
+  public sealed partial class PluginRegisterInfo : pb::IMessage<PluginRegisterInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<PluginInfo> _parser = new pb::MessageParser<PluginInfo>(() => new PluginInfo());
+    private static readonly pb::MessageParser<PluginRegisterInfo> _parser = new pb::MessageParser<PluginRegisterInfo>(() => new PluginRegisterInfo());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<PluginInfo> Parser { get { return _parser; } }
+    public static pb::MessageParser<PluginRegisterInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -73,7 +72,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PluginInfo() {
+    public PluginRegisterInfo() {
       OnConstruction();
     }
 
@@ -81,11 +80,12 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PluginInfo(PluginInfo other) : this() {
+    public PluginRegisterInfo(PluginRegisterInfo other) : this() {
       uuid_ = other.uuid_;
       name_ = other.name_;
       version_ = other.version_;
       description_ = other.description_;
+      rpcPort_ = other.rpcPort_;
       capabilities_ = other.capabilities_.Clone();
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -93,8 +93,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PluginInfo Clone() {
-      return new PluginInfo(this);
+    public PluginRegisterInfo Clone() {
+      return new PluginRegisterInfo(this);
     }
 
     /// <summary>Field number for the "uuid" field.</summary>
@@ -145,10 +145,22 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
     }
 
+    /// <summary>Field number for the "rpc_port" field.</summary>
+    public const int RpcPortFieldNumber = 5;
+    private string rpcPort_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RpcPort {
+      get { return rpcPort_; }
+      set {
+        rpcPort_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "capabilities" field.</summary>
-    public const int CapabilitiesFieldNumber = 5;
+    public const int CapabilitiesFieldNumber = 6;
     private static readonly pb::FieldCodec<string> _repeated_capabilities_codec
-        = pb::FieldCodec.ForString(42);
+        = pb::FieldCodec.ForString(50);
     private readonly pbc::RepeatedField<string> capabilities_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -171,12 +183,12 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as PluginInfo);
+      return Equals(other as PluginRegisterInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(PluginInfo other) {
+    public bool Equals(PluginRegisterInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -187,6 +199,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Name != other.Name) return false;
       if (Version != other.Version) return false;
       if (Description != other.Description) return false;
+      if (RpcPort != other.RpcPort) return false;
       if(!capabilities_.Equals(other.capabilities_)) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -200,6 +213,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (RpcPort.Length != 0) hash ^= RpcPort.GetHashCode();
       hash ^= capabilities_.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
@@ -236,6 +250,10 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (RpcPort.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(RpcPort);
+      }
       capabilities_.WriteTo(output, _repeated_capabilities_codec);
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
@@ -267,6 +285,10 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
+      if (RpcPort.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(RpcPort);
+      }
       capabilities_.WriteTo(ref output, _repeated_capabilities_codec);
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
@@ -294,6 +316,9 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
+      if (RpcPort.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RpcPort);
+      }
       size += capabilities_.CalculateSize(_repeated_capabilities_codec);
       if (timestamp_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
@@ -306,7 +331,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(PluginInfo other) {
+    public void MergeFrom(PluginRegisterInfo other) {
       if (other == null) {
         return;
       }
@@ -321,6 +346,9 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
+      }
+      if (other.RpcPort.Length != 0) {
+        RpcPort = other.RpcPort;
       }
       capabilities_.Add(other.capabilities_);
       if (other.timestamp_ != null) {
@@ -361,6 +389,10 @@ namespace SydneyOwl.CLHProto.Plugin {
             break;
           }
           case 42: {
+            RpcPort = input.ReadString();
+            break;
+          }
+          case 50: {
             capabilities_.AddEntriesFrom(input, _repeated_capabilities_codec);
             break;
           }
@@ -403,6 +435,10 @@ namespace SydneyOwl.CLHProto.Plugin {
             break;
           }
           case 42: {
+            RpcPort = input.ReadString();
+            break;
+          }
+          case 50: {
             capabilities_.AddEntriesFrom(ref input, _repeated_capabilities_codec);
             break;
           }
