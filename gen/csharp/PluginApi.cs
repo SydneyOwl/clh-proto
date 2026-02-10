@@ -29,7 +29,7 @@ namespace SydneyOwl.CLHProto.Plugin {
             "bXAucHJvdG8aDXJpZ19tc2cucHJvdG8aD3dzanR4X21zZy5wcm90byK5AQoS",
             "UGx1Z2luUmVnaXN0ZXJJbmZvEgwKBHV1aWQYASABKAkSDAoEbmFtZRgCIAEo",
             "CRIPCgd2ZXJzaW9uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhAKCHJw",
-            "Y19wb3J0GAUgASgJEhQKDGNhcGFiaWxpdGllcxgGIAMoCRI5Cgl0aW1lc3Rh",
+            "Y19wb3J0GAUgASgNEhQKDGNhcGFiaWxpdGllcxgGIAMoCRI5Cgl0aW1lc3Rh",
             "bXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdGltZXN0",
             "YW1wMqwBChNDTEhQbHVnaW5BUElTZXJ2aWNlEkYKEUZvcndhcmRSaWdNZXNz",
             "YWdlEhkuY2xoX3Byb3RvLnBsdWdpbi5SaWdEYXRhGhYuZ29vZ2xlLnByb3Rv",
@@ -147,13 +147,13 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "rpc_port" field.</summary>
     public const int RpcPortFieldNumber = 5;
-    private string rpcPort_ = "";
+    private uint rpcPort_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string RpcPort {
+    public uint RpcPort {
       get { return rpcPort_; }
       set {
-        rpcPort_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        rpcPort_ = value;
       }
     }
 
@@ -213,7 +213,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (RpcPort.Length != 0) hash ^= RpcPort.GetHashCode();
+      if (RpcPort != 0) hash ^= RpcPort.GetHashCode();
       hash ^= capabilities_.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
@@ -250,9 +250,9 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (RpcPort.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(RpcPort);
+      if (RpcPort != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(RpcPort);
       }
       capabilities_.WriteTo(output, _repeated_capabilities_codec);
       if (timestamp_ != null) {
@@ -285,9 +285,9 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (RpcPort.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(RpcPort);
+      if (RpcPort != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(RpcPort);
       }
       capabilities_.WriteTo(ref output, _repeated_capabilities_codec);
       if (timestamp_ != null) {
@@ -316,8 +316,8 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (RpcPort.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(RpcPort);
+      if (RpcPort != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RpcPort);
       }
       size += capabilities_.CalculateSize(_repeated_capabilities_codec);
       if (timestamp_ != null) {
@@ -347,7 +347,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.RpcPort.Length != 0) {
+      if (other.RpcPort != 0) {
         RpcPort = other.RpcPort;
       }
       capabilities_.Add(other.capabilities_);
@@ -388,8 +388,8 @@ namespace SydneyOwl.CLHProto.Plugin {
             Description = input.ReadString();
             break;
           }
-          case 42: {
-            RpcPort = input.ReadString();
+          case 40: {
+            RpcPort = input.ReadUInt32();
             break;
           }
           case 50: {
@@ -434,8 +434,8 @@ namespace SydneyOwl.CLHProto.Plugin {
             Description = input.ReadString();
             break;
           }
-          case 42: {
-            RpcPort = input.ReadString();
+          case 40: {
+            RpcPort = input.ReadUInt32();
             break;
           }
           case 50: {
