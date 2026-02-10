@@ -26,22 +26,22 @@ namespace SydneyOwl.CLHProto.Plugin {
           string.Concat(
             "ChBwbHVnaW5fYXBpLnByb3RvEhBjbGhfcHJvdG8ucGx1Z2luGhtnb29nbGUv",
             "cHJvdG9idWYvZW1wdHkucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3Rh",
-            "bXAucHJvdG8aDXJpZ19tc2cucHJvdG8aD3dzanR4X21zZy5wcm90byKRAQoK",
-            "UGx1Z2luSW5mbxIMCgRuYW1lGAEgASgJEg8KB3ZlcnNpb24YAiABKAkSEwoL",
-            "ZGVzY3JpcHRpb24YAyABKAkSFAoMY2FwYWJpbGl0aWVzGAQgAygJEjkKCXRp",
-            "bWVzdGFtcBjnByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl0",
-            "aW1lc3RhbXAy8wEKE0NMSFBsdWdpbkFQSVNlcnZpY2USRQoNR2V0UGx1Z2lu",
-            "SW5mbxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRocLmNsaF9wcm90by5wbHVn",
-            "aW4uUGx1Z2luSW5mbxJGChFGb3J3YXJkUmlnTWVzc2FnZRIZLmNsaF9wcm90",
-            "by5wbHVnaW4uUmlnRGF0YRoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRJNChNG",
-            "b3J3YXJkV3NqdHhNZXNzYWdlEh4uY2xoX3Byb3RvLnBsdWdpbi5Xc2p0eE1l",
-            "c3NhZ2UaFi5nb29nbGUucHJvdG9idWYuRW1wdHlCSlosZ2l0aHViLmNvbS9z",
-            "eWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6qAhlTeWRuZXlPd2wu",
-            "Q0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
+            "bXAucHJvdG8aDXJpZ19tc2cucHJvdG8aD3dzanR4X21zZy5wcm90byKfAQoK",
+            "UGx1Z2luSW5mbxIMCgR1dWlkGAEgASgJEgwKBG5hbWUYAiABKAkSDwoHdmVy",
+            "c2lvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIUCgxjYXBhYmlsaXRp",
+            "ZXMYBSADKAkSOQoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5wcm90b2J1",
+            "Zi5UaW1lc3RhbXBSCXRpbWVzdGFtcDLzAQoTQ0xIUGx1Z2luQVBJU2Vydmlj",
+            "ZRJFCg1HZXRQbHVnaW5JbmZvEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Ghwu",
+            "Y2xoX3Byb3RvLnBsdWdpbi5QbHVnaW5JbmZvEkYKEUZvcndhcmRSaWdNZXNz",
+            "YWdlEhkuY2xoX3Byb3RvLnBsdWdpbi5SaWdEYXRhGhYuZ29vZ2xlLnByb3Rv",
+            "YnVmLkVtcHR5Ek0KE0ZvcndhcmRXc2p0eE1lc3NhZ2USHi5jbGhfcHJvdG8u",
+            "cGx1Z2luLldzanR4TWVzc2FnZRoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eUJK",
+            "WixnaXRodWIuY29tL3N5ZG5leW93bC9jbGgtcHJvdG8vZ2VuL2dvL3BsdWdp",
+            "bqoCGVN5ZG5leU93bC5DTEhQcm90by5QbHVnaW5iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.RigMsgReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PluginInfo), global::SydneyOwl.CLHProto.Plugin.PluginInfo.Parser, new[]{ "Name", "Version", "Description", "Capabilities", "Timestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PluginInfo), global::SydneyOwl.CLHProto.Plugin.PluginInfo.Parser, new[]{ "Uuid", "Name", "Version", "Description", "Capabilities", "Timestamp" }, null, null, null, null)
           }));
     }
     #endregion
@@ -82,6 +82,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PluginInfo(PluginInfo other) : this() {
+      uuid_ = other.uuid_;
       name_ = other.name_;
       version_ = other.version_;
       description_ = other.description_;
@@ -96,8 +97,20 @@ namespace SydneyOwl.CLHProto.Plugin {
       return new PluginInfo(this);
     }
 
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 1;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
+    public const int NameFieldNumber = 2;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +122,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     }
 
     /// <summary>Field number for the "version" field.</summary>
-    public const int VersionFieldNumber = 2;
+    public const int VersionFieldNumber = 3;
     private string version_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,7 +134,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     }
 
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 3;
+    public const int DescriptionFieldNumber = 4;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -133,9 +146,9 @@ namespace SydneyOwl.CLHProto.Plugin {
     }
 
     /// <summary>Field number for the "capabilities" field.</summary>
-    public const int CapabilitiesFieldNumber = 4;
+    public const int CapabilitiesFieldNumber = 5;
     private static readonly pb::FieldCodec<string> _repeated_capabilities_codec
-        = pb::FieldCodec.ForString(34);
+        = pb::FieldCodec.ForString(42);
     private readonly pbc::RepeatedField<string> capabilities_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -170,6 +183,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Uuid != other.Uuid) return false;
       if (Name != other.Name) return false;
       if (Version != other.Version) return false;
       if (Description != other.Description) return false;
@@ -182,6 +196,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
@@ -205,16 +220,20 @@ namespace SydneyOwl.CLHProto.Plugin {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Name.Length != 0) {
+      if (Uuid.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(Uuid);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Name);
       }
       if (Version.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Version);
       }
       if (Description.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
       capabilities_.WriteTo(output, _repeated_capabilities_codec);
@@ -232,16 +251,20 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Name.Length != 0) {
+      if (Uuid.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(Uuid);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Name);
       }
       if (Version.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Version);
       }
       if (Description.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteString(Description);
       }
       capabilities_.WriteTo(ref output, _repeated_capabilities_codec);
@@ -259,6 +282,9 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Uuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
+      }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
@@ -283,6 +309,9 @@ namespace SydneyOwl.CLHProto.Plugin {
     public void MergeFrom(PluginInfo other) {
       if (other == null) {
         return;
+      }
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -316,18 +345,22 @@ namespace SydneyOwl.CLHProto.Plugin {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Name = input.ReadString();
+            Uuid = input.ReadString();
             break;
           }
           case 18: {
-            Version = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Version = input.ReadString();
             break;
           }
           case 34: {
+            Description = input.ReadString();
+            break;
+          }
+          case 42: {
             capabilities_.AddEntriesFrom(input, _repeated_capabilities_codec);
             break;
           }
@@ -354,18 +387,22 @@ namespace SydneyOwl.CLHProto.Plugin {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Name = input.ReadString();
+            Uuid = input.ReadString();
             break;
           }
           case 18: {
-            Version = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 26: {
-            Description = input.ReadString();
+            Version = input.ReadString();
             break;
           }
           case 34: {
+            Description = input.ReadString();
+            break;
+          }
+          case 42: {
             capabilities_.AddEntriesFrom(ref input, _repeated_capabilities_codec);
             break;
           }
