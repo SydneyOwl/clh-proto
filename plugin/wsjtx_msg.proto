@@ -1,0 +1,409 @@
+syntax = "proto3";
+
+package clh_proto.plugin;
+option go_package = "github.com/sydneyowl/clh-proto/gen/go/plugin";
+option csharp_namespace = "SydneyOwl.CLHProto.Plugin";
+
+import "google/protobuf/timestamp.proto";
+
+// Message types as defined in WSJT-X network protocol
+enum MessageType {
+  HEARTBEAT = 0;
+  STATUS = 1;
+  DECODE = 2;
+  CLEAR = 3;
+  REPLY = 4;
+  QSO_LOGGED = 5;
+  CLOSE = 6;
+  REPLAY = 7;
+  HALT_TX = 8;
+  FREE_TEXT = 9;
+  WSPR_DECODE = 10;
+  LOCATION = 11;
+  LOGGED_ADIF = 12;
+  HIGHLIGHT_CALLSIGN = 13;
+  SWITCH_CONFIGURATION = 14;
+  CONFIGURE = 15;
+}
+
+// Special operation mode values
+enum SpecialOperationMode {
+  NONE = 0;
+  NA_VHF = 1;
+  EU_VHF = 2;
+  FIELD_DAY = 3;
+  RTTY_RU = 4;
+  WW_DIGI = 5;
+  FOX = 6;
+  HOUND = 7;
+}
+
+// Clear window options
+enum ClearWindow {
+  CLEAR_BAND_ACTIVITY = 0;
+  CLEAR_RX_FREQUENCY = 1;
+  CLEAR_BOTH = 2;
+}
+
+// Keyboard modifiers for Reply message
+enum KeyModifiers {
+  NO_MODIFIER = 0x00;
+  SHIFT = 0x02;
+  CTRL = 0x04;      // CMD on Mac
+  ALT = 0x08;
+  META = 0x10;      // Windows key on MS Windows
+  KEYPAD = 0x20;    // Keypad or arrows
+  GROUP_SWITCH = 0x40; // X11 only
+}
+
+// Common message header
+message MessageHeader {
+  // Magic number identifying WSJT-X protocol (0xadbccbda)
+  fixed32 magic_number = 1;
+
+  // Schema version (2 or 3, indicating Qt data format version)
+  fixed32 schema_number = 2;
+
+  // Message type identifier
+  MessageType type = 3;
+
+  // Unique identifier for the WSJT-X instance
+  string id = 4;
+}
+
+// Heartbeat message (type 0) - bidirectional
+message Heartbeat {
+  // Maximum schema number supported by this client
+  uint32 max_schema_number = 1;
+
+  // WSJT-X version string (e.g., "2.1.2")
+  string version = 2;
+
+  // WSJT-X revision string (e.g., "rc1")
+  optional string revision = 3;
+}
+
+// Status message (type 1) - outgoing only
+message Status {
+  // Dial frequency in Hz
+  uint64 dial_frequency = 1;
+
+  // Current operating mode (e.g., "FT8", "JT65")
+  string mode = 2;
+
+  // DX call being worked
+  string dx_call = 3;
+
+  // Signal report
+  string report = 4;
+
+  // Transmit mode (in dual JT9+JT65 mode)
+  string tx_mode = 5;
+
+  // Transmit enabled flag
+  bool tx_enabled = 6;
+
+  // Currently transmitting flag
+  bool transmitting = 7;
+
+  // Currently decoding flag
+  bool decoding = 8;
+
+  // Receive DF (Doppler shift)
+  uint32 rx_df = 9;
+
+  // Transmit DF (Doppler shift)
+  uint32 tx_df = 10;
+
+  // DE (own) callsign
+  string de_call = 11;
+
+  // DE (own) grid square
+  string de_grid = 12;
+
+  // DX grid square
+  string dx_grid = 13;
+
+  // Transmit watchdog active flag
+  bool tx_watchdog = 14;
+
+  // Sub-mode (e.g., "A" for FT8-A)
+  string sub_mode = 15;
+
+  // Fast mode flag
+  bool fast_mode = 16;
+
+  // Special operation mode
+  optional SpecialOperationMode special_op_mode = 17;
+
+  // Frequency tolerance in Hz (max uint32 for N/A)
+  optional uint32 frequency_tolerance = 18;
+
+  // T/R period in seconds (max uint32 for N/A)
+  optional uint32 tr_period = 19;
+
+  // Configuration name
+  optional string config_name = 20;
+
+  // Current transmit message
+  optional string tx_message = 21;
+}
+
+// Decode message (type 2) - outgoing only
+message Decode {
+  // Whether this is a new decode (true) or replay (false)
+  bool is_new = 1;
+
+  // Time of decode
+  google.protobuf.Timestamp time = 2;
+
+  // Signal-to-noise ratio in dB
+  int32 snr = 3;
+
+  // Delta time in seconds
+  double delta_time = 4;
+
+  // Delta frequency in Hz
+  uint32 delta_frequency = 5;
+
+  // Mode (e.g., "FT8")
+  string mode = 6;
+
+  // Decoded message text
+  string message = 7;
+
+  // Low confidence decode flag
+  bool low_confidence = 8;
+
+  // Decoded from off-air recording flag
+  bool off_air = 9;
+}
+
+// Clear message (type 3) - bidirectional
+message Clear {
+  // Which window(s) to clear (incoming only)
+  ClearWindow window = 1;
+}
+
+// Reply message (type 4) - incoming only
+message Reply {
+  // Time of original decode
+  google.protobuf.Timestamp time = 1;
+
+  // Signal-to-noise ratio in dB
+  int32 snr = 2;
+
+  // Delta time in seconds
+  double delta_time = 3;
+
+  // Delta frequency in Hz
+  uint32 delta_frequency = 4;
+
+  // Mode (e.g., "FT8")
+  string mode = 5;
+
+  // Decoded message text
+  string message = 6;
+
+  // Low confidence decode flag
+  bool low_confidence = 7;
+
+  // Keyboard modifiers (bitmask)
+  uint32 modifiers = 8;
+}
+
+// QSO Logged message (type 5) - outgoing only
+message QSOLogged {
+  // Date and time QSO ended
+  google.protobuf.Timestamp datetime_off = 1;
+
+  // DX station callsign
+  string dx_call = 2;
+
+  // DX station grid square
+  string dx_grid = 3;
+
+  // Transmit frequency in Hz
+  uint64 tx_frequency = 4;
+
+  // Mode (e.g., "FT8")
+  string mode = 5;
+
+  // Report sent to DX station
+  string report_sent = 6;
+
+  // Report received from DX station
+  string report_received = 7;
+
+  // Transmit power
+  string tx_power = 8;
+
+  // Comments
+  string comments = 9;
+
+  // Date and time QSO started
+  google.protobuf.Timestamp datetime_on = 10;
+
+  // Operator callsign
+  string operator_call = 11;
+
+  // Own callsign
+  string my_call = 12;
+
+  // Own grid square
+  string my_grid = 13;
+
+  // Exchange sent
+  optional string exchange_sent = 14;
+
+  // Exchange received
+  optional string exchange_received = 15;
+
+  // ADIF propagation mode
+  optional string adif_propagation_mode = 16;
+}
+
+// Close message (type 6) - bidirectional
+// No additional fields beyond header
+
+// Replay message (type 7) - incoming only
+// No additional fields beyond header
+
+// Halt Tx message (type 8) - incoming only
+message HaltTx {
+  // Whether to stop only auto-generated transmissions
+  bool auto_tx_only = 1;
+}
+
+// Free Text message (type 9) - incoming only
+message FreeText {
+  // Text to send
+  string text = 1;
+
+  // Whether to send immediately
+  bool send = 2;
+}
+
+// WSPR Decode message (type 10) - outgoing only
+message WSPRDecode {
+  // Whether this is a new decode (true) or replay (false)
+  bool is_new = 1;
+
+  // Time of decode
+  google.protobuf.Timestamp time = 2;
+
+  // Signal-to-noise ratio in dB
+  int32 snr = 3;
+
+  // Delta time in seconds
+  double delta_time = 4;
+
+  // Frequency in Hz
+  uint64 frequency = 5;
+
+  // Frequency drift in Hz
+  int32 drift = 6;
+
+  // Callsign
+  string callsign = 7;
+
+  // Grid square
+  string grid = 8;
+
+  // Power in dBm
+  int32 power = 9;
+
+  // Decoded from off-air recording flag
+  optional bool off_air = 10;
+}
+
+// Location message (type 11) - incoming only
+message Location {
+  // Maidenhead grid locator (4- or 6-digit)
+  string location = 1;
+}
+
+// Logged ADIF message (type 12) - outgoing only
+message LoggedADIF {
+  // ADIF-formatted log entry
+  string adif_text = 1;
+}
+
+// Highlight Callsign message (type 13) - incoming only
+message HighlightCallsign {
+  // Callsign to highlight
+  string callsign = 1;
+
+  // Background color (RGBA, invalid color to clear)
+  uint32 background_color = 2;
+
+  // Foreground color (RGBA, invalid color to clear)
+  uint32 foreground_color = 3;
+
+  // Highlight only in last period flag
+  bool highlight_last = 4;
+}
+
+// Switch Configuration message (type 14) - incoming only
+message SwitchConfiguration {
+  // Configuration name to switch to
+  string config_name = 1;
+}
+
+// Configure message (type 15) - incoming only
+message Configure {
+  // Mode to set (empty for no change)
+  string mode = 1;
+
+  // Frequency tolerance in Hz (max uint32 for no change)
+  uint32 frequency_tolerance = 2;
+
+  // Sub-mode to set (empty for no change)
+  string sub_mode = 3;
+
+  // Fast mode flag
+  bool fast_mode = 4;
+
+  // T/R period in seconds (max uint32 for no change)
+  uint32 tr_period = 5;
+
+  // Receive DF (max uint32 for no change)
+  uint32 rx_df = 6;
+
+  // DX callsign (empty for no change)
+  string dx_call = 7;
+
+  // DX grid square (empty for no change)
+  string dx_grid = 8;
+
+  // Whether to generate messages
+  bool generate_messages = 9;
+}
+
+// Main WSJT-X message container
+message WsjtxMessage {
+  // Common header
+  MessageHeader header = 1;
+
+  // Message payload (oneof ensures only one is set)
+  oneof payload {
+    Heartbeat heartbeat = 2;
+    Status status = 3;
+    Decode decode = 4;
+    Clear clear = 5;
+    Reply reply = 6;
+    QSOLogged qso_logged = 7;
+    // Close: no additional fields
+    // Replay: no additional fields
+    HaltTx halt_tx = 10;
+    FreeText free_text = 11;
+    WSPRDecode wspr_decode = 12;
+    Location location = 13;
+    LoggedADIF logged_adif = 14;
+    HighlightCallsign highlight_callsign = 15;
+    SwitchConfiguration switch_configuration = 16;
+    Configure configure = 17;
+  }
+  
+  google.protobuf.Timestamp timestamp = 999;
+}
