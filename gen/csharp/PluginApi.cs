@@ -31,24 +31,25 @@ namespace SydneyOwl.CLHProto.Plugin {
             "IAEoCRIPCgd2ZXJzaW9uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhAK",
             "CHJwY19wb3J0GAUgASgNEjIKDGNhcGFiaWxpdGllcxgGIAMoDjIcLmNsaF9w",
             "cm90by5wbHVnaW4uQ2FwYWJpbGl0eRIuCgl0aW1lc3RhbXAY5wcgASgLMhou",
-            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJqChZQaXBlUmVnaXN0ZXJQbHVn",
-            "aW5SZXNwEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIuCgl0",
-            "aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJ2",
-            "ChJQYWNrZWRXc2p0eE1lc3NhZ2USMAoIbWVzc2FnZXMYASADKAsyHi5jbGhf",
-            "cHJvdG8ucGx1Z2luLldzanR4TWVzc2FnZRIuCgl0aW1lc3RhbXAY5wcgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCotCgpDYXBhYmlsaXR5EhEK",
-            "DXdzanR4X21lc3NhZ2UQABIMCghyaWdfZGF0YRABMrIBChNDTEhQbHVnaW5B",
-            "UElTZXJ2aWNlEkYKEUZvcndhcmRSaWdNZXNzYWdlEhkuY2xoX3Byb3RvLnBs",
-            "dWdpbi5SaWdEYXRhGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5ElMKE0Zvcndh",
-            "cmRXc2p0eE1lc3NhZ2USJC5jbGhfcHJvdG8ucGx1Z2luLlBhY2tlZFdzanR4",
-            "TWVzc2FnZRoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eUJKWixnaXRodWIuY29t",
-            "L3N5ZG5leW93bC9jbGgtcHJvdG8vZ2VuL2dvL3BsdWdpbqoCGVN5ZG5leU93",
-            "bC5DTEhQcm90by5QbHVnaW5iBnByb3RvMw=="));
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCKDAQoWUGlwZVJlZ2lzdGVyUGx1",
+            "Z2luUmVzcBIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSFwoP",
+            "Y2xoX2luc3RhbmNlX2lkGAMgASgJEi4KCXRpbWVzdGFtcBjnByABKAsyGi5n",
+            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wInYKElBhY2tlZFdzanR4TWVzc2Fn",
+            "ZRIwCghtZXNzYWdlcxgBIAMoCzIeLmNsaF9wcm90by5wbHVnaW4uV3NqdHhN",
+            "ZXNzYWdlEi4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUucHJvdG9idWYu",
+            "VGltZXN0YW1wKi0KCkNhcGFiaWxpdHkSEQoNd3NqdHhfbWVzc2FnZRAAEgwK",
+            "CHJpZ19kYXRhEAEysgEKE0NMSFBsdWdpbkFQSVNlcnZpY2USRgoRRm9yd2Fy",
+            "ZFJpZ01lc3NhZ2USGS5jbGhfcHJvdG8ucGx1Z2luLlJpZ0RhdGEaFi5nb29n",
+            "bGUucHJvdG9idWYuRW1wdHkSUwoTRm9yd2FyZFdzanR4TWVzc2FnZRIkLmNs",
+            "aF9wcm90by5wbHVnaW4uUGFja2VkV3NqdHhNZXNzYWdlGhYuZ29vZ2xlLnBy",
+            "b3RvYnVmLkVtcHR5QkpaLGdpdGh1Yi5jb20vc3lkbmV5b3dsL2NsaC1wcm90",
+            "by9nZW4vZ28vcGx1Z2luqgIZU3lkbmV5T3dsLkNMSFByb3RvLlBsdWdpbmIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.RigMsgReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.Capability), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq.Parser, new[]{ "Uuid", "Name", "Version", "Description", "RpcPort", "Capabilities", "Timestamp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp.Parser, new[]{ "Success", "Message", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp.Parser, new[]{ "Success", "Message", "ClhInstanceId", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage), global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage.Parser, new[]{ "Messages", "Timestamp" }, null, null, null, null)
           }));
     }
@@ -511,6 +512,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     public PipeRegisterPluginResp(PipeRegisterPluginResp other) : this() {
       success_ = other.success_;
       message_ = other.message_;
+      clhInstanceId_ = other.clhInstanceId_;
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -545,6 +547,18 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
     }
 
+    /// <summary>Field number for the "clh_instance_id" field.</summary>
+    public const int ClhInstanceIdFieldNumber = 3;
+    private string clhInstanceId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClhInstanceId {
+      get { return clhInstanceId_; }
+      set {
+        clhInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "timestamp" field.</summary>
     public const int TimestampFieldNumber = 999;
     private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
@@ -574,6 +588,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (Success != other.Success) return false;
       if (Message != other.Message) return false;
+      if (ClhInstanceId != other.ClhInstanceId) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -584,6 +599,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (ClhInstanceId.Length != 0) hash ^= ClhInstanceId.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -611,6 +627,10 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(18);
         output.WriteString(Message);
       }
+      if (ClhInstanceId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ClhInstanceId);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -633,6 +653,10 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(18);
         output.WriteString(Message);
       }
+      if (ClhInstanceId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ClhInstanceId);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -652,6 +676,9 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (ClhInstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClhInstanceId);
       }
       if (timestamp_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
@@ -673,6 +700,9 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
+      }
+      if (other.ClhInstanceId.Length != 0) {
+        ClhInstanceId = other.ClhInstanceId;
       }
       if (other.timestamp_ != null) {
         if (timestamp_ == null) {
@@ -703,6 +733,10 @@ namespace SydneyOwl.CLHProto.Plugin {
             Message = input.ReadString();
             break;
           }
+          case 26: {
+            ClhInstanceId = input.ReadString();
+            break;
+          }
           case 7994: {
             if (timestamp_ == null) {
               Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
@@ -731,6 +765,10 @@ namespace SydneyOwl.CLHProto.Plugin {
           }
           case 18: {
             Message = input.ReadString();
+            break;
+          }
+          case 26: {
+            ClhInstanceId = input.ReadString();
             break;
           }
           case 7994: {

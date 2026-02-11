@@ -28,6 +28,7 @@ message PipeRegisterPluginReq {
 message PipeRegisterPluginResp {
   bool success = 1;
   string message = 2;
+  string clh_instance_id = 3;
   google.protobuf.Timestamp timestamp = 999;
 }
 

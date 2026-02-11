@@ -165,6 +165,7 @@ type PipeRegisterPluginResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	ClhInstanceId string                 `protobuf:"bytes,3,opt,name=clh_instance_id,json=clhInstanceId,proto3" json:"clh_instance_id,omitempty"`
 	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -210,6 +211,13 @@ func (x *PipeRegisterPluginResp) GetSuccess() bool {
 func (x *PipeRegisterPluginResp) GetMessage() string {
 	if x != nil {
 		return x.Message
+	}
+	return ""
+}
+
+func (x *PipeRegisterPluginResp) GetClhInstanceId() string {
+	if x != nil {
+		return x.ClhInstanceId
 	}
 	return ""
 }
@@ -285,10 +293,11 @@ const file_plugin_api_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x19\n" +
 	"\brpc_port\x18\x05 \x01(\rR\arpcPort\x12@\n" +
 	"\fcapabilities\x18\x06 \x03(\x0e2\x1c.clh_proto.plugin.CapabilityR\fcapabilities\x129\n" +
-	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\x87\x01\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\xaf\x01\n" +
 	"\x16PipeRegisterPluginResp\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage\x129\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\x12&\n" +
+	"\x0fclh_instance_id\x18\x03 \x01(\tR\rclhInstanceId\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\x8b\x01\n" +
 	"\x12PackedWsjtxMessage\x12:\n" +
 	"\bmessages\x18\x01 \x03(\v2\x1e.clh_proto.plugin.WsjtxMessageR\bmessages\x129\n" +
