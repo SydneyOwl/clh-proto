@@ -117,6 +117,8 @@ func (x *PipeRegisterPluginReq) GetTimestamp() *timestamppb.Timestamp {
 
 type PipeRegisterPluginResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	Message       bool                   `protobuf:"varint,2,opt,name=message,proto3" json:"message,omitempty"`
 	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -150,6 +152,20 @@ func (x *PipeRegisterPluginResp) ProtoReflect() protoreflect.Message {
 // Deprecated: Use PipeRegisterPluginResp.ProtoReflect.Descriptor instead.
 func (*PipeRegisterPluginResp) Descriptor() ([]byte, []int) {
 	return file_plugin_api_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *PipeRegisterPluginResp) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+func (x *PipeRegisterPluginResp) GetMessage() bool {
+	if x != nil {
+		return x.Message
+	}
+	return false
 }
 
 func (x *PipeRegisterPluginResp) GetTimestamp() *timestamppb.Timestamp {
@@ -223,8 +239,10 @@ const file_plugin_api_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x19\n" +
 	"\brpc_port\x18\x05 \x01(\rR\arpcPort\x12\"\n" +
 	"\fcapabilities\x18\x06 \x03(\tR\fcapabilities\x129\n" +
-	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"S\n" +
-	"\x16PipeRegisterPluginResp\x129\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\x87\x01\n" +
+	"\x16PipeRegisterPluginResp\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\bR\amessage\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\x8b\x01\n" +
 	"\x12PackedWsjtxMessage\x12:\n" +
 	"\bmessages\x18\x01 \x03(\v2\x1e.clh_proto.plugin.WsjtxMessageR\bmessages\x129\n" +

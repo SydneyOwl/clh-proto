@@ -30,23 +30,23 @@ namespace SydneyOwl.CLHProto.Plugin {
             "UGlwZVJlZ2lzdGVyUGx1Z2luUmVxEgwKBHV1aWQYASABKAkSDAoEbmFtZRgC",
             "IAEoCRIPCgd2ZXJzaW9uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhAK",
             "CHJwY19wb3J0GAUgASgNEhQKDGNhcGFiaWxpdGllcxgGIAMoCRIuCgl0aW1l",
-            "c3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJIChZQ",
-            "aXBlUmVnaXN0ZXJQbHVnaW5SZXNwEi4KCXRpbWVzdGFtcBjnByABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wInYKElBhY2tlZFdzanR4TWVzc2Fn",
-            "ZRIwCghtZXNzYWdlcxgBIAMoCzIeLmNsaF9wcm90by5wbHVnaW4uV3NqdHhN",
-            "ZXNzYWdlEi4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUucHJvdG9idWYu",
-            "VGltZXN0YW1wMrIBChNDTEhQbHVnaW5BUElTZXJ2aWNlEkYKEUZvcndhcmRS",
-            "aWdNZXNzYWdlEhkuY2xoX3Byb3RvLnBsdWdpbi5SaWdEYXRhGhYuZ29vZ2xl",
-            "LnByb3RvYnVmLkVtcHR5ElMKE0ZvcndhcmRXc2p0eE1lc3NhZ2USJC5jbGhf",
-            "cHJvdG8ucGx1Z2luLlBhY2tlZFdzanR4TWVzc2FnZRoWLmdvb2dsZS5wcm90",
-            "b2J1Zi5FbXB0eUJKWixnaXRodWIuY29tL3N5ZG5leW93bC9jbGgtcHJvdG8v",
-            "Z2VuL2dvL3BsdWdpbqoCGVN5ZG5leU93bC5DTEhQcm90by5QbHVnaW5iBnBy",
-            "b3RvMw=="));
+            "c3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJqChZQ",
+            "aXBlUmVnaXN0ZXJQbHVnaW5SZXNwEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVz",
+            "c2FnZRgCIAEoCBIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3Rv",
+            "YnVmLlRpbWVzdGFtcCJ2ChJQYWNrZWRXc2p0eE1lc3NhZ2USMAoIbWVzc2Fn",
+            "ZXMYASADKAsyHi5jbGhfcHJvdG8ucGx1Z2luLldzanR4TWVzc2FnZRIuCgl0",
+            "aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcDKy",
+            "AQoTQ0xIUGx1Z2luQVBJU2VydmljZRJGChFGb3J3YXJkUmlnTWVzc2FnZRIZ",
+            "LmNsaF9wcm90by5wbHVnaW4uUmlnRGF0YRoWLmdvb2dsZS5wcm90b2J1Zi5F",
+            "bXB0eRJTChNGb3J3YXJkV3NqdHhNZXNzYWdlEiQuY2xoX3Byb3RvLnBsdWdp",
+            "bi5QYWNrZWRXc2p0eE1lc3NhZ2UaFi5nb29nbGUucHJvdG9idWYuRW1wdHlC",
+            "SlosZ2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVn",
+            "aW6qAhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.RigMsgReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq.Parser, new[]{ "Uuid", "Name", "Version", "Description", "RpcPort", "Capabilities", "Timestamp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp.Parser, new[]{ "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp.Parser, new[]{ "Success", "Message", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage), global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage.Parser, new[]{ "Messages", "Timestamp" }, null, null, null, null)
           }));
     }
@@ -497,6 +497,8 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PipeRegisterPluginResp(PipeRegisterPluginResp other) : this() {
+      success_ = other.success_;
+      message_ = other.message_;
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -505,6 +507,30 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PipeRegisterPluginResp Clone() {
       return new PipeRegisterPluginResp(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private bool message_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Message {
+      get { return message_; }
+      set {
+        message_ = value;
+      }
     }
 
     /// <summary>Field number for the "timestamp" field.</summary>
@@ -534,6 +560,8 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Success != other.Success) return false;
+      if (Message != other.Message) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -542,6 +570,8 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (Message != false) hash ^= Message.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -561,6 +591,14 @@ namespace SydneyOwl.CLHProto.Plugin {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (Message != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Message);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -575,6 +613,14 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (Message != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Message);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -589,6 +635,12 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (Message != false) {
+        size += 1 + 1;
+      }
       if (timestamp_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
       }
@@ -603,6 +655,12 @@ namespace SydneyOwl.CLHProto.Plugin {
     public void MergeFrom(PipeRegisterPluginResp other) {
       if (other == null) {
         return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      if (other.Message != false) {
+        Message = other.Message;
       }
       if (other.timestamp_ != null) {
         if (timestamp_ == null) {
@@ -625,6 +683,14 @@ namespace SydneyOwl.CLHProto.Plugin {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 16: {
+            Message = input.ReadBool();
+            break;
+          }
           case 7994: {
             if (timestamp_ == null) {
               Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
@@ -647,6 +713,14 @@ namespace SydneyOwl.CLHProto.Plugin {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 16: {
+            Message = input.ReadBool();
+            break;
+          }
           case 7994: {
             if (timestamp_ == null) {
               Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
