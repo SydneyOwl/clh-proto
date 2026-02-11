@@ -10,8 +10,9 @@ import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
-	_ "google.golang.org/protobuf/types/known/timestamppb"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
+	sync "sync"
 	unsafe "unsafe"
 )
 
@@ -22,30 +23,252 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type PipeRegisterPluginReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Uuid          string                 `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	RpcPort       uint32                 `protobuf:"varint,5,opt,name=rpc_port,json=rpcPort,proto3" json:"rpc_port,omitempty"`
+	Capabilities  []string               `protobuf:"bytes,6,rep,name=capabilities,proto3" json:"capabilities,omitempty"`
+	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PipeRegisterPluginReq) Reset() {
+	*x = PipeRegisterPluginReq{}
+	mi := &file_plugin_api_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PipeRegisterPluginReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PipeRegisterPluginReq) ProtoMessage() {}
+
+func (x *PipeRegisterPluginReq) ProtoReflect() protoreflect.Message {
+	mi := &file_plugin_api_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PipeRegisterPluginReq.ProtoReflect.Descriptor instead.
+func (*PipeRegisterPluginReq) Descriptor() ([]byte, []int) {
+	return file_plugin_api_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *PipeRegisterPluginReq) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
+func (x *PipeRegisterPluginReq) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *PipeRegisterPluginReq) GetVersion() string {
+	if x != nil {
+		return x.Version
+	}
+	return ""
+}
+
+func (x *PipeRegisterPluginReq) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *PipeRegisterPluginReq) GetRpcPort() uint32 {
+	if x != nil {
+		return x.RpcPort
+	}
+	return 0
+}
+
+func (x *PipeRegisterPluginReq) GetCapabilities() []string {
+	if x != nil {
+		return x.Capabilities
+	}
+	return nil
+}
+
+func (x *PipeRegisterPluginReq) GetTimestamp() *timestamppb.Timestamp {
+	if x != nil {
+		return x.Timestamp
+	}
+	return nil
+}
+
+type PipeRegisterPluginResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PipeRegisterPluginResp) Reset() {
+	*x = PipeRegisterPluginResp{}
+	mi := &file_plugin_api_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PipeRegisterPluginResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PipeRegisterPluginResp) ProtoMessage() {}
+
+func (x *PipeRegisterPluginResp) ProtoReflect() protoreflect.Message {
+	mi := &file_plugin_api_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PipeRegisterPluginResp.ProtoReflect.Descriptor instead.
+func (*PipeRegisterPluginResp) Descriptor() ([]byte, []int) {
+	return file_plugin_api_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *PipeRegisterPluginResp) GetTimestamp() *timestamppb.Timestamp {
+	if x != nil {
+		return x.Timestamp
+	}
+	return nil
+}
+
+type PackedWsjtxMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Messages      []*WsjtxMessage        `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
+	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PackedWsjtxMessage) Reset() {
+	*x = PackedWsjtxMessage{}
+	mi := &file_plugin_api_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PackedWsjtxMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PackedWsjtxMessage) ProtoMessage() {}
+
+func (x *PackedWsjtxMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_plugin_api_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PackedWsjtxMessage.ProtoReflect.Descriptor instead.
+func (*PackedWsjtxMessage) Descriptor() ([]byte, []int) {
+	return file_plugin_api_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *PackedWsjtxMessage) GetMessages() []*WsjtxMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
+}
+
+func (x *PackedWsjtxMessage) GetTimestamp() *timestamppb.Timestamp {
+	if x != nil {
+		return x.Timestamp
+	}
+	return nil
+}
+
 var File_plugin_api_proto protoreflect.FileDescriptor
 
 const file_plugin_api_proto_rawDesc = "" +
 	"\n" +
-	"\x10plugin_api.proto\x12\x10clh_proto.plugin\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rrig_msg.proto\x1a\x0fwsjtx_msg.proto2\xac\x01\n" +
+	"\x10plugin_api.proto\x12\x10clh_proto.plugin\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rrig_msg.proto\x1a\x0fwsjtx_msg.proto\"\xf5\x01\n" +
+	"\x15PipeRegisterPluginReq\x12\x12\n" +
+	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
+	"\aversion\x18\x03 \x01(\tR\aversion\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x19\n" +
+	"\brpc_port\x18\x05 \x01(\rR\arpcPort\x12\"\n" +
+	"\fcapabilities\x18\x06 \x03(\tR\fcapabilities\x129\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"S\n" +
+	"\x16PipeRegisterPluginResp\x129\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\x8b\x01\n" +
+	"\x12PackedWsjtxMessage\x12:\n" +
+	"\bmessages\x18\x01 \x03(\v2\x1e.clh_proto.plugin.WsjtxMessageR\bmessages\x129\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp2\xb2\x01\n" +
 	"\x13CLHPluginAPIService\x12F\n" +
-	"\x11ForwardRigMessage\x12\x19.clh_proto.plugin.RigData\x1a\x16.google.protobuf.Empty\x12M\n" +
-	"\x13ForwardWsjtxMessage\x12\x1e.clh_proto.plugin.WsjtxMessage\x1a\x16.google.protobuf.EmptyBJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
+	"\x11ForwardRigMessage\x12\x19.clh_proto.plugin.RigData\x1a\x16.google.protobuf.Empty\x12S\n" +
+	"\x13ForwardWsjtxMessage\x12$.clh_proto.plugin.PackedWsjtxMessage\x1a\x16.google.protobuf.EmptyBJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
 
+var (
+	file_plugin_api_proto_rawDescOnce sync.Once
+	file_plugin_api_proto_rawDescData []byte
+)
+
+func file_plugin_api_proto_rawDescGZIP() []byte {
+	file_plugin_api_proto_rawDescOnce.Do(func() {
+		file_plugin_api_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_plugin_api_proto_rawDesc), len(file_plugin_api_proto_rawDesc)))
+	})
+	return file_plugin_api_proto_rawDescData
+}
+
+var file_plugin_api_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_plugin_api_proto_goTypes = []any{
-	(*RigData)(nil),       // 0: clh_proto.plugin.RigData
-	(*WsjtxMessage)(nil),  // 1: clh_proto.plugin.WsjtxMessage
-	(*emptypb.Empty)(nil), // 2: google.protobuf.Empty
+	(*PipeRegisterPluginReq)(nil),  // 0: clh_proto.plugin.PipeRegisterPluginReq
+	(*PipeRegisterPluginResp)(nil), // 1: clh_proto.plugin.PipeRegisterPluginResp
+	(*PackedWsjtxMessage)(nil),     // 2: clh_proto.plugin.PackedWsjtxMessage
+	(*timestamppb.Timestamp)(nil),  // 3: google.protobuf.Timestamp
+	(*WsjtxMessage)(nil),           // 4: clh_proto.plugin.WsjtxMessage
+	(*RigData)(nil),                // 5: clh_proto.plugin.RigData
+	(*emptypb.Empty)(nil),          // 6: google.protobuf.Empty
 }
 var file_plugin_api_proto_depIdxs = []int32{
-	0, // 0: clh_proto.plugin.CLHPluginAPIService.ForwardRigMessage:input_type -> clh_proto.plugin.RigData
-	1, // 1: clh_proto.plugin.CLHPluginAPIService.ForwardWsjtxMessage:input_type -> clh_proto.plugin.WsjtxMessage
-	2, // 2: clh_proto.plugin.CLHPluginAPIService.ForwardRigMessage:output_type -> google.protobuf.Empty
-	2, // 3: clh_proto.plugin.CLHPluginAPIService.ForwardWsjtxMessage:output_type -> google.protobuf.Empty
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	3, // 0: clh_proto.plugin.PipeRegisterPluginReq.timestamp:type_name -> google.protobuf.Timestamp
+	3, // 1: clh_proto.plugin.PipeRegisterPluginResp.timestamp:type_name -> google.protobuf.Timestamp
+	4, // 2: clh_proto.plugin.PackedWsjtxMessage.messages:type_name -> clh_proto.plugin.WsjtxMessage
+	3, // 3: clh_proto.plugin.PackedWsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
+	5, // 4: clh_proto.plugin.CLHPluginAPIService.ForwardRigMessage:input_type -> clh_proto.plugin.RigData
+	2, // 5: clh_proto.plugin.CLHPluginAPIService.ForwardWsjtxMessage:input_type -> clh_proto.plugin.PackedWsjtxMessage
+	6, // 6: clh_proto.plugin.CLHPluginAPIService.ForwardRigMessage:output_type -> google.protobuf.Empty
+	6, // 7: clh_proto.plugin.CLHPluginAPIService.ForwardWsjtxMessage:output_type -> google.protobuf.Empty
+	6, // [6:8] is the sub-list for method output_type
+	4, // [4:6] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_plugin_api_proto_init() }
@@ -61,12 +284,13 @@ func file_plugin_api_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plugin_api_proto_rawDesc), len(file_plugin_api_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   0,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
 		GoTypes:           file_plugin_api_proto_goTypes,
 		DependencyIndexes: file_plugin_api_proto_depIdxs,
+		MessageInfos:      file_plugin_api_proto_msgTypes,
 	}.Build()
 	File_plugin_api_proto = out.File
 	file_plugin_api_proto_goTypes = nil

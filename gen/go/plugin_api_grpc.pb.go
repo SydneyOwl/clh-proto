@@ -29,7 +29,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CLHPluginAPIServiceClient interface {
 	ForwardRigMessage(ctx context.Context, in *RigData, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	ForwardWsjtxMessage(ctx context.Context, in *WsjtxMessage, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	ForwardWsjtxMessage(ctx context.Context, in *PackedWsjtxMessage, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
 type cLHPluginAPIServiceClient struct {
@@ -50,7 +50,7 @@ func (c *cLHPluginAPIServiceClient) ForwardRigMessage(ctx context.Context, in *R
 	return out, nil
 }
 
-func (c *cLHPluginAPIServiceClient) ForwardWsjtxMessage(ctx context.Context, in *WsjtxMessage, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *cLHPluginAPIServiceClient) ForwardWsjtxMessage(ctx context.Context, in *PackedWsjtxMessage, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(emptypb.Empty)
 	err := c.cc.Invoke(ctx, CLHPluginAPIService_ForwardWsjtxMessage_FullMethodName, in, out, cOpts...)
@@ -65,7 +65,7 @@ func (c *cLHPluginAPIServiceClient) ForwardWsjtxMessage(ctx context.Context, in 
 // for forward compatibility.
 type CLHPluginAPIServiceServer interface {
 	ForwardRigMessage(context.Context, *RigData) (*emptypb.Empty, error)
-	ForwardWsjtxMessage(context.Context, *WsjtxMessage) (*emptypb.Empty, error)
+	ForwardWsjtxMessage(context.Context, *PackedWsjtxMessage) (*emptypb.Empty, error)
 	mustEmbedUnimplementedCLHPluginAPIServiceServer()
 }
 
@@ -79,7 +79,7 @@ type UnimplementedCLHPluginAPIServiceServer struct{}
 func (UnimplementedCLHPluginAPIServiceServer) ForwardRigMessage(context.Context, *RigData) (*emptypb.Empty, error) {
 	return nil, status.Error(codes.Unimplemented, "method ForwardRigMessage not implemented")
 }
-func (UnimplementedCLHPluginAPIServiceServer) ForwardWsjtxMessage(context.Context, *WsjtxMessage) (*emptypb.Empty, error) {
+func (UnimplementedCLHPluginAPIServiceServer) ForwardWsjtxMessage(context.Context, *PackedWsjtxMessage) (*emptypb.Empty, error) {
 	return nil, status.Error(codes.Unimplemented, "method ForwardWsjtxMessage not implemented")
 }
 func (UnimplementedCLHPluginAPIServiceServer) mustEmbedUnimplementedCLHPluginAPIServiceServer() {}
@@ -122,7 +122,7 @@ func _CLHPluginAPIService_ForwardRigMessage_Handler(srv interface{}, ctx context
 }
 
 func _CLHPluginAPIService_ForwardWsjtxMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(WsjtxMessage)
+	in := new(PackedWsjtxMessage)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -134,7 +134,7 @@ func _CLHPluginAPIService_ForwardWsjtxMessage_Handler(srv interface{}, ctx conte
 		FullMethod: CLHPluginAPIService_ForwardWsjtxMessage_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CLHPluginAPIServiceServer).ForwardWsjtxMessage(ctx, req.(*WsjtxMessage))
+		return srv.(CLHPluginAPIServiceServer).ForwardWsjtxMessage(ctx, req.(*PackedWsjtxMessage))
 	}
 	return interceptor(ctx, in, info, handler)
 }
