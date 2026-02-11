@@ -118,7 +118,7 @@ func (x *PipeRegisterPluginReq) GetTimestamp() *timestamppb.Timestamp {
 type PipeRegisterPluginResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
-	Message       bool                   `protobuf:"varint,2,opt,name=message,proto3" json:"message,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -161,11 +161,11 @@ func (x *PipeRegisterPluginResp) GetSuccess() bool {
 	return false
 }
 
-func (x *PipeRegisterPluginResp) GetMessage() bool {
+func (x *PipeRegisterPluginResp) GetMessage() string {
 	if x != nil {
 		return x.Message
 	}
-	return false
+	return ""
 }
 
 func (x *PipeRegisterPluginResp) GetTimestamp() *timestamppb.Timestamp {
@@ -242,7 +242,7 @@ const file_plugin_api_proto_rawDesc = "" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\x87\x01\n" +
 	"\x16PipeRegisterPluginResp\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\bR\amessage\x129\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\x8b\x01\n" +
 	"\x12PackedWsjtxMessage\x12:\n" +
 	"\bmessages\x18\x01 \x03(\v2\x1e.clh_proto.plugin.WsjtxMessageR\bmessages\x129\n" +

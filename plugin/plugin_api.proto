@@ -22,7 +22,7 @@ message PipeRegisterPluginReq {
 
 message PipeRegisterPluginResp {
   bool success = 1;
-  bool message = 2;
+  string message = 2;
   google.protobuf.Timestamp timestamp = 999;
 }
 

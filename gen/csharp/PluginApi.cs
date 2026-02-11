@@ -32,7 +32,7 @@ namespace SydneyOwl.CLHProto.Plugin {
             "CHJwY19wb3J0GAUgASgNEhQKDGNhcGFiaWxpdGllcxgGIAMoCRIuCgl0aW1l",
             "c3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJqChZQ",
             "aXBlUmVnaXN0ZXJQbHVnaW5SZXNwEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVz",
-            "c2FnZRgCIAEoCBIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3Rv",
+            "c2FnZRgCIAEoCRIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3Rv",
             "YnVmLlRpbWVzdGFtcCJ2ChJQYWNrZWRXc2p0eE1lc3NhZ2USMAoIbWVzc2Fn",
             "ZXMYASADKAsyHi5jbGhfcHJvdG8ucGx1Z2luLldzanR4TWVzc2FnZRIuCgl0",
             "aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcDKy",
@@ -523,13 +523,13 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "message" field.</summary>
     public const int MessageFieldNumber = 2;
-    private bool message_;
+    private string message_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Message {
+    public string Message {
       get { return message_; }
       set {
-        message_ = value;
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -571,7 +571,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
-      if (Message != false) hash ^= Message.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -595,9 +595,9 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
-      if (Message != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(Message);
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
       }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
@@ -617,9 +617,9 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
-      if (Message != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(Message);
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
       }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
@@ -638,8 +638,8 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Success != false) {
         size += 1 + 1;
       }
-      if (Message != false) {
-        size += 1 + 1;
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
       if (timestamp_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
@@ -659,7 +659,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (other.Success != false) {
         Success = other.Success;
       }
-      if (other.Message != false) {
+      if (other.Message.Length != 0) {
         Message = other.Message;
       }
       if (other.timestamp_ != null) {
@@ -687,8 +687,8 @@ namespace SydneyOwl.CLHProto.Plugin {
             Success = input.ReadBool();
             break;
           }
-          case 16: {
-            Message = input.ReadBool();
+          case 18: {
+            Message = input.ReadString();
             break;
           }
           case 7994: {
@@ -717,8 +717,8 @@ namespace SydneyOwl.CLHProto.Plugin {
             Success = input.ReadBool();
             break;
           }
-          case 16: {
-            Message = input.ReadBool();
+          case 18: {
+            Message = input.ReadString();
             break;
           }
           case 7994: {
