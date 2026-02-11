@@ -10,13 +10,18 @@ import "google/protobuf/timestamp.proto";
 import "rig_msg.proto";
 import "wsjtx_msg.proto";
 
+enum Capability{
+  wsjtx_message = 0;
+  rig_data = 1;
+}
+
 message PipeRegisterPluginReq {
   string uuid = 1;
   string name = 2;
   string version = 3;
   string description = 4;
   uint32 rpc_port = 5;
-  repeated string capabilities = 6;
+  repeated Capability capabilities = 6;
   google.protobuf.Timestamp timestamp = 999;
 }
 

@@ -26,25 +26,27 @@ namespace SydneyOwl.CLHProto.Plugin {
           string.Concat(
             "ChBwbHVnaW5fYXBpLnByb3RvEhBjbGhfcHJvdG8ucGx1Z2luGhtnb29nbGUv",
             "cHJvdG9idWYvZW1wdHkucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3Rh",
-            "bXAucHJvdG8aDXJpZ19tc2cucHJvdG8aD3dzanR4X21zZy5wcm90byKxAQoV",
+            "bXAucHJvdG8aDXJpZ19tc2cucHJvdG8aD3dzanR4X21zZy5wcm90byLPAQoV",
             "UGlwZVJlZ2lzdGVyUGx1Z2luUmVxEgwKBHV1aWQYASABKAkSDAoEbmFtZRgC",
             "IAEoCRIPCgd2ZXJzaW9uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEhAK",
-            "CHJwY19wb3J0GAUgASgNEhQKDGNhcGFiaWxpdGllcxgGIAMoCRIuCgl0aW1l",
-            "c3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJqChZQ",
-            "aXBlUmVnaXN0ZXJQbHVnaW5SZXNwEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVz",
-            "c2FnZRgCIAEoCRIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3Rv",
-            "YnVmLlRpbWVzdGFtcCJ2ChJQYWNrZWRXc2p0eE1lc3NhZ2USMAoIbWVzc2Fn",
-            "ZXMYASADKAsyHi5jbGhfcHJvdG8ucGx1Z2luLldzanR4TWVzc2FnZRIuCgl0",
-            "aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcDKy",
-            "AQoTQ0xIUGx1Z2luQVBJU2VydmljZRJGChFGb3J3YXJkUmlnTWVzc2FnZRIZ",
-            "LmNsaF9wcm90by5wbHVnaW4uUmlnRGF0YRoWLmdvb2dsZS5wcm90b2J1Zi5F",
-            "bXB0eRJTChNGb3J3YXJkV3NqdHhNZXNzYWdlEiQuY2xoX3Byb3RvLnBsdWdp",
-            "bi5QYWNrZWRXc2p0eE1lc3NhZ2UaFi5nb29nbGUucHJvdG9idWYuRW1wdHlC",
-            "SlosZ2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVn",
-            "aW6qAhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
+            "CHJwY19wb3J0GAUgASgNEjIKDGNhcGFiaWxpdGllcxgGIAMoDjIcLmNsaF9w",
+            "cm90by5wbHVnaW4uQ2FwYWJpbGl0eRIuCgl0aW1lc3RhbXAY5wcgASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJqChZQaXBlUmVnaXN0ZXJQbHVn",
+            "aW5SZXNwEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIuCgl0",
+            "aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJ2",
+            "ChJQYWNrZWRXc2p0eE1lc3NhZ2USMAoIbWVzc2FnZXMYASADKAsyHi5jbGhf",
+            "cHJvdG8ucGx1Z2luLldzanR4TWVzc2FnZRIuCgl0aW1lc3RhbXAY5wcgASgL",
+            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCotCgpDYXBhYmlsaXR5EhEK",
+            "DXdzanR4X21lc3NhZ2UQABIMCghyaWdfZGF0YRABMrIBChNDTEhQbHVnaW5B",
+            "UElTZXJ2aWNlEkYKEUZvcndhcmRSaWdNZXNzYWdlEhkuY2xoX3Byb3RvLnBs",
+            "dWdpbi5SaWdEYXRhGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5ElMKE0Zvcndh",
+            "cmRXc2p0eE1lc3NhZ2USJC5jbGhfcHJvdG8ucGx1Z2luLlBhY2tlZFdzanR4",
+            "TWVzc2FnZRoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eUJKWixnaXRodWIuY29t",
+            "L3N5ZG5leW93bC9jbGgtcHJvdG8vZ2VuL2dvL3BsdWdpbqoCGVN5ZG5leU93",
+            "bC5DTEhQcm90by5QbHVnaW5iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.RigMsgReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.Capability), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq.Parser, new[]{ "Uuid", "Name", "Version", "Description", "RpcPort", "Capabilities", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp.Parser, new[]{ "Success", "Message", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage), global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage.Parser, new[]{ "Messages", "Timestamp" }, null, null, null, null)
@@ -53,6 +55,14 @@ namespace SydneyOwl.CLHProto.Plugin {
     #endregion
 
   }
+  #region Enums
+  public enum Capability {
+    [pbr::OriginalName("wsjtx_message")] WsjtxMessage = 0,
+    [pbr::OriginalName("rig_data")] RigData = 1,
+  }
+
+  #endregion
+
   #region Messages
   public sealed partial class PipeRegisterPluginReq : pb::IMessage<PipeRegisterPluginReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -166,12 +176,12 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "capabilities" field.</summary>
     public const int CapabilitiesFieldNumber = 6;
-    private static readonly pb::FieldCodec<string> _repeated_capabilities_codec
-        = pb::FieldCodec.ForString(50);
-    private readonly pbc::RepeatedField<string> capabilities_ = new pbc::RepeatedField<string>();
+    private static readonly pb::FieldCodec<global::SydneyOwl.CLHProto.Plugin.Capability> _repeated_capabilities_codec
+        = pb::FieldCodec.ForEnum(50, x => (int) x, x => (global::SydneyOwl.CLHProto.Plugin.Capability) x);
+    private readonly pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.Capability> capabilities_ = new pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.Capability>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> Capabilities {
+    public pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.Capability> Capabilities {
       get { return capabilities_; }
     }
 
@@ -399,7 +409,8 @@ namespace SydneyOwl.CLHProto.Plugin {
             RpcPort = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 50:
+          case 48: {
             capabilities_.AddEntriesFrom(input, _repeated_capabilities_codec);
             break;
           }
@@ -445,7 +456,8 @@ namespace SydneyOwl.CLHProto.Plugin {
             RpcPort = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 50:
+          case 48: {
             capabilities_.AddEntriesFrom(ref input, _repeated_capabilities_codec);
             break;
           }
