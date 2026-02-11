@@ -50,7 +50,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage> __Marshaller_clh_proto_plugin_WsjtxMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SydneyOwl.CLHProto.Plugin.WsjtxMessage.Parser));
+    static readonly grpc::Marshaller<global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage> __Marshaller_clh_proto_plugin_PackedWsjtxMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::SydneyOwl.CLHProto.Plugin.RigData, global::Google.Protobuf.WellKnownTypes.Empty> __Method_ForwardRigMessage = new grpc::Method<global::SydneyOwl.CLHProto.Plugin.RigData, global::Google.Protobuf.WellKnownTypes.Empty>(
@@ -61,11 +61,11 @@ namespace SydneyOwl.CLHProto.Plugin {
         __Marshaller_google_protobuf_Empty);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage, global::Google.Protobuf.WellKnownTypes.Empty> __Method_ForwardWsjtxMessage = new grpc::Method<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly grpc::Method<global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage, global::Google.Protobuf.WellKnownTypes.Empty> __Method_ForwardWsjtxMessage = new grpc::Method<global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage, global::Google.Protobuf.WellKnownTypes.Empty>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ForwardWsjtxMessage",
-        __Marshaller_clh_proto_plugin_WsjtxMessage,
+        __Marshaller_clh_proto_plugin_PackedWsjtxMessage,
         __Marshaller_google_protobuf_Empty);
 
     /// <summary>Service descriptor</summary>
@@ -85,7 +85,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> ForwardWsjtxMessage(global::SydneyOwl.CLHProto.Plugin.WsjtxMessage request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> ForwardWsjtxMessage(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -140,22 +140,22 @@ namespace SydneyOwl.CLHProto.Plugin {
         return CallInvoker.AsyncUnaryCall(__Method_ForwardRigMessage, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty ForwardWsjtxMessage(global::SydneyOwl.CLHProto.Plugin.WsjtxMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty ForwardWsjtxMessage(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ForwardWsjtxMessage(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty ForwardWsjtxMessage(global::SydneyOwl.CLHProto.Plugin.WsjtxMessage request, grpc::CallOptions options)
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty ForwardWsjtxMessage(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ForwardWsjtxMessage, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> ForwardWsjtxMessageAsync(global::SydneyOwl.CLHProto.Plugin.WsjtxMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> ForwardWsjtxMessageAsync(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ForwardWsjtxMessageAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> ForwardWsjtxMessageAsync(global::SydneyOwl.CLHProto.Plugin.WsjtxMessage request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> ForwardWsjtxMessageAsync(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ForwardWsjtxMessage, null, options, request);
       }
@@ -185,7 +185,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CLHPluginAPIServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_ForwardRigMessage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SydneyOwl.CLHProto.Plugin.RigData, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.ForwardRigMessage));
-      serviceBinder.AddMethod(__Method_ForwardWsjtxMessage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.ForwardWsjtxMessage));
+      serviceBinder.AddMethod(__Method_ForwardWsjtxMessage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.ForwardWsjtxMessage));
     }
 
   }
