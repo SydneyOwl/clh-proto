@@ -1105,7 +1105,6 @@ func (x *QSOLogged) GetAdifPropagationMode() string {
 	return ""
 }
 
-// Halt Tx message (type 8) - incoming only
 type HaltTx struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Whether to stop only auto-generated transmissions
@@ -1958,6 +1957,58 @@ func (*WsjtxMessage_SwitchConfiguration) isWsjtxMessage_Payload() {}
 
 func (*WsjtxMessage_Configure) isWsjtxMessage_Payload() {}
 
+type PackedWsjtxMessage struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Messages      []*WsjtxMessage        `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
+	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PackedWsjtxMessage) Reset() {
+	*x = PackedWsjtxMessage{}
+	mi := &file_wsjtx_msg_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PackedWsjtxMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PackedWsjtxMessage) ProtoMessage() {}
+
+func (x *PackedWsjtxMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_wsjtx_msg_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PackedWsjtxMessage.ProtoReflect.Descriptor instead.
+func (*PackedWsjtxMessage) Descriptor() ([]byte, []int) {
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *PackedWsjtxMessage) GetMessages() []*WsjtxMessage {
+	if x != nil {
+		return x.Messages
+	}
+	return nil
+}
+
+func (x *PackedWsjtxMessage) GetTimestamp() *timestamppb.Timestamp {
+	if x != nil {
+		return x.Timestamp
+	}
+	return nil
+}
+
 var File_wsjtx_msg_proto protoreflect.FileDescriptor
 
 const file_wsjtx_msg_proto_rawDesc = "" +
@@ -2118,7 +2169,10 @@ const file_wsjtx_msg_proto_rawDesc = "" +
 	"\x14switch_configuration\x18\x10 \x01(\v2%.clh_proto.plugin.SwitchConfigurationH\x00R\x13switchConfiguration\x12;\n" +
 	"\tconfigure\x18\x11 \x01(\v2\x1b.clh_proto.plugin.ConfigureH\x00R\tconfigure\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampB\t\n" +
-	"\apayload*\xfe\x01\n" +
+	"\apayload\"\x8b\x01\n" +
+	"\x12PackedWsjtxMessage\x12:\n" +
+	"\bmessages\x18\x01 \x03(\v2\x1e.clh_proto.plugin.WsjtxMessageR\bmessages\x129\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp*\xfe\x01\n" +
 	"\vMessageType\x12\r\n" +
 	"\tHEARTBEAT\x10\x00\x12\n" +
 	"\n" +
@@ -2180,7 +2234,7 @@ func file_wsjtx_msg_proto_rawDescGZIP() []byte {
 }
 
 var file_wsjtx_msg_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_wsjtx_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
+var file_wsjtx_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_wsjtx_msg_proto_goTypes = []any{
 	(MessageType)(0),              // 0: clh_proto.plugin.MessageType
 	(SpecialOperationMode)(0),     // 1: clh_proto.plugin.SpecialOperationMode
@@ -2202,17 +2256,18 @@ var file_wsjtx_msg_proto_goTypes = []any{
 	(*SwitchConfiguration)(nil),   // 17: clh_proto.plugin.SwitchConfiguration
 	(*Configure)(nil),             // 18: clh_proto.plugin.Configure
 	(*WsjtxMessage)(nil),          // 19: clh_proto.plugin.WsjtxMessage
-	(*timestamppb.Timestamp)(nil), // 20: google.protobuf.Timestamp
+	(*PackedWsjtxMessage)(nil),    // 20: clh_proto.plugin.PackedWsjtxMessage
+	(*timestamppb.Timestamp)(nil), // 21: google.protobuf.Timestamp
 }
 var file_wsjtx_msg_proto_depIdxs = []int32{
 	0,  // 0: clh_proto.plugin.MessageHeader.type:type_name -> clh_proto.plugin.MessageType
 	1,  // 1: clh_proto.plugin.Status.special_op_mode:type_name -> clh_proto.plugin.SpecialOperationMode
-	20, // 2: clh_proto.plugin.Decode.time:type_name -> google.protobuf.Timestamp
+	21, // 2: clh_proto.plugin.Decode.time:type_name -> google.protobuf.Timestamp
 	2,  // 3: clh_proto.plugin.Clear.window:type_name -> clh_proto.plugin.ClearWindow
-	20, // 4: clh_proto.plugin.Reply.time:type_name -> google.protobuf.Timestamp
-	20, // 5: clh_proto.plugin.QSOLogged.datetime_off:type_name -> google.protobuf.Timestamp
-	20, // 6: clh_proto.plugin.QSOLogged.datetime_on:type_name -> google.protobuf.Timestamp
-	20, // 7: clh_proto.plugin.WSPRDecode.time:type_name -> google.protobuf.Timestamp
+	21, // 4: clh_proto.plugin.Reply.time:type_name -> google.protobuf.Timestamp
+	21, // 5: clh_proto.plugin.QSOLogged.datetime_off:type_name -> google.protobuf.Timestamp
+	21, // 6: clh_proto.plugin.QSOLogged.datetime_on:type_name -> google.protobuf.Timestamp
+	21, // 7: clh_proto.plugin.WSPRDecode.time:type_name -> google.protobuf.Timestamp
 	4,  // 8: clh_proto.plugin.WsjtxMessage.header:type_name -> clh_proto.plugin.MessageHeader
 	5,  // 9: clh_proto.plugin.WsjtxMessage.heartbeat:type_name -> clh_proto.plugin.Heartbeat
 	6,  // 10: clh_proto.plugin.WsjtxMessage.status:type_name -> clh_proto.plugin.Status
@@ -2228,12 +2283,14 @@ var file_wsjtx_msg_proto_depIdxs = []int32{
 	16, // 20: clh_proto.plugin.WsjtxMessage.highlight_callsign:type_name -> clh_proto.plugin.HighlightCallsign
 	17, // 21: clh_proto.plugin.WsjtxMessage.switch_configuration:type_name -> clh_proto.plugin.SwitchConfiguration
 	18, // 22: clh_proto.plugin.WsjtxMessage.configure:type_name -> clh_proto.plugin.Configure
-	20, // 23: clh_proto.plugin.WsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
-	24, // [24:24] is the sub-list for method output_type
-	24, // [24:24] is the sub-list for method input_type
-	24, // [24:24] is the sub-list for extension type_name
-	24, // [24:24] is the sub-list for extension extendee
-	0,  // [0:24] is the sub-list for field type_name
+	21, // 23: clh_proto.plugin.WsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
+	19, // 24: clh_proto.plugin.PackedWsjtxMessage.messages:type_name -> clh_proto.plugin.WsjtxMessage
+	21, // 25: clh_proto.plugin.PackedWsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
+	26, // [26:26] is the sub-list for method output_type
+	26, // [26:26] is the sub-list for method input_type
+	26, // [26:26] is the sub-list for extension type_name
+	26, // [26:26] is the sub-list for extension extendee
+	0,  // [0:26] is the sub-list for field type_name
 }
 
 func init() { file_wsjtx_msg_proto_init() }
@@ -2267,7 +2324,7 @@ func file_wsjtx_msg_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_wsjtx_msg_proto_rawDesc), len(file_wsjtx_msg_proto_rawDesc)),
 			NumEnums:      4,
-			NumMessages:   16,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

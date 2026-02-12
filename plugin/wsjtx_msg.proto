@@ -270,6 +270,7 @@ message QSOLogged {
 // No additional fields beyond header
 
 // Halt Tx message (type 8) - incoming only
+
 message HaltTx {
   // Whether to stop only auto-generated transmissions
   bool auto_tx_only = 1;
@@ -405,5 +406,10 @@ message WsjtxMessage {
     Configure configure = 17;
   }
   
+  google.protobuf.Timestamp timestamp = 999;
+}
+
+message PackedWsjtxMessage{
+  repeated WsjtxMessage messages = 1;
   google.protobuf.Timestamp timestamp = 999;
 }

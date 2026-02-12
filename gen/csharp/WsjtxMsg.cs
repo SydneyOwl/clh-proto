@@ -97,21 +97,24 @@ namespace SydneyOwl.CLHProto.Plugin {
             "bhgQIAEoCzIlLmNsaF9wcm90by5wbHVnaW4uU3dpdGNoQ29uZmlndXJhdGlv",
             "bkgAEjAKCWNvbmZpZ3VyZRgRIAEoCzIbLmNsaF9wcm90by5wbHVnaW4uQ29u",
             "ZmlndXJlSAASLgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5wcm90b2J1",
-            "Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCr+AQoLTWVzc2FnZVR5cGUSDQoJSEVB",
-            "UlRCRUFUEAASCgoGU1RBVFVTEAESCgoGREVDT0RFEAISCQoFQ0xFQVIQAxIJ",
-            "CgVSRVBMWRAEEg4KClFTT19MT0dHRUQQBRIJCgVDTE9TRRAGEgoKBlJFUExB",
-            "WRAHEgsKB0hBTFRfVFgQCBINCglGUkVFX1RFWFQQCRIPCgtXU1BSX0RFQ09E",
-            "RRAKEgwKCExPQ0FUSU9OEAsSDwoLTE9HR0VEX0FESUYQDBIWChJISUdITElH",
-            "SFRfQ0FMTFNJR04QDRIYChRTV0lUQ0hfQ09ORklHVVJBVElPThAOEg0KCUNP",
-            "TkZJR1VSRRAPKnUKFFNwZWNpYWxPcGVyYXRpb25Nb2RlEggKBE5PTkUQABIK",
-            "CgZOQV9WSEYQARIKCgZFVV9WSEYQAhINCglGSUVMRF9EQVkQAxILCgdSVFRZ",
-            "X1JVEAQSCwoHV1dfRElHSRAFEgcKA0ZPWBAGEgkKBUhPVU5EEAcqTgoLQ2xl",
-            "YXJXaW5kb3cSFwoTQ0xFQVJfQkFORF9BQ1RJVklUWRAAEhYKEkNMRUFSX1JY",
-            "X0ZSRVFVRU5DWRABEg4KCkNMRUFSX0JPVEgQAiplCgxLZXlNb2RpZmllcnMS",
-            "DwoLTk9fTU9ESUZJRVIQABIJCgVTSElGVBACEggKBENUUkwQBBIHCgNBTFQQ",
-            "CBIICgRNRVRBEBASCgoGS0VZUEFEECASEAoMR1JPVVBfU1dJVENIEEBCSlos",
-            "Z2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6q",
-            "AhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
+            "Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCJ2ChJQYWNrZWRXc2p0eE1lc3NhZ2US",
+            "MAoIbWVzc2FnZXMYASADKAsyHi5jbGhfcHJvdG8ucGx1Z2luLldzanR4TWVz",
+            "c2FnZRIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcCr+AQoLTWVzc2FnZVR5cGUSDQoJSEVBUlRCRUFUEAASCgoGU1RB",
+            "VFVTEAESCgoGREVDT0RFEAISCQoFQ0xFQVIQAxIJCgVSRVBMWRAEEg4KClFT",
+            "T19MT0dHRUQQBRIJCgVDTE9TRRAGEgoKBlJFUExBWRAHEgsKB0hBTFRfVFgQ",
+            "CBINCglGUkVFX1RFWFQQCRIPCgtXU1BSX0RFQ09ERRAKEgwKCExPQ0FUSU9O",
+            "EAsSDwoLTE9HR0VEX0FESUYQDBIWChJISUdITElHSFRfQ0FMTFNJR04QDRIY",
+            "ChRTV0lUQ0hfQ09ORklHVVJBVElPThAOEg0KCUNPTkZJR1VSRRAPKnUKFFNw",
+            "ZWNpYWxPcGVyYXRpb25Nb2RlEggKBE5PTkUQABIKCgZOQV9WSEYQARIKCgZF",
+            "VV9WSEYQAhINCglGSUVMRF9EQVkQAxILCgdSVFRZX1JVEAQSCwoHV1dfRElH",
+            "SRAFEgcKA0ZPWBAGEgkKBUhPVU5EEAcqTgoLQ2xlYXJXaW5kb3cSFwoTQ0xF",
+            "QVJfQkFORF9BQ1RJVklUWRAAEhYKEkNMRUFSX1JYX0ZSRVFVRU5DWRABEg4K",
+            "CkNMRUFSX0JPVEgQAiplCgxLZXlNb2RpZmllcnMSDwoLTk9fTU9ESUZJRVIQ",
+            "ABIJCgVTSElGVBACEggKBENUUkwQBBIHCgNBTFQQCBIICgRNRVRBEBASCgoG",
+            "S0VZUEFEECASEAoMR1JPVVBfU1dJVENIEEBCSlosZ2l0aHViLmNvbS9zeWRu",
+            "ZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6qAhlTeWRuZXlPd2wuQ0xI",
+            "UHJvdG8uUGx1Z2luYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.MessageType), typeof(global::SydneyOwl.CLHProto.Plugin.SpecialOperationMode), typeof(global::SydneyOwl.CLHProto.Plugin.ClearWindow), typeof(global::SydneyOwl.CLHProto.Plugin.KeyModifiers), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -130,7 +133,8 @@ namespace SydneyOwl.CLHProto.Plugin {
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.HighlightCallsign), global::SydneyOwl.CLHProto.Plugin.HighlightCallsign.Parser, new[]{ "Callsign", "BackgroundColor", "ForegroundColor", "HighlightLast" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.SwitchConfiguration), global::SydneyOwl.CLHProto.Plugin.SwitchConfiguration.Parser, new[]{ "ConfigName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.Configure), global::SydneyOwl.CLHProto.Plugin.Configure.Parser, new[]{ "Mode", "FrequencyTolerance", "SubMode", "FastMode", "TrPeriod", "RxDf", "DxCall", "DxGrid", "GenerateMessages" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.WsjtxMessage), global::SydneyOwl.CLHProto.Plugin.WsjtxMessage.Parser, new[]{ "Header", "Heartbeat", "Status", "Decode", "Clear", "Reply", "QsoLogged", "HaltTx", "FreeText", "WsprDecode", "Location", "LoggedAdif", "HighlightCallsign", "SwitchConfiguration", "Configure", "Timestamp" }, new[]{ "Payload" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.WsjtxMessage), global::SydneyOwl.CLHProto.Plugin.WsjtxMessage.Parser, new[]{ "Header", "Heartbeat", "Status", "Decode", "Clear", "Reply", "QsoLogged", "HaltTx", "FreeText", "WsprDecode", "Location", "LoggedAdif", "HighlightCallsign", "SwitchConfiguration", "Configure", "Timestamp" }, new[]{ "Payload" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage), global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage.Parser, new[]{ "Messages", "Timestamp" }, null, null, null, null)
           }));
     }
     #endregion
@@ -3924,9 +3928,6 @@ namespace SydneyOwl.CLHProto.Plugin {
 
   }
 
-  /// <summary>
-  /// Halt Tx message (type 8) - incoming only
-  /// </summary>
   public sealed partial class HaltTx : pb::IMessage<HaltTx>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7355,6 +7356,230 @@ namespace SydneyOwl.CLHProto.Plugin {
             }
             input.ReadMessage(subBuilder);
             Configure = subBuilder;
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class PackedWsjtxMessage : pb::IMessage<PackedWsjtxMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PackedWsjtxMessage> _parser = new pb::MessageParser<PackedWsjtxMessage>(() => new PackedWsjtxMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PackedWsjtxMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PackedWsjtxMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PackedWsjtxMessage(PackedWsjtxMessage other) : this() {
+      messages_ = other.messages_.Clone();
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PackedWsjtxMessage Clone() {
+      return new PackedWsjtxMessage(this);
+    }
+
+    /// <summary>Field number for the "messages" field.</summary>
+    public const int MessagesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage> _repeated_messages_codec
+        = pb::FieldCodec.ForMessage(10, global::SydneyOwl.CLHProto.Plugin.WsjtxMessage.Parser);
+    private readonly pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage> messages_ = new pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage> Messages {
+      get { return messages_; }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 999;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PackedWsjtxMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PackedWsjtxMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!messages_.Equals(other.messages_)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= messages_.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      messages_.WriteTo(output, _repeated_messages_codec);
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      messages_.WriteTo(ref output, _repeated_messages_codec);
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += messages_.CalculateSize(_repeated_messages_codec);
+      if (timestamp_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PackedWsjtxMessage other) {
+      if (other == null) {
+        return;
+      }
+      messages_.Add(other.messages_);
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            messages_.AddEntriesFrom(input, _repeated_messages_codec);
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            messages_.AddEntriesFrom(ref input, _repeated_messages_codec);
             break;
           }
           case 7994: {

@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v3.21.12
-// source: plugin_api.proto
+// source: common.proto
 
 package plugin
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
+	_ "google.golang.org/protobuf/types/known/emptypb"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
@@ -53,11 +53,11 @@ func (x Capability) String() string {
 }
 
 func (Capability) Descriptor() protoreflect.EnumDescriptor {
-	return file_plugin_api_proto_enumTypes[0].Descriptor()
+	return file_common_proto_enumTypes[0].Descriptor()
 }
 
 func (Capability) Type() protoreflect.EnumType {
-	return &file_plugin_api_proto_enumTypes[0]
+	return &file_common_proto_enumTypes[0]
 }
 
 func (x Capability) Number() protoreflect.EnumNumber {
@@ -66,7 +66,7 @@ func (x Capability) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Capability.Descriptor instead.
 func (Capability) EnumDescriptor() ([]byte, []int) {
-	return file_plugin_api_proto_rawDescGZIP(), []int{0}
+	return file_common_proto_rawDescGZIP(), []int{0}
 }
 
 type PipeRegisterPluginReq struct {
@@ -84,7 +84,7 @@ type PipeRegisterPluginReq struct {
 
 func (x *PipeRegisterPluginReq) Reset() {
 	*x = PipeRegisterPluginReq{}
-	mi := &file_plugin_api_proto_msgTypes[0]
+	mi := &file_common_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -96,7 +96,7 @@ func (x *PipeRegisterPluginReq) String() string {
 func (*PipeRegisterPluginReq) ProtoMessage() {}
 
 func (x *PipeRegisterPluginReq) ProtoReflect() protoreflect.Message {
-	mi := &file_plugin_api_proto_msgTypes[0]
+	mi := &file_common_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +109,7 @@ func (x *PipeRegisterPluginReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PipeRegisterPluginReq.ProtoReflect.Descriptor instead.
 func (*PipeRegisterPluginReq) Descriptor() ([]byte, []int) {
-	return file_plugin_api_proto_rawDescGZIP(), []int{0}
+	return file_common_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *PipeRegisterPluginReq) GetUuid() string {
@@ -173,7 +173,7 @@ type PipeRegisterPluginResp struct {
 
 func (x *PipeRegisterPluginResp) Reset() {
 	*x = PipeRegisterPluginResp{}
-	mi := &file_plugin_api_proto_msgTypes[1]
+	mi := &file_common_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -185,7 +185,7 @@ func (x *PipeRegisterPluginResp) String() string {
 func (*PipeRegisterPluginResp) ProtoMessage() {}
 
 func (x *PipeRegisterPluginResp) ProtoReflect() protoreflect.Message {
-	mi := &file_plugin_api_proto_msgTypes[1]
+	mi := &file_common_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -198,7 +198,7 @@ func (x *PipeRegisterPluginResp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PipeRegisterPluginResp.ProtoReflect.Descriptor instead.
 func (*PipeRegisterPluginResp) Descriptor() ([]byte, []int) {
-	return file_plugin_api_proto_rawDescGZIP(), []int{1}
+	return file_common_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PipeRegisterPluginResp) GetSuccess() bool {
@@ -229,63 +229,11 @@ func (x *PipeRegisterPluginResp) GetTimestamp() *timestamppb.Timestamp {
 	return nil
 }
 
-type PackedWsjtxMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Messages      []*WsjtxMessage        `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
-	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
+var File_common_proto protoreflect.FileDescriptor
 
-func (x *PackedWsjtxMessage) Reset() {
-	*x = PackedWsjtxMessage{}
-	mi := &file_plugin_api_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *PackedWsjtxMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PackedWsjtxMessage) ProtoMessage() {}
-
-func (x *PackedWsjtxMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_plugin_api_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PackedWsjtxMessage.ProtoReflect.Descriptor instead.
-func (*PackedWsjtxMessage) Descriptor() ([]byte, []int) {
-	return file_plugin_api_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *PackedWsjtxMessage) GetMessages() []*WsjtxMessage {
-	if x != nil {
-		return x.Messages
-	}
-	return nil
-}
-
-func (x *PackedWsjtxMessage) GetTimestamp() *timestamppb.Timestamp {
-	if x != nil {
-		return x.Timestamp
-	}
-	return nil
-}
-
-var File_plugin_api_proto protoreflect.FileDescriptor
-
-const file_plugin_api_proto_rawDesc = "" +
+const file_common_proto_rawDesc = "" +
 	"\n" +
-	"\x10plugin_api.proto\x12\x10clh_proto.plugin\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rrig_msg.proto\x1a\x0fwsjtx_msg.proto\"\x93\x02\n" +
+	"\fcommon.proto\x12\x10clh_proto.plugin\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rrig_msg.proto\x1a\x0fwsjtx_msg.proto\"\x93\x02\n" +
 	"\x15PipeRegisterPluginReq\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
@@ -298,62 +246,46 @@ const file_plugin_api_proto_rawDesc = "" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12&\n" +
 	"\x0fclh_instance_id\x18\x03 \x01(\tR\rclhInstanceId\x129\n" +
-	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\x8b\x01\n" +
-	"\x12PackedWsjtxMessage\x12:\n" +
-	"\bmessages\x18\x01 \x03(\v2\x1e.clh_proto.plugin.WsjtxMessageR\bmessages\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp*-\n" +
 	"\n" +
 	"Capability\x12\x11\n" +
 	"\rwsjtx_message\x10\x00\x12\f\n" +
-	"\brig_data\x10\x012\xb2\x01\n" +
-	"\x13CLHPluginAPIService\x12F\n" +
-	"\x11ForwardRigMessage\x12\x19.clh_proto.plugin.RigData\x1a\x16.google.protobuf.Empty\x12S\n" +
-	"\x13ForwardWsjtxMessage\x12$.clh_proto.plugin.PackedWsjtxMessage\x1a\x16.google.protobuf.EmptyBJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
+	"\brig_data\x10\x01BJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
 
 var (
-	file_plugin_api_proto_rawDescOnce sync.Once
-	file_plugin_api_proto_rawDescData []byte
+	file_common_proto_rawDescOnce sync.Once
+	file_common_proto_rawDescData []byte
 )
 
-func file_plugin_api_proto_rawDescGZIP() []byte {
-	file_plugin_api_proto_rawDescOnce.Do(func() {
-		file_plugin_api_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_plugin_api_proto_rawDesc), len(file_plugin_api_proto_rawDesc)))
+func file_common_proto_rawDescGZIP() []byte {
+	file_common_proto_rawDescOnce.Do(func() {
+		file_common_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_common_proto_rawDesc), len(file_common_proto_rawDesc)))
 	})
-	return file_plugin_api_proto_rawDescData
+	return file_common_proto_rawDescData
 }
 
-var file_plugin_api_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_plugin_api_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_plugin_api_proto_goTypes = []any{
+var file_common_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_common_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_common_proto_goTypes = []any{
 	(Capability)(0),                // 0: clh_proto.plugin.Capability
 	(*PipeRegisterPluginReq)(nil),  // 1: clh_proto.plugin.PipeRegisterPluginReq
 	(*PipeRegisterPluginResp)(nil), // 2: clh_proto.plugin.PipeRegisterPluginResp
-	(*PackedWsjtxMessage)(nil),     // 3: clh_proto.plugin.PackedWsjtxMessage
-	(*timestamppb.Timestamp)(nil),  // 4: google.protobuf.Timestamp
-	(*WsjtxMessage)(nil),           // 5: clh_proto.plugin.WsjtxMessage
-	(*RigData)(nil),                // 6: clh_proto.plugin.RigData
-	(*emptypb.Empty)(nil),          // 7: google.protobuf.Empty
+	(*timestamppb.Timestamp)(nil),  // 3: google.protobuf.Timestamp
 }
-var file_plugin_api_proto_depIdxs = []int32{
+var file_common_proto_depIdxs = []int32{
 	0, // 0: clh_proto.plugin.PipeRegisterPluginReq.capabilities:type_name -> clh_proto.plugin.Capability
-	4, // 1: clh_proto.plugin.PipeRegisterPluginReq.timestamp:type_name -> google.protobuf.Timestamp
-	4, // 2: clh_proto.plugin.PipeRegisterPluginResp.timestamp:type_name -> google.protobuf.Timestamp
-	5, // 3: clh_proto.plugin.PackedWsjtxMessage.messages:type_name -> clh_proto.plugin.WsjtxMessage
-	4, // 4: clh_proto.plugin.PackedWsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
-	6, // 5: clh_proto.plugin.CLHPluginAPIService.ForwardRigMessage:input_type -> clh_proto.plugin.RigData
-	3, // 6: clh_proto.plugin.CLHPluginAPIService.ForwardWsjtxMessage:input_type -> clh_proto.plugin.PackedWsjtxMessage
-	7, // 7: clh_proto.plugin.CLHPluginAPIService.ForwardRigMessage:output_type -> google.protobuf.Empty
-	7, // 8: clh_proto.plugin.CLHPluginAPIService.ForwardWsjtxMessage:output_type -> google.protobuf.Empty
-	7, // [7:9] is the sub-list for method output_type
-	5, // [5:7] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	3, // 1: clh_proto.plugin.PipeRegisterPluginReq.timestamp:type_name -> google.protobuf.Timestamp
+	3, // 2: clh_proto.plugin.PipeRegisterPluginResp.timestamp:type_name -> google.protobuf.Timestamp
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_plugin_api_proto_init() }
-func file_plugin_api_proto_init() {
-	if File_plugin_api_proto != nil {
+func init() { file_common_proto_init() }
+func file_common_proto_init() {
+	if File_common_proto != nil {
 		return
 	}
 	file_rig_msg_proto_init()
@@ -362,18 +294,18 @@ func file_plugin_api_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_plugin_api_proto_rawDesc), len(file_plugin_api_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_proto_rawDesc), len(file_common_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   3,
+			NumMessages:   2,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   0,
 		},
-		GoTypes:           file_plugin_api_proto_goTypes,
-		DependencyIndexes: file_plugin_api_proto_depIdxs,
-		EnumInfos:         file_plugin_api_proto_enumTypes,
-		MessageInfos:      file_plugin_api_proto_msgTypes,
+		GoTypes:           file_common_proto_goTypes,
+		DependencyIndexes: file_common_proto_depIdxs,
+		EnumInfos:         file_common_proto_enumTypes,
+		MessageInfos:      file_common_proto_msgTypes,
 	}.Build()
-	File_plugin_api_proto = out.File
-	file_plugin_api_proto_goTypes = nil
-	file_plugin_api_proto_depIdxs = nil
+	File_common_proto = out.File
+	file_common_proto_goTypes = nil
+	file_common_proto_depIdxs = nil
 }

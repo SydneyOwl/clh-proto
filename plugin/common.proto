@@ -31,13 +31,3 @@ message PipeRegisterPluginResp {
   string clh_instance_id = 3;
   google.protobuf.Timestamp timestamp = 999;
 }
-
-message PackedWsjtxMessage{
-  repeated WsjtxMessage messages = 1;
-  google.protobuf.Timestamp timestamp = 999;
-}
-
-service CLHPluginAPIService {
-  rpc ForwardRigMessage(RigData) returns (google.protobuf.Empty);
-  rpc ForwardWsjtxMessage(PackedWsjtxMessage) returns (google.protobuf.Empty);
-}
