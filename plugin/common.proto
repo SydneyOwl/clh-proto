@@ -20,7 +20,6 @@ message PipeRegisterPluginReq {
   string name = 2;
   string version = 3;
   string description = 4;
-  uint32 rpc_port = 5;
   repeated Capability capabilities = 6;
   google.protobuf.Timestamp timestamp = 999;
 }

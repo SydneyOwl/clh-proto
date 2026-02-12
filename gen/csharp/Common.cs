@@ -26,22 +26,21 @@ namespace SydneyOwl.CLHProto.Plugin {
           string.Concat(
             "Cgxjb21tb24ucHJvdG8SEGNsaF9wcm90by5wbHVnaW4aG2dvb2dsZS9wcm90",
             "b2J1Zi9lbXB0eS5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
-            "cm90bxoNcmlnX21zZy5wcm90bxoPd3NqdHhfbXNnLnByb3RvIs8BChVQaXBl",
+            "cm90bxoNcmlnX21zZy5wcm90bxoPd3NqdHhfbXNnLnByb3RvIr0BChVQaXBl",
             "UmVnaXN0ZXJQbHVnaW5SZXESDAoEdXVpZBgBIAEoCRIMCgRuYW1lGAIgASgJ",
-            "Eg8KB3ZlcnNpb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSEAoIcnBj",
-            "X3BvcnQYBSABKA0SMgoMY2FwYWJpbGl0aWVzGAYgAygOMhwuY2xoX3Byb3Rv",
-            "LnBsdWdpbi5DYXBhYmlsaXR5Ei4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29n",
-            "bGUucHJvdG9idWYuVGltZXN0YW1wIoMBChZQaXBlUmVnaXN0ZXJQbHVnaW5S",
-            "ZXNwEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIXCg9jbGhf",
-            "aW5zdGFuY2VfaWQYAyABKAkSLgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5UaW1lc3RhbXAqLQoKQ2FwYWJpbGl0eRIRCg13c2p0eF9t",
-            "ZXNzYWdlEAASDAoIcmlnX2RhdGEQAUJKWixnaXRodWIuY29tL3N5ZG5leW93",
-            "bC9jbGgtcHJvdG8vZ2VuL2dvL3BsdWdpbqoCGVN5ZG5leU93bC5DTEhQcm90",
-            "by5QbHVnaW5iBnByb3RvMw=="));
+            "Eg8KB3ZlcnNpb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSMgoMY2Fw",
+            "YWJpbGl0aWVzGAYgAygOMhwuY2xoX3Byb3RvLnBsdWdpbi5DYXBhYmlsaXR5",
+            "Ei4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
+            "YW1wIoMBChZQaXBlUmVnaXN0ZXJQbHVnaW5SZXNwEg8KB3N1Y2Nlc3MYASAB",
+            "KAgSDwoHbWVzc2FnZRgCIAEoCRIXCg9jbGhfaW5zdGFuY2VfaWQYAyABKAkS",
+            "LgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
+            "bXAqLQoKQ2FwYWJpbGl0eRIRCg13c2p0eF9tZXNzYWdlEAASDAoIcmlnX2Rh",
+            "dGEQAUJKWixnaXRodWIuY29tL3N5ZG5leW93bC9jbGgtcHJvdG8vZ2VuL2dv",
+            "L3BsdWdpbqoCGVN5ZG5leU93bC5DTEhQcm90by5QbHVnaW5iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.RigMsgReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.Capability), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq.Parser, new[]{ "Uuid", "Name", "Version", "Description", "RpcPort", "Capabilities", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq.Parser, new[]{ "Uuid", "Name", "Version", "Description", "Capabilities", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp.Parser, new[]{ "Success", "Message", "ClhInstanceId", "Timestamp" }, null, null, null, null)
           }));
     }
@@ -95,7 +94,6 @@ namespace SydneyOwl.CLHProto.Plugin {
       name_ = other.name_;
       version_ = other.version_;
       description_ = other.description_;
-      rpcPort_ = other.rpcPort_;
       capabilities_ = other.capabilities_.Clone();
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -155,18 +153,6 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
     }
 
-    /// <summary>Field number for the "rpc_port" field.</summary>
-    public const int RpcPortFieldNumber = 5;
-    private uint rpcPort_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RpcPort {
-      get { return rpcPort_; }
-      set {
-        rpcPort_ = value;
-      }
-    }
-
     /// <summary>Field number for the "capabilities" field.</summary>
     public const int CapabilitiesFieldNumber = 6;
     private static readonly pb::FieldCodec<global::SydneyOwl.CLHProto.Plugin.Capability> _repeated_capabilities_codec
@@ -209,7 +195,6 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Name != other.Name) return false;
       if (Version != other.Version) return false;
       if (Description != other.Description) return false;
-      if (RpcPort != other.RpcPort) return false;
       if(!capabilities_.Equals(other.capabilities_)) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -223,7 +208,6 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (RpcPort != 0) hash ^= RpcPort.GetHashCode();
       hash ^= capabilities_.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
@@ -260,10 +244,6 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (RpcPort != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(RpcPort);
-      }
       capabilities_.WriteTo(output, _repeated_capabilities_codec);
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
@@ -295,10 +275,6 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(34);
         output.WriteString(Description);
       }
-      if (RpcPort != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(RpcPort);
-      }
       capabilities_.WriteTo(ref output, _repeated_capabilities_codec);
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
@@ -325,9 +301,6 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
-      if (RpcPort != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RpcPort);
       }
       size += capabilities_.CalculateSize(_repeated_capabilities_codec);
       if (timestamp_ != null) {
@@ -356,9 +329,6 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
-      }
-      if (other.RpcPort != 0) {
-        RpcPort = other.RpcPort;
       }
       capabilities_.Add(other.capabilities_);
       if (other.timestamp_ != null) {
@@ -396,10 +366,6 @@ namespace SydneyOwl.CLHProto.Plugin {
           }
           case 34: {
             Description = input.ReadString();
-            break;
-          }
-          case 40: {
-            RpcPort = input.ReadUInt32();
             break;
           }
           case 50:
@@ -443,10 +409,6 @@ namespace SydneyOwl.CLHProto.Plugin {
           }
           case 34: {
             Description = input.ReadString();
-            break;
-          }
-          case 40: {
-            RpcPort = input.ReadUInt32();
             break;
           }
           case 50:

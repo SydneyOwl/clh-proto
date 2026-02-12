@@ -75,7 +75,6 @@ type PipeRegisterPluginReq struct {
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	RpcPort       uint32                 `protobuf:"varint,5,opt,name=rpc_port,json=rpcPort,proto3" json:"rpc_port,omitempty"`
 	Capabilities  []Capability           `protobuf:"varint,6,rep,packed,name=capabilities,proto3,enum=clh_proto.plugin.Capability" json:"capabilities,omitempty"`
 	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -138,13 +137,6 @@ func (x *PipeRegisterPluginReq) GetDescription() string {
 		return x.Description
 	}
 	return ""
-}
-
-func (x *PipeRegisterPluginReq) GetRpcPort() uint32 {
-	if x != nil {
-		return x.RpcPort
-	}
-	return 0
 }
 
 func (x *PipeRegisterPluginReq) GetCapabilities() []Capability {
@@ -233,13 +225,12 @@ var File_common_proto protoreflect.FileDescriptor
 
 const file_common_proto_rawDesc = "" +
 	"\n" +
-	"\fcommon.proto\x12\x10clh_proto.plugin\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rrig_msg.proto\x1a\x0fwsjtx_msg.proto\"\x93\x02\n" +
+	"\fcommon.proto\x12\x10clh_proto.plugin\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rrig_msg.proto\x1a\x0fwsjtx_msg.proto\"\xf8\x01\n" +
 	"\x15PipeRegisterPluginReq\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
 	"\aversion\x18\x03 \x01(\tR\aversion\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x19\n" +
-	"\brpc_port\x18\x05 \x01(\rR\arpcPort\x12@\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12@\n" +
 	"\fcapabilities\x18\x06 \x03(\x0e2\x1c.clh_proto.plugin.CapabilityR\fcapabilities\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\xaf\x01\n" +
 	"\x16PipeRegisterPluginResp\x12\x18\n" +
