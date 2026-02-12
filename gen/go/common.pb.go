@@ -221,6 +221,58 @@ func (x *PipeRegisterPluginResp) GetTimestamp() *timestamppb.Timestamp {
 	return nil
 }
 
+type PipeHeartbeat struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Uuid          string                 `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PipeHeartbeat) Reset() {
+	*x = PipeHeartbeat{}
+	mi := &file_common_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PipeHeartbeat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PipeHeartbeat) ProtoMessage() {}
+
+func (x *PipeHeartbeat) ProtoReflect() protoreflect.Message {
+	mi := &file_common_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PipeHeartbeat.ProtoReflect.Descriptor instead.
+func (*PipeHeartbeat) Descriptor() ([]byte, []int) {
+	return file_common_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *PipeHeartbeat) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
+func (x *PipeHeartbeat) GetTimestamp() *timestamppb.Timestamp {
+	if x != nil {
+		return x.Timestamp
+	}
+	return nil
+}
+
 var File_common_proto protoreflect.FileDescriptor
 
 const file_common_proto_rawDesc = "" +
@@ -237,6 +289,9 @@ const file_common_proto_rawDesc = "" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12&\n" +
 	"\x0fclh_instance_id\x18\x03 \x01(\tR\rclhInstanceId\x129\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"^\n" +
+	"\rPipeHeartbeat\x12\x12\n" +
+	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp*-\n" +
 	"\n" +
 	"Capability\x12\x11\n" +
@@ -256,22 +311,24 @@ func file_common_proto_rawDescGZIP() []byte {
 }
 
 var file_common_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_common_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_common_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_common_proto_goTypes = []any{
 	(Capability)(0),                // 0: clh_proto.plugin.Capability
 	(*PipeRegisterPluginReq)(nil),  // 1: clh_proto.plugin.PipeRegisterPluginReq
 	(*PipeRegisterPluginResp)(nil), // 2: clh_proto.plugin.PipeRegisterPluginResp
-	(*timestamppb.Timestamp)(nil),  // 3: google.protobuf.Timestamp
+	(*PipeHeartbeat)(nil),          // 3: clh_proto.plugin.PipeHeartbeat
+	(*timestamppb.Timestamp)(nil),  // 4: google.protobuf.Timestamp
 }
 var file_common_proto_depIdxs = []int32{
 	0, // 0: clh_proto.plugin.PipeRegisterPluginReq.capabilities:type_name -> clh_proto.plugin.Capability
-	3, // 1: clh_proto.plugin.PipeRegisterPluginReq.timestamp:type_name -> google.protobuf.Timestamp
-	3, // 2: clh_proto.plugin.PipeRegisterPluginResp.timestamp:type_name -> google.protobuf.Timestamp
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	4, // 1: clh_proto.plugin.PipeRegisterPluginReq.timestamp:type_name -> google.protobuf.Timestamp
+	4, // 2: clh_proto.plugin.PipeRegisterPluginResp.timestamp:type_name -> google.protobuf.Timestamp
+	4, // 3: clh_proto.plugin.PipeHeartbeat.timestamp:type_name -> google.protobuf.Timestamp
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_common_proto_init() }
@@ -287,7 +344,7 @@ func file_common_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_proto_rawDesc), len(file_common_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
