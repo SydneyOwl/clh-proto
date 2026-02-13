@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package clh_proto.plugin;
+option go_package = "github.com/sydneyowl/clh-proto/gen/go/plugin";
+option csharp_namespace = "SydneyOwl.CLHProto.Plugin";
+
+import "google/protobuf/timestamp.proto";
+
+message RigData{
+  string uuid = 1 [json_name = "uuid"];
+  string provider = 2 [json_name = "provider"];
+  string rig_name = 3 [json_name = "rig_name"];
+  uint64 frequency = 4 [json_name = "frequency"];
+  string mode = 5 [json_name = "mode"];
+  uint64 frequency_rx = 6 [json_name = "frequency_rx"];
+  string mode_rx = 7 [json_name = "mode_rx"];
+  bool split = 8 [json_name = "split"];
+  uint32 power = 9 [json_name = "power"];
+
+  google.protobuf.Timestamp timestamp = 999 [json_name = "timestamp"];
+}

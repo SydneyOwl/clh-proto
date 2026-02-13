@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package clh_proto.plugin;
+
+option go_package = "github.com/sydneyowl/clh-proto/gen/go/plugin";
+option csharp_namespace = "SydneyOwl.CLHProto.Plugin";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "rig_msg.proto";
+import "wsjtx_msg.proto";
+
+enum Capability{
+  wsjtx_message = 0;
+  rig_data = 1;
+}
+
+message PipeRegisterPluginReq {
+  string uuid = 1;
+  string name = 2;
+  string version = 3;
+  string description = 4;
+  repeated Capability capabilities = 6;
+  google.protobuf.Timestamp timestamp = 999;
+}
+
+message PipeRegisterPluginResp {
+  bool success = 1;
+  string message = 2;
+  string clh_instance_id = 3;
+  google.protobuf.Timestamp timestamp = 999;
+}
+
+message PipeHeartbeat {
+  string uuid = 1;
+  google.protobuf.Timestamp timestamp = 999;
+}
