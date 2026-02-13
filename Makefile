@@ -6,7 +6,7 @@ PROTO_FILES := $(wildcard $(PROTO_DIR)/*.proto)
 GO_OUT_DIR := ./gen/go
 CSHARP_OUT_DIR := ./gen/csharp
 
-GRPC_PLUGIN = /home/sydneyowl/.nuget/packages/grpc.tools/2.78.0/tools/linux_x64/grpc_csharp_plugin
+GRPC_PLUGIN = C:\Users\SydneyOwl\.nuget\packages\grpc.tools\2.78.0\tools\windows_x64\grpc_csharp_plugin.exe
 
 .PHONY: all clean dep proto-go proto-cs proto help
 
@@ -40,7 +40,7 @@ proto-cs:
 proto: proto-go proto-cs
 
 clean:
-	rm -rf ./generated
+	rm -rf ./gen
 
 help:
 	@echo "Available targets:"

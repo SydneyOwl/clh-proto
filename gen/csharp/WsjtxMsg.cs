@@ -217,6 +217,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Common message header
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class MessageHeader : pb::IMessage<MessageHeader>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -471,7 +472,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -502,7 +507,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -532,6 +541,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Heartbeat message (type 0) - bidirectional
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Heartbeat : pb::IMessage<Heartbeat>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -610,6 +620,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "revision" field.</summary>
     public const int RevisionFieldNumber = 3;
+    private readonly static string RevisionDefaultValue = "";
+
     private string revision_;
     /// <summary>
     /// WSJT-X revision string (e.g., "rc1")
@@ -617,7 +629,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Revision {
-      get { return revision_ ?? ""; }
+      get { return revision_ ?? RevisionDefaultValue; }
       set {
         revision_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
@@ -766,7 +778,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -793,7 +809,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -819,6 +839,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Status message (type 1) - outgoing only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Status : pb::IMessage<Status>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1127,6 +1148,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "special_op_mode" field.</summary>
     public const int SpecialOpModeFieldNumber = 17;
+    private readonly static global::SydneyOwl.CLHProto.Plugin.SpecialOperationMode SpecialOpModeDefaultValue = global::SydneyOwl.CLHProto.Plugin.SpecialOperationMode.None;
+
     private global::SydneyOwl.CLHProto.Plugin.SpecialOperationMode specialOpMode_;
     /// <summary>
     /// Special operation mode
@@ -1134,7 +1157,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::SydneyOwl.CLHProto.Plugin.SpecialOperationMode SpecialOpMode {
-      get { if ((_hasBits0 & 1) != 0) { return specialOpMode_; } else { return global::SydneyOwl.CLHProto.Plugin.SpecialOperationMode.None; } }
+      get { if ((_hasBits0 & 1) != 0) { return specialOpMode_; } else { return SpecialOpModeDefaultValue; } }
       set {
         _hasBits0 |= 1;
         specialOpMode_ = value;
@@ -1155,6 +1178,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "frequency_tolerance" field.</summary>
     public const int FrequencyToleranceFieldNumber = 18;
+    private readonly static uint FrequencyToleranceDefaultValue = 0;
+
     private uint frequencyTolerance_;
     /// <summary>
     /// Frequency tolerance in Hz (max uint32 for N/A)
@@ -1162,7 +1187,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint FrequencyTolerance {
-      get { if ((_hasBits0 & 2) != 0) { return frequencyTolerance_; } else { return 0; } }
+      get { if ((_hasBits0 & 2) != 0) { return frequencyTolerance_; } else { return FrequencyToleranceDefaultValue; } }
       set {
         _hasBits0 |= 2;
         frequencyTolerance_ = value;
@@ -1183,6 +1208,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "tr_period" field.</summary>
     public const int TrPeriodFieldNumber = 19;
+    private readonly static uint TrPeriodDefaultValue = 0;
+
     private uint trPeriod_;
     /// <summary>
     /// T/R period in seconds (max uint32 for N/A)
@@ -1190,7 +1217,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint TrPeriod {
-      get { if ((_hasBits0 & 4) != 0) { return trPeriod_; } else { return 0; } }
+      get { if ((_hasBits0 & 4) != 0) { return trPeriod_; } else { return TrPeriodDefaultValue; } }
       set {
         _hasBits0 |= 4;
         trPeriod_ = value;
@@ -1211,6 +1238,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "config_name" field.</summary>
     public const int ConfigNameFieldNumber = 20;
+    private readonly static string ConfigNameDefaultValue = "";
+
     private string configName_;
     /// <summary>
     /// Configuration name
@@ -1218,7 +1247,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ConfigName {
-      get { return configName_ ?? ""; }
+      get { return configName_ ?? ConfigNameDefaultValue; }
       set {
         configName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
@@ -1238,6 +1267,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "tx_message" field.</summary>
     public const int TxMessageFieldNumber = 21;
+    private readonly static string TxMessageDefaultValue = "";
+
     private string txMessage_;
     /// <summary>
     /// Current transmit message
@@ -1245,7 +1276,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TxMessage {
-      get { return txMessage_ ?? ""; }
+      get { return txMessage_ ?? TxMessageDefaultValue; }
       set {
         txMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
@@ -1682,7 +1713,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1781,7 +1816,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1879,6 +1918,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Decode message (type 2) - outgoing only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Decode : pb::IMessage<Decode>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2296,7 +2336,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -2350,7 +2394,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -2403,6 +2451,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Clear message (type 3) - bidirectional
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Clear : pb::IMessage<Clear>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2561,7 +2610,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -2580,7 +2633,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -2598,6 +2655,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Reply message (type 4) - incoming only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Reply : pb::IMessage<Reply>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2983,7 +3041,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -3033,7 +3095,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -3082,6 +3148,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// QSO Logged message (type 5) - outgoing only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class QSOLogged : pb::IMessage<QSOLogged>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3338,6 +3405,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "exchange_sent" field.</summary>
     public const int ExchangeSentFieldNumber = 14;
+    private readonly static string ExchangeSentDefaultValue = "";
+
     private string exchangeSent_;
     /// <summary>
     /// Exchange sent
@@ -3345,7 +3414,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ExchangeSent {
-      get { return exchangeSent_ ?? ""; }
+      get { return exchangeSent_ ?? ExchangeSentDefaultValue; }
       set {
         exchangeSent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
@@ -3365,6 +3434,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "exchange_received" field.</summary>
     public const int ExchangeReceivedFieldNumber = 15;
+    private readonly static string ExchangeReceivedDefaultValue = "";
+
     private string exchangeReceived_;
     /// <summary>
     /// Exchange received
@@ -3372,7 +3443,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ExchangeReceived {
-      get { return exchangeReceived_ ?? ""; }
+      get { return exchangeReceived_ ?? ExchangeReceivedDefaultValue; }
       set {
         exchangeReceived_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
@@ -3392,6 +3463,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "adif_propagation_mode" field.</summary>
     public const int AdifPropagationModeFieldNumber = 16;
+    private readonly static string AdifPropagationModeDefaultValue = "";
+
     private string adifPropagationMode_;
     /// <summary>
     /// ADIF propagation mode
@@ -3399,7 +3472,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AdifPropagationMode {
-      get { return adifPropagationMode_ ?? ""; }
+      get { return adifPropagationMode_ ?? AdifPropagationModeDefaultValue; }
       set {
         adifPropagationMode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
@@ -3762,7 +3835,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -3847,7 +3924,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -3928,6 +4009,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class HaltTx : pb::IMessage<HaltTx>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4086,7 +4168,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -4105,7 +4191,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -4123,6 +4213,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Free Text message (type 9) - incoming only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class FreeText : pb::IMessage<FreeText>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4313,7 +4404,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -4336,7 +4431,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -4358,6 +4457,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// WSPR Decode message (type 10) - outgoing only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class WSPRDecode : pb::IMessage<WSPRDecode>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4550,6 +4650,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "off_air" field.</summary>
     public const int OffAirFieldNumber = 10;
+    private readonly static bool OffAirDefaultValue = false;
+
     private bool offAir_;
     /// <summary>
     /// Decoded from off-air recording flag
@@ -4557,7 +4659,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool OffAir {
-      get { if ((_hasBits0 & 1) != 0) { return offAir_; } else { return false; } }
+      get { if ((_hasBits0 & 1) != 0) { return offAir_; } else { return OffAirDefaultValue; } }
       set {
         _hasBits0 |= 1;
         offAir_ = value;
@@ -4822,7 +4924,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -4880,7 +4986,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -4937,6 +5047,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Location message (type 11) - incoming only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Location : pb::IMessage<Location>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5095,7 +5206,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -5114,7 +5229,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -5132,6 +5251,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Logged ADIF message (type 12) - outgoing only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class LoggedADIF : pb::IMessage<LoggedADIF>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5290,7 +5410,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -5309,7 +5433,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -5327,6 +5455,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Highlight Callsign message (type 13) - incoming only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class HighlightCallsign : pb::IMessage<HighlightCallsign>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5581,7 +5710,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -5612,7 +5745,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -5642,6 +5779,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Switch Configuration message (type 14) - incoming only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class SwitchConfiguration : pb::IMessage<SwitchConfiguration>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5800,7 +5938,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -5819,7 +5961,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -5837,6 +5983,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Configure message (type 15) - incoming only
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Configure : pb::IMessage<Configure>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6251,7 +6398,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -6302,7 +6453,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -6352,6 +6507,7 @@ namespace SydneyOwl.CLHProto.Plugin {
   /// <summary>
   /// Main WSJT-X message container
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class WsjtxMessage : pb::IMessage<WsjtxMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7066,7 +7222,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -7221,7 +7381,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -7372,6 +7536,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class PackedWsjtxMessage : pb::IMessage<PackedWsjtxMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7548,7 +7713,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -7574,7 +7743,11 @@ namespace SydneyOwl.CLHProto.Plugin {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
