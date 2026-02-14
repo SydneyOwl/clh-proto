@@ -1105,6 +1105,44 @@ func (x *QSOLogged) GetAdifPropagationMode() string {
 	return ""
 }
 
+// Close message (type 6) - bidirectional
+// No additional fields beyond header
+type Close struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Close) Reset() {
+	*x = Close{}
+	mi := &file_wsjtx_msg_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Close) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Close) ProtoMessage() {}
+
+func (x *Close) ProtoReflect() protoreflect.Message {
+	mi := &file_wsjtx_msg_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Close.ProtoReflect.Descriptor instead.
+func (*Close) Descriptor() ([]byte, []int) {
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{7}
+}
+
 type HaltTx struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Whether to stop only auto-generated transmissions
@@ -1115,7 +1153,7 @@ type HaltTx struct {
 
 func (x *HaltTx) Reset() {
 	*x = HaltTx{}
-	mi := &file_wsjtx_msg_proto_msgTypes[7]
+	mi := &file_wsjtx_msg_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1127,7 +1165,7 @@ func (x *HaltTx) String() string {
 func (*HaltTx) ProtoMessage() {}
 
 func (x *HaltTx) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[7]
+	mi := &file_wsjtx_msg_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1140,7 +1178,7 @@ func (x *HaltTx) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HaltTx.ProtoReflect.Descriptor instead.
 func (*HaltTx) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{7}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *HaltTx) GetAutoTxOnly() bool {
@@ -1163,7 +1201,7 @@ type FreeText struct {
 
 func (x *FreeText) Reset() {
 	*x = FreeText{}
-	mi := &file_wsjtx_msg_proto_msgTypes[8]
+	mi := &file_wsjtx_msg_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1175,7 +1213,7 @@ func (x *FreeText) String() string {
 func (*FreeText) ProtoMessage() {}
 
 func (x *FreeText) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[8]
+	mi := &file_wsjtx_msg_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1188,7 +1226,7 @@ func (x *FreeText) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FreeText.ProtoReflect.Descriptor instead.
 func (*FreeText) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{8}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *FreeText) GetText() string {
@@ -1234,7 +1272,7 @@ type WSPRDecode struct {
 
 func (x *WSPRDecode) Reset() {
 	*x = WSPRDecode{}
-	mi := &file_wsjtx_msg_proto_msgTypes[9]
+	mi := &file_wsjtx_msg_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1246,7 +1284,7 @@ func (x *WSPRDecode) String() string {
 func (*WSPRDecode) ProtoMessage() {}
 
 func (x *WSPRDecode) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[9]
+	mi := &file_wsjtx_msg_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1259,7 +1297,7 @@ func (x *WSPRDecode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WSPRDecode.ProtoReflect.Descriptor instead.
 func (*WSPRDecode) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{9}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *WSPRDecode) GetIsNew() bool {
@@ -1343,7 +1381,7 @@ type Location struct {
 
 func (x *Location) Reset() {
 	*x = Location{}
-	mi := &file_wsjtx_msg_proto_msgTypes[10]
+	mi := &file_wsjtx_msg_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1355,7 +1393,7 @@ func (x *Location) String() string {
 func (*Location) ProtoMessage() {}
 
 func (x *Location) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[10]
+	mi := &file_wsjtx_msg_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1368,7 +1406,7 @@ func (x *Location) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Location.ProtoReflect.Descriptor instead.
 func (*Location) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{10}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *Location) GetLocation() string {
@@ -1389,7 +1427,7 @@ type LoggedADIF struct {
 
 func (x *LoggedADIF) Reset() {
 	*x = LoggedADIF{}
-	mi := &file_wsjtx_msg_proto_msgTypes[11]
+	mi := &file_wsjtx_msg_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1401,7 +1439,7 @@ func (x *LoggedADIF) String() string {
 func (*LoggedADIF) ProtoMessage() {}
 
 func (x *LoggedADIF) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[11]
+	mi := &file_wsjtx_msg_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1414,7 +1452,7 @@ func (x *LoggedADIF) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoggedADIF.ProtoReflect.Descriptor instead.
 func (*LoggedADIF) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{11}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *LoggedADIF) GetAdifText() string {
@@ -1441,7 +1479,7 @@ type HighlightCallsign struct {
 
 func (x *HighlightCallsign) Reset() {
 	*x = HighlightCallsign{}
-	mi := &file_wsjtx_msg_proto_msgTypes[12]
+	mi := &file_wsjtx_msg_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1453,7 +1491,7 @@ func (x *HighlightCallsign) String() string {
 func (*HighlightCallsign) ProtoMessage() {}
 
 func (x *HighlightCallsign) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[12]
+	mi := &file_wsjtx_msg_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1466,7 +1504,7 @@ func (x *HighlightCallsign) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HighlightCallsign.ProtoReflect.Descriptor instead.
 func (*HighlightCallsign) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{12}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *HighlightCallsign) GetCallsign() string {
@@ -1508,7 +1546,7 @@ type SwitchConfiguration struct {
 
 func (x *SwitchConfiguration) Reset() {
 	*x = SwitchConfiguration{}
-	mi := &file_wsjtx_msg_proto_msgTypes[13]
+	mi := &file_wsjtx_msg_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1520,7 +1558,7 @@ func (x *SwitchConfiguration) String() string {
 func (*SwitchConfiguration) ProtoMessage() {}
 
 func (x *SwitchConfiguration) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[13]
+	mi := &file_wsjtx_msg_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1533,7 +1571,7 @@ func (x *SwitchConfiguration) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SwitchConfiguration.ProtoReflect.Descriptor instead.
 func (*SwitchConfiguration) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{13}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *SwitchConfiguration) GetConfigName() string {
@@ -1570,7 +1608,7 @@ type Configure struct {
 
 func (x *Configure) Reset() {
 	*x = Configure{}
-	mi := &file_wsjtx_msg_proto_msgTypes[14]
+	mi := &file_wsjtx_msg_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1582,7 +1620,7 @@ func (x *Configure) String() string {
 func (*Configure) ProtoMessage() {}
 
 func (x *Configure) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[14]
+	mi := &file_wsjtx_msg_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1595,7 +1633,7 @@ func (x *Configure) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Configure.ProtoReflect.Descriptor instead.
 func (*Configure) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{14}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *Configure) GetMode() string {
@@ -1676,6 +1714,7 @@ type WsjtxMessage struct {
 	//	*WsjtxMessage_Clear
 	//	*WsjtxMessage_Reply
 	//	*WsjtxMessage_QsoLogged
+	//	*WsjtxMessage_Close
 	//	*WsjtxMessage_HaltTx
 	//	*WsjtxMessage_FreeText
 	//	*WsjtxMessage_WsprDecode
@@ -1692,7 +1731,7 @@ type WsjtxMessage struct {
 
 func (x *WsjtxMessage) Reset() {
 	*x = WsjtxMessage{}
-	mi := &file_wsjtx_msg_proto_msgTypes[15]
+	mi := &file_wsjtx_msg_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1704,7 +1743,7 @@ func (x *WsjtxMessage) String() string {
 func (*WsjtxMessage) ProtoMessage() {}
 
 func (x *WsjtxMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[15]
+	mi := &file_wsjtx_msg_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1717,7 +1756,7 @@ func (x *WsjtxMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WsjtxMessage.ProtoReflect.Descriptor instead.
 func (*WsjtxMessage) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{15}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *WsjtxMessage) GetHeader() *MessageHeader {
@@ -1783,6 +1822,15 @@ func (x *WsjtxMessage) GetQsoLogged() *QSOLogged {
 	if x != nil {
 		if x, ok := x.Payload.(*WsjtxMessage_QsoLogged); ok {
 			return x.QsoLogged
+		}
+	}
+	return nil
+}
+
+func (x *WsjtxMessage) GetClose() *Close {
+	if x != nil {
+		if x, ok := x.Payload.(*WsjtxMessage_Close); ok {
+			return x.Close
 		}
 	}
 	return nil
@@ -1895,8 +1943,11 @@ type WsjtxMessage_QsoLogged struct {
 	QsoLogged *QSOLogged `protobuf:"bytes,7,opt,name=qso_logged,json=qsoLogged,proto3,oneof"`
 }
 
+type WsjtxMessage_Close struct {
+	Close *Close `protobuf:"bytes,8,opt,name=close,proto3,oneof"`
+}
+
 type WsjtxMessage_HaltTx struct {
-	// Close: no additional fields
 	// Replay: no additional fields
 	HaltTx *HaltTx `protobuf:"bytes,10,opt,name=halt_tx,json=haltTx,proto3,oneof"`
 }
@@ -1941,6 +1992,8 @@ func (*WsjtxMessage_Reply) isWsjtxMessage_Payload() {}
 
 func (*WsjtxMessage_QsoLogged) isWsjtxMessage_Payload() {}
 
+func (*WsjtxMessage_Close) isWsjtxMessage_Payload() {}
+
 func (*WsjtxMessage_HaltTx) isWsjtxMessage_Payload() {}
 
 func (*WsjtxMessage_FreeText) isWsjtxMessage_Payload() {}
@@ -1967,7 +2020,7 @@ type PackedWsjtxMessage struct {
 
 func (x *PackedWsjtxMessage) Reset() {
 	*x = PackedWsjtxMessage{}
-	mi := &file_wsjtx_msg_proto_msgTypes[16]
+	mi := &file_wsjtx_msg_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1979,7 +2032,7 @@ func (x *PackedWsjtxMessage) String() string {
 func (*PackedWsjtxMessage) ProtoMessage() {}
 
 func (x *PackedWsjtxMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_wsjtx_msg_proto_msgTypes[16]
+	mi := &file_wsjtx_msg_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1992,7 +2045,7 @@ func (x *PackedWsjtxMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PackedWsjtxMessage.ProtoReflect.Descriptor instead.
 func (*PackedWsjtxMessage) Descriptor() ([]byte, []int) {
-	return file_wsjtx_msg_proto_rawDescGZIP(), []int{16}
+	return file_wsjtx_msg_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *PackedWsjtxMessage) GetMessages() []*WsjtxMessage {
@@ -2102,7 +2155,8 @@ const file_wsjtx_msg_proto_rawDesc = "" +
 	"\x15adif_propagation_mode\x18\x10 \x01(\tH\x02R\x13adifPropagationMode\x88\x01\x01B\x10\n" +
 	"\x0e_exchange_sentB\x14\n" +
 	"\x12_exchange_receivedB\x18\n" +
-	"\x16_adif_propagation_mode\"*\n" +
+	"\x16_adif_propagation_mode\"\a\n" +
+	"\x05Close\"*\n" +
 	"\x06HaltTx\x12 \n" +
 	"\fauto_tx_only\x18\x01 \x01(\bR\n" +
 	"autoTxOnly\"2\n" +
@@ -2147,7 +2201,7 @@ const file_wsjtx_msg_proto_rawDesc = "" +
 	"\x05rx_df\x18\x06 \x01(\rR\x04rxDf\x12\x17\n" +
 	"\adx_call\x18\a \x01(\tR\x06dxCall\x12\x17\n" +
 	"\adx_grid\x18\b \x01(\tR\x06dxGrid\x12+\n" +
-	"\x11generate_messages\x18\t \x01(\bR\x10generateMessages\"\xed\a\n" +
+	"\x11generate_messages\x18\t \x01(\bR\x10generateMessages\"\x9e\b\n" +
 	"\fWsjtxMessage\x127\n" +
 	"\x06header\x18\x01 \x01(\v2\x1f.clh_proto.plugin.MessageHeaderR\x06header\x12;\n" +
 	"\theartbeat\x18\x02 \x01(\v2\x1b.clh_proto.plugin.HeartbeatH\x00R\theartbeat\x122\n" +
@@ -2156,7 +2210,8 @@ const file_wsjtx_msg_proto_rawDesc = "" +
 	"\x05clear\x18\x05 \x01(\v2\x17.clh_proto.plugin.ClearH\x00R\x05clear\x12/\n" +
 	"\x05reply\x18\x06 \x01(\v2\x17.clh_proto.plugin.ReplyH\x00R\x05reply\x12<\n" +
 	"\n" +
-	"qso_logged\x18\a \x01(\v2\x1b.clh_proto.plugin.QSOLoggedH\x00R\tqsoLogged\x123\n" +
+	"qso_logged\x18\a \x01(\v2\x1b.clh_proto.plugin.QSOLoggedH\x00R\tqsoLogged\x12/\n" +
+	"\x05close\x18\b \x01(\v2\x17.clh_proto.plugin.CloseH\x00R\x05close\x123\n" +
 	"\ahalt_tx\x18\n" +
 	" \x01(\v2\x18.clh_proto.plugin.HaltTxH\x00R\x06haltTx\x129\n" +
 	"\tfree_text\x18\v \x01(\v2\x1a.clh_proto.plugin.FreeTextH\x00R\bfreeText\x12?\n" +
@@ -2234,7 +2289,7 @@ func file_wsjtx_msg_proto_rawDescGZIP() []byte {
 }
 
 var file_wsjtx_msg_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_wsjtx_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_wsjtx_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_wsjtx_msg_proto_goTypes = []any{
 	(MessageType)(0),              // 0: clh_proto.plugin.MessageType
 	(SpecialOperationMode)(0),     // 1: clh_proto.plugin.SpecialOperationMode
@@ -2247,27 +2302,28 @@ var file_wsjtx_msg_proto_goTypes = []any{
 	(*Clear)(nil),                 // 8: clh_proto.plugin.Clear
 	(*Reply)(nil),                 // 9: clh_proto.plugin.Reply
 	(*QSOLogged)(nil),             // 10: clh_proto.plugin.QSOLogged
-	(*HaltTx)(nil),                // 11: clh_proto.plugin.HaltTx
-	(*FreeText)(nil),              // 12: clh_proto.plugin.FreeText
-	(*WSPRDecode)(nil),            // 13: clh_proto.plugin.WSPRDecode
-	(*Location)(nil),              // 14: clh_proto.plugin.Location
-	(*LoggedADIF)(nil),            // 15: clh_proto.plugin.LoggedADIF
-	(*HighlightCallsign)(nil),     // 16: clh_proto.plugin.HighlightCallsign
-	(*SwitchConfiguration)(nil),   // 17: clh_proto.plugin.SwitchConfiguration
-	(*Configure)(nil),             // 18: clh_proto.plugin.Configure
-	(*WsjtxMessage)(nil),          // 19: clh_proto.plugin.WsjtxMessage
-	(*PackedWsjtxMessage)(nil),    // 20: clh_proto.plugin.PackedWsjtxMessage
-	(*timestamppb.Timestamp)(nil), // 21: google.protobuf.Timestamp
+	(*Close)(nil),                 // 11: clh_proto.plugin.Close
+	(*HaltTx)(nil),                // 12: clh_proto.plugin.HaltTx
+	(*FreeText)(nil),              // 13: clh_proto.plugin.FreeText
+	(*WSPRDecode)(nil),            // 14: clh_proto.plugin.WSPRDecode
+	(*Location)(nil),              // 15: clh_proto.plugin.Location
+	(*LoggedADIF)(nil),            // 16: clh_proto.plugin.LoggedADIF
+	(*HighlightCallsign)(nil),     // 17: clh_proto.plugin.HighlightCallsign
+	(*SwitchConfiguration)(nil),   // 18: clh_proto.plugin.SwitchConfiguration
+	(*Configure)(nil),             // 19: clh_proto.plugin.Configure
+	(*WsjtxMessage)(nil),          // 20: clh_proto.plugin.WsjtxMessage
+	(*PackedWsjtxMessage)(nil),    // 21: clh_proto.plugin.PackedWsjtxMessage
+	(*timestamppb.Timestamp)(nil), // 22: google.protobuf.Timestamp
 }
 var file_wsjtx_msg_proto_depIdxs = []int32{
 	0,  // 0: clh_proto.plugin.MessageHeader.type:type_name -> clh_proto.plugin.MessageType
 	1,  // 1: clh_proto.plugin.Status.special_op_mode:type_name -> clh_proto.plugin.SpecialOperationMode
-	21, // 2: clh_proto.plugin.Decode.time:type_name -> google.protobuf.Timestamp
+	22, // 2: clh_proto.plugin.Decode.time:type_name -> google.protobuf.Timestamp
 	2,  // 3: clh_proto.plugin.Clear.window:type_name -> clh_proto.plugin.ClearWindow
-	21, // 4: clh_proto.plugin.Reply.time:type_name -> google.protobuf.Timestamp
-	21, // 5: clh_proto.plugin.QSOLogged.datetime_off:type_name -> google.protobuf.Timestamp
-	21, // 6: clh_proto.plugin.QSOLogged.datetime_on:type_name -> google.protobuf.Timestamp
-	21, // 7: clh_proto.plugin.WSPRDecode.time:type_name -> google.protobuf.Timestamp
+	22, // 4: clh_proto.plugin.Reply.time:type_name -> google.protobuf.Timestamp
+	22, // 5: clh_proto.plugin.QSOLogged.datetime_off:type_name -> google.protobuf.Timestamp
+	22, // 6: clh_proto.plugin.QSOLogged.datetime_on:type_name -> google.protobuf.Timestamp
+	22, // 7: clh_proto.plugin.WSPRDecode.time:type_name -> google.protobuf.Timestamp
 	4,  // 8: clh_proto.plugin.WsjtxMessage.header:type_name -> clh_proto.plugin.MessageHeader
 	5,  // 9: clh_proto.plugin.WsjtxMessage.heartbeat:type_name -> clh_proto.plugin.Heartbeat
 	6,  // 10: clh_proto.plugin.WsjtxMessage.status:type_name -> clh_proto.plugin.Status
@@ -2275,22 +2331,23 @@ var file_wsjtx_msg_proto_depIdxs = []int32{
 	8,  // 12: clh_proto.plugin.WsjtxMessage.clear:type_name -> clh_proto.plugin.Clear
 	9,  // 13: clh_proto.plugin.WsjtxMessage.reply:type_name -> clh_proto.plugin.Reply
 	10, // 14: clh_proto.plugin.WsjtxMessage.qso_logged:type_name -> clh_proto.plugin.QSOLogged
-	11, // 15: clh_proto.plugin.WsjtxMessage.halt_tx:type_name -> clh_proto.plugin.HaltTx
-	12, // 16: clh_proto.plugin.WsjtxMessage.free_text:type_name -> clh_proto.plugin.FreeText
-	13, // 17: clh_proto.plugin.WsjtxMessage.wspr_decode:type_name -> clh_proto.plugin.WSPRDecode
-	14, // 18: clh_proto.plugin.WsjtxMessage.location:type_name -> clh_proto.plugin.Location
-	15, // 19: clh_proto.plugin.WsjtxMessage.logged_adif:type_name -> clh_proto.plugin.LoggedADIF
-	16, // 20: clh_proto.plugin.WsjtxMessage.highlight_callsign:type_name -> clh_proto.plugin.HighlightCallsign
-	17, // 21: clh_proto.plugin.WsjtxMessage.switch_configuration:type_name -> clh_proto.plugin.SwitchConfiguration
-	18, // 22: clh_proto.plugin.WsjtxMessage.configure:type_name -> clh_proto.plugin.Configure
-	21, // 23: clh_proto.plugin.WsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
-	19, // 24: clh_proto.plugin.PackedWsjtxMessage.messages:type_name -> clh_proto.plugin.WsjtxMessage
-	21, // 25: clh_proto.plugin.PackedWsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
-	26, // [26:26] is the sub-list for method output_type
-	26, // [26:26] is the sub-list for method input_type
-	26, // [26:26] is the sub-list for extension type_name
-	26, // [26:26] is the sub-list for extension extendee
-	0,  // [0:26] is the sub-list for field type_name
+	11, // 15: clh_proto.plugin.WsjtxMessage.close:type_name -> clh_proto.plugin.Close
+	12, // 16: clh_proto.plugin.WsjtxMessage.halt_tx:type_name -> clh_proto.plugin.HaltTx
+	13, // 17: clh_proto.plugin.WsjtxMessage.free_text:type_name -> clh_proto.plugin.FreeText
+	14, // 18: clh_proto.plugin.WsjtxMessage.wspr_decode:type_name -> clh_proto.plugin.WSPRDecode
+	15, // 19: clh_proto.plugin.WsjtxMessage.location:type_name -> clh_proto.plugin.Location
+	16, // 20: clh_proto.plugin.WsjtxMessage.logged_adif:type_name -> clh_proto.plugin.LoggedADIF
+	17, // 21: clh_proto.plugin.WsjtxMessage.highlight_callsign:type_name -> clh_proto.plugin.HighlightCallsign
+	18, // 22: clh_proto.plugin.WsjtxMessage.switch_configuration:type_name -> clh_proto.plugin.SwitchConfiguration
+	19, // 23: clh_proto.plugin.WsjtxMessage.configure:type_name -> clh_proto.plugin.Configure
+	22, // 24: clh_proto.plugin.WsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
+	20, // 25: clh_proto.plugin.PackedWsjtxMessage.messages:type_name -> clh_proto.plugin.WsjtxMessage
+	22, // 26: clh_proto.plugin.PackedWsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
+	27, // [27:27] is the sub-list for method output_type
+	27, // [27:27] is the sub-list for method input_type
+	27, // [27:27] is the sub-list for extension type_name
+	27, // [27:27] is the sub-list for extension extendee
+	0,  // [0:27] is the sub-list for field type_name
 }
 
 func init() { file_wsjtx_msg_proto_init() }
@@ -2301,14 +2358,15 @@ func file_wsjtx_msg_proto_init() {
 	file_wsjtx_msg_proto_msgTypes[1].OneofWrappers = []any{}
 	file_wsjtx_msg_proto_msgTypes[2].OneofWrappers = []any{}
 	file_wsjtx_msg_proto_msgTypes[6].OneofWrappers = []any{}
-	file_wsjtx_msg_proto_msgTypes[9].OneofWrappers = []any{}
-	file_wsjtx_msg_proto_msgTypes[15].OneofWrappers = []any{
+	file_wsjtx_msg_proto_msgTypes[10].OneofWrappers = []any{}
+	file_wsjtx_msg_proto_msgTypes[16].OneofWrappers = []any{
 		(*WsjtxMessage_Heartbeat)(nil),
 		(*WsjtxMessage_Status)(nil),
 		(*WsjtxMessage_Decode)(nil),
 		(*WsjtxMessage_Clear)(nil),
 		(*WsjtxMessage_Reply)(nil),
 		(*WsjtxMessage_QsoLogged)(nil),
+		(*WsjtxMessage_Close)(nil),
 		(*WsjtxMessage_HaltTx)(nil),
 		(*WsjtxMessage_FreeText)(nil),
 		(*WsjtxMessage_WsprDecode)(nil),
@@ -2324,7 +2382,7 @@ func file_wsjtx_msg_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_wsjtx_msg_proto_rawDesc), len(file_wsjtx_msg_proto_rawDesc)),
 			NumEnums:      4,
-			NumMessages:   17,
+			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

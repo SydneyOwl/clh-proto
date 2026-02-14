@@ -265,6 +265,7 @@ message QSOLogged {
 
 // Close message (type 6) - bidirectional
 // No additional fields beyond header
+message Close{}
 
 // Replay message (type 7) - incoming only
 // No additional fields beyond header
@@ -394,7 +395,7 @@ message WsjtxMessage {
     Clear clear = 5;
     Reply reply = 6;
     QSOLogged qso_logged = 7;
-    // Close: no additional fields
+    Close close = 8;
     // Replay: no additional fields
     HaltTx halt_tx = 10;
     FreeText free_text = 11;
