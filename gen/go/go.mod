@@ -1,4 +1,4 @@
-module github.com/sydneyowl/clh-proto/gen/go
+module github.com/SydneyOwl/clh-proto/gen/go
 
 go 1.23
 
