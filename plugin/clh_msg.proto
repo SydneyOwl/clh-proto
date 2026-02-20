@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package clh_proto.plugin;
+option go_package = "github.com/sydneyowl/clh-proto/gen/go/plugin";
+option csharp_namespace = "SydneyOwl.CLHProto.Plugin";
+
+import "google/protobuf/timestamp.proto";
+
+enum InternalStatus{
+  clh_starting_up = 0;
+  clh_shutting_down = 1;
+  plugin_service_starting = 2;
+  plugin_service_stopping = 3;
+}
+
+message CLHInternalData{
+  InternalStatus status = 1;
+
+  google.protobuf.Timestamp timestamp = 999 [json_name = "timestamp"];
+}

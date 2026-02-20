@@ -18,7 +18,6 @@ dep:
 
 proto-go:
 	@echo "Generating Go code..."
-	@mkdir -p $(GO_OUT_DIR)
 	$(PROTOC) --proto_path=$(PROTO_DIR) \
 		--proto_path=. \
 		--go_out=$(GO_OUT_DIR) \
@@ -29,7 +28,6 @@ proto-go:
 
 proto-cs:
 	@echo "Generating C# code..."
-	@mkdir -p $(CSHARP_OUT_DIR)
 	$(PROTOC) --proto_path=$(PROTO_DIR) \
 		--proto_path=. \
 		--csharp_out=$(CSHARP_OUT_DIR) \
