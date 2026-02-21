@@ -410,7 +410,7 @@ message WsjtxMessage {
   google.protobuf.Timestamp timestamp = 999;
 }
 
-message PackedWsjtxMessage{
-  repeated WsjtxMessage messages = 1;
+message PackedDecodeMessage{
+  repeated Decode messages = 1;
   google.protobuf.Timestamp timestamp = 999;
 }

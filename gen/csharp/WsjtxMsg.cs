@@ -98,24 +98,24 @@ namespace SydneyOwl.CLHProto.Plugin {
             "dXJhdGlvbhgQIAEoCzIlLmNsaF9wcm90by5wbHVnaW4uU3dpdGNoQ29uZmln",
             "dXJhdGlvbkgAEjAKCWNvbmZpZ3VyZRgRIAEoCzIbLmNsaF9wcm90by5wbHVn",
             "aW4uQ29uZmlndXJlSAASLgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCJ2ChJQYWNrZWRXc2p0eE1l",
-            "c3NhZ2USMAoIbWVzc2FnZXMYASADKAsyHi5jbGhfcHJvdG8ucGx1Z2luLldz",
-            "anR4TWVzc2FnZRIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3Rv",
-            "YnVmLlRpbWVzdGFtcCr+AQoLTWVzc2FnZVR5cGUSDQoJSEVBUlRCRUFUEAAS",
-            "CgoGU1RBVFVTEAESCgoGREVDT0RFEAISCQoFQ0xFQVIQAxIJCgVSRVBMWRAE",
-            "Eg4KClFTT19MT0dHRUQQBRIJCgVDTE9TRRAGEgoKBlJFUExBWRAHEgsKB0hB",
-            "TFRfVFgQCBINCglGUkVFX1RFWFQQCRIPCgtXU1BSX0RFQ09ERRAKEgwKCExP",
-            "Q0FUSU9OEAsSDwoLTE9HR0VEX0FESUYQDBIWChJISUdITElHSFRfQ0FMTFNJ",
-            "R04QDRIYChRTV0lUQ0hfQ09ORklHVVJBVElPThAOEg0KCUNPTkZJR1VSRRAP",
-            "KnUKFFNwZWNpYWxPcGVyYXRpb25Nb2RlEggKBE5PTkUQABIKCgZOQV9WSEYQ",
-            "ARIKCgZFVV9WSEYQAhINCglGSUVMRF9EQVkQAxILCgdSVFRZX1JVEAQSCwoH",
-            "V1dfRElHSRAFEgcKA0ZPWBAGEgkKBUhPVU5EEAcqTgoLQ2xlYXJXaW5kb3cS",
-            "FwoTQ0xFQVJfQkFORF9BQ1RJVklUWRAAEhYKEkNMRUFSX1JYX0ZSRVFVRU5D",
-            "WRABEg4KCkNMRUFSX0JPVEgQAiplCgxLZXlNb2RpZmllcnMSDwoLTk9fTU9E",
-            "SUZJRVIQABIJCgVTSElGVBACEggKBENUUkwQBBIHCgNBTFQQCBIICgRNRVRB",
-            "EBASCgoGS0VZUEFEECASEAoMR1JPVVBfU1dJVENIEEBCSlosZ2l0aHViLmNv",
-            "bS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6qAhlTeWRuZXlP",
-            "d2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
+            "cm90b2J1Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCJxChNQYWNrZWREZWNvZGVN",
+            "ZXNzYWdlEioKCG1lc3NhZ2VzGAEgAygLMhguY2xoX3Byb3RvLnBsdWdpbi5E",
+            "ZWNvZGUSLgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
+            "aW1lc3RhbXAq/gEKC01lc3NhZ2VUeXBlEg0KCUhFQVJUQkVBVBAAEgoKBlNU",
+            "QVRVUxABEgoKBkRFQ09ERRACEgkKBUNMRUFSEAMSCQoFUkVQTFkQBBIOCgpR",
+            "U09fTE9HR0VEEAUSCQoFQ0xPU0UQBhIKCgZSRVBMQVkQBxILCgdIQUxUX1RY",
+            "EAgSDQoJRlJFRV9URVhUEAkSDwoLV1NQUl9ERUNPREUQChIMCghMT0NBVElP",
+            "ThALEg8KC0xPR0dFRF9BRElGEAwSFgoSSElHSExJR0hUX0NBTExTSUdOEA0S",
+            "GAoUU1dJVENIX0NPTkZJR1VSQVRJT04QDhINCglDT05GSUdVUkUQDyp1ChRT",
+            "cGVjaWFsT3BlcmF0aW9uTW9kZRIICgROT05FEAASCgoGTkFfVkhGEAESCgoG",
+            "RVVfVkhGEAISDQoJRklFTERfREFZEAMSCwoHUlRUWV9SVRAEEgsKB1dXX0RJ",
+            "R0kQBRIHCgNGT1gQBhIJCgVIT1VORBAHKk4KC0NsZWFyV2luZG93EhcKE0NM",
+            "RUFSX0JBTkRfQUNUSVZJVFkQABIWChJDTEVBUl9SWF9GUkVRVUVOQ1kQARIO",
+            "CgpDTEVBUl9CT1RIEAIqZQoMS2V5TW9kaWZpZXJzEg8KC05PX01PRElGSUVS",
+            "EAASCQoFU0hJRlQQAhIICgRDVFJMEAQSBwoDQUxUEAgSCAoETUVUQRAQEgoK",
+            "BktFWVBBRBAgEhAKDEdST1VQX1NXSVRDSBBAQkpaLGdpdGh1Yi5jb20vc3lk",
+            "bmV5b3dsL2NsaC1wcm90by9nZW4vZ28vcGx1Z2luqgIZU3lkbmV5T3dsLkNM",
+            "SFByb3RvLlBsdWdpbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.MessageType), typeof(global::SydneyOwl.CLHProto.Plugin.SpecialOperationMode), typeof(global::SydneyOwl.CLHProto.Plugin.ClearWindow), typeof(global::SydneyOwl.CLHProto.Plugin.KeyModifiers), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -136,7 +136,7 @@ namespace SydneyOwl.CLHProto.Plugin {
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.SwitchConfiguration), global::SydneyOwl.CLHProto.Plugin.SwitchConfiguration.Parser, new[]{ "ConfigName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.Configure), global::SydneyOwl.CLHProto.Plugin.Configure.Parser, new[]{ "Mode", "FrequencyTolerance", "SubMode", "FastMode", "TrPeriod", "RxDf", "DxCall", "DxGrid", "GenerateMessages" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.WsjtxMessage), global::SydneyOwl.CLHProto.Plugin.WsjtxMessage.Parser, new[]{ "Header", "Heartbeat", "Status", "Decode", "Clear", "Reply", "QsoLogged", "Close", "HaltTx", "FreeText", "WsprDecode", "Location", "LoggedAdif", "HighlightCallsign", "SwitchConfiguration", "Configure", "Timestamp" }, new[]{ "Payload" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage), global::SydneyOwl.CLHProto.Plugin.PackedWsjtxMessage.Parser, new[]{ "Messages", "Timestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PackedDecodeMessage), global::SydneyOwl.CLHProto.Plugin.PackedDecodeMessage.Parser, new[]{ "Messages", "Timestamp" }, null, null, null, null)
           }));
     }
     #endregion
@@ -7756,16 +7756,16 @@ namespace SydneyOwl.CLHProto.Plugin {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class PackedWsjtxMessage : pb::IMessage<PackedWsjtxMessage>
+  public sealed partial class PackedDecodeMessage : pb::IMessage<PackedDecodeMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<PackedWsjtxMessage> _parser = new pb::MessageParser<PackedWsjtxMessage>(() => new PackedWsjtxMessage());
+    private static readonly pb::MessageParser<PackedDecodeMessage> _parser = new pb::MessageParser<PackedDecodeMessage>(() => new PackedDecodeMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<PackedWsjtxMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<PackedDecodeMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7781,7 +7781,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PackedWsjtxMessage() {
+    public PackedDecodeMessage() {
       OnConstruction();
     }
 
@@ -7789,7 +7789,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PackedWsjtxMessage(PackedWsjtxMessage other) : this() {
+    public PackedDecodeMessage(PackedDecodeMessage other) : this() {
       messages_ = other.messages_.Clone();
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -7797,18 +7797,18 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PackedWsjtxMessage Clone() {
-      return new PackedWsjtxMessage(this);
+    public PackedDecodeMessage Clone() {
+      return new PackedDecodeMessage(this);
     }
 
     /// <summary>Field number for the "messages" field.</summary>
     public const int MessagesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage> _repeated_messages_codec
-        = pb::FieldCodec.ForMessage(10, global::SydneyOwl.CLHProto.Plugin.WsjtxMessage.Parser);
-    private readonly pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage> messages_ = new pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage>();
+    private static readonly pb::FieldCodec<global::SydneyOwl.CLHProto.Plugin.Decode> _repeated_messages_codec
+        = pb::FieldCodec.ForMessage(10, global::SydneyOwl.CLHProto.Plugin.Decode.Parser);
+    private readonly pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.Decode> messages_ = new pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.Decode>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.WsjtxMessage> Messages {
+    public pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.Decode> Messages {
       get { return messages_; }
     }
 
@@ -7827,12 +7827,12 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as PackedWsjtxMessage);
+      return Equals(other as PackedDecodeMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(PackedWsjtxMessage other) {
+    public bool Equals(PackedDecodeMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -7910,7 +7910,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(PackedWsjtxMessage other) {
+    public void MergeFrom(PackedDecodeMessage other) {
       if (other == null) {
         return;
       }

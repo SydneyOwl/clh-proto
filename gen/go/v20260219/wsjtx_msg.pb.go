@@ -2010,28 +2010,28 @@ func (*WsjtxMessage_SwitchConfiguration) isWsjtxMessage_Payload() {}
 
 func (*WsjtxMessage_Configure) isWsjtxMessage_Payload() {}
 
-type PackedWsjtxMessage struct {
+type PackedDecodeMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Messages      []*WsjtxMessage        `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
+	Messages      []*Decode              `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
 	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *PackedWsjtxMessage) Reset() {
-	*x = PackedWsjtxMessage{}
+func (x *PackedDecodeMessage) Reset() {
+	*x = PackedDecodeMessage{}
 	mi := &file_wsjtx_msg_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *PackedWsjtxMessage) String() string {
+func (x *PackedDecodeMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*PackedWsjtxMessage) ProtoMessage() {}
+func (*PackedDecodeMessage) ProtoMessage() {}
 
-func (x *PackedWsjtxMessage) ProtoReflect() protoreflect.Message {
+func (x *PackedDecodeMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_wsjtx_msg_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2043,19 +2043,19 @@ func (x *PackedWsjtxMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use PackedWsjtxMessage.ProtoReflect.Descriptor instead.
-func (*PackedWsjtxMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use PackedDecodeMessage.ProtoReflect.Descriptor instead.
+func (*PackedDecodeMessage) Descriptor() ([]byte, []int) {
 	return file_wsjtx_msg_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *PackedWsjtxMessage) GetMessages() []*WsjtxMessage {
+func (x *PackedDecodeMessage) GetMessages() []*Decode {
 	if x != nil {
 		return x.Messages
 	}
 	return nil
 }
 
-func (x *PackedWsjtxMessage) GetTimestamp() *timestamppb.Timestamp {
+func (x *PackedDecodeMessage) GetTimestamp() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Timestamp
 	}
@@ -2224,9 +2224,9 @@ const file_wsjtx_msg_proto_rawDesc = "" +
 	"\x14switch_configuration\x18\x10 \x01(\v2%.clh_proto.plugin.SwitchConfigurationH\x00R\x13switchConfiguration\x12;\n" +
 	"\tconfigure\x18\x11 \x01(\v2\x1b.clh_proto.plugin.ConfigureH\x00R\tconfigure\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampB\t\n" +
-	"\apayload\"\x8b\x01\n" +
-	"\x12PackedWsjtxMessage\x12:\n" +
-	"\bmessages\x18\x01 \x03(\v2\x1e.clh_proto.plugin.WsjtxMessageR\bmessages\x129\n" +
+	"\apayload\"\x86\x01\n" +
+	"\x13PackedDecodeMessage\x124\n" +
+	"\bmessages\x18\x01 \x03(\v2\x18.clh_proto.plugin.DecodeR\bmessages\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp*\xfe\x01\n" +
 	"\vMessageType\x12\r\n" +
 	"\tHEARTBEAT\x10\x00\x12\n" +
@@ -2312,7 +2312,7 @@ var file_wsjtx_msg_proto_goTypes = []any{
 	(*SwitchConfiguration)(nil),   // 18: clh_proto.plugin.SwitchConfiguration
 	(*Configure)(nil),             // 19: clh_proto.plugin.Configure
 	(*WsjtxMessage)(nil),          // 20: clh_proto.plugin.WsjtxMessage
-	(*PackedWsjtxMessage)(nil),    // 21: clh_proto.plugin.PackedWsjtxMessage
+	(*PackedDecodeMessage)(nil),   // 21: clh_proto.plugin.PackedDecodeMessage
 	(*timestamppb.Timestamp)(nil), // 22: google.protobuf.Timestamp
 }
 var file_wsjtx_msg_proto_depIdxs = []int32{
@@ -2341,8 +2341,8 @@ var file_wsjtx_msg_proto_depIdxs = []int32{
 	18, // 22: clh_proto.plugin.WsjtxMessage.switch_configuration:type_name -> clh_proto.plugin.SwitchConfiguration
 	19, // 23: clh_proto.plugin.WsjtxMessage.configure:type_name -> clh_proto.plugin.Configure
 	22, // 24: clh_proto.plugin.WsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
-	20, // 25: clh_proto.plugin.PackedWsjtxMessage.messages:type_name -> clh_proto.plugin.WsjtxMessage
-	22, // 26: clh_proto.plugin.PackedWsjtxMessage.timestamp:type_name -> google.protobuf.Timestamp
+	7,  // 25: clh_proto.plugin.PackedDecodeMessage.messages:type_name -> clh_proto.plugin.Decode
+	22, // 26: clh_proto.plugin.PackedDecodeMessage.timestamp:type_name -> google.protobuf.Timestamp
 	27, // [27:27] is the sub-list for method output_type
 	27, // [27:27] is the sub-list for method input_type
 	27, // [27:27] is the sub-list for extension type_name
