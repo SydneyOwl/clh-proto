@@ -54,8 +54,17 @@ message RecordedCallsignDetail {
   bool forced_upload = 37;
 }
 
-message CLHQSOUploadStatusChanged {
+message ClhQSOUploadStatusChanged {
   RecordedCallsignDetail qso_detail = 1;
+
+  google.protobuf.Timestamp timestamp = 999;
+}
+
+message ClhInternalMessage {
+
+  oneof payload {
+    ClhQSOUploadStatusChanged qso_upload_status = 2;
+  }
 
   google.protobuf.Timestamp timestamp = 999;
 }

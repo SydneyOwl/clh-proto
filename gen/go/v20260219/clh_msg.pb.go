@@ -388,7 +388,7 @@ func (x *RecordedCallsignDetail) GetForcedUpload() bool {
 	return false
 }
 
-type CLHQSOUploadStatusChanged struct {
+type ClhQSOUploadStatusChanged struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
 	QsoDetail     *RecordedCallsignDetail `protobuf:"bytes,1,opt,name=qso_detail,json=qsoDetail,proto3" json:"qso_detail,omitempty"`
 	Timestamp     *timestamppb.Timestamp  `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
@@ -396,20 +396,20 @@ type CLHQSOUploadStatusChanged struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CLHQSOUploadStatusChanged) Reset() {
-	*x = CLHQSOUploadStatusChanged{}
+func (x *ClhQSOUploadStatusChanged) Reset() {
+	*x = ClhQSOUploadStatusChanged{}
 	mi := &file_clh_msg_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CLHQSOUploadStatusChanged) String() string {
+func (x *ClhQSOUploadStatusChanged) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CLHQSOUploadStatusChanged) ProtoMessage() {}
+func (*ClhQSOUploadStatusChanged) ProtoMessage() {}
 
-func (x *CLHQSOUploadStatusChanged) ProtoReflect() protoreflect.Message {
+func (x *ClhQSOUploadStatusChanged) ProtoReflect() protoreflect.Message {
 	mi := &file_clh_msg_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -421,24 +421,98 @@ func (x *CLHQSOUploadStatusChanged) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CLHQSOUploadStatusChanged.ProtoReflect.Descriptor instead.
-func (*CLHQSOUploadStatusChanged) Descriptor() ([]byte, []int) {
+// Deprecated: Use ClhQSOUploadStatusChanged.ProtoReflect.Descriptor instead.
+func (*ClhQSOUploadStatusChanged) Descriptor() ([]byte, []int) {
 	return file_clh_msg_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CLHQSOUploadStatusChanged) GetQsoDetail() *RecordedCallsignDetail {
+func (x *ClhQSOUploadStatusChanged) GetQsoDetail() *RecordedCallsignDetail {
 	if x != nil {
 		return x.QsoDetail
 	}
 	return nil
 }
 
-func (x *CLHQSOUploadStatusChanged) GetTimestamp() *timestamppb.Timestamp {
+func (x *ClhQSOUploadStatusChanged) GetTimestamp() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Timestamp
 	}
 	return nil
 }
+
+type ClhInternalMessage struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Payload:
+	//
+	//	*ClhInternalMessage_QsoUploadStatus
+	Payload       isClhInternalMessage_Payload `protobuf_oneof:"payload"`
+	Timestamp     *timestamppb.Timestamp       `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ClhInternalMessage) Reset() {
+	*x = ClhInternalMessage{}
+	mi := &file_clh_msg_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ClhInternalMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClhInternalMessage) ProtoMessage() {}
+
+func (x *ClhInternalMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_clh_msg_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClhInternalMessage.ProtoReflect.Descriptor instead.
+func (*ClhInternalMessage) Descriptor() ([]byte, []int) {
+	return file_clh_msg_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ClhInternalMessage) GetPayload() isClhInternalMessage_Payload {
+	if x != nil {
+		return x.Payload
+	}
+	return nil
+}
+
+func (x *ClhInternalMessage) GetQsoUploadStatus() *ClhQSOUploadStatusChanged {
+	if x != nil {
+		if x, ok := x.Payload.(*ClhInternalMessage_QsoUploadStatus); ok {
+			return x.QsoUploadStatus
+		}
+	}
+	return nil
+}
+
+func (x *ClhInternalMessage) GetTimestamp() *timestamppb.Timestamp {
+	if x != nil {
+		return x.Timestamp
+	}
+	return nil
+}
+
+type isClhInternalMessage_Payload interface {
+	isClhInternalMessage_Payload()
+}
+
+type ClhInternalMessage_QsoUploadStatus struct {
+	QsoUploadStatus *ClhQSOUploadStatusChanged `protobuf:"bytes,2,opt,name=qso_upload_status,json=qsoUploadStatus,proto3,oneof"`
+}
+
+func (*ClhInternalMessage_QsoUploadStatus) isClhInternalMessage_Payload() {}
 
 var File_clh_msg_proto protoreflect.FileDescriptor
 
@@ -492,10 +566,14 @@ const file_clh_msg_proto_rawDesc = "" +
 	"!UploadedServicesErrorMessageEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x9f\x01\n" +
-	"\x19CLHQSOUploadStatusChanged\x12G\n" +
+	"\x19ClhQSOUploadStatusChanged\x12G\n" +
 	"\n" +
 	"qso_detail\x18\x01 \x01(\v2(.clh_proto.plugin.RecordedCallsignDetailR\tqsoDetail\x129\n" +
-	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp*\xb5\x01\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\xb5\x01\n" +
+	"\x12ClhInternalMessage\x12Y\n" +
+	"\x11qso_upload_status\x18\x02 \x01(\v2+.clh_proto.plugin.ClhQSOUploadStatusChangedH\x00R\x0fqsoUploadStatus\x129\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampB\t\n" +
+	"\apayload*\xb5\x01\n" +
 	"\fUploadStatus\x12\x1d\n" +
 	"\x19UPLOAD_STATUS_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15UPLOAD_STATUS_PENDING\x10\x01\x12\x1b\n" +
@@ -517,26 +595,29 @@ func file_clh_msg_proto_rawDescGZIP() []byte {
 }
 
 var file_clh_msg_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_clh_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_clh_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_clh_msg_proto_goTypes = []any{
 	(UploadStatus)(0),                 // 0: clh_proto.plugin.UploadStatus
 	(*RecordedCallsignDetail)(nil),    // 1: clh_proto.plugin.RecordedCallsignDetail
-	(*CLHQSOUploadStatusChanged)(nil), // 2: clh_proto.plugin.CLHQSOUploadStatusChanged
-	nil,                               // 3: clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntry
-	nil,                               // 4: clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntry
-	(*timestamppb.Timestamp)(nil),     // 5: google.protobuf.Timestamp
+	(*ClhQSOUploadStatusChanged)(nil), // 2: clh_proto.plugin.ClhQSOUploadStatusChanged
+	(*ClhInternalMessage)(nil),        // 3: clh_proto.plugin.ClhInternalMessage
+	nil,                               // 4: clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntry
+	nil,                               // 5: clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntry
+	(*timestamppb.Timestamp)(nil),     // 6: google.protobuf.Timestamp
 }
 var file_clh_msg_proto_depIdxs = []int32{
-	3, // 0: clh_proto.plugin.RecordedCallsignDetail.uploaded_services:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntry
-	4, // 1: clh_proto.plugin.RecordedCallsignDetail.uploaded_services_error_message:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntry
+	4, // 0: clh_proto.plugin.RecordedCallsignDetail.uploaded_services:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntry
+	5, // 1: clh_proto.plugin.RecordedCallsignDetail.uploaded_services_error_message:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntry
 	0, // 2: clh_proto.plugin.RecordedCallsignDetail.upload_status:type_name -> clh_proto.plugin.UploadStatus
-	1, // 3: clh_proto.plugin.CLHQSOUploadStatusChanged.qso_detail:type_name -> clh_proto.plugin.RecordedCallsignDetail
-	5, // 4: clh_proto.plugin.CLHQSOUploadStatusChanged.timestamp:type_name -> google.protobuf.Timestamp
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	1, // 3: clh_proto.plugin.ClhQSOUploadStatusChanged.qso_detail:type_name -> clh_proto.plugin.RecordedCallsignDetail
+	6, // 4: clh_proto.plugin.ClhQSOUploadStatusChanged.timestamp:type_name -> google.protobuf.Timestamp
+	2, // 5: clh_proto.plugin.ClhInternalMessage.qso_upload_status:type_name -> clh_proto.plugin.ClhQSOUploadStatusChanged
+	6, // 6: clh_proto.plugin.ClhInternalMessage.timestamp:type_name -> google.protobuf.Timestamp
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_clh_msg_proto_init() }
@@ -544,13 +625,16 @@ func file_clh_msg_proto_init() {
 	if File_clh_msg_proto != nil {
 		return
 	}
+	file_clh_msg_proto_msgTypes[2].OneofWrappers = []any{
+		(*ClhInternalMessage_QsoUploadStatus)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_clh_msg_proto_rawDesc), len(file_clh_msg_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -49,21 +49,25 @@ namespace SydneyOwl.CLHProto.Plugin {
             "cGxvYWQYJSABKAgaNwoVVXBsb2FkZWRTZXJ2aWNlc0VudHJ5EgsKA2tleRgB",
             "IAEoCRINCgV2YWx1ZRgCIAEoCDoCOAEaQwohVXBsb2FkZWRTZXJ2aWNlc0Vy",
             "cm9yTWVzc2FnZUVudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToC",
-            "OAEiiQEKGUNMSFFTT1VwbG9hZFN0YXR1c0NoYW5nZWQSPAoKcXNvX2RldGFp",
+            "OAEiiQEKGUNsaFFTT1VwbG9hZFN0YXR1c0NoYW5nZWQSPAoKcXNvX2RldGFp",
             "bBgBIAEoCzIoLmNsaF9wcm90by5wbHVnaW4uUmVjb3JkZWRDYWxsc2lnbkRl",
             "dGFpbBIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcCq1AQoMVXBsb2FkU3RhdHVzEh0KGVVQTE9BRF9TVEFUVVNfVU5T",
-            "UEVDSUZJRUQQABIZChVVUExPQURfU1RBVFVTX1BFTkRJTkcQARIbChdVUExP",
-            "QURfU1RBVFVTX1VQTE9BRElORxACEhkKFVVQTE9BRF9TVEFUVVNfU1VDQ0VT",
-            "UxADEhgKFFVQTE9BRF9TVEFUVVNfRkFJTEVEEAQSGQoVVVBMT0FEX1NUQVRV",
-            "U19TS0lQUEVEEAVCSlosZ2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3Rv",
-            "L2dlbi9nby9wbHVnaW6qAhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZw",
-            "cm90bzM="));
+            "bWVzdGFtcCKZAQoSQ2xoSW50ZXJuYWxNZXNzYWdlEkgKEXFzb191cGxvYWRf",
+            "c3RhdHVzGAIgASgLMisuY2xoX3Byb3RvLnBsdWdpbi5DbGhRU09VcGxvYWRT",
+            "dGF0dXNDaGFuZ2VkSAASLgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5w",
+            "cm90b2J1Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCq1AQoMVXBsb2FkU3RhdHVz",
+            "Eh0KGVVQTE9BRF9TVEFUVVNfVU5TUEVDSUZJRUQQABIZChVVUExPQURfU1RB",
+            "VFVTX1BFTkRJTkcQARIbChdVUExPQURfU1RBVFVTX1VQTE9BRElORxACEhkK",
+            "FVVQTE9BRF9TVEFUVVNfU1VDQ0VTUxADEhgKFFVQTE9BRF9TVEFUVVNfRkFJ",
+            "TEVEEAQSGQoVVVBMT0FEX1NUQVRVU19TS0lQUEVEEAVCSlosZ2l0aHViLmNv",
+            "bS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6qAhlTeWRuZXlP",
+            "d2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.UploadStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail), global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail.Parser, new[]{ "UploadedServices", "UploadedServicesErrorMessage", "OriginalCountryName", "CqZone", "ItuZone", "Continent", "Latitude", "Longitude", "GmtOffset", "Dxcc", "DateTimeOff", "DxCall", "DxGrid", "TxFrequencyInHz", "TxFrequencyInMeters", "Mode", "ParentMode", "ReportSent", "ReportReceived", "TxPower", "Comments", "Name", "DateTimeOn", "OperatorCall", "MyCall", "MyGrid", "ExchangeSent", "ExchangeReceived", "AdifPropagationMode", "ClientId", "RawData", "FailReason", "UploadStatus", "ForcedUpload" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.CLHQSOUploadStatusChanged), global::SydneyOwl.CLHProto.Plugin.CLHQSOUploadStatusChanged.Parser, new[]{ "QsoDetail", "Timestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged), global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged.Parser, new[]{ "QsoDetail", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage), global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage.Parser, new[]{ "QsoUploadStatus", "Timestamp" }, new[]{ "Payload" }, null, null, null)
           }));
     }
     #endregion
@@ -1480,16 +1484,16 @@ namespace SydneyOwl.CLHProto.Plugin {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class CLHQSOUploadStatusChanged : pb::IMessage<CLHQSOUploadStatusChanged>
+  public sealed partial class ClhQSOUploadStatusChanged : pb::IMessage<ClhQSOUploadStatusChanged>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CLHQSOUploadStatusChanged> _parser = new pb::MessageParser<CLHQSOUploadStatusChanged>(() => new CLHQSOUploadStatusChanged());
+    private static readonly pb::MessageParser<ClhQSOUploadStatusChanged> _parser = new pb::MessageParser<ClhQSOUploadStatusChanged>(() => new ClhQSOUploadStatusChanged());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<CLHQSOUploadStatusChanged> Parser { get { return _parser; } }
+    public static pb::MessageParser<ClhQSOUploadStatusChanged> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1505,7 +1509,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CLHQSOUploadStatusChanged() {
+    public ClhQSOUploadStatusChanged() {
       OnConstruction();
     }
 
@@ -1513,7 +1517,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CLHQSOUploadStatusChanged(CLHQSOUploadStatusChanged other) : this() {
+    public ClhQSOUploadStatusChanged(ClhQSOUploadStatusChanged other) : this() {
       qsoDetail_ = other.qsoDetail_ != null ? other.qsoDetail_.Clone() : null;
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -1521,8 +1525,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CLHQSOUploadStatusChanged Clone() {
-      return new CLHQSOUploadStatusChanged(this);
+    public ClhQSOUploadStatusChanged Clone() {
+      return new ClhQSOUploadStatusChanged(this);
     }
 
     /// <summary>Field number for the "qso_detail" field.</summary>
@@ -1552,12 +1556,12 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as CLHQSOUploadStatusChanged);
+      return Equals(other as ClhQSOUploadStatusChanged);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(CLHQSOUploadStatusChanged other) {
+    public bool Equals(ClhQSOUploadStatusChanged other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1643,7 +1647,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(CLHQSOUploadStatusChanged other) {
+    public void MergeFrom(ClhQSOUploadStatusChanged other) {
       if (other == null) {
         return;
       }
@@ -1716,6 +1720,293 @@ namespace SydneyOwl.CLHProto.Plugin {
               QsoDetail = new global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail();
             }
             input.ReadMessage(QsoDetail);
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ClhInternalMessage : pb::IMessage<ClhInternalMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ClhInternalMessage> _parser = new pb::MessageParser<ClhInternalMessage>(() => new ClhInternalMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ClhInternalMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.ClhMsgReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClhInternalMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClhInternalMessage(ClhInternalMessage other) : this() {
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      switch (other.PayloadCase) {
+        case PayloadOneofCase.QsoUploadStatus:
+          QsoUploadStatus = other.QsoUploadStatus.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClhInternalMessage Clone() {
+      return new ClhInternalMessage(this);
+    }
+
+    /// <summary>Field number for the "qso_upload_status" field.</summary>
+    public const int QsoUploadStatusFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged QsoUploadStatus {
+      get { return payloadCase_ == PayloadOneofCase.QsoUploadStatus ? (global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged) payload_ : null; }
+      set {
+        payload_ = value;
+        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.QsoUploadStatus;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 999;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    private object payload_;
+    /// <summary>Enum of possible cases for the "payload" oneof.</summary>
+    public enum PayloadOneofCase {
+      None = 0,
+      QsoUploadStatus = 2,
+    }
+    private PayloadOneofCase payloadCase_ = PayloadOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PayloadOneofCase PayloadCase {
+      get { return payloadCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPayload() {
+      payloadCase_ = PayloadOneofCase.None;
+      payload_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ClhInternalMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ClhInternalMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(QsoUploadStatus, other.QsoUploadStatus)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      if (PayloadCase != other.PayloadCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (payloadCase_ == PayloadOneofCase.QsoUploadStatus) hash ^= QsoUploadStatus.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      hash ^= (int) payloadCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (payloadCase_ == PayloadOneofCase.QsoUploadStatus) {
+        output.WriteRawTag(18);
+        output.WriteMessage(QsoUploadStatus);
+      }
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (payloadCase_ == PayloadOneofCase.QsoUploadStatus) {
+        output.WriteRawTag(18);
+        output.WriteMessage(QsoUploadStatus);
+      }
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (payloadCase_ == PayloadOneofCase.QsoUploadStatus) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(QsoUploadStatus);
+      }
+      if (timestamp_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ClhInternalMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
+      }
+      switch (other.PayloadCase) {
+        case PayloadOneofCase.QsoUploadStatus:
+          if (QsoUploadStatus == null) {
+            QsoUploadStatus = new global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged();
+          }
+          QsoUploadStatus.MergeFrom(other.QsoUploadStatus);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged subBuilder = new global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged();
+            if (payloadCase_ == PayloadOneofCase.QsoUploadStatus) {
+              subBuilder.MergeFrom(QsoUploadStatus);
+            }
+            input.ReadMessage(subBuilder);
+            QsoUploadStatus = subBuilder;
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged subBuilder = new global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged();
+            if (payloadCase_ == PayloadOneofCase.QsoUploadStatus) {
+              subBuilder.MergeFrom(QsoUploadStatus);
+            }
+            input.ReadMessage(subBuilder);
+            QsoUploadStatus = subBuilder;
             break;
           }
           case 7994: {
