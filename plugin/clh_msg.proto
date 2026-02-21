@@ -26,7 +26,7 @@ message RecordedCallsignDetail {
   float longitude = 8;
   float gmt_offset = 9;
   string dxcc = 10;
-  int64 date_time_off = 11;
+  google.protobuf.Timestamp date_time_off = 11;
   string dx_call = 12;
   string dx_grid = 13;
   uint64 tx_frequency_in_hz = 14;
@@ -38,7 +38,7 @@ message RecordedCallsignDetail {
   string tx_power = 20;
   string comments = 21;
   string name = 22;
-  int64 date_time_on = 23;
+  google.protobuf.Timestamp date_time_on = 23;
   string operator_call = 24;
   string my_call = 25;
   string my_grid = 26;

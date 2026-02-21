@@ -25,7 +25,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg1jbGhfbXNnLnByb3RvEhBjbGhfcHJvdG8ucGx1Z2luGh9nb29nbGUvcHJv",
-            "dG9idWYvdGltZXN0YW1wLnByb3RvIqIIChZSZWNvcmRlZENhbGxzaWduRGV0",
+            "dG9idWYvdGltZXN0YW1wLnByb3RvItoIChZSZWNvcmRlZENhbGxzaWduRGV0",
             "YWlsElkKEXVwbG9hZGVkX3NlcnZpY2VzGAEgAygLMj4uY2xoX3Byb3RvLnBs",
             "dWdpbi5SZWNvcmRlZENhbGxzaWduRGV0YWlsLlVwbG9hZGVkU2VydmljZXNF",
             "bnRyeRJzCh91cGxvYWRlZF9zZXJ2aWNlc19lcnJvcl9tZXNzYWdlGAIgAygL",
@@ -34,34 +34,35 @@ namespace SydneyOwl.CLHProto.Plugin {
             "b3VudHJ5X25hbWUYAyABKAkSDwoHY3Ffem9uZRgEIAEoBRIQCghpdHVfem9u",
             "ZRgFIAEoBRIRCgljb250aW5lbnQYBiABKAkSEAoIbGF0aXR1ZGUYByABKAIS",
             "EQoJbG9uZ2l0dWRlGAggASgCEhIKCmdtdF9vZmZzZXQYCSABKAISDAoEZHhj",
-            "YxgKIAEoCRIVCg1kYXRlX3RpbWVfb2ZmGAsgASgDEg8KB2R4X2NhbGwYDCAB",
-            "KAkSDwoHZHhfZ3JpZBgNIAEoCRIaChJ0eF9mcmVxdWVuY3lfaW5faHoYDiAB",
-            "KAQSHgoWdHhfZnJlcXVlbmN5X2luX21ldGVycxgPIAEoCRIMCgRtb2RlGBAg",
-            "ASgJEhMKC3BhcmVudF9tb2RlGBEgASgJEhMKC3JlcG9ydF9zZW50GBIgASgJ",
-            "EhcKD3JlcG9ydF9yZWNlaXZlZBgTIAEoCRIQCgh0eF9wb3dlchgUIAEoCRIQ",
-            "Cghjb21tZW50cxgVIAEoCRIMCgRuYW1lGBYgASgJEhQKDGRhdGVfdGltZV9v",
-            "bhgXIAEoAxIVCg1vcGVyYXRvcl9jYWxsGBggASgJEg8KB215X2NhbGwYGSAB",
-            "KAkSDwoHbXlfZ3JpZBgaIAEoCRIVCg1leGNoYW5nZV9zZW50GBsgASgJEhkK",
-            "EWV4Y2hhbmdlX3JlY2VpdmVkGBwgASgJEh0KFWFkaWZfcHJvcGFnYXRpb25f",
-            "bW9kZRgdIAEoCRIRCgljbGllbnRfaWQYHiABKAkSEAoIcmF3X2RhdGEYICAB",
-            "KAkSEwoLZmFpbF9yZWFzb24YISABKAkSNQoNdXBsb2FkX3N0YXR1cxgjIAEo",
-            "DjIeLmNsaF9wcm90by5wbHVnaW4uVXBsb2FkU3RhdHVzEhUKDWZvcmNlZF91",
-            "cGxvYWQYJSABKAgaNwoVVXBsb2FkZWRTZXJ2aWNlc0VudHJ5EgsKA2tleRgB",
-            "IAEoCRINCgV2YWx1ZRgCIAEoCDoCOAEaQwohVXBsb2FkZWRTZXJ2aWNlc0Vy",
-            "cm9yTWVzc2FnZUVudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToC",
-            "OAEiiQEKGUNsaFFTT1VwbG9hZFN0YXR1c0NoYW5nZWQSPAoKcXNvX2RldGFp",
-            "bBgBIAEoCzIoLmNsaF9wcm90by5wbHVnaW4uUmVjb3JkZWRDYWxsc2lnbkRl",
-            "dGFpbBIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcCKZAQoSQ2xoSW50ZXJuYWxNZXNzYWdlEkgKEXFzb191cGxvYWRf",
-            "c3RhdHVzGAIgASgLMisuY2xoX3Byb3RvLnBsdWdpbi5DbGhRU09VcGxvYWRT",
-            "dGF0dXNDaGFuZ2VkSAASLgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCqzAQoMVXBsb2FkU3RhdHVz",
-            "Eh0KGVVQTE9BRF9TVEFUVVNfVU5TUEVDSUZJRUQQABIZChVVUExPQURfU1RB",
-            "VFVTX1BFTkRJTkcQARIbChdVUExPQURfU1RBVFVTX1VQTE9BRElORxACEhkK",
-            "FVVQTE9BRF9TVEFUVVNfU1VDQ0VTUxADEhYKElVQTE9BRF9TVEFUVVNfRkFJ",
-            "TBAEEhkKFVVQTE9BRF9TVEFUVVNfSUdOT1JFRBAFQkpaLGdpdGh1Yi5jb20v",
-            "c3lkbmV5b3dsL2NsaC1wcm90by9nZW4vZ28vcGx1Z2luqgIZU3lkbmV5T3ds",
-            "LkNMSFByb3RvLlBsdWdpbmIGcHJvdG8z"));
+            "YxgKIAEoCRIxCg1kYXRlX3RpbWVfb2ZmGAsgASgLMhouZ29vZ2xlLnByb3Rv",
+            "YnVmLlRpbWVzdGFtcBIPCgdkeF9jYWxsGAwgASgJEg8KB2R4X2dyaWQYDSAB",
+            "KAkSGgoSdHhfZnJlcXVlbmN5X2luX2h6GA4gASgEEh4KFnR4X2ZyZXF1ZW5j",
+            "eV9pbl9tZXRlcnMYDyABKAkSDAoEbW9kZRgQIAEoCRITCgtwYXJlbnRfbW9k",
+            "ZRgRIAEoCRITCgtyZXBvcnRfc2VudBgSIAEoCRIXCg9yZXBvcnRfcmVjZWl2",
+            "ZWQYEyABKAkSEAoIdHhfcG93ZXIYFCABKAkSEAoIY29tbWVudHMYFSABKAkS",
+            "DAoEbmFtZRgWIAEoCRIwCgxkYXRlX3RpbWVfb24YFyABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wEhUKDW9wZXJhdG9yX2NhbGwYGCABKAkSDwoH",
+            "bXlfY2FsbBgZIAEoCRIPCgdteV9ncmlkGBogASgJEhUKDWV4Y2hhbmdlX3Nl",
+            "bnQYGyABKAkSGQoRZXhjaGFuZ2VfcmVjZWl2ZWQYHCABKAkSHQoVYWRpZl9w",
+            "cm9wYWdhdGlvbl9tb2RlGB0gASgJEhEKCWNsaWVudF9pZBgeIAEoCRIQCghy",
+            "YXdfZGF0YRggIAEoCRITCgtmYWlsX3JlYXNvbhghIAEoCRI1Cg11cGxvYWRf",
+            "c3RhdHVzGCMgASgOMh4uY2xoX3Byb3RvLnBsdWdpbi5VcGxvYWRTdGF0dXMS",
+            "FQoNZm9yY2VkX3VwbG9hZBglIAEoCBo3ChVVcGxvYWRlZFNlcnZpY2VzRW50",
+            "cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgIOgI4ARpDCiFVcGxvYWRl",
+            "ZFNlcnZpY2VzRXJyb3JNZXNzYWdlRW50cnkSCwoDa2V5GAEgASgJEg0KBXZh",
+            "bHVlGAIgASgJOgI4ASKJAQoZQ2xoUVNPVXBsb2FkU3RhdHVzQ2hhbmdlZBI8",
+            "Cgpxc29fZGV0YWlsGAEgASgLMiguY2xoX3Byb3RvLnBsdWdpbi5SZWNvcmRl",
+            "ZENhbGxzaWduRGV0YWlsEi4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wIpkBChJDbGhJbnRlcm5hbE1lc3NhZ2USSAoR",
+            "cXNvX3VwbG9hZF9zdGF0dXMYAiABKAsyKy5jbGhfcHJvdG8ucGx1Z2luLkNs",
+            "aFFTT1VwbG9hZFN0YXR1c0NoYW5nZWRIABIuCgl0aW1lc3RhbXAY5wcgASgL",
+            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIJCgdwYXlsb2FkKrMBCgxV",
+            "cGxvYWRTdGF0dXMSHQoZVVBMT0FEX1NUQVRVU19VTlNQRUNJRklFRBAAEhkK",
+            "FVVQTE9BRF9TVEFUVVNfUEVORElORxABEhsKF1VQTE9BRF9TVEFUVVNfVVBM",
+            "T0FESU5HEAISGQoVVVBMT0FEX1NUQVRVU19TVUNDRVNTEAMSFgoSVVBMT0FE",
+            "X1NUQVRVU19GQUlMEAQSGQoVVVBMT0FEX1NUQVRVU19JR05PUkVEEAVCSlos",
+            "Z2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6q",
+            "AhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.UploadStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -131,7 +132,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       longitude_ = other.longitude_;
       gmtOffset_ = other.gmtOffset_;
       dxcc_ = other.dxcc_;
-      dateTimeOff_ = other.dateTimeOff_;
+      dateTimeOff_ = other.dateTimeOff_ != null ? other.dateTimeOff_.Clone() : null;
       dxCall_ = other.dxCall_;
       dxGrid_ = other.dxGrid_;
       txFrequencyInHz_ = other.txFrequencyInHz_;
@@ -143,7 +144,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       txPower_ = other.txPower_;
       comments_ = other.comments_;
       name_ = other.name_;
-      dateTimeOn_ = other.dateTimeOn_;
+      dateTimeOn_ = other.dateTimeOn_ != null ? other.dateTimeOn_.Clone() : null;
       operatorCall_ = other.operatorCall_;
       myCall_ = other.myCall_;
       myGrid_ = other.myGrid_;
@@ -284,10 +285,10 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "date_time_off" field.</summary>
     public const int DateTimeOffFieldNumber = 11;
-    private long dateTimeOff_;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp dateTimeOff_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long DateTimeOff {
+    public global::Google.Protobuf.WellKnownTypes.Timestamp DateTimeOff {
       get { return dateTimeOff_; }
       set {
         dateTimeOff_ = value;
@@ -428,10 +429,10 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     /// <summary>Field number for the "date_time_on" field.</summary>
     public const int DateTimeOnFieldNumber = 23;
-    private long dateTimeOn_;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp dateTimeOn_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long DateTimeOn {
+    public global::Google.Protobuf.WellKnownTypes.Timestamp DateTimeOn {
       get { return dateTimeOn_; }
       set {
         dateTimeOn_ = value;
@@ -595,7 +596,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Longitude, other.Longitude)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(GmtOffset, other.GmtOffset)) return false;
       if (Dxcc != other.Dxcc) return false;
-      if (DateTimeOff != other.DateTimeOff) return false;
+      if (!object.Equals(DateTimeOff, other.DateTimeOff)) return false;
       if (DxCall != other.DxCall) return false;
       if (DxGrid != other.DxGrid) return false;
       if (TxFrequencyInHz != other.TxFrequencyInHz) return false;
@@ -607,7 +608,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (TxPower != other.TxPower) return false;
       if (Comments != other.Comments) return false;
       if (Name != other.Name) return false;
-      if (DateTimeOn != other.DateTimeOn) return false;
+      if (!object.Equals(DateTimeOn, other.DateTimeOn)) return false;
       if (OperatorCall != other.OperatorCall) return false;
       if (MyCall != other.MyCall) return false;
       if (MyGrid != other.MyGrid) return false;
@@ -636,7 +637,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Longitude != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Longitude);
       if (GmtOffset != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(GmtOffset);
       if (Dxcc.Length != 0) hash ^= Dxcc.GetHashCode();
-      if (DateTimeOff != 0L) hash ^= DateTimeOff.GetHashCode();
+      if (dateTimeOff_ != null) hash ^= DateTimeOff.GetHashCode();
       if (DxCall.Length != 0) hash ^= DxCall.GetHashCode();
       if (DxGrid.Length != 0) hash ^= DxGrid.GetHashCode();
       if (TxFrequencyInHz != 0UL) hash ^= TxFrequencyInHz.GetHashCode();
@@ -648,7 +649,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (TxPower.Length != 0) hash ^= TxPower.GetHashCode();
       if (Comments.Length != 0) hash ^= Comments.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (DateTimeOn != 0L) hash ^= DateTimeOn.GetHashCode();
+      if (dateTimeOn_ != null) hash ^= DateTimeOn.GetHashCode();
       if (OperatorCall.Length != 0) hash ^= OperatorCall.GetHashCode();
       if (MyCall.Length != 0) hash ^= MyCall.GetHashCode();
       if (MyGrid.Length != 0) hash ^= MyGrid.GetHashCode();
@@ -712,9 +713,9 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(82);
         output.WriteString(Dxcc);
       }
-      if (DateTimeOff != 0L) {
-        output.WriteRawTag(88);
-        output.WriteInt64(DateTimeOff);
+      if (dateTimeOff_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(DateTimeOff);
       }
       if (DxCall.Length != 0) {
         output.WriteRawTag(98);
@@ -760,9 +761,9 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(178, 1);
         output.WriteString(Name);
       }
-      if (DateTimeOn != 0L) {
-        output.WriteRawTag(184, 1);
-        output.WriteInt64(DateTimeOn);
+      if (dateTimeOn_ != null) {
+        output.WriteRawTag(186, 1);
+        output.WriteMessage(DateTimeOn);
       }
       if (OperatorCall.Length != 0) {
         output.WriteRawTag(194, 1);
@@ -852,9 +853,9 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(82);
         output.WriteString(Dxcc);
       }
-      if (DateTimeOff != 0L) {
-        output.WriteRawTag(88);
-        output.WriteInt64(DateTimeOff);
+      if (dateTimeOff_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(DateTimeOff);
       }
       if (DxCall.Length != 0) {
         output.WriteRawTag(98);
@@ -900,9 +901,9 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(178, 1);
         output.WriteString(Name);
       }
-      if (DateTimeOn != 0L) {
-        output.WriteRawTag(184, 1);
-        output.WriteInt64(DateTimeOn);
+      if (dateTimeOn_ != null) {
+        output.WriteRawTag(186, 1);
+        output.WriteMessage(DateTimeOn);
       }
       if (OperatorCall.Length != 0) {
         output.WriteRawTag(194, 1);
@@ -984,8 +985,8 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Dxcc.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Dxcc);
       }
-      if (DateTimeOff != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(DateTimeOff);
+      if (dateTimeOff_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DateTimeOff);
       }
       if (DxCall.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(DxCall);
@@ -1020,8 +1021,8 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Name.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (DateTimeOn != 0L) {
-        size += 2 + pb::CodedOutputStream.ComputeInt64Size(DateTimeOn);
+      if (dateTimeOn_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DateTimeOn);
       }
       if (OperatorCall.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(OperatorCall);
@@ -1094,8 +1095,11 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (other.Dxcc.Length != 0) {
         Dxcc = other.Dxcc;
       }
-      if (other.DateTimeOff != 0L) {
-        DateTimeOff = other.DateTimeOff;
+      if (other.dateTimeOff_ != null) {
+        if (dateTimeOff_ == null) {
+          DateTimeOff = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        DateTimeOff.MergeFrom(other.DateTimeOff);
       }
       if (other.DxCall.Length != 0) {
         DxCall = other.DxCall;
@@ -1130,8 +1134,11 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.DateTimeOn != 0L) {
-        DateTimeOn = other.DateTimeOn;
+      if (other.dateTimeOn_ != null) {
+        if (dateTimeOn_ == null) {
+          DateTimeOn = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        DateTimeOn.MergeFrom(other.DateTimeOn);
       }
       if (other.OperatorCall.Length != 0) {
         OperatorCall = other.OperatorCall;
@@ -1225,8 +1232,11 @@ namespace SydneyOwl.CLHProto.Plugin {
             Dxcc = input.ReadString();
             break;
           }
-          case 88: {
-            DateTimeOff = input.ReadInt64();
+          case 90: {
+            if (dateTimeOff_ == null) {
+              DateTimeOff = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(DateTimeOff);
             break;
           }
           case 98: {
@@ -1273,8 +1283,11 @@ namespace SydneyOwl.CLHProto.Plugin {
             Name = input.ReadString();
             break;
           }
-          case 184: {
-            DateTimeOn = input.ReadInt64();
+          case 186: {
+            if (dateTimeOn_ == null) {
+              DateTimeOn = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(DateTimeOn);
             break;
           }
           case 194: {
@@ -1380,8 +1393,11 @@ namespace SydneyOwl.CLHProto.Plugin {
             Dxcc = input.ReadString();
             break;
           }
-          case 88: {
-            DateTimeOff = input.ReadInt64();
+          case 90: {
+            if (dateTimeOff_ == null) {
+              DateTimeOff = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(DateTimeOff);
             break;
           }
           case 98: {
@@ -1428,8 +1444,11 @@ namespace SydneyOwl.CLHProto.Plugin {
             Name = input.ReadString();
             break;
           }
-          case 184: {
-            DateTimeOn = input.ReadInt64();
+          case 186: {
+            if (dateTimeOn_ == null) {
+              DateTimeOn = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(DateTimeOn);
             break;
           }
           case 194: {

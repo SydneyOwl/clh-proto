@@ -92,7 +92,7 @@ type RecordedCallsignDetail struct {
 	Longitude                    float32                `protobuf:"fixed32,8,opt,name=longitude,proto3" json:"longitude,omitempty"`
 	GmtOffset                    float32                `protobuf:"fixed32,9,opt,name=gmt_offset,json=gmtOffset,proto3" json:"gmt_offset,omitempty"`
 	Dxcc                         string                 `protobuf:"bytes,10,opt,name=dxcc,proto3" json:"dxcc,omitempty"`
-	DateTimeOff                  int64                  `protobuf:"varint,11,opt,name=date_time_off,json=dateTimeOff,proto3" json:"date_time_off,omitempty"`
+	DateTimeOff                  *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=date_time_off,json=dateTimeOff,proto3" json:"date_time_off,omitempty"`
 	DxCall                       string                 `protobuf:"bytes,12,opt,name=dx_call,json=dxCall,proto3" json:"dx_call,omitempty"`
 	DxGrid                       string                 `protobuf:"bytes,13,opt,name=dx_grid,json=dxGrid,proto3" json:"dx_grid,omitempty"`
 	TxFrequencyInHz              uint64                 `protobuf:"varint,14,opt,name=tx_frequency_in_hz,json=txFrequencyInHz,proto3" json:"tx_frequency_in_hz,omitempty"`
@@ -104,7 +104,7 @@ type RecordedCallsignDetail struct {
 	TxPower                      string                 `protobuf:"bytes,20,opt,name=tx_power,json=txPower,proto3" json:"tx_power,omitempty"`
 	Comments                     string                 `protobuf:"bytes,21,opt,name=comments,proto3" json:"comments,omitempty"`
 	Name                         string                 `protobuf:"bytes,22,opt,name=name,proto3" json:"name,omitempty"`
-	DateTimeOn                   int64                  `protobuf:"varint,23,opt,name=date_time_on,json=dateTimeOn,proto3" json:"date_time_on,omitempty"`
+	DateTimeOn                   *timestamppb.Timestamp `protobuf:"bytes,23,opt,name=date_time_on,json=dateTimeOn,proto3" json:"date_time_on,omitempty"`
 	OperatorCall                 string                 `protobuf:"bytes,24,opt,name=operator_call,json=operatorCall,proto3" json:"operator_call,omitempty"`
 	MyCall                       string                 `protobuf:"bytes,25,opt,name=my_call,json=myCall,proto3" json:"my_call,omitempty"`
 	MyGrid                       string                 `protobuf:"bytes,26,opt,name=my_grid,json=myGrid,proto3" json:"my_grid,omitempty"`
@@ -220,11 +220,11 @@ func (x *RecordedCallsignDetail) GetDxcc() string {
 	return ""
 }
 
-func (x *RecordedCallsignDetail) GetDateTimeOff() int64 {
+func (x *RecordedCallsignDetail) GetDateTimeOff() *timestamppb.Timestamp {
 	if x != nil {
 		return x.DateTimeOff
 	}
-	return 0
+	return nil
 }
 
 func (x *RecordedCallsignDetail) GetDxCall() string {
@@ -304,11 +304,11 @@ func (x *RecordedCallsignDetail) GetName() string {
 	return ""
 }
 
-func (x *RecordedCallsignDetail) GetDateTimeOn() int64 {
+func (x *RecordedCallsignDetail) GetDateTimeOn() *timestamppb.Timestamp {
 	if x != nil {
 		return x.DateTimeOn
 	}
-	return 0
+	return nil
 }
 
 func (x *RecordedCallsignDetail) GetOperatorCall() string {
@@ -518,7 +518,7 @@ var File_clh_msg_proto protoreflect.FileDescriptor
 
 const file_clh_msg_proto_rawDesc = "" +
 	"\n" +
-	"\rclh_msg.proto\x12\x10clh_proto.plugin\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe6\v\n" +
+	"\rclh_msg.proto\x12\x10clh_proto.plugin\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\f\n" +
 	"\x16RecordedCallsignDetail\x12k\n" +
 	"\x11uploaded_services\x18\x01 \x03(\v2>.clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntryR\x10uploadedServices\x12\x91\x01\n" +
 	"\x1fuploaded_services_error_message\x18\x02 \x03(\v2J.clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntryR\x1cuploadedServicesErrorMessage\x122\n" +
@@ -531,8 +531,8 @@ const file_clh_msg_proto_rawDesc = "" +
 	"\n" +
 	"gmt_offset\x18\t \x01(\x02R\tgmtOffset\x12\x12\n" +
 	"\x04dxcc\x18\n" +
-	" \x01(\tR\x04dxcc\x12\"\n" +
-	"\rdate_time_off\x18\v \x01(\x03R\vdateTimeOff\x12\x17\n" +
+	" \x01(\tR\x04dxcc\x12>\n" +
+	"\rdate_time_off\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\vdateTimeOff\x12\x17\n" +
 	"\adx_call\x18\f \x01(\tR\x06dxCall\x12\x17\n" +
 	"\adx_grid\x18\r \x01(\tR\x06dxGrid\x12+\n" +
 	"\x12tx_frequency_in_hz\x18\x0e \x01(\x04R\x0ftxFrequencyInHz\x123\n" +
@@ -545,8 +545,8 @@ const file_clh_msg_proto_rawDesc = "" +
 	"\x0freport_received\x18\x13 \x01(\tR\x0ereportReceived\x12\x19\n" +
 	"\btx_power\x18\x14 \x01(\tR\atxPower\x12\x1a\n" +
 	"\bcomments\x18\x15 \x01(\tR\bcomments\x12\x12\n" +
-	"\x04name\x18\x16 \x01(\tR\x04name\x12 \n" +
-	"\fdate_time_on\x18\x17 \x01(\x03R\n" +
+	"\x04name\x18\x16 \x01(\tR\x04name\x12<\n" +
+	"\fdate_time_on\x18\x17 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"dateTimeOn\x12#\n" +
 	"\roperator_call\x18\x18 \x01(\tR\foperatorCall\x12\x17\n" +
 	"\amy_call\x18\x19 \x01(\tR\x06myCall\x12\x17\n" +
@@ -608,16 +608,18 @@ var file_clh_msg_proto_goTypes = []any{
 var file_clh_msg_proto_depIdxs = []int32{
 	4, // 0: clh_proto.plugin.RecordedCallsignDetail.uploaded_services:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntry
 	5, // 1: clh_proto.plugin.RecordedCallsignDetail.uploaded_services_error_message:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntry
-	0, // 2: clh_proto.plugin.RecordedCallsignDetail.upload_status:type_name -> clh_proto.plugin.UploadStatus
-	1, // 3: clh_proto.plugin.ClhQSOUploadStatusChanged.qso_detail:type_name -> clh_proto.plugin.RecordedCallsignDetail
-	6, // 4: clh_proto.plugin.ClhQSOUploadStatusChanged.timestamp:type_name -> google.protobuf.Timestamp
-	2, // 5: clh_proto.plugin.ClhInternalMessage.qso_upload_status:type_name -> clh_proto.plugin.ClhQSOUploadStatusChanged
-	6, // 6: clh_proto.plugin.ClhInternalMessage.timestamp:type_name -> google.protobuf.Timestamp
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	6, // 2: clh_proto.plugin.RecordedCallsignDetail.date_time_off:type_name -> google.protobuf.Timestamp
+	6, // 3: clh_proto.plugin.RecordedCallsignDetail.date_time_on:type_name -> google.protobuf.Timestamp
+	0, // 4: clh_proto.plugin.RecordedCallsignDetail.upload_status:type_name -> clh_proto.plugin.UploadStatus
+	1, // 5: clh_proto.plugin.ClhQSOUploadStatusChanged.qso_detail:type_name -> clh_proto.plugin.RecordedCallsignDetail
+	6, // 6: clh_proto.plugin.ClhQSOUploadStatusChanged.timestamp:type_name -> google.protobuf.Timestamp
+	2, // 7: clh_proto.plugin.ClhInternalMessage.qso_upload_status:type_name -> clh_proto.plugin.ClhQSOUploadStatusChanged
+	6, // 8: clh_proto.plugin.ClhInternalMessage.timestamp:type_name -> google.protobuf.Timestamp
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_clh_msg_proto_init() }
