@@ -55,13 +55,13 @@ namespace SydneyOwl.CLHProto.Plugin {
             "bWVzdGFtcCKZAQoSQ2xoSW50ZXJuYWxNZXNzYWdlEkgKEXFzb191cGxvYWRf",
             "c3RhdHVzGAIgASgLMisuY2xoX3Byb3RvLnBsdWdpbi5DbGhRU09VcGxvYWRT",
             "dGF0dXNDaGFuZ2VkSAASLgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCq1AQoMVXBsb2FkU3RhdHVz",
+            "cm90b2J1Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCqzAQoMVXBsb2FkU3RhdHVz",
             "Eh0KGVVQTE9BRF9TVEFUVVNfVU5TUEVDSUZJRUQQABIZChVVUExPQURfU1RB",
             "VFVTX1BFTkRJTkcQARIbChdVUExPQURfU1RBVFVTX1VQTE9BRElORxACEhkK",
-            "FVVQTE9BRF9TVEFUVVNfU1VDQ0VTUxADEhgKFFVQTE9BRF9TVEFUVVNfRkFJ",
-            "TEVEEAQSGQoVVVBMT0FEX1NUQVRVU19TS0lQUEVEEAVCSlosZ2l0aHViLmNv",
-            "bS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6qAhlTeWRuZXlP",
-            "d2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
+            "FVVQTE9BRF9TVEFUVVNfU1VDQ0VTUxADEhYKElVQTE9BRF9TVEFUVVNfRkFJ",
+            "TBAEEhkKFVVQTE9BRF9TVEFUVVNfSUdOT1JFRBAFQkpaLGdpdGh1Yi5jb20v",
+            "c3lkbmV5b3dsL2NsaC1wcm90by9nZW4vZ28vcGx1Z2luqgIZU3lkbmV5T3ds",
+            "LkNMSFByb3RvLlBsdWdpbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.UploadStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -79,8 +79,8 @@ namespace SydneyOwl.CLHProto.Plugin {
     [pbr::OriginalName("UPLOAD_STATUS_PENDING")] Pending = 1,
     [pbr::OriginalName("UPLOAD_STATUS_UPLOADING")] Uploading = 2,
     [pbr::OriginalName("UPLOAD_STATUS_SUCCESS")] Success = 3,
-    [pbr::OriginalName("UPLOAD_STATUS_FAILED")] Failed = 4,
-    [pbr::OriginalName("UPLOAD_STATUS_SKIPPED")] Skipped = 5,
+    [pbr::OriginalName("UPLOAD_STATUS_FAIL")] Fail = 4,
+    [pbr::OriginalName("UPLOAD_STATUS_IGNORED")] Ignored = 5,
   }
 
   #endregion

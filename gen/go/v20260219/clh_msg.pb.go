@@ -29,8 +29,8 @@ const (
 	UploadStatus_UPLOAD_STATUS_PENDING     UploadStatus = 1
 	UploadStatus_UPLOAD_STATUS_UPLOADING   UploadStatus = 2
 	UploadStatus_UPLOAD_STATUS_SUCCESS     UploadStatus = 3
-	UploadStatus_UPLOAD_STATUS_FAILED      UploadStatus = 4
-	UploadStatus_UPLOAD_STATUS_SKIPPED     UploadStatus = 5
+	UploadStatus_UPLOAD_STATUS_FAIL        UploadStatus = 4
+	UploadStatus_UPLOAD_STATUS_IGNORED     UploadStatus = 5
 )
 
 // Enum value maps for UploadStatus.
@@ -40,16 +40,16 @@ var (
 		1: "UPLOAD_STATUS_PENDING",
 		2: "UPLOAD_STATUS_UPLOADING",
 		3: "UPLOAD_STATUS_SUCCESS",
-		4: "UPLOAD_STATUS_FAILED",
-		5: "UPLOAD_STATUS_SKIPPED",
+		4: "UPLOAD_STATUS_FAIL",
+		5: "UPLOAD_STATUS_IGNORED",
 	}
 	UploadStatus_value = map[string]int32{
 		"UPLOAD_STATUS_UNSPECIFIED": 0,
 		"UPLOAD_STATUS_PENDING":     1,
 		"UPLOAD_STATUS_UPLOADING":   2,
 		"UPLOAD_STATUS_SUCCESS":     3,
-		"UPLOAD_STATUS_FAILED":      4,
-		"UPLOAD_STATUS_SKIPPED":     5,
+		"UPLOAD_STATUS_FAIL":        4,
+		"UPLOAD_STATUS_IGNORED":     5,
 	}
 )
 
@@ -573,14 +573,14 @@ const file_clh_msg_proto_rawDesc = "" +
 	"\x12ClhInternalMessage\x12Y\n" +
 	"\x11qso_upload_status\x18\x02 \x01(\v2+.clh_proto.plugin.ClhQSOUploadStatusChangedH\x00R\x0fqsoUploadStatus\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampB\t\n" +
-	"\apayload*\xb5\x01\n" +
+	"\apayload*\xb3\x01\n" +
 	"\fUploadStatus\x12\x1d\n" +
 	"\x19UPLOAD_STATUS_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15UPLOAD_STATUS_PENDING\x10\x01\x12\x1b\n" +
 	"\x17UPLOAD_STATUS_UPLOADING\x10\x02\x12\x19\n" +
-	"\x15UPLOAD_STATUS_SUCCESS\x10\x03\x12\x18\n" +
-	"\x14UPLOAD_STATUS_FAILED\x10\x04\x12\x19\n" +
-	"\x15UPLOAD_STATUS_SKIPPED\x10\x05BJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
+	"\x15UPLOAD_STATUS_SUCCESS\x10\x03\x12\x16\n" +
+	"\x12UPLOAD_STATUS_FAIL\x10\x04\x12\x19\n" +
+	"\x15UPLOAD_STATUS_IGNORED\x10\x05BJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
 
 var (
 	file_clh_msg_proto_rawDescOnce sync.Once
