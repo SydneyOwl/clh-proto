@@ -25,49 +25,45 @@ namespace SydneyOwl.CLHProto.Plugin {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg1jbGhfbXNnLnByb3RvEhBjbGhfcHJvdG8ucGx1Z2luGh9nb29nbGUvcHJv",
-            "dG9idWYvdGltZXN0YW1wLnByb3RvItoIChZSZWNvcmRlZENhbGxzaWduRGV0",
-            "YWlsElkKEXVwbG9hZGVkX3NlcnZpY2VzGAEgAygLMj4uY2xoX3Byb3RvLnBs",
-            "dWdpbi5SZWNvcmRlZENhbGxzaWduRGV0YWlsLlVwbG9hZGVkU2VydmljZXNF",
-            "bnRyeRJzCh91cGxvYWRlZF9zZXJ2aWNlc19lcnJvcl9tZXNzYWdlGAIgAygL",
-            "MkouY2xoX3Byb3RvLnBsdWdpbi5SZWNvcmRlZENhbGxzaWduRGV0YWlsLlVw",
-            "bG9hZGVkU2VydmljZXNFcnJvck1lc3NhZ2VFbnRyeRIdChVvcmlnaW5hbF9j",
-            "b3VudHJ5X25hbWUYAyABKAkSDwoHY3Ffem9uZRgEIAEoBRIQCghpdHVfem9u",
-            "ZRgFIAEoBRIRCgljb250aW5lbnQYBiABKAkSEAoIbGF0aXR1ZGUYByABKAIS",
-            "EQoJbG9uZ2l0dWRlGAggASgCEhIKCmdtdF9vZmZzZXQYCSABKAISDAoEZHhj",
-            "YxgKIAEoCRIxCg1kYXRlX3RpbWVfb2ZmGAsgASgLMhouZ29vZ2xlLnByb3Rv",
-            "YnVmLlRpbWVzdGFtcBIPCgdkeF9jYWxsGAwgASgJEg8KB2R4X2dyaWQYDSAB",
-            "KAkSGgoSdHhfZnJlcXVlbmN5X2luX2h6GA4gASgEEh4KFnR4X2ZyZXF1ZW5j",
-            "eV9pbl9tZXRlcnMYDyABKAkSDAoEbW9kZRgQIAEoCRITCgtwYXJlbnRfbW9k",
-            "ZRgRIAEoCRITCgtyZXBvcnRfc2VudBgSIAEoCRIXCg9yZXBvcnRfcmVjZWl2",
-            "ZWQYEyABKAkSEAoIdHhfcG93ZXIYFCABKAkSEAoIY29tbWVudHMYFSABKAkS",
-            "DAoEbmFtZRgWIAEoCRIwCgxkYXRlX3RpbWVfb24YFyABKAsyGi5nb29nbGUu",
-            "cHJvdG9idWYuVGltZXN0YW1wEhUKDW9wZXJhdG9yX2NhbGwYGCABKAkSDwoH",
-            "bXlfY2FsbBgZIAEoCRIPCgdteV9ncmlkGBogASgJEhUKDWV4Y2hhbmdlX3Nl",
-            "bnQYGyABKAkSGQoRZXhjaGFuZ2VfcmVjZWl2ZWQYHCABKAkSHQoVYWRpZl9w",
-            "cm9wYWdhdGlvbl9tb2RlGB0gASgJEhEKCWNsaWVudF9pZBgeIAEoCRIQCghy",
-            "YXdfZGF0YRggIAEoCRITCgtmYWlsX3JlYXNvbhghIAEoCRI1Cg11cGxvYWRf",
-            "c3RhdHVzGCMgASgOMh4uY2xoX3Byb3RvLnBsdWdpbi5VcGxvYWRTdGF0dXMS",
-            "FQoNZm9yY2VkX3VwbG9hZBglIAEoCBo3ChVVcGxvYWRlZFNlcnZpY2VzRW50",
-            "cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgIOgI4ARpDCiFVcGxvYWRl",
-            "ZFNlcnZpY2VzRXJyb3JNZXNzYWdlRW50cnkSCwoDa2V5GAEgASgJEg0KBXZh",
-            "bHVlGAIgASgJOgI4ASKJAQoZQ2xoUVNPVXBsb2FkU3RhdHVzQ2hhbmdlZBI8",
-            "Cgpxc29fZGV0YWlsGAEgASgLMiguY2xoX3Byb3RvLnBsdWdpbi5SZWNvcmRl",
-            "ZENhbGxzaWduRGV0YWlsEi4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUu",
-            "cHJvdG9idWYuVGltZXN0YW1wIpkBChJDbGhJbnRlcm5hbE1lc3NhZ2USSAoR",
-            "cXNvX3VwbG9hZF9zdGF0dXMYAiABKAsyKy5jbGhfcHJvdG8ucGx1Z2luLkNs",
-            "aFFTT1VwbG9hZFN0YXR1c0NoYW5nZWRIABIuCgl0aW1lc3RhbXAY5wcgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIJCgdwYXlsb2FkKrMBCgxV",
-            "cGxvYWRTdGF0dXMSHQoZVVBMT0FEX1NUQVRVU19VTlNQRUNJRklFRBAAEhkK",
-            "FVVQTE9BRF9TVEFUVVNfUEVORElORxABEhsKF1VQTE9BRF9TVEFUVVNfVVBM",
-            "T0FESU5HEAISGQoVVVBMT0FEX1NUQVRVU19TVUNDRVNTEAMSFgoSVVBMT0FE",
-            "X1NUQVRVU19GQUlMEAQSGQoVVVBMT0FEX1NUQVRVU19JR05PUkVEEAVCSlos",
-            "Z2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6q",
-            "AhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
+            "dG9idWYvdGltZXN0YW1wLnByb3RvIuMIChlDbGhRU09VcGxvYWRTdGF0dXND",
+            "aGFuZ2VkElwKEXVwbG9hZGVkX3NlcnZpY2VzGAEgAygLMkEuY2xoX3Byb3Rv",
+            "LnBsdWdpbi5DbGhRU09VcGxvYWRTdGF0dXNDaGFuZ2VkLlVwbG9hZGVkU2Vy",
+            "dmljZXNFbnRyeRJ2Ch91cGxvYWRlZF9zZXJ2aWNlc19lcnJvcl9tZXNzYWdl",
+            "GAIgAygLMk0uY2xoX3Byb3RvLnBsdWdpbi5DbGhRU09VcGxvYWRTdGF0dXND",
+            "aGFuZ2VkLlVwbG9hZGVkU2VydmljZXNFcnJvck1lc3NhZ2VFbnRyeRIdChVv",
+            "cmlnaW5hbF9jb3VudHJ5X25hbWUYAyABKAkSDwoHY3Ffem9uZRgEIAEoBRIQ",
+            "CghpdHVfem9uZRgFIAEoBRIRCgljb250aW5lbnQYBiABKAkSEAoIbGF0aXR1",
+            "ZGUYByABKAISEQoJbG9uZ2l0dWRlGAggASgCEhIKCmdtdF9vZmZzZXQYCSAB",
+            "KAISDAoEZHhjYxgKIAEoCRIxCg1kYXRlX3RpbWVfb2ZmGAsgASgLMhouZ29v",
+            "Z2xlLnByb3RvYnVmLlRpbWVzdGFtcBIPCgdkeF9jYWxsGAwgASgJEg8KB2R4",
+            "X2dyaWQYDSABKAkSGgoSdHhfZnJlcXVlbmN5X2luX2h6GA4gASgEEh4KFnR4",
+            "X2ZyZXF1ZW5jeV9pbl9tZXRlcnMYDyABKAkSDAoEbW9kZRgQIAEoCRITCgtw",
+            "YXJlbnRfbW9kZRgRIAEoCRITCgtyZXBvcnRfc2VudBgSIAEoCRIXCg9yZXBv",
+            "cnRfcmVjZWl2ZWQYEyABKAkSEAoIdHhfcG93ZXIYFCABKAkSEAoIY29tbWVu",
+            "dHMYFSABKAkSDAoEbmFtZRgWIAEoCRIwCgxkYXRlX3RpbWVfb24YFyABKAsy",
+            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhUKDW9wZXJhdG9yX2NhbGwY",
+            "GCABKAkSDwoHbXlfY2FsbBgZIAEoCRIPCgdteV9ncmlkGBogASgJEhUKDWV4",
+            "Y2hhbmdlX3NlbnQYGyABKAkSGQoRZXhjaGFuZ2VfcmVjZWl2ZWQYHCABKAkS",
+            "HQoVYWRpZl9wcm9wYWdhdGlvbl9tb2RlGB0gASgJEhEKCWNsaWVudF9pZBge",
+            "IAEoCRIQCghyYXdfZGF0YRggIAEoCRITCgtmYWlsX3JlYXNvbhghIAEoCRI1",
+            "Cg11cGxvYWRfc3RhdHVzGCMgASgOMh4uY2xoX3Byb3RvLnBsdWdpbi5VcGxv",
+            "YWRTdGF0dXMSFQoNZm9yY2VkX3VwbG9hZBglIAEoCBo3ChVVcGxvYWRlZFNl",
+            "cnZpY2VzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgIOgI4ARpD",
+            "CiFVcGxvYWRlZFNlcnZpY2VzRXJyb3JNZXNzYWdlRW50cnkSCwoDa2V5GAEg",
+            "ASgJEg0KBXZhbHVlGAIgASgJOgI4ASKZAQoSQ2xoSW50ZXJuYWxNZXNzYWdl",
+            "EkgKEXFzb191cGxvYWRfc3RhdHVzGAIgASgLMisuY2xoX3Byb3RvLnBsdWdp",
+            "bi5DbGhRU09VcGxvYWRTdGF0dXNDaGFuZ2VkSAASLgoJdGltZXN0YW1wGOcH",
+            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCqz",
+            "AQoMVXBsb2FkU3RhdHVzEh0KGVVQTE9BRF9TVEFUVVNfVU5TUEVDSUZJRUQQ",
+            "ABIZChVVUExPQURfU1RBVFVTX1BFTkRJTkcQARIbChdVUExPQURfU1RBVFVT",
+            "X1VQTE9BRElORxACEhkKFVVQTE9BRF9TVEFUVVNfU1VDQ0VTUxADEhYKElVQ",
+            "TE9BRF9TVEFUVVNfRkFJTBAEEhkKFVVQTE9BRF9TVEFUVVNfSUdOT1JFRBAF",
+            "QkpaLGdpdGh1Yi5jb20vc3lkbmV5b3dsL2NsaC1wcm90by9nZW4vZ28vcGx1",
+            "Z2luqgIZU3lkbmV5T3dsLkNMSFByb3RvLlBsdWdpbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.UploadStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail), global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail.Parser, new[]{ "UploadedServices", "UploadedServicesErrorMessage", "OriginalCountryName", "CqZone", "ItuZone", "Continent", "Latitude", "Longitude", "GmtOffset", "Dxcc", "DateTimeOff", "DxCall", "DxGrid", "TxFrequencyInHz", "TxFrequencyInMeters", "Mode", "ParentMode", "ReportSent", "ReportReceived", "TxPower", "Comments", "Name", "DateTimeOn", "OperatorCall", "MyCall", "MyGrid", "ExchangeSent", "ExchangeReceived", "AdifPropagationMode", "ClientId", "RawData", "FailReason", "UploadStatus", "ForcedUpload" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged), global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged.Parser, new[]{ "QsoDetail", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged), global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged.Parser, new[]{ "UploadedServices", "UploadedServicesErrorMessage", "OriginalCountryName", "CqZone", "ItuZone", "Continent", "Latitude", "Longitude", "GmtOffset", "Dxcc", "DateTimeOff", "DxCall", "DxGrid", "TxFrequencyInHz", "TxFrequencyInMeters", "Mode", "ParentMode", "ReportSent", "ReportReceived", "TxPower", "Comments", "Name", "DateTimeOn", "OperatorCall", "MyCall", "MyGrid", "ExchangeSent", "ExchangeReceived", "AdifPropagationMode", "ClientId", "RawData", "FailReason", "UploadStatus", "ForcedUpload" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage), global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage.Parser, new[]{ "QsoUploadStatus", "Timestamp" }, new[]{ "Payload" }, null, null, null)
           }));
     }
@@ -88,16 +84,16 @@ namespace SydneyOwl.CLHProto.Plugin {
 
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class RecordedCallsignDetail : pb::IMessage<RecordedCallsignDetail>
+  public sealed partial class ClhQSOUploadStatusChanged : pb::IMessage<ClhQSOUploadStatusChanged>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<RecordedCallsignDetail> _parser = new pb::MessageParser<RecordedCallsignDetail>(() => new RecordedCallsignDetail());
+    private static readonly pb::MessageParser<ClhQSOUploadStatusChanged> _parser = new pb::MessageParser<ClhQSOUploadStatusChanged>(() => new ClhQSOUploadStatusChanged());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<RecordedCallsignDetail> Parser { get { return _parser; } }
+    public static pb::MessageParser<ClhQSOUploadStatusChanged> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,7 +109,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RecordedCallsignDetail() {
+    public ClhQSOUploadStatusChanged() {
       OnConstruction();
     }
 
@@ -121,7 +117,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RecordedCallsignDetail(RecordedCallsignDetail other) : this() {
+    public ClhQSOUploadStatusChanged(ClhQSOUploadStatusChanged other) : this() {
       uploadedServices_ = other.uploadedServices_.Clone();
       uploadedServicesErrorMessage_ = other.uploadedServicesErrorMessage_.Clone();
       originalCountryName_ = other.originalCountryName_;
@@ -161,8 +157,8 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RecordedCallsignDetail Clone() {
-      return new RecordedCallsignDetail(this);
+    public ClhQSOUploadStatusChanged Clone() {
+      return new ClhQSOUploadStatusChanged(this);
     }
 
     /// <summary>Field number for the "uploaded_services" field.</summary>
@@ -574,12 +570,12 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as RecordedCallsignDetail);
+      return Equals(other as ClhQSOUploadStatusChanged);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(RecordedCallsignDetail other) {
+    public bool Equals(ClhQSOUploadStatusChanged other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1065,7 +1061,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(RecordedCallsignDetail other) {
+    public void MergeFrom(ClhQSOUploadStatusChanged other) {
       if (other == null) {
         return;
       }
@@ -1503,259 +1499,6 @@ namespace SydneyOwl.CLHProto.Plugin {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ClhQSOUploadStatusChanged : pb::IMessage<ClhQSOUploadStatusChanged>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<ClhQSOUploadStatusChanged> _parser = new pb::MessageParser<ClhQSOUploadStatusChanged>(() => new ClhQSOUploadStatusChanged());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<ClhQSOUploadStatusChanged> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::SydneyOwl.CLHProto.Plugin.ClhMsgReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ClhQSOUploadStatusChanged() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ClhQSOUploadStatusChanged(ClhQSOUploadStatusChanged other) : this() {
-      qsoDetail_ = other.qsoDetail_ != null ? other.qsoDetail_.Clone() : null;
-      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ClhQSOUploadStatusChanged Clone() {
-      return new ClhQSOUploadStatusChanged(this);
-    }
-
-    /// <summary>Field number for the "qso_detail" field.</summary>
-    public const int QsoDetailFieldNumber = 1;
-    private global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail qsoDetail_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail QsoDetail {
-      get { return qsoDetail_; }
-      set {
-        qsoDetail_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 999;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
-      get { return timestamp_; }
-      set {
-        timestamp_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as ClhQSOUploadStatusChanged);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(ClhQSOUploadStatusChanged other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(QsoDetail, other.QsoDetail)) return false;
-      if (!object.Equals(Timestamp, other.Timestamp)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (qsoDetail_ != null) hash ^= QsoDetail.GetHashCode();
-      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (qsoDetail_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(QsoDetail);
-      }
-      if (timestamp_ != null) {
-        output.WriteRawTag(186, 62);
-        output.WriteMessage(Timestamp);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (qsoDetail_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(QsoDetail);
-      }
-      if (timestamp_ != null) {
-        output.WriteRawTag(186, 62);
-        output.WriteMessage(Timestamp);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (qsoDetail_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(QsoDetail);
-      }
-      if (timestamp_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(ClhQSOUploadStatusChanged other) {
-      if (other == null) {
-        return;
-      }
-      if (other.qsoDetail_ != null) {
-        if (qsoDetail_ == null) {
-          QsoDetail = new global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail();
-        }
-        QsoDetail.MergeFrom(other.QsoDetail);
-      }
-      if (other.timestamp_ != null) {
-        if (timestamp_ == null) {
-          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        Timestamp.MergeFrom(other.Timestamp);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            if (qsoDetail_ == null) {
-              QsoDetail = new global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail();
-            }
-            input.ReadMessage(QsoDetail);
-            break;
-          }
-          case 7994: {
-            if (timestamp_ == null) {
-              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Timestamp);
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            if (qsoDetail_ == null) {
-              QsoDetail = new global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail();
-            }
-            input.ReadMessage(QsoDetail);
-            break;
-          }
-          case 7994: {
-            if (timestamp_ == null) {
-              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Timestamp);
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ClhInternalMessage : pb::IMessage<ClhInternalMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1770,7 +1513,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SydneyOwl.CLHProto.Plugin.ClhMsgReflection.Descriptor.MessageTypes[2]; }
+      get { return global::SydneyOwl.CLHProto.Plugin.ClhMsgReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

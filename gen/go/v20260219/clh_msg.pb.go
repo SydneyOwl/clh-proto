@@ -80,7 +80,7 @@ func (UploadStatus) EnumDescriptor() ([]byte, []int) {
 	return file_clh_msg_proto_rawDescGZIP(), []int{0}
 }
 
-type RecordedCallsignDetail struct {
+type ClhQSOUploadStatusChanged struct {
 	state                        protoimpl.MessageState `protogen:"open.v1"`
 	UploadedServices             map[string]bool        `protobuf:"bytes,1,rep,name=uploaded_services,json=uploadedServices,proto3" json:"uploaded_services,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
 	UploadedServicesErrorMessage map[string]string      `protobuf:"bytes,2,rep,name=uploaded_services_error_message,json=uploadedServicesErrorMessage,proto3" json:"uploaded_services_error_message,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
@@ -120,285 +120,9 @@ type RecordedCallsignDetail struct {
 	sizeCache                    protoimpl.SizeCache
 }
 
-func (x *RecordedCallsignDetail) Reset() {
-	*x = RecordedCallsignDetail{}
-	mi := &file_clh_msg_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *RecordedCallsignDetail) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RecordedCallsignDetail) ProtoMessage() {}
-
-func (x *RecordedCallsignDetail) ProtoReflect() protoreflect.Message {
-	mi := &file_clh_msg_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RecordedCallsignDetail.ProtoReflect.Descriptor instead.
-func (*RecordedCallsignDetail) Descriptor() ([]byte, []int) {
-	return file_clh_msg_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *RecordedCallsignDetail) GetUploadedServices() map[string]bool {
-	if x != nil {
-		return x.UploadedServices
-	}
-	return nil
-}
-
-func (x *RecordedCallsignDetail) GetUploadedServicesErrorMessage() map[string]string {
-	if x != nil {
-		return x.UploadedServicesErrorMessage
-	}
-	return nil
-}
-
-func (x *RecordedCallsignDetail) GetOriginalCountryName() string {
-	if x != nil {
-		return x.OriginalCountryName
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetCqZone() int32 {
-	if x != nil {
-		return x.CqZone
-	}
-	return 0
-}
-
-func (x *RecordedCallsignDetail) GetItuZone() int32 {
-	if x != nil {
-		return x.ItuZone
-	}
-	return 0
-}
-
-func (x *RecordedCallsignDetail) GetContinent() string {
-	if x != nil {
-		return x.Continent
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetLatitude() float32 {
-	if x != nil {
-		return x.Latitude
-	}
-	return 0
-}
-
-func (x *RecordedCallsignDetail) GetLongitude() float32 {
-	if x != nil {
-		return x.Longitude
-	}
-	return 0
-}
-
-func (x *RecordedCallsignDetail) GetGmtOffset() float32 {
-	if x != nil {
-		return x.GmtOffset
-	}
-	return 0
-}
-
-func (x *RecordedCallsignDetail) GetDxcc() string {
-	if x != nil {
-		return x.Dxcc
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetDateTimeOff() *timestamppb.Timestamp {
-	if x != nil {
-		return x.DateTimeOff
-	}
-	return nil
-}
-
-func (x *RecordedCallsignDetail) GetDxCall() string {
-	if x != nil {
-		return x.DxCall
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetDxGrid() string {
-	if x != nil {
-		return x.DxGrid
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetTxFrequencyInHz() uint64 {
-	if x != nil {
-		return x.TxFrequencyInHz
-	}
-	return 0
-}
-
-func (x *RecordedCallsignDetail) GetTxFrequencyInMeters() string {
-	if x != nil {
-		return x.TxFrequencyInMeters
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetMode() string {
-	if x != nil {
-		return x.Mode
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetParentMode() string {
-	if x != nil {
-		return x.ParentMode
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetReportSent() string {
-	if x != nil {
-		return x.ReportSent
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetReportReceived() string {
-	if x != nil {
-		return x.ReportReceived
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetTxPower() string {
-	if x != nil {
-		return x.TxPower
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetComments() string {
-	if x != nil {
-		return x.Comments
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetDateTimeOn() *timestamppb.Timestamp {
-	if x != nil {
-		return x.DateTimeOn
-	}
-	return nil
-}
-
-func (x *RecordedCallsignDetail) GetOperatorCall() string {
-	if x != nil {
-		return x.OperatorCall
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetMyCall() string {
-	if x != nil {
-		return x.MyCall
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetMyGrid() string {
-	if x != nil {
-		return x.MyGrid
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetExchangeSent() string {
-	if x != nil {
-		return x.ExchangeSent
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetExchangeReceived() string {
-	if x != nil {
-		return x.ExchangeReceived
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetAdifPropagationMode() string {
-	if x != nil {
-		return x.AdifPropagationMode
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetClientId() string {
-	if x != nil {
-		return x.ClientId
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetRawData() string {
-	if x != nil {
-		return x.RawData
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetFailReason() string {
-	if x != nil {
-		return x.FailReason
-	}
-	return ""
-}
-
-func (x *RecordedCallsignDetail) GetUploadStatus() UploadStatus {
-	if x != nil {
-		return x.UploadStatus
-	}
-	return UploadStatus_UPLOAD_STATUS_UNSPECIFIED
-}
-
-func (x *RecordedCallsignDetail) GetForcedUpload() bool {
-	if x != nil {
-		return x.ForcedUpload
-	}
-	return false
-}
-
-type ClhQSOUploadStatusChanged struct {
-	state         protoimpl.MessageState  `protogen:"open.v1"`
-	QsoDetail     *RecordedCallsignDetail `protobuf:"bytes,1,opt,name=qso_detail,json=qsoDetail,proto3" json:"qso_detail,omitempty"`
-	Timestamp     *timestamppb.Timestamp  `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
 func (x *ClhQSOUploadStatusChanged) Reset() {
 	*x = ClhQSOUploadStatusChanged{}
-	mi := &file_clh_msg_proto_msgTypes[1]
+	mi := &file_clh_msg_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -410,7 +134,7 @@ func (x *ClhQSOUploadStatusChanged) String() string {
 func (*ClhQSOUploadStatusChanged) ProtoMessage() {}
 
 func (x *ClhQSOUploadStatusChanged) ProtoReflect() protoreflect.Message {
-	mi := &file_clh_msg_proto_msgTypes[1]
+	mi := &file_clh_msg_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -423,21 +147,245 @@ func (x *ClhQSOUploadStatusChanged) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClhQSOUploadStatusChanged.ProtoReflect.Descriptor instead.
 func (*ClhQSOUploadStatusChanged) Descriptor() ([]byte, []int) {
-	return file_clh_msg_proto_rawDescGZIP(), []int{1}
+	return file_clh_msg_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ClhQSOUploadStatusChanged) GetQsoDetail() *RecordedCallsignDetail {
+func (x *ClhQSOUploadStatusChanged) GetUploadedServices() map[string]bool {
 	if x != nil {
-		return x.QsoDetail
+		return x.UploadedServices
 	}
 	return nil
 }
 
-func (x *ClhQSOUploadStatusChanged) GetTimestamp() *timestamppb.Timestamp {
+func (x *ClhQSOUploadStatusChanged) GetUploadedServicesErrorMessage() map[string]string {
 	if x != nil {
-		return x.Timestamp
+		return x.UploadedServicesErrorMessage
 	}
 	return nil
+}
+
+func (x *ClhQSOUploadStatusChanged) GetOriginalCountryName() string {
+	if x != nil {
+		return x.OriginalCountryName
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetCqZone() int32 {
+	if x != nil {
+		return x.CqZone
+	}
+	return 0
+}
+
+func (x *ClhQSOUploadStatusChanged) GetItuZone() int32 {
+	if x != nil {
+		return x.ItuZone
+	}
+	return 0
+}
+
+func (x *ClhQSOUploadStatusChanged) GetContinent() string {
+	if x != nil {
+		return x.Continent
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetLatitude() float32 {
+	if x != nil {
+		return x.Latitude
+	}
+	return 0
+}
+
+func (x *ClhQSOUploadStatusChanged) GetLongitude() float32 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
+}
+
+func (x *ClhQSOUploadStatusChanged) GetGmtOffset() float32 {
+	if x != nil {
+		return x.GmtOffset
+	}
+	return 0
+}
+
+func (x *ClhQSOUploadStatusChanged) GetDxcc() string {
+	if x != nil {
+		return x.Dxcc
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetDateTimeOff() *timestamppb.Timestamp {
+	if x != nil {
+		return x.DateTimeOff
+	}
+	return nil
+}
+
+func (x *ClhQSOUploadStatusChanged) GetDxCall() string {
+	if x != nil {
+		return x.DxCall
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetDxGrid() string {
+	if x != nil {
+		return x.DxGrid
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetTxFrequencyInHz() uint64 {
+	if x != nil {
+		return x.TxFrequencyInHz
+	}
+	return 0
+}
+
+func (x *ClhQSOUploadStatusChanged) GetTxFrequencyInMeters() string {
+	if x != nil {
+		return x.TxFrequencyInMeters
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetMode() string {
+	if x != nil {
+		return x.Mode
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetParentMode() string {
+	if x != nil {
+		return x.ParentMode
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetReportSent() string {
+	if x != nil {
+		return x.ReportSent
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetReportReceived() string {
+	if x != nil {
+		return x.ReportReceived
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetTxPower() string {
+	if x != nil {
+		return x.TxPower
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetComments() string {
+	if x != nil {
+		return x.Comments
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetDateTimeOn() *timestamppb.Timestamp {
+	if x != nil {
+		return x.DateTimeOn
+	}
+	return nil
+}
+
+func (x *ClhQSOUploadStatusChanged) GetOperatorCall() string {
+	if x != nil {
+		return x.OperatorCall
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetMyCall() string {
+	if x != nil {
+		return x.MyCall
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetMyGrid() string {
+	if x != nil {
+		return x.MyGrid
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetExchangeSent() string {
+	if x != nil {
+		return x.ExchangeSent
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetExchangeReceived() string {
+	if x != nil {
+		return x.ExchangeReceived
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetAdifPropagationMode() string {
+	if x != nil {
+		return x.AdifPropagationMode
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetClientId() string {
+	if x != nil {
+		return x.ClientId
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetRawData() string {
+	if x != nil {
+		return x.RawData
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetFailReason() string {
+	if x != nil {
+		return x.FailReason
+	}
+	return ""
+}
+
+func (x *ClhQSOUploadStatusChanged) GetUploadStatus() UploadStatus {
+	if x != nil {
+		return x.UploadStatus
+	}
+	return UploadStatus_UPLOAD_STATUS_UNSPECIFIED
+}
+
+func (x *ClhQSOUploadStatusChanged) GetForcedUpload() bool {
+	if x != nil {
+		return x.ForcedUpload
+	}
+	return false
 }
 
 type ClhInternalMessage struct {
@@ -453,7 +401,7 @@ type ClhInternalMessage struct {
 
 func (x *ClhInternalMessage) Reset() {
 	*x = ClhInternalMessage{}
-	mi := &file_clh_msg_proto_msgTypes[2]
+	mi := &file_clh_msg_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -465,7 +413,7 @@ func (x *ClhInternalMessage) String() string {
 func (*ClhInternalMessage) ProtoMessage() {}
 
 func (x *ClhInternalMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_clh_msg_proto_msgTypes[2]
+	mi := &file_clh_msg_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -478,7 +426,7 @@ func (x *ClhInternalMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClhInternalMessage.ProtoReflect.Descriptor instead.
 func (*ClhInternalMessage) Descriptor() ([]byte, []int) {
-	return file_clh_msg_proto_rawDescGZIP(), []int{2}
+	return file_clh_msg_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ClhInternalMessage) GetPayload() isClhInternalMessage_Payload {
@@ -518,10 +466,10 @@ var File_clh_msg_proto protoreflect.FileDescriptor
 
 const file_clh_msg_proto_rawDesc = "" +
 	"\n" +
-	"\rclh_msg.proto\x12\x10clh_proto.plugin\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\f\n" +
-	"\x16RecordedCallsignDetail\x12k\n" +
-	"\x11uploaded_services\x18\x01 \x03(\v2>.clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntryR\x10uploadedServices\x12\x91\x01\n" +
-	"\x1fuploaded_services_error_message\x18\x02 \x03(\v2J.clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntryR\x1cuploadedServicesErrorMessage\x122\n" +
+	"\rclh_msg.proto\x12\x10clh_proto.plugin\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa7\f\n" +
+	"\x19ClhQSOUploadStatusChanged\x12n\n" +
+	"\x11uploaded_services\x18\x01 \x03(\v2A.clh_proto.plugin.ClhQSOUploadStatusChanged.UploadedServicesEntryR\x10uploadedServices\x12\x94\x01\n" +
+	"\x1fuploaded_services_error_message\x18\x02 \x03(\v2M.clh_proto.plugin.ClhQSOUploadStatusChanged.UploadedServicesErrorMessageEntryR\x1cuploadedServicesErrorMessage\x122\n" +
 	"\x15original_country_name\x18\x03 \x01(\tR\x13originalCountryName\x12\x17\n" +
 	"\acq_zone\x18\x04 \x01(\x05R\x06cqZone\x12\x19\n" +
 	"\bitu_zone\x18\x05 \x01(\x05R\aituZone\x12\x1c\n" +
@@ -565,11 +513,7 @@ const file_clh_msg_proto_rawDesc = "" +
 	"\x05value\x18\x02 \x01(\bR\x05value:\x028\x01\x1aO\n" +
 	"!UploadedServicesErrorMessageEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x9f\x01\n" +
-	"\x19ClhQSOUploadStatusChanged\x12G\n" +
-	"\n" +
-	"qso_detail\x18\x01 \x01(\v2(.clh_proto.plugin.RecordedCallsignDetailR\tqsoDetail\x129\n" +
-	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"\xb5\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xb5\x01\n" +
 	"\x12ClhInternalMessage\x12Y\n" +
 	"\x11qso_upload_status\x18\x02 \x01(\v2+.clh_proto.plugin.ClhQSOUploadStatusChangedH\x00R\x0fqsoUploadStatus\x129\n" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampB\t\n" +
@@ -595,31 +539,28 @@ func file_clh_msg_proto_rawDescGZIP() []byte {
 }
 
 var file_clh_msg_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_clh_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_clh_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_clh_msg_proto_goTypes = []any{
 	(UploadStatus)(0),                 // 0: clh_proto.plugin.UploadStatus
-	(*RecordedCallsignDetail)(nil),    // 1: clh_proto.plugin.RecordedCallsignDetail
-	(*ClhQSOUploadStatusChanged)(nil), // 2: clh_proto.plugin.ClhQSOUploadStatusChanged
-	(*ClhInternalMessage)(nil),        // 3: clh_proto.plugin.ClhInternalMessage
-	nil,                               // 4: clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntry
-	nil,                               // 5: clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntry
-	(*timestamppb.Timestamp)(nil),     // 6: google.protobuf.Timestamp
+	(*ClhQSOUploadStatusChanged)(nil), // 1: clh_proto.plugin.ClhQSOUploadStatusChanged
+	(*ClhInternalMessage)(nil),        // 2: clh_proto.plugin.ClhInternalMessage
+	nil,                               // 3: clh_proto.plugin.ClhQSOUploadStatusChanged.UploadedServicesEntry
+	nil,                               // 4: clh_proto.plugin.ClhQSOUploadStatusChanged.UploadedServicesErrorMessageEntry
+	(*timestamppb.Timestamp)(nil),     // 5: google.protobuf.Timestamp
 }
 var file_clh_msg_proto_depIdxs = []int32{
-	4, // 0: clh_proto.plugin.RecordedCallsignDetail.uploaded_services:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntry
-	5, // 1: clh_proto.plugin.RecordedCallsignDetail.uploaded_services_error_message:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntry
-	6, // 2: clh_proto.plugin.RecordedCallsignDetail.date_time_off:type_name -> google.protobuf.Timestamp
-	6, // 3: clh_proto.plugin.RecordedCallsignDetail.date_time_on:type_name -> google.protobuf.Timestamp
-	0, // 4: clh_proto.plugin.RecordedCallsignDetail.upload_status:type_name -> clh_proto.plugin.UploadStatus
-	1, // 5: clh_proto.plugin.ClhQSOUploadStatusChanged.qso_detail:type_name -> clh_proto.plugin.RecordedCallsignDetail
-	6, // 6: clh_proto.plugin.ClhQSOUploadStatusChanged.timestamp:type_name -> google.protobuf.Timestamp
-	2, // 7: clh_proto.plugin.ClhInternalMessage.qso_upload_status:type_name -> clh_proto.plugin.ClhQSOUploadStatusChanged
-	6, // 8: clh_proto.plugin.ClhInternalMessage.timestamp:type_name -> google.protobuf.Timestamp
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	3, // 0: clh_proto.plugin.ClhQSOUploadStatusChanged.uploaded_services:type_name -> clh_proto.plugin.ClhQSOUploadStatusChanged.UploadedServicesEntry
+	4, // 1: clh_proto.plugin.ClhQSOUploadStatusChanged.uploaded_services_error_message:type_name -> clh_proto.plugin.ClhQSOUploadStatusChanged.UploadedServicesErrorMessageEntry
+	5, // 2: clh_proto.plugin.ClhQSOUploadStatusChanged.date_time_off:type_name -> google.protobuf.Timestamp
+	5, // 3: clh_proto.plugin.ClhQSOUploadStatusChanged.date_time_on:type_name -> google.protobuf.Timestamp
+	0, // 4: clh_proto.plugin.ClhQSOUploadStatusChanged.upload_status:type_name -> clh_proto.plugin.UploadStatus
+	1, // 5: clh_proto.plugin.ClhInternalMessage.qso_upload_status:type_name -> clh_proto.plugin.ClhQSOUploadStatusChanged
+	5, // 6: clh_proto.plugin.ClhInternalMessage.timestamp:type_name -> google.protobuf.Timestamp
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_clh_msg_proto_init() }
@@ -627,7 +568,7 @@ func file_clh_msg_proto_init() {
 	if File_clh_msg_proto != nil {
 		return
 	}
-	file_clh_msg_proto_msgTypes[2].OneofWrappers = []any{
+	file_clh_msg_proto_msgTypes[1].OneofWrappers = []any{
 		(*ClhInternalMessage_QsoUploadStatus)(nil),
 	}
 	type x struct{}
@@ -636,7 +577,7 @@ func file_clh_msg_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_clh_msg_proto_rawDesc), len(file_clh_msg_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   5,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

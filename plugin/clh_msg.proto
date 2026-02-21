@@ -15,7 +15,7 @@ enum UploadStatus {
   UPLOAD_STATUS_IGNORED = 5;
 }
 
-message RecordedCallsignDetail {
+message ClhQSOUploadStatusChanged {
   map<string, bool> uploaded_services = 1;
   map<string, string> uploaded_services_error_message = 2;
   string original_country_name = 3;
@@ -52,12 +52,6 @@ message RecordedCallsignDetail {
   UploadStatus upload_status = 35;
 
   bool forced_upload = 37;
-}
-
-message ClhQSOUploadStatusChanged {
-  RecordedCallsignDetail qso_detail = 1;
-
-  google.protobuf.Timestamp timestamp = 999;
 }
 
 message ClhInternalMessage {
