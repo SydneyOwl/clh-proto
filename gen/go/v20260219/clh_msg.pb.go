@@ -22,80 +22,118 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type InternalStatus int32
+type UploadStatus int32
 
 const (
-	InternalStatus_clh_starting_up         InternalStatus = 0
-	InternalStatus_clh_shutting_down       InternalStatus = 1
-	InternalStatus_plugin_service_starting InternalStatus = 2
-	InternalStatus_plugin_service_stopping InternalStatus = 3
+	UploadStatus_UPLOAD_STATUS_UNSPECIFIED UploadStatus = 0
+	UploadStatus_UPLOAD_STATUS_PENDING     UploadStatus = 1
+	UploadStatus_UPLOAD_STATUS_UPLOADING   UploadStatus = 2
+	UploadStatus_UPLOAD_STATUS_SUCCESS     UploadStatus = 3
+	UploadStatus_UPLOAD_STATUS_FAILED      UploadStatus = 4
+	UploadStatus_UPLOAD_STATUS_SKIPPED     UploadStatus = 5
 )
 
-// Enum value maps for InternalStatus.
+// Enum value maps for UploadStatus.
 var (
-	InternalStatus_name = map[int32]string{
-		0: "clh_starting_up",
-		1: "clh_shutting_down",
-		2: "plugin_service_starting",
-		3: "plugin_service_stopping",
+	UploadStatus_name = map[int32]string{
+		0: "UPLOAD_STATUS_UNSPECIFIED",
+		1: "UPLOAD_STATUS_PENDING",
+		2: "UPLOAD_STATUS_UPLOADING",
+		3: "UPLOAD_STATUS_SUCCESS",
+		4: "UPLOAD_STATUS_FAILED",
+		5: "UPLOAD_STATUS_SKIPPED",
 	}
-	InternalStatus_value = map[string]int32{
-		"clh_starting_up":         0,
-		"clh_shutting_down":       1,
-		"plugin_service_starting": 2,
-		"plugin_service_stopping": 3,
+	UploadStatus_value = map[string]int32{
+		"UPLOAD_STATUS_UNSPECIFIED": 0,
+		"UPLOAD_STATUS_PENDING":     1,
+		"UPLOAD_STATUS_UPLOADING":   2,
+		"UPLOAD_STATUS_SUCCESS":     3,
+		"UPLOAD_STATUS_FAILED":      4,
+		"UPLOAD_STATUS_SKIPPED":     5,
 	}
 )
 
-func (x InternalStatus) Enum() *InternalStatus {
-	p := new(InternalStatus)
+func (x UploadStatus) Enum() *UploadStatus {
+	p := new(UploadStatus)
 	*p = x
 	return p
 }
 
-func (x InternalStatus) String() string {
+func (x UploadStatus) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (InternalStatus) Descriptor() protoreflect.EnumDescriptor {
+func (UploadStatus) Descriptor() protoreflect.EnumDescriptor {
 	return file_clh_msg_proto_enumTypes[0].Descriptor()
 }
 
-func (InternalStatus) Type() protoreflect.EnumType {
+func (UploadStatus) Type() protoreflect.EnumType {
 	return &file_clh_msg_proto_enumTypes[0]
 }
 
-func (x InternalStatus) Number() protoreflect.EnumNumber {
+func (x UploadStatus) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use InternalStatus.Descriptor instead.
-func (InternalStatus) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use UploadStatus.Descriptor instead.
+func (UploadStatus) EnumDescriptor() ([]byte, []int) {
 	return file_clh_msg_proto_rawDescGZIP(), []int{0}
 }
 
-type CLHInternalData struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Status        InternalStatus         `protobuf:"varint,1,opt,name=status,proto3,enum=clh_proto.plugin.InternalStatus" json:"status,omitempty"`
-	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+type RecordedCallsignDetail struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	UploadedServices             map[string]bool        `protobuf:"bytes,1,rep,name=uploaded_services,json=uploadedServices,proto3" json:"uploaded_services,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
+	UploadedServicesErrorMessage map[string]string      `protobuf:"bytes,2,rep,name=uploaded_services_error_message,json=uploadedServicesErrorMessage,proto3" json:"uploaded_services_error_message,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	OriginalCountryName          string                 `protobuf:"bytes,3,opt,name=original_country_name,json=originalCountryName,proto3" json:"original_country_name,omitempty"`
+	CqZone                       int32                  `protobuf:"varint,4,opt,name=cq_zone,json=cqZone,proto3" json:"cq_zone,omitempty"`
+	ItuZone                      int32                  `protobuf:"varint,5,opt,name=itu_zone,json=ituZone,proto3" json:"itu_zone,omitempty"`
+	Continent                    string                 `protobuf:"bytes,6,opt,name=continent,proto3" json:"continent,omitempty"`
+	Latitude                     float32                `protobuf:"fixed32,7,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Longitude                    float32                `protobuf:"fixed32,8,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	GmtOffset                    float32                `protobuf:"fixed32,9,opt,name=gmt_offset,json=gmtOffset,proto3" json:"gmt_offset,omitempty"`
+	Dxcc                         string                 `protobuf:"bytes,10,opt,name=dxcc,proto3" json:"dxcc,omitempty"`
+	DateTimeOff                  int64                  `protobuf:"varint,11,opt,name=date_time_off,json=dateTimeOff,proto3" json:"date_time_off,omitempty"`
+	DxCall                       string                 `protobuf:"bytes,12,opt,name=dx_call,json=dxCall,proto3" json:"dx_call,omitempty"`
+	DxGrid                       string                 `protobuf:"bytes,13,opt,name=dx_grid,json=dxGrid,proto3" json:"dx_grid,omitempty"`
+	TxFrequencyInHz              uint64                 `protobuf:"varint,14,opt,name=tx_frequency_in_hz,json=txFrequencyInHz,proto3" json:"tx_frequency_in_hz,omitempty"`
+	TxFrequencyInMeters          string                 `protobuf:"bytes,15,opt,name=tx_frequency_in_meters,json=txFrequencyInMeters,proto3" json:"tx_frequency_in_meters,omitempty"`
+	Mode                         string                 `protobuf:"bytes,16,opt,name=mode,proto3" json:"mode,omitempty"`
+	ParentMode                   string                 `protobuf:"bytes,17,opt,name=parent_mode,json=parentMode,proto3" json:"parent_mode,omitempty"`
+	ReportSent                   string                 `protobuf:"bytes,18,opt,name=report_sent,json=reportSent,proto3" json:"report_sent,omitempty"`
+	ReportReceived               string                 `protobuf:"bytes,19,opt,name=report_received,json=reportReceived,proto3" json:"report_received,omitempty"`
+	TxPower                      string                 `protobuf:"bytes,20,opt,name=tx_power,json=txPower,proto3" json:"tx_power,omitempty"`
+	Comments                     string                 `protobuf:"bytes,21,opt,name=comments,proto3" json:"comments,omitempty"`
+	Name                         string                 `protobuf:"bytes,22,opt,name=name,proto3" json:"name,omitempty"`
+	DateTimeOn                   int64                  `protobuf:"varint,23,opt,name=date_time_on,json=dateTimeOn,proto3" json:"date_time_on,omitempty"`
+	OperatorCall                 string                 `protobuf:"bytes,24,opt,name=operator_call,json=operatorCall,proto3" json:"operator_call,omitempty"`
+	MyCall                       string                 `protobuf:"bytes,25,opt,name=my_call,json=myCall,proto3" json:"my_call,omitempty"`
+	MyGrid                       string                 `protobuf:"bytes,26,opt,name=my_grid,json=myGrid,proto3" json:"my_grid,omitempty"`
+	ExchangeSent                 string                 `protobuf:"bytes,27,opt,name=exchange_sent,json=exchangeSent,proto3" json:"exchange_sent,omitempty"`
+	ExchangeReceived             string                 `protobuf:"bytes,28,opt,name=exchange_received,json=exchangeReceived,proto3" json:"exchange_received,omitempty"`
+	AdifPropagationMode          string                 `protobuf:"bytes,29,opt,name=adif_propagation_mode,json=adifPropagationMode,proto3" json:"adif_propagation_mode,omitempty"`
+	ClientId                     string                 `protobuf:"bytes,30,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	RawData                      string                 `protobuf:"bytes,32,opt,name=raw_data,json=rawData,proto3" json:"raw_data,omitempty"`
+	FailReason                   string                 `protobuf:"bytes,33,opt,name=fail_reason,json=failReason,proto3" json:"fail_reason,omitempty"`
+	UploadStatus                 UploadStatus           `protobuf:"varint,35,opt,name=upload_status,json=uploadStatus,proto3,enum=clh_proto.plugin.UploadStatus" json:"upload_status,omitempty"`
+	ForcedUpload                 bool                   `protobuf:"varint,37,opt,name=forced_upload,json=forcedUpload,proto3" json:"forced_upload,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
 }
 
-func (x *CLHInternalData) Reset() {
-	*x = CLHInternalData{}
+func (x *RecordedCallsignDetail) Reset() {
+	*x = RecordedCallsignDetail{}
 	mi := &file_clh_msg_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CLHInternalData) String() string {
+func (x *RecordedCallsignDetail) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CLHInternalData) ProtoMessage() {}
+func (*RecordedCallsignDetail) ProtoMessage() {}
 
-func (x *CLHInternalData) ProtoReflect() protoreflect.Message {
+func (x *RecordedCallsignDetail) ProtoReflect() protoreflect.Message {
 	mi := &file_clh_msg_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -107,19 +145,295 @@ func (x *CLHInternalData) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CLHInternalData.ProtoReflect.Descriptor instead.
-func (*CLHInternalData) Descriptor() ([]byte, []int) {
+// Deprecated: Use RecordedCallsignDetail.ProtoReflect.Descriptor instead.
+func (*RecordedCallsignDetail) Descriptor() ([]byte, []int) {
 	return file_clh_msg_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CLHInternalData) GetStatus() InternalStatus {
+func (x *RecordedCallsignDetail) GetUploadedServices() map[string]bool {
 	if x != nil {
-		return x.Status
+		return x.UploadedServices
 	}
-	return InternalStatus_clh_starting_up
+	return nil
 }
 
-func (x *CLHInternalData) GetTimestamp() *timestamppb.Timestamp {
+func (x *RecordedCallsignDetail) GetUploadedServicesErrorMessage() map[string]string {
+	if x != nil {
+		return x.UploadedServicesErrorMessage
+	}
+	return nil
+}
+
+func (x *RecordedCallsignDetail) GetOriginalCountryName() string {
+	if x != nil {
+		return x.OriginalCountryName
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetCqZone() int32 {
+	if x != nil {
+		return x.CqZone
+	}
+	return 0
+}
+
+func (x *RecordedCallsignDetail) GetItuZone() int32 {
+	if x != nil {
+		return x.ItuZone
+	}
+	return 0
+}
+
+func (x *RecordedCallsignDetail) GetContinent() string {
+	if x != nil {
+		return x.Continent
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetLatitude() float32 {
+	if x != nil {
+		return x.Latitude
+	}
+	return 0
+}
+
+func (x *RecordedCallsignDetail) GetLongitude() float32 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
+}
+
+func (x *RecordedCallsignDetail) GetGmtOffset() float32 {
+	if x != nil {
+		return x.GmtOffset
+	}
+	return 0
+}
+
+func (x *RecordedCallsignDetail) GetDxcc() string {
+	if x != nil {
+		return x.Dxcc
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetDateTimeOff() int64 {
+	if x != nil {
+		return x.DateTimeOff
+	}
+	return 0
+}
+
+func (x *RecordedCallsignDetail) GetDxCall() string {
+	if x != nil {
+		return x.DxCall
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetDxGrid() string {
+	if x != nil {
+		return x.DxGrid
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetTxFrequencyInHz() uint64 {
+	if x != nil {
+		return x.TxFrequencyInHz
+	}
+	return 0
+}
+
+func (x *RecordedCallsignDetail) GetTxFrequencyInMeters() string {
+	if x != nil {
+		return x.TxFrequencyInMeters
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetMode() string {
+	if x != nil {
+		return x.Mode
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetParentMode() string {
+	if x != nil {
+		return x.ParentMode
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetReportSent() string {
+	if x != nil {
+		return x.ReportSent
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetReportReceived() string {
+	if x != nil {
+		return x.ReportReceived
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetTxPower() string {
+	if x != nil {
+		return x.TxPower
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetComments() string {
+	if x != nil {
+		return x.Comments
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetDateTimeOn() int64 {
+	if x != nil {
+		return x.DateTimeOn
+	}
+	return 0
+}
+
+func (x *RecordedCallsignDetail) GetOperatorCall() string {
+	if x != nil {
+		return x.OperatorCall
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetMyCall() string {
+	if x != nil {
+		return x.MyCall
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetMyGrid() string {
+	if x != nil {
+		return x.MyGrid
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetExchangeSent() string {
+	if x != nil {
+		return x.ExchangeSent
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetExchangeReceived() string {
+	if x != nil {
+		return x.ExchangeReceived
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetAdifPropagationMode() string {
+	if x != nil {
+		return x.AdifPropagationMode
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetClientId() string {
+	if x != nil {
+		return x.ClientId
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetRawData() string {
+	if x != nil {
+		return x.RawData
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetFailReason() string {
+	if x != nil {
+		return x.FailReason
+	}
+	return ""
+}
+
+func (x *RecordedCallsignDetail) GetUploadStatus() UploadStatus {
+	if x != nil {
+		return x.UploadStatus
+	}
+	return UploadStatus_UPLOAD_STATUS_UNSPECIFIED
+}
+
+func (x *RecordedCallsignDetail) GetForcedUpload() bool {
+	if x != nil {
+		return x.ForcedUpload
+	}
+	return false
+}
+
+type CLHQSOUploadStatusChanged struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	QsoDetail     *RecordedCallsignDetail `protobuf:"bytes,1,opt,name=qso_detail,json=qsoDetail,proto3" json:"qso_detail,omitempty"`
+	Timestamp     *timestamppb.Timestamp  `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CLHQSOUploadStatusChanged) Reset() {
+	*x = CLHQSOUploadStatusChanged{}
+	mi := &file_clh_msg_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CLHQSOUploadStatusChanged) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CLHQSOUploadStatusChanged) ProtoMessage() {}
+
+func (x *CLHQSOUploadStatusChanged) ProtoReflect() protoreflect.Message {
+	mi := &file_clh_msg_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CLHQSOUploadStatusChanged.ProtoReflect.Descriptor instead.
+func (*CLHQSOUploadStatusChanged) Descriptor() ([]byte, []int) {
+	return file_clh_msg_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *CLHQSOUploadStatusChanged) GetQsoDetail() *RecordedCallsignDetail {
+	if x != nil {
+		return x.QsoDetail
+	}
+	return nil
+}
+
+func (x *CLHQSOUploadStatusChanged) GetTimestamp() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Timestamp
 	}
@@ -130,15 +444,65 @@ var File_clh_msg_proto protoreflect.FileDescriptor
 
 const file_clh_msg_proto_rawDesc = "" +
 	"\n" +
-	"\rclh_msg.proto\x12\x10clh_proto.plugin\x1a\x1fgoogle/protobuf/timestamp.proto\"\x86\x01\n" +
-	"\x0fCLHInternalData\x128\n" +
-	"\x06status\x18\x01 \x01(\x0e2 .clh_proto.plugin.InternalStatusR\x06status\x129\n" +
-	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp*v\n" +
-	"\x0eInternalStatus\x12\x13\n" +
-	"\x0fclh_starting_up\x10\x00\x12\x15\n" +
-	"\x11clh_shutting_down\x10\x01\x12\x1b\n" +
-	"\x17plugin_service_starting\x10\x02\x12\x1b\n" +
-	"\x17plugin_service_stopping\x10\x03BJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
+	"\rclh_msg.proto\x12\x10clh_proto.plugin\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe6\v\n" +
+	"\x16RecordedCallsignDetail\x12k\n" +
+	"\x11uploaded_services\x18\x01 \x03(\v2>.clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntryR\x10uploadedServices\x12\x91\x01\n" +
+	"\x1fuploaded_services_error_message\x18\x02 \x03(\v2J.clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntryR\x1cuploadedServicesErrorMessage\x122\n" +
+	"\x15original_country_name\x18\x03 \x01(\tR\x13originalCountryName\x12\x17\n" +
+	"\acq_zone\x18\x04 \x01(\x05R\x06cqZone\x12\x19\n" +
+	"\bitu_zone\x18\x05 \x01(\x05R\aituZone\x12\x1c\n" +
+	"\tcontinent\x18\x06 \x01(\tR\tcontinent\x12\x1a\n" +
+	"\blatitude\x18\a \x01(\x02R\blatitude\x12\x1c\n" +
+	"\tlongitude\x18\b \x01(\x02R\tlongitude\x12\x1d\n" +
+	"\n" +
+	"gmt_offset\x18\t \x01(\x02R\tgmtOffset\x12\x12\n" +
+	"\x04dxcc\x18\n" +
+	" \x01(\tR\x04dxcc\x12\"\n" +
+	"\rdate_time_off\x18\v \x01(\x03R\vdateTimeOff\x12\x17\n" +
+	"\adx_call\x18\f \x01(\tR\x06dxCall\x12\x17\n" +
+	"\adx_grid\x18\r \x01(\tR\x06dxGrid\x12+\n" +
+	"\x12tx_frequency_in_hz\x18\x0e \x01(\x04R\x0ftxFrequencyInHz\x123\n" +
+	"\x16tx_frequency_in_meters\x18\x0f \x01(\tR\x13txFrequencyInMeters\x12\x12\n" +
+	"\x04mode\x18\x10 \x01(\tR\x04mode\x12\x1f\n" +
+	"\vparent_mode\x18\x11 \x01(\tR\n" +
+	"parentMode\x12\x1f\n" +
+	"\vreport_sent\x18\x12 \x01(\tR\n" +
+	"reportSent\x12'\n" +
+	"\x0freport_received\x18\x13 \x01(\tR\x0ereportReceived\x12\x19\n" +
+	"\btx_power\x18\x14 \x01(\tR\atxPower\x12\x1a\n" +
+	"\bcomments\x18\x15 \x01(\tR\bcomments\x12\x12\n" +
+	"\x04name\x18\x16 \x01(\tR\x04name\x12 \n" +
+	"\fdate_time_on\x18\x17 \x01(\x03R\n" +
+	"dateTimeOn\x12#\n" +
+	"\roperator_call\x18\x18 \x01(\tR\foperatorCall\x12\x17\n" +
+	"\amy_call\x18\x19 \x01(\tR\x06myCall\x12\x17\n" +
+	"\amy_grid\x18\x1a \x01(\tR\x06myGrid\x12#\n" +
+	"\rexchange_sent\x18\x1b \x01(\tR\fexchangeSent\x12+\n" +
+	"\x11exchange_received\x18\x1c \x01(\tR\x10exchangeReceived\x122\n" +
+	"\x15adif_propagation_mode\x18\x1d \x01(\tR\x13adifPropagationMode\x12\x1b\n" +
+	"\tclient_id\x18\x1e \x01(\tR\bclientId\x12\x19\n" +
+	"\braw_data\x18  \x01(\tR\arawData\x12\x1f\n" +
+	"\vfail_reason\x18! \x01(\tR\n" +
+	"failReason\x12C\n" +
+	"\rupload_status\x18# \x01(\x0e2\x1e.clh_proto.plugin.UploadStatusR\fuploadStatus\x12#\n" +
+	"\rforced_upload\x18% \x01(\bR\fforcedUpload\x1aC\n" +
+	"\x15UploadedServicesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\bR\x05value:\x028\x01\x1aO\n" +
+	"!UploadedServicesErrorMessageEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x9f\x01\n" +
+	"\x19CLHQSOUploadStatusChanged\x12G\n" +
+	"\n" +
+	"qso_detail\x18\x01 \x01(\v2(.clh_proto.plugin.RecordedCallsignDetailR\tqsoDetail\x129\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp*\xb5\x01\n" +
+	"\fUploadStatus\x12\x1d\n" +
+	"\x19UPLOAD_STATUS_UNSPECIFIED\x10\x00\x12\x19\n" +
+	"\x15UPLOAD_STATUS_PENDING\x10\x01\x12\x1b\n" +
+	"\x17UPLOAD_STATUS_UPLOADING\x10\x02\x12\x19\n" +
+	"\x15UPLOAD_STATUS_SUCCESS\x10\x03\x12\x18\n" +
+	"\x14UPLOAD_STATUS_FAILED\x10\x04\x12\x19\n" +
+	"\x15UPLOAD_STATUS_SKIPPED\x10\x05BJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
 
 var (
 	file_clh_msg_proto_rawDescOnce sync.Once
@@ -153,20 +517,26 @@ func file_clh_msg_proto_rawDescGZIP() []byte {
 }
 
 var file_clh_msg_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_clh_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_clh_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_clh_msg_proto_goTypes = []any{
-	(InternalStatus)(0),           // 0: clh_proto.plugin.InternalStatus
-	(*CLHInternalData)(nil),       // 1: clh_proto.plugin.CLHInternalData
-	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
+	(UploadStatus)(0),                 // 0: clh_proto.plugin.UploadStatus
+	(*RecordedCallsignDetail)(nil),    // 1: clh_proto.plugin.RecordedCallsignDetail
+	(*CLHQSOUploadStatusChanged)(nil), // 2: clh_proto.plugin.CLHQSOUploadStatusChanged
+	nil,                               // 3: clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntry
+	nil,                               // 4: clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntry
+	(*timestamppb.Timestamp)(nil),     // 5: google.protobuf.Timestamp
 }
 var file_clh_msg_proto_depIdxs = []int32{
-	0, // 0: clh_proto.plugin.CLHInternalData.status:type_name -> clh_proto.plugin.InternalStatus
-	2, // 1: clh_proto.plugin.CLHInternalData.timestamp:type_name -> google.protobuf.Timestamp
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	3, // 0: clh_proto.plugin.RecordedCallsignDetail.uploaded_services:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesEntry
+	4, // 1: clh_proto.plugin.RecordedCallsignDetail.uploaded_services_error_message:type_name -> clh_proto.plugin.RecordedCallsignDetail.UploadedServicesErrorMessageEntry
+	0, // 2: clh_proto.plugin.RecordedCallsignDetail.upload_status:type_name -> clh_proto.plugin.UploadStatus
+	1, // 3: clh_proto.plugin.CLHQSOUploadStatusChanged.qso_detail:type_name -> clh_proto.plugin.RecordedCallsignDetail
+	5, // 4: clh_proto.plugin.CLHQSOUploadStatusChanged.timestamp:type_name -> google.protobuf.Timestamp
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_clh_msg_proto_init() }
@@ -180,7 +550,7 @@ func file_clh_msg_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_clh_msg_proto_rawDesc), len(file_clh_msg_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

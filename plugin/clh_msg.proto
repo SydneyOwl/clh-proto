@@ -6,15 +6,56 @@ option csharp_namespace = "SydneyOwl.CLHProto.Plugin";
 
 import "google/protobuf/timestamp.proto";
 
-enum InternalStatus{
-  clh_starting_up = 0;
-  clh_shutting_down = 1;
-  plugin_service_starting = 2;
-  plugin_service_stopping = 3;
+enum UploadStatus {
+  UPLOAD_STATUS_UNSPECIFIED = 0;
+  UPLOAD_STATUS_PENDING = 1;
+  UPLOAD_STATUS_UPLOADING = 2;
+  UPLOAD_STATUS_SUCCESS = 3;
+  UPLOAD_STATUS_FAILED = 4;
+  UPLOAD_STATUS_SKIPPED = 5;
 }
 
-message CLHInternalData{
-  InternalStatus status = 1;
+message RecordedCallsignDetail {
+  map<string, bool> uploaded_services = 1;
+  map<string, string> uploaded_services_error_message = 2;
+  string original_country_name = 3;
+  int32 cq_zone = 4;
+  int32 itu_zone = 5;
+  string continent = 6;
+  float latitude = 7;
+  float longitude = 8;
+  float gmt_offset = 9;
+  string dxcc = 10;
+  int64 date_time_off = 11;
+  string dx_call = 12;
+  string dx_grid = 13;
+  uint64 tx_frequency_in_hz = 14;
+  string tx_frequency_in_meters = 15;
+  string mode = 16;
+  string parent_mode = 17;
+  string report_sent = 18;
+  string report_received = 19;
+  string tx_power = 20;
+  string comments = 21;
+  string name = 22;
+  int64 date_time_on = 23;
+  string operator_call = 24;
+  string my_call = 25;
+  string my_grid = 26;
+  string exchange_sent = 27;
+  string exchange_received = 28;
+  string adif_propagation_mode = 29;
+  string client_id = 30;
+  string raw_data = 32;
+  string fail_reason = 33;
 
-  google.protobuf.Timestamp timestamp = 999 [json_name = "timestamp"];
+  UploadStatus upload_status = 35;
+
+  bool forced_upload = 37;
+}
+
+message CLHQSOUploadStatusChanged {
+  RecordedCallsignDetail qso_detail = 1;
+
+  google.protobuf.Timestamp timestamp = 999;
 }

@@ -26,19 +26,22 @@ const (
 type Capability int32
 
 const (
-	Capability_wsjtx_message Capability = 0
-	Capability_rig_data      Capability = 1
+	Capability_WSJTX_MESSAGE     Capability = 0
+	Capability_RIG_DATA          Capability = 1
+	Capability_CLH_INTERNAL_DATA Capability = 2
 )
 
 // Enum value maps for Capability.
 var (
 	Capability_name = map[int32]string{
-		0: "wsjtx_message",
-		1: "rig_data",
+		0: "WSJTX_MESSAGE",
+		1: "RIG_DATA",
+		2: "CLH_INTERNAL_DATA",
 	}
 	Capability_value = map[string]int32{
-		"wsjtx_message": 0,
-		"rig_data":      1,
+		"WSJTX_MESSAGE":     0,
+		"RIG_DATA":          1,
+		"CLH_INTERNAL_DATA": 2,
 	}
 )
 
@@ -273,6 +276,51 @@ func (x *PipeHeartbeat) GetTimestamp() *timestamppb.Timestamp {
 	return nil
 }
 
+// PipeConnectionClosed is sent when CLH is closing plugin connection.
+type PipeConnectionClosed struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,999,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PipeConnectionClosed) Reset() {
+	*x = PipeConnectionClosed{}
+	mi := &file_common_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PipeConnectionClosed) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PipeConnectionClosed) ProtoMessage() {}
+
+func (x *PipeConnectionClosed) ProtoReflect() protoreflect.Message {
+	mi := &file_common_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PipeConnectionClosed.ProtoReflect.Descriptor instead.
+func (*PipeConnectionClosed) Descriptor() ([]byte, []int) {
+	return file_common_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *PipeConnectionClosed) GetTimestamp() *timestamppb.Timestamp {
+	if x != nil {
+		return x.Timestamp
+	}
+	return nil
+}
+
 var File_common_proto protoreflect.FileDescriptor
 
 const file_common_proto_rawDesc = "" +
@@ -292,11 +340,14 @@ const file_common_proto_rawDesc = "" +
 	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"^\n" +
 	"\rPipeHeartbeat\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x129\n" +
-	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp*-\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"Q\n" +
+	"\x14PipeConnectionClosed\x129\n" +
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp*D\n" +
 	"\n" +
 	"Capability\x12\x11\n" +
-	"\rwsjtx_message\x10\x00\x12\f\n" +
-	"\brig_data\x10\x01BJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
+	"\rWSJTX_MESSAGE\x10\x00\x12\f\n" +
+	"\bRIG_DATA\x10\x01\x12\x15\n" +
+	"\x11CLH_INTERNAL_DATA\x10\x02BJZ,github.com/sydneyowl/clh-proto/gen/go/plugin\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
 
 var (
 	file_common_proto_rawDescOnce sync.Once
@@ -311,24 +362,26 @@ func file_common_proto_rawDescGZIP() []byte {
 }
 
 var file_common_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_common_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_common_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_common_proto_goTypes = []any{
 	(Capability)(0),                // 0: clh_proto.plugin.Capability
 	(*PipeRegisterPluginReq)(nil),  // 1: clh_proto.plugin.PipeRegisterPluginReq
 	(*PipeRegisterPluginResp)(nil), // 2: clh_proto.plugin.PipeRegisterPluginResp
 	(*PipeHeartbeat)(nil),          // 3: clh_proto.plugin.PipeHeartbeat
-	(*timestamppb.Timestamp)(nil),  // 4: google.protobuf.Timestamp
+	(*PipeConnectionClosed)(nil),   // 4: clh_proto.plugin.PipeConnectionClosed
+	(*timestamppb.Timestamp)(nil),  // 5: google.protobuf.Timestamp
 }
 var file_common_proto_depIdxs = []int32{
 	0, // 0: clh_proto.plugin.PipeRegisterPluginReq.capabilities:type_name -> clh_proto.plugin.Capability
-	4, // 1: clh_proto.plugin.PipeRegisterPluginReq.timestamp:type_name -> google.protobuf.Timestamp
-	4, // 2: clh_proto.plugin.PipeRegisterPluginResp.timestamp:type_name -> google.protobuf.Timestamp
-	4, // 3: clh_proto.plugin.PipeHeartbeat.timestamp:type_name -> google.protobuf.Timestamp
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	5, // 1: clh_proto.plugin.PipeRegisterPluginReq.timestamp:type_name -> google.protobuf.Timestamp
+	5, // 2: clh_proto.plugin.PipeRegisterPluginResp.timestamp:type_name -> google.protobuf.Timestamp
+	5, // 3: clh_proto.plugin.PipeHeartbeat.timestamp:type_name -> google.protobuf.Timestamp
+	5, // 4: clh_proto.plugin.PipeConnectionClosed.timestamp:type_name -> google.protobuf.Timestamp
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_common_proto_init() }
@@ -344,7 +397,7 @@ func file_common_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_proto_rawDesc), len(file_common_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

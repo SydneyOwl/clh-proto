@@ -11,8 +11,9 @@ import "rig_msg.proto";
 import "wsjtx_msg.proto";
 
 enum Capability{
-  wsjtx_message = 0;
-  rig_data = 1;
+  WSJTX_MESSAGE = 0;
+  RIG_DATA = 1;
+  CLH_INTERNAL_DATA = 2;
 }
 
 message PipeRegisterPluginReq {
@@ -33,5 +34,10 @@ message PipeRegisterPluginResp {
 
 message PipeHeartbeat {
   string uuid = 1;
+  google.protobuf.Timestamp timestamp = 999;
+}
+
+// PipeConnectionClosed is sent when CLH is closing plugin connection.
+message PipeConnectionClosed {
   google.protobuf.Timestamp timestamp = 999;
 }

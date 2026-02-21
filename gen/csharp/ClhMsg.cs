@@ -25,45 +25,74 @@ namespace SydneyOwl.CLHProto.Plugin {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg1jbGhfbXNnLnByb3RvEhBjbGhfcHJvdG8ucGx1Z2luGh9nb29nbGUvcHJv",
-            "dG9idWYvdGltZXN0YW1wLnByb3RvIn4KD0NMSEludGVybmFsRGF0YRIwCgZz",
-            "dGF0dXMYASABKA4yIC5jbGhfcHJvdG8ucGx1Z2luLkludGVybmFsU3RhdHVz",
-            "EjkKCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wUgl0aW1lc3RhbXAqdgoOSW50ZXJuYWxTdGF0dXMSEwoPY2xoX3N0YXJ0",
-            "aW5nX3VwEAASFQoRY2xoX3NodXR0aW5nX2Rvd24QARIbChdwbHVnaW5fc2Vy",
-            "dmljZV9zdGFydGluZxACEhsKF3BsdWdpbl9zZXJ2aWNlX3N0b3BwaW5nEANC",
-            "SlosZ2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVn",
-            "aW6qAhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
+            "dG9idWYvdGltZXN0YW1wLnByb3RvIqIIChZSZWNvcmRlZENhbGxzaWduRGV0",
+            "YWlsElkKEXVwbG9hZGVkX3NlcnZpY2VzGAEgAygLMj4uY2xoX3Byb3RvLnBs",
+            "dWdpbi5SZWNvcmRlZENhbGxzaWduRGV0YWlsLlVwbG9hZGVkU2VydmljZXNF",
+            "bnRyeRJzCh91cGxvYWRlZF9zZXJ2aWNlc19lcnJvcl9tZXNzYWdlGAIgAygL",
+            "MkouY2xoX3Byb3RvLnBsdWdpbi5SZWNvcmRlZENhbGxzaWduRGV0YWlsLlVw",
+            "bG9hZGVkU2VydmljZXNFcnJvck1lc3NhZ2VFbnRyeRIdChVvcmlnaW5hbF9j",
+            "b3VudHJ5X25hbWUYAyABKAkSDwoHY3Ffem9uZRgEIAEoBRIQCghpdHVfem9u",
+            "ZRgFIAEoBRIRCgljb250aW5lbnQYBiABKAkSEAoIbGF0aXR1ZGUYByABKAIS",
+            "EQoJbG9uZ2l0dWRlGAggASgCEhIKCmdtdF9vZmZzZXQYCSABKAISDAoEZHhj",
+            "YxgKIAEoCRIVCg1kYXRlX3RpbWVfb2ZmGAsgASgDEg8KB2R4X2NhbGwYDCAB",
+            "KAkSDwoHZHhfZ3JpZBgNIAEoCRIaChJ0eF9mcmVxdWVuY3lfaW5faHoYDiAB",
+            "KAQSHgoWdHhfZnJlcXVlbmN5X2luX21ldGVycxgPIAEoCRIMCgRtb2RlGBAg",
+            "ASgJEhMKC3BhcmVudF9tb2RlGBEgASgJEhMKC3JlcG9ydF9zZW50GBIgASgJ",
+            "EhcKD3JlcG9ydF9yZWNlaXZlZBgTIAEoCRIQCgh0eF9wb3dlchgUIAEoCRIQ",
+            "Cghjb21tZW50cxgVIAEoCRIMCgRuYW1lGBYgASgJEhQKDGRhdGVfdGltZV9v",
+            "bhgXIAEoAxIVCg1vcGVyYXRvcl9jYWxsGBggASgJEg8KB215X2NhbGwYGSAB",
+            "KAkSDwoHbXlfZ3JpZBgaIAEoCRIVCg1leGNoYW5nZV9zZW50GBsgASgJEhkK",
+            "EWV4Y2hhbmdlX3JlY2VpdmVkGBwgASgJEh0KFWFkaWZfcHJvcGFnYXRpb25f",
+            "bW9kZRgdIAEoCRIRCgljbGllbnRfaWQYHiABKAkSEAoIcmF3X2RhdGEYICAB",
+            "KAkSEwoLZmFpbF9yZWFzb24YISABKAkSNQoNdXBsb2FkX3N0YXR1cxgjIAEo",
+            "DjIeLmNsaF9wcm90by5wbHVnaW4uVXBsb2FkU3RhdHVzEhUKDWZvcmNlZF91",
+            "cGxvYWQYJSABKAgaNwoVVXBsb2FkZWRTZXJ2aWNlc0VudHJ5EgsKA2tleRgB",
+            "IAEoCRINCgV2YWx1ZRgCIAEoCDoCOAEaQwohVXBsb2FkZWRTZXJ2aWNlc0Vy",
+            "cm9yTWVzc2FnZUVudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToC",
+            "OAEiiQEKGUNMSFFTT1VwbG9hZFN0YXR1c0NoYW5nZWQSPAoKcXNvX2RldGFp",
+            "bBgBIAEoCzIoLmNsaF9wcm90by5wbHVnaW4uUmVjb3JkZWRDYWxsc2lnbkRl",
+            "dGFpbBIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcCq1AQoMVXBsb2FkU3RhdHVzEh0KGVVQTE9BRF9TVEFUVVNfVU5T",
+            "UEVDSUZJRUQQABIZChVVUExPQURfU1RBVFVTX1BFTkRJTkcQARIbChdVUExP",
+            "QURfU1RBVFVTX1VQTE9BRElORxACEhkKFVVQTE9BRF9TVEFUVVNfU1VDQ0VT",
+            "UxADEhgKFFVQTE9BRF9TVEFUVVNfRkFJTEVEEAQSGQoVVVBMT0FEX1NUQVRV",
+            "U19TS0lQUEVEEAVCSlosZ2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3Rv",
+            "L2dlbi9nby9wbHVnaW6qAhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.InternalStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.CLHInternalData), global::SydneyOwl.CLHProto.Plugin.CLHInternalData.Parser, new[]{ "Status", "Timestamp" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.UploadStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail), global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail.Parser, new[]{ "UploadedServices", "UploadedServicesErrorMessage", "OriginalCountryName", "CqZone", "ItuZone", "Continent", "Latitude", "Longitude", "GmtOffset", "Dxcc", "DateTimeOff", "DxCall", "DxGrid", "TxFrequencyInHz", "TxFrequencyInMeters", "Mode", "ParentMode", "ReportSent", "ReportReceived", "TxPower", "Comments", "Name", "DateTimeOn", "OperatorCall", "MyCall", "MyGrid", "ExchangeSent", "ExchangeReceived", "AdifPropagationMode", "ClientId", "RawData", "FailReason", "UploadStatus", "ForcedUpload" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.CLHQSOUploadStatusChanged), global::SydneyOwl.CLHProto.Plugin.CLHQSOUploadStatusChanged.Parser, new[]{ "QsoDetail", "Timestamp" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Enums
-  public enum InternalStatus {
-    [pbr::OriginalName("clh_starting_up")] ClhStartingUp = 0,
-    [pbr::OriginalName("clh_shutting_down")] ClhShuttingDown = 1,
-    [pbr::OriginalName("plugin_service_starting")] PluginServiceStarting = 2,
-    [pbr::OriginalName("plugin_service_stopping")] PluginServiceStopping = 3,
+  public enum UploadStatus {
+    [pbr::OriginalName("UPLOAD_STATUS_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("UPLOAD_STATUS_PENDING")] Pending = 1,
+    [pbr::OriginalName("UPLOAD_STATUS_UPLOADING")] Uploading = 2,
+    [pbr::OriginalName("UPLOAD_STATUS_SUCCESS")] Success = 3,
+    [pbr::OriginalName("UPLOAD_STATUS_FAILED")] Failed = 4,
+    [pbr::OriginalName("UPLOAD_STATUS_SKIPPED")] Skipped = 5,
   }
 
   #endregion
 
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class CLHInternalData : pb::IMessage<CLHInternalData>
+  public sealed partial class RecordedCallsignDetail : pb::IMessage<RecordedCallsignDetail>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CLHInternalData> _parser = new pb::MessageParser<CLHInternalData>(() => new CLHInternalData());
+    private static readonly pb::MessageParser<RecordedCallsignDetail> _parser = new pb::MessageParser<RecordedCallsignDetail>(() => new RecordedCallsignDetail());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<CLHInternalData> Parser { get { return _parser; } }
+    public static pb::MessageParser<RecordedCallsignDetail> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -79,7 +108,7 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CLHInternalData() {
+    public RecordedCallsignDetail() {
       OnConstruction();
     }
 
@@ -87,27 +116,1424 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CLHInternalData(CLHInternalData other) : this() {
-      status_ = other.status_;
+    public RecordedCallsignDetail(RecordedCallsignDetail other) : this() {
+      uploadedServices_ = other.uploadedServices_.Clone();
+      uploadedServicesErrorMessage_ = other.uploadedServicesErrorMessage_.Clone();
+      originalCountryName_ = other.originalCountryName_;
+      cqZone_ = other.cqZone_;
+      ituZone_ = other.ituZone_;
+      continent_ = other.continent_;
+      latitude_ = other.latitude_;
+      longitude_ = other.longitude_;
+      gmtOffset_ = other.gmtOffset_;
+      dxcc_ = other.dxcc_;
+      dateTimeOff_ = other.dateTimeOff_;
+      dxCall_ = other.dxCall_;
+      dxGrid_ = other.dxGrid_;
+      txFrequencyInHz_ = other.txFrequencyInHz_;
+      txFrequencyInMeters_ = other.txFrequencyInMeters_;
+      mode_ = other.mode_;
+      parentMode_ = other.parentMode_;
+      reportSent_ = other.reportSent_;
+      reportReceived_ = other.reportReceived_;
+      txPower_ = other.txPower_;
+      comments_ = other.comments_;
+      name_ = other.name_;
+      dateTimeOn_ = other.dateTimeOn_;
+      operatorCall_ = other.operatorCall_;
+      myCall_ = other.myCall_;
+      myGrid_ = other.myGrid_;
+      exchangeSent_ = other.exchangeSent_;
+      exchangeReceived_ = other.exchangeReceived_;
+      adifPropagationMode_ = other.adifPropagationMode_;
+      clientId_ = other.clientId_;
+      rawData_ = other.rawData_;
+      failReason_ = other.failReason_;
+      uploadStatus_ = other.uploadStatus_;
+      forcedUpload_ = other.forcedUpload_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RecordedCallsignDetail Clone() {
+      return new RecordedCallsignDetail(this);
+    }
+
+    /// <summary>Field number for the "uploaded_services" field.</summary>
+    public const int UploadedServicesFieldNumber = 1;
+    private static readonly pbc::MapField<string, bool>.Codec _map_uploadedServices_codec
+        = new pbc::MapField<string, bool>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForBool(16, false), 10);
+    private readonly pbc::MapField<string, bool> uploadedServices_ = new pbc::MapField<string, bool>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, bool> UploadedServices {
+      get { return uploadedServices_; }
+    }
+
+    /// <summary>Field number for the "uploaded_services_error_message" field.</summary>
+    public const int UploadedServicesErrorMessageFieldNumber = 2;
+    private static readonly pbc::MapField<string, string>.Codec _map_uploadedServicesErrorMessage_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 18);
+    private readonly pbc::MapField<string, string> uploadedServicesErrorMessage_ = new pbc::MapField<string, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> UploadedServicesErrorMessage {
+      get { return uploadedServicesErrorMessage_; }
+    }
+
+    /// <summary>Field number for the "original_country_name" field.</summary>
+    public const int OriginalCountryNameFieldNumber = 3;
+    private string originalCountryName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OriginalCountryName {
+      get { return originalCountryName_; }
+      set {
+        originalCountryName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "cq_zone" field.</summary>
+    public const int CqZoneFieldNumber = 4;
+    private int cqZone_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CqZone {
+      get { return cqZone_; }
+      set {
+        cqZone_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "itu_zone" field.</summary>
+    public const int ItuZoneFieldNumber = 5;
+    private int ituZone_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int ItuZone {
+      get { return ituZone_; }
+      set {
+        ituZone_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "continent" field.</summary>
+    public const int ContinentFieldNumber = 6;
+    private string continent_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Continent {
+      get { return continent_; }
+      set {
+        continent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "latitude" field.</summary>
+    public const int LatitudeFieldNumber = 7;
+    private float latitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Latitude {
+      get { return latitude_; }
+      set {
+        latitude_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "longitude" field.</summary>
+    public const int LongitudeFieldNumber = 8;
+    private float longitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Longitude {
+      get { return longitude_; }
+      set {
+        longitude_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gmt_offset" field.</summary>
+    public const int GmtOffsetFieldNumber = 9;
+    private float gmtOffset_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float GmtOffset {
+      get { return gmtOffset_; }
+      set {
+        gmtOffset_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dxcc" field.</summary>
+    public const int DxccFieldNumber = 10;
+    private string dxcc_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Dxcc {
+      get { return dxcc_; }
+      set {
+        dxcc_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "date_time_off" field.</summary>
+    public const int DateTimeOffFieldNumber = 11;
+    private long dateTimeOff_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long DateTimeOff {
+      get { return dateTimeOff_; }
+      set {
+        dateTimeOff_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dx_call" field.</summary>
+    public const int DxCallFieldNumber = 12;
+    private string dxCall_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DxCall {
+      get { return dxCall_; }
+      set {
+        dxCall_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "dx_grid" field.</summary>
+    public const int DxGridFieldNumber = 13;
+    private string dxGrid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DxGrid {
+      get { return dxGrid_; }
+      set {
+        dxGrid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tx_frequency_in_hz" field.</summary>
+    public const int TxFrequencyInHzFieldNumber = 14;
+    private ulong txFrequencyInHz_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong TxFrequencyInHz {
+      get { return txFrequencyInHz_; }
+      set {
+        txFrequencyInHz_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tx_frequency_in_meters" field.</summary>
+    public const int TxFrequencyInMetersFieldNumber = 15;
+    private string txFrequencyInMeters_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TxFrequencyInMeters {
+      get { return txFrequencyInMeters_; }
+      set {
+        txFrequencyInMeters_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "mode" field.</summary>
+    public const int ModeFieldNumber = 16;
+    private string mode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Mode {
+      get { return mode_; }
+      set {
+        mode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "parent_mode" field.</summary>
+    public const int ParentModeFieldNumber = 17;
+    private string parentMode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ParentMode {
+      get { return parentMode_; }
+      set {
+        parentMode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "report_sent" field.</summary>
+    public const int ReportSentFieldNumber = 18;
+    private string reportSent_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ReportSent {
+      get { return reportSent_; }
+      set {
+        reportSent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "report_received" field.</summary>
+    public const int ReportReceivedFieldNumber = 19;
+    private string reportReceived_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ReportReceived {
+      get { return reportReceived_; }
+      set {
+        reportReceived_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tx_power" field.</summary>
+    public const int TxPowerFieldNumber = 20;
+    private string txPower_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TxPower {
+      get { return txPower_; }
+      set {
+        txPower_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "comments" field.</summary>
+    public const int CommentsFieldNumber = 21;
+    private string comments_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Comments {
+      get { return comments_; }
+      set {
+        comments_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 22;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "date_time_on" field.</summary>
+    public const int DateTimeOnFieldNumber = 23;
+    private long dateTimeOn_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long DateTimeOn {
+      get { return dateTimeOn_; }
+      set {
+        dateTimeOn_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "operator_call" field.</summary>
+    public const int OperatorCallFieldNumber = 24;
+    private string operatorCall_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OperatorCall {
+      get { return operatorCall_; }
+      set {
+        operatorCall_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "my_call" field.</summary>
+    public const int MyCallFieldNumber = 25;
+    private string myCall_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string MyCall {
+      get { return myCall_; }
+      set {
+        myCall_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "my_grid" field.</summary>
+    public const int MyGridFieldNumber = 26;
+    private string myGrid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string MyGrid {
+      get { return myGrid_; }
+      set {
+        myGrid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "exchange_sent" field.</summary>
+    public const int ExchangeSentFieldNumber = 27;
+    private string exchangeSent_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ExchangeSent {
+      get { return exchangeSent_; }
+      set {
+        exchangeSent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "exchange_received" field.</summary>
+    public const int ExchangeReceivedFieldNumber = 28;
+    private string exchangeReceived_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ExchangeReceived {
+      get { return exchangeReceived_; }
+      set {
+        exchangeReceived_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "adif_propagation_mode" field.</summary>
+    public const int AdifPropagationModeFieldNumber = 29;
+    private string adifPropagationMode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AdifPropagationMode {
+      get { return adifPropagationMode_; }
+      set {
+        adifPropagationMode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_id" field.</summary>
+    public const int ClientIdFieldNumber = 30;
+    private string clientId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientId {
+      get { return clientId_; }
+      set {
+        clientId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "raw_data" field.</summary>
+    public const int RawDataFieldNumber = 32;
+    private string rawData_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RawData {
+      get { return rawData_; }
+      set {
+        rawData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "fail_reason" field.</summary>
+    public const int FailReasonFieldNumber = 33;
+    private string failReason_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string FailReason {
+      get { return failReason_; }
+      set {
+        failReason_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "upload_status" field.</summary>
+    public const int UploadStatusFieldNumber = 35;
+    private global::SydneyOwl.CLHProto.Plugin.UploadStatus uploadStatus_ = global::SydneyOwl.CLHProto.Plugin.UploadStatus.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.UploadStatus UploadStatus {
+      get { return uploadStatus_; }
+      set {
+        uploadStatus_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forced_upload" field.</summary>
+    public const int ForcedUploadFieldNumber = 37;
+    private bool forcedUpload_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool ForcedUpload {
+      get { return forcedUpload_; }
+      set {
+        forcedUpload_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RecordedCallsignDetail);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RecordedCallsignDetail other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!UploadedServices.Equals(other.UploadedServices)) return false;
+      if (!UploadedServicesErrorMessage.Equals(other.UploadedServicesErrorMessage)) return false;
+      if (OriginalCountryName != other.OriginalCountryName) return false;
+      if (CqZone != other.CqZone) return false;
+      if (ItuZone != other.ItuZone) return false;
+      if (Continent != other.Continent) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Latitude, other.Latitude)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Longitude, other.Longitude)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(GmtOffset, other.GmtOffset)) return false;
+      if (Dxcc != other.Dxcc) return false;
+      if (DateTimeOff != other.DateTimeOff) return false;
+      if (DxCall != other.DxCall) return false;
+      if (DxGrid != other.DxGrid) return false;
+      if (TxFrequencyInHz != other.TxFrequencyInHz) return false;
+      if (TxFrequencyInMeters != other.TxFrequencyInMeters) return false;
+      if (Mode != other.Mode) return false;
+      if (ParentMode != other.ParentMode) return false;
+      if (ReportSent != other.ReportSent) return false;
+      if (ReportReceived != other.ReportReceived) return false;
+      if (TxPower != other.TxPower) return false;
+      if (Comments != other.Comments) return false;
+      if (Name != other.Name) return false;
+      if (DateTimeOn != other.DateTimeOn) return false;
+      if (OperatorCall != other.OperatorCall) return false;
+      if (MyCall != other.MyCall) return false;
+      if (MyGrid != other.MyGrid) return false;
+      if (ExchangeSent != other.ExchangeSent) return false;
+      if (ExchangeReceived != other.ExchangeReceived) return false;
+      if (AdifPropagationMode != other.AdifPropagationMode) return false;
+      if (ClientId != other.ClientId) return false;
+      if (RawData != other.RawData) return false;
+      if (FailReason != other.FailReason) return false;
+      if (UploadStatus != other.UploadStatus) return false;
+      if (ForcedUpload != other.ForcedUpload) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= UploadedServices.GetHashCode();
+      hash ^= UploadedServicesErrorMessage.GetHashCode();
+      if (OriginalCountryName.Length != 0) hash ^= OriginalCountryName.GetHashCode();
+      if (CqZone != 0) hash ^= CqZone.GetHashCode();
+      if (ItuZone != 0) hash ^= ItuZone.GetHashCode();
+      if (Continent.Length != 0) hash ^= Continent.GetHashCode();
+      if (Latitude != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Latitude);
+      if (Longitude != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Longitude);
+      if (GmtOffset != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(GmtOffset);
+      if (Dxcc.Length != 0) hash ^= Dxcc.GetHashCode();
+      if (DateTimeOff != 0L) hash ^= DateTimeOff.GetHashCode();
+      if (DxCall.Length != 0) hash ^= DxCall.GetHashCode();
+      if (DxGrid.Length != 0) hash ^= DxGrid.GetHashCode();
+      if (TxFrequencyInHz != 0UL) hash ^= TxFrequencyInHz.GetHashCode();
+      if (TxFrequencyInMeters.Length != 0) hash ^= TxFrequencyInMeters.GetHashCode();
+      if (Mode.Length != 0) hash ^= Mode.GetHashCode();
+      if (ParentMode.Length != 0) hash ^= ParentMode.GetHashCode();
+      if (ReportSent.Length != 0) hash ^= ReportSent.GetHashCode();
+      if (ReportReceived.Length != 0) hash ^= ReportReceived.GetHashCode();
+      if (TxPower.Length != 0) hash ^= TxPower.GetHashCode();
+      if (Comments.Length != 0) hash ^= Comments.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (DateTimeOn != 0L) hash ^= DateTimeOn.GetHashCode();
+      if (OperatorCall.Length != 0) hash ^= OperatorCall.GetHashCode();
+      if (MyCall.Length != 0) hash ^= MyCall.GetHashCode();
+      if (MyGrid.Length != 0) hash ^= MyGrid.GetHashCode();
+      if (ExchangeSent.Length != 0) hash ^= ExchangeSent.GetHashCode();
+      if (ExchangeReceived.Length != 0) hash ^= ExchangeReceived.GetHashCode();
+      if (AdifPropagationMode.Length != 0) hash ^= AdifPropagationMode.GetHashCode();
+      if (ClientId.Length != 0) hash ^= ClientId.GetHashCode();
+      if (RawData.Length != 0) hash ^= RawData.GetHashCode();
+      if (FailReason.Length != 0) hash ^= FailReason.GetHashCode();
+      if (UploadStatus != global::SydneyOwl.CLHProto.Plugin.UploadStatus.Unspecified) hash ^= UploadStatus.GetHashCode();
+      if (ForcedUpload != false) hash ^= ForcedUpload.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      uploadedServices_.WriteTo(output, _map_uploadedServices_codec);
+      uploadedServicesErrorMessage_.WriteTo(output, _map_uploadedServicesErrorMessage_codec);
+      if (OriginalCountryName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(OriginalCountryName);
+      }
+      if (CqZone != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(CqZone);
+      }
+      if (ItuZone != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(ItuZone);
+      }
+      if (Continent.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Continent);
+      }
+      if (Latitude != 0F) {
+        output.WriteRawTag(61);
+        output.WriteFloat(Latitude);
+      }
+      if (Longitude != 0F) {
+        output.WriteRawTag(69);
+        output.WriteFloat(Longitude);
+      }
+      if (GmtOffset != 0F) {
+        output.WriteRawTag(77);
+        output.WriteFloat(GmtOffset);
+      }
+      if (Dxcc.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Dxcc);
+      }
+      if (DateTimeOff != 0L) {
+        output.WriteRawTag(88);
+        output.WriteInt64(DateTimeOff);
+      }
+      if (DxCall.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(DxCall);
+      }
+      if (DxGrid.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(DxGrid);
+      }
+      if (TxFrequencyInHz != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(TxFrequencyInHz);
+      }
+      if (TxFrequencyInMeters.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(TxFrequencyInMeters);
+      }
+      if (Mode.Length != 0) {
+        output.WriteRawTag(130, 1);
+        output.WriteString(Mode);
+      }
+      if (ParentMode.Length != 0) {
+        output.WriteRawTag(138, 1);
+        output.WriteString(ParentMode);
+      }
+      if (ReportSent.Length != 0) {
+        output.WriteRawTag(146, 1);
+        output.WriteString(ReportSent);
+      }
+      if (ReportReceived.Length != 0) {
+        output.WriteRawTag(154, 1);
+        output.WriteString(ReportReceived);
+      }
+      if (TxPower.Length != 0) {
+        output.WriteRawTag(162, 1);
+        output.WriteString(TxPower);
+      }
+      if (Comments.Length != 0) {
+        output.WriteRawTag(170, 1);
+        output.WriteString(Comments);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(178, 1);
+        output.WriteString(Name);
+      }
+      if (DateTimeOn != 0L) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt64(DateTimeOn);
+      }
+      if (OperatorCall.Length != 0) {
+        output.WriteRawTag(194, 1);
+        output.WriteString(OperatorCall);
+      }
+      if (MyCall.Length != 0) {
+        output.WriteRawTag(202, 1);
+        output.WriteString(MyCall);
+      }
+      if (MyGrid.Length != 0) {
+        output.WriteRawTag(210, 1);
+        output.WriteString(MyGrid);
+      }
+      if (ExchangeSent.Length != 0) {
+        output.WriteRawTag(218, 1);
+        output.WriteString(ExchangeSent);
+      }
+      if (ExchangeReceived.Length != 0) {
+        output.WriteRawTag(226, 1);
+        output.WriteString(ExchangeReceived);
+      }
+      if (AdifPropagationMode.Length != 0) {
+        output.WriteRawTag(234, 1);
+        output.WriteString(AdifPropagationMode);
+      }
+      if (ClientId.Length != 0) {
+        output.WriteRawTag(242, 1);
+        output.WriteString(ClientId);
+      }
+      if (RawData.Length != 0) {
+        output.WriteRawTag(130, 2);
+        output.WriteString(RawData);
+      }
+      if (FailReason.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(FailReason);
+      }
+      if (UploadStatus != global::SydneyOwl.CLHProto.Plugin.UploadStatus.Unspecified) {
+        output.WriteRawTag(152, 2);
+        output.WriteEnum((int) UploadStatus);
+      }
+      if (ForcedUpload != false) {
+        output.WriteRawTag(168, 2);
+        output.WriteBool(ForcedUpload);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      uploadedServices_.WriteTo(ref output, _map_uploadedServices_codec);
+      uploadedServicesErrorMessage_.WriteTo(ref output, _map_uploadedServicesErrorMessage_codec);
+      if (OriginalCountryName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(OriginalCountryName);
+      }
+      if (CqZone != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(CqZone);
+      }
+      if (ItuZone != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(ItuZone);
+      }
+      if (Continent.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Continent);
+      }
+      if (Latitude != 0F) {
+        output.WriteRawTag(61);
+        output.WriteFloat(Latitude);
+      }
+      if (Longitude != 0F) {
+        output.WriteRawTag(69);
+        output.WriteFloat(Longitude);
+      }
+      if (GmtOffset != 0F) {
+        output.WriteRawTag(77);
+        output.WriteFloat(GmtOffset);
+      }
+      if (Dxcc.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Dxcc);
+      }
+      if (DateTimeOff != 0L) {
+        output.WriteRawTag(88);
+        output.WriteInt64(DateTimeOff);
+      }
+      if (DxCall.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(DxCall);
+      }
+      if (DxGrid.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(DxGrid);
+      }
+      if (TxFrequencyInHz != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(TxFrequencyInHz);
+      }
+      if (TxFrequencyInMeters.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(TxFrequencyInMeters);
+      }
+      if (Mode.Length != 0) {
+        output.WriteRawTag(130, 1);
+        output.WriteString(Mode);
+      }
+      if (ParentMode.Length != 0) {
+        output.WriteRawTag(138, 1);
+        output.WriteString(ParentMode);
+      }
+      if (ReportSent.Length != 0) {
+        output.WriteRawTag(146, 1);
+        output.WriteString(ReportSent);
+      }
+      if (ReportReceived.Length != 0) {
+        output.WriteRawTag(154, 1);
+        output.WriteString(ReportReceived);
+      }
+      if (TxPower.Length != 0) {
+        output.WriteRawTag(162, 1);
+        output.WriteString(TxPower);
+      }
+      if (Comments.Length != 0) {
+        output.WriteRawTag(170, 1);
+        output.WriteString(Comments);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(178, 1);
+        output.WriteString(Name);
+      }
+      if (DateTimeOn != 0L) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt64(DateTimeOn);
+      }
+      if (OperatorCall.Length != 0) {
+        output.WriteRawTag(194, 1);
+        output.WriteString(OperatorCall);
+      }
+      if (MyCall.Length != 0) {
+        output.WriteRawTag(202, 1);
+        output.WriteString(MyCall);
+      }
+      if (MyGrid.Length != 0) {
+        output.WriteRawTag(210, 1);
+        output.WriteString(MyGrid);
+      }
+      if (ExchangeSent.Length != 0) {
+        output.WriteRawTag(218, 1);
+        output.WriteString(ExchangeSent);
+      }
+      if (ExchangeReceived.Length != 0) {
+        output.WriteRawTag(226, 1);
+        output.WriteString(ExchangeReceived);
+      }
+      if (AdifPropagationMode.Length != 0) {
+        output.WriteRawTag(234, 1);
+        output.WriteString(AdifPropagationMode);
+      }
+      if (ClientId.Length != 0) {
+        output.WriteRawTag(242, 1);
+        output.WriteString(ClientId);
+      }
+      if (RawData.Length != 0) {
+        output.WriteRawTag(130, 2);
+        output.WriteString(RawData);
+      }
+      if (FailReason.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(FailReason);
+      }
+      if (UploadStatus != global::SydneyOwl.CLHProto.Plugin.UploadStatus.Unspecified) {
+        output.WriteRawTag(152, 2);
+        output.WriteEnum((int) UploadStatus);
+      }
+      if (ForcedUpload != false) {
+        output.WriteRawTag(168, 2);
+        output.WriteBool(ForcedUpload);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += uploadedServices_.CalculateSize(_map_uploadedServices_codec);
+      size += uploadedServicesErrorMessage_.CalculateSize(_map_uploadedServicesErrorMessage_codec);
+      if (OriginalCountryName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OriginalCountryName);
+      }
+      if (CqZone != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CqZone);
+      }
+      if (ItuZone != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ItuZone);
+      }
+      if (Continent.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Continent);
+      }
+      if (Latitude != 0F) {
+        size += 1 + 4;
+      }
+      if (Longitude != 0F) {
+        size += 1 + 4;
+      }
+      if (GmtOffset != 0F) {
+        size += 1 + 4;
+      }
+      if (Dxcc.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Dxcc);
+      }
+      if (DateTimeOff != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(DateTimeOff);
+      }
+      if (DxCall.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DxCall);
+      }
+      if (DxGrid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DxGrid);
+      }
+      if (TxFrequencyInHz != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TxFrequencyInHz);
+      }
+      if (TxFrequencyInMeters.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TxFrequencyInMeters);
+      }
+      if (Mode.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Mode);
+      }
+      if (ParentMode.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ParentMode);
+      }
+      if (ReportSent.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ReportSent);
+      }
+      if (ReportReceived.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ReportReceived);
+      }
+      if (TxPower.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(TxPower);
+      }
+      if (Comments.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Comments);
+      }
+      if (Name.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (DateTimeOn != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(DateTimeOn);
+      }
+      if (OperatorCall.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(OperatorCall);
+      }
+      if (MyCall.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(MyCall);
+      }
+      if (MyGrid.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(MyGrid);
+      }
+      if (ExchangeSent.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ExchangeSent);
+      }
+      if (ExchangeReceived.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ExchangeReceived);
+      }
+      if (AdifPropagationMode.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(AdifPropagationMode);
+      }
+      if (ClientId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ClientId);
+      }
+      if (RawData.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(RawData);
+      }
+      if (FailReason.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(FailReason);
+      }
+      if (UploadStatus != global::SydneyOwl.CLHProto.Plugin.UploadStatus.Unspecified) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) UploadStatus);
+      }
+      if (ForcedUpload != false) {
+        size += 2 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RecordedCallsignDetail other) {
+      if (other == null) {
+        return;
+      }
+      uploadedServices_.MergeFrom(other.uploadedServices_);
+      uploadedServicesErrorMessage_.MergeFrom(other.uploadedServicesErrorMessage_);
+      if (other.OriginalCountryName.Length != 0) {
+        OriginalCountryName = other.OriginalCountryName;
+      }
+      if (other.CqZone != 0) {
+        CqZone = other.CqZone;
+      }
+      if (other.ItuZone != 0) {
+        ItuZone = other.ItuZone;
+      }
+      if (other.Continent.Length != 0) {
+        Continent = other.Continent;
+      }
+      if (other.Latitude != 0F) {
+        Latitude = other.Latitude;
+      }
+      if (other.Longitude != 0F) {
+        Longitude = other.Longitude;
+      }
+      if (other.GmtOffset != 0F) {
+        GmtOffset = other.GmtOffset;
+      }
+      if (other.Dxcc.Length != 0) {
+        Dxcc = other.Dxcc;
+      }
+      if (other.DateTimeOff != 0L) {
+        DateTimeOff = other.DateTimeOff;
+      }
+      if (other.DxCall.Length != 0) {
+        DxCall = other.DxCall;
+      }
+      if (other.DxGrid.Length != 0) {
+        DxGrid = other.DxGrid;
+      }
+      if (other.TxFrequencyInHz != 0UL) {
+        TxFrequencyInHz = other.TxFrequencyInHz;
+      }
+      if (other.TxFrequencyInMeters.Length != 0) {
+        TxFrequencyInMeters = other.TxFrequencyInMeters;
+      }
+      if (other.Mode.Length != 0) {
+        Mode = other.Mode;
+      }
+      if (other.ParentMode.Length != 0) {
+        ParentMode = other.ParentMode;
+      }
+      if (other.ReportSent.Length != 0) {
+        ReportSent = other.ReportSent;
+      }
+      if (other.ReportReceived.Length != 0) {
+        ReportReceived = other.ReportReceived;
+      }
+      if (other.TxPower.Length != 0) {
+        TxPower = other.TxPower;
+      }
+      if (other.Comments.Length != 0) {
+        Comments = other.Comments;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.DateTimeOn != 0L) {
+        DateTimeOn = other.DateTimeOn;
+      }
+      if (other.OperatorCall.Length != 0) {
+        OperatorCall = other.OperatorCall;
+      }
+      if (other.MyCall.Length != 0) {
+        MyCall = other.MyCall;
+      }
+      if (other.MyGrid.Length != 0) {
+        MyGrid = other.MyGrid;
+      }
+      if (other.ExchangeSent.Length != 0) {
+        ExchangeSent = other.ExchangeSent;
+      }
+      if (other.ExchangeReceived.Length != 0) {
+        ExchangeReceived = other.ExchangeReceived;
+      }
+      if (other.AdifPropagationMode.Length != 0) {
+        AdifPropagationMode = other.AdifPropagationMode;
+      }
+      if (other.ClientId.Length != 0) {
+        ClientId = other.ClientId;
+      }
+      if (other.RawData.Length != 0) {
+        RawData = other.RawData;
+      }
+      if (other.FailReason.Length != 0) {
+        FailReason = other.FailReason;
+      }
+      if (other.UploadStatus != global::SydneyOwl.CLHProto.Plugin.UploadStatus.Unspecified) {
+        UploadStatus = other.UploadStatus;
+      }
+      if (other.ForcedUpload != false) {
+        ForcedUpload = other.ForcedUpload;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            uploadedServices_.AddEntriesFrom(input, _map_uploadedServices_codec);
+            break;
+          }
+          case 18: {
+            uploadedServicesErrorMessage_.AddEntriesFrom(input, _map_uploadedServicesErrorMessage_codec);
+            break;
+          }
+          case 26: {
+            OriginalCountryName = input.ReadString();
+            break;
+          }
+          case 32: {
+            CqZone = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            ItuZone = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            Continent = input.ReadString();
+            break;
+          }
+          case 61: {
+            Latitude = input.ReadFloat();
+            break;
+          }
+          case 69: {
+            Longitude = input.ReadFloat();
+            break;
+          }
+          case 77: {
+            GmtOffset = input.ReadFloat();
+            break;
+          }
+          case 82: {
+            Dxcc = input.ReadString();
+            break;
+          }
+          case 88: {
+            DateTimeOff = input.ReadInt64();
+            break;
+          }
+          case 98: {
+            DxCall = input.ReadString();
+            break;
+          }
+          case 106: {
+            DxGrid = input.ReadString();
+            break;
+          }
+          case 112: {
+            TxFrequencyInHz = input.ReadUInt64();
+            break;
+          }
+          case 122: {
+            TxFrequencyInMeters = input.ReadString();
+            break;
+          }
+          case 130: {
+            Mode = input.ReadString();
+            break;
+          }
+          case 138: {
+            ParentMode = input.ReadString();
+            break;
+          }
+          case 146: {
+            ReportSent = input.ReadString();
+            break;
+          }
+          case 154: {
+            ReportReceived = input.ReadString();
+            break;
+          }
+          case 162: {
+            TxPower = input.ReadString();
+            break;
+          }
+          case 170: {
+            Comments = input.ReadString();
+            break;
+          }
+          case 178: {
+            Name = input.ReadString();
+            break;
+          }
+          case 184: {
+            DateTimeOn = input.ReadInt64();
+            break;
+          }
+          case 194: {
+            OperatorCall = input.ReadString();
+            break;
+          }
+          case 202: {
+            MyCall = input.ReadString();
+            break;
+          }
+          case 210: {
+            MyGrid = input.ReadString();
+            break;
+          }
+          case 218: {
+            ExchangeSent = input.ReadString();
+            break;
+          }
+          case 226: {
+            ExchangeReceived = input.ReadString();
+            break;
+          }
+          case 234: {
+            AdifPropagationMode = input.ReadString();
+            break;
+          }
+          case 242: {
+            ClientId = input.ReadString();
+            break;
+          }
+          case 258: {
+            RawData = input.ReadString();
+            break;
+          }
+          case 266: {
+            FailReason = input.ReadString();
+            break;
+          }
+          case 280: {
+            UploadStatus = (global::SydneyOwl.CLHProto.Plugin.UploadStatus) input.ReadEnum();
+            break;
+          }
+          case 296: {
+            ForcedUpload = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            uploadedServices_.AddEntriesFrom(ref input, _map_uploadedServices_codec);
+            break;
+          }
+          case 18: {
+            uploadedServicesErrorMessage_.AddEntriesFrom(ref input, _map_uploadedServicesErrorMessage_codec);
+            break;
+          }
+          case 26: {
+            OriginalCountryName = input.ReadString();
+            break;
+          }
+          case 32: {
+            CqZone = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            ItuZone = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            Continent = input.ReadString();
+            break;
+          }
+          case 61: {
+            Latitude = input.ReadFloat();
+            break;
+          }
+          case 69: {
+            Longitude = input.ReadFloat();
+            break;
+          }
+          case 77: {
+            GmtOffset = input.ReadFloat();
+            break;
+          }
+          case 82: {
+            Dxcc = input.ReadString();
+            break;
+          }
+          case 88: {
+            DateTimeOff = input.ReadInt64();
+            break;
+          }
+          case 98: {
+            DxCall = input.ReadString();
+            break;
+          }
+          case 106: {
+            DxGrid = input.ReadString();
+            break;
+          }
+          case 112: {
+            TxFrequencyInHz = input.ReadUInt64();
+            break;
+          }
+          case 122: {
+            TxFrequencyInMeters = input.ReadString();
+            break;
+          }
+          case 130: {
+            Mode = input.ReadString();
+            break;
+          }
+          case 138: {
+            ParentMode = input.ReadString();
+            break;
+          }
+          case 146: {
+            ReportSent = input.ReadString();
+            break;
+          }
+          case 154: {
+            ReportReceived = input.ReadString();
+            break;
+          }
+          case 162: {
+            TxPower = input.ReadString();
+            break;
+          }
+          case 170: {
+            Comments = input.ReadString();
+            break;
+          }
+          case 178: {
+            Name = input.ReadString();
+            break;
+          }
+          case 184: {
+            DateTimeOn = input.ReadInt64();
+            break;
+          }
+          case 194: {
+            OperatorCall = input.ReadString();
+            break;
+          }
+          case 202: {
+            MyCall = input.ReadString();
+            break;
+          }
+          case 210: {
+            MyGrid = input.ReadString();
+            break;
+          }
+          case 218: {
+            ExchangeSent = input.ReadString();
+            break;
+          }
+          case 226: {
+            ExchangeReceived = input.ReadString();
+            break;
+          }
+          case 234: {
+            AdifPropagationMode = input.ReadString();
+            break;
+          }
+          case 242: {
+            ClientId = input.ReadString();
+            break;
+          }
+          case 258: {
+            RawData = input.ReadString();
+            break;
+          }
+          case 266: {
+            FailReason = input.ReadString();
+            break;
+          }
+          case 280: {
+            UploadStatus = (global::SydneyOwl.CLHProto.Plugin.UploadStatus) input.ReadEnum();
+            break;
+          }
+          case 296: {
+            ForcedUpload = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class CLHQSOUploadStatusChanged : pb::IMessage<CLHQSOUploadStatusChanged>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CLHQSOUploadStatusChanged> _parser = new pb::MessageParser<CLHQSOUploadStatusChanged>(() => new CLHQSOUploadStatusChanged());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CLHQSOUploadStatusChanged> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.ClhMsgReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CLHQSOUploadStatusChanged() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CLHQSOUploadStatusChanged(CLHQSOUploadStatusChanged other) : this() {
+      qsoDetail_ = other.qsoDetail_ != null ? other.qsoDetail_.Clone() : null;
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CLHInternalData Clone() {
-      return new CLHInternalData(this);
+    public CLHQSOUploadStatusChanged Clone() {
+      return new CLHQSOUploadStatusChanged(this);
     }
 
-    /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 1;
-    private global::SydneyOwl.CLHProto.Plugin.InternalStatus status_ = global::SydneyOwl.CLHProto.Plugin.InternalStatus.ClhStartingUp;
+    /// <summary>Field number for the "qso_detail" field.</summary>
+    public const int QsoDetailFieldNumber = 1;
+    private global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail qsoDetail_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::SydneyOwl.CLHProto.Plugin.InternalStatus Status {
-      get { return status_; }
+    public global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail QsoDetail {
+      get { return qsoDetail_; }
       set {
-        status_ = value;
+        qsoDetail_ = value;
       }
     }
 
@@ -126,19 +1552,19 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as CLHInternalData);
+      return Equals(other as CLHQSOUploadStatusChanged);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(CLHInternalData other) {
+    public bool Equals(CLHQSOUploadStatusChanged other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Status != other.Status) return false;
+      if (!object.Equals(QsoDetail, other.QsoDetail)) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -147,7 +1573,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Status != global::SydneyOwl.CLHProto.Plugin.InternalStatus.ClhStartingUp) hash ^= Status.GetHashCode();
+      if (qsoDetail_ != null) hash ^= QsoDetail.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -167,9 +1593,9 @@ namespace SydneyOwl.CLHProto.Plugin {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Status != global::SydneyOwl.CLHProto.Plugin.InternalStatus.ClhStartingUp) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Status);
+      if (qsoDetail_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(QsoDetail);
       }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
@@ -185,9 +1611,9 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Status != global::SydneyOwl.CLHProto.Plugin.InternalStatus.ClhStartingUp) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Status);
+      if (qsoDetail_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(QsoDetail);
       }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
@@ -203,8 +1629,8 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Status != global::SydneyOwl.CLHProto.Plugin.InternalStatus.ClhStartingUp) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      if (qsoDetail_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(QsoDetail);
       }
       if (timestamp_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
@@ -217,12 +1643,15 @@ namespace SydneyOwl.CLHProto.Plugin {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(CLHInternalData other) {
+    public void MergeFrom(CLHQSOUploadStatusChanged other) {
       if (other == null) {
         return;
       }
-      if (other.Status != global::SydneyOwl.CLHProto.Plugin.InternalStatus.ClhStartingUp) {
-        Status = other.Status;
+      if (other.qsoDetail_ != null) {
+        if (qsoDetail_ == null) {
+          QsoDetail = new global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail();
+        }
+        QsoDetail.MergeFrom(other.QsoDetail);
       }
       if (other.timestamp_ != null) {
         if (timestamp_ == null) {
@@ -249,8 +1678,11 @@ namespace SydneyOwl.CLHProto.Plugin {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Status = (global::SydneyOwl.CLHProto.Plugin.InternalStatus) input.ReadEnum();
+          case 10: {
+            if (qsoDetail_ == null) {
+              QsoDetail = new global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail();
+            }
+            input.ReadMessage(QsoDetail);
             break;
           }
           case 7994: {
@@ -279,8 +1711,11 @@ namespace SydneyOwl.CLHProto.Plugin {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Status = (global::SydneyOwl.CLHProto.Plugin.InternalStatus) input.ReadEnum();
+          case 10: {
+            if (qsoDetail_ == null) {
+              QsoDetail = new global::SydneyOwl.CLHProto.Plugin.RecordedCallsignDetail();
+            }
+            input.ReadMessage(QsoDetail);
             break;
           }
           case 7994: {

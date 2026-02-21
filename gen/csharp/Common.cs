@@ -35,16 +35,19 @@ namespace SydneyOwl.CLHProto.Plugin {
             "KAgSDwoHbWVzc2FnZRgCIAEoCRIXCg9jbGhfaW5zdGFuY2VfaWQYAyABKAkS",
             "LgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
             "bXAiTQoNUGlwZUhlYXJ0YmVhdBIMCgR1dWlkGAEgASgJEi4KCXRpbWVzdGFt",
-            "cBjnByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wKi0KCkNhcGFi",
-            "aWxpdHkSEQoNd3NqdHhfbWVzc2FnZRAAEgwKCHJpZ19kYXRhEAFCSlosZ2l0",
-            "aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6qAhlT",
-            "eWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
+            "cBjnByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIkYKFFBpcGVD",
+            "b25uZWN0aW9uQ2xvc2VkEi4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wKkQKCkNhcGFiaWxpdHkSEQoNV1NKVFhfTUVT",
+            "U0FHRRAAEgwKCFJJR19EQVRBEAESFQoRQ0xIX0lOVEVSTkFMX0RBVEEQAkJK",
+            "WixnaXRodWIuY29tL3N5ZG5leW93bC9jbGgtcHJvdG8vZ2VuL2dvL3BsdWdp",
+            "bqoCGVN5ZG5leU93bC5DTEhQcm90by5QbHVnaW5iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.RigMsgReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.Capability), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq.Parser, new[]{ "Uuid", "Name", "Version", "Description", "Capabilities", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp.Parser, new[]{ "Success", "Message", "ClhInstanceId", "Timestamp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeHeartbeat), global::SydneyOwl.CLHProto.Plugin.PipeHeartbeat.Parser, new[]{ "Uuid", "Timestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeHeartbeat), global::SydneyOwl.CLHProto.Plugin.PipeHeartbeat.Parser, new[]{ "Uuid", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeConnectionClosed), global::SydneyOwl.CLHProto.Plugin.PipeConnectionClosed.Parser, new[]{ "Timestamp" }, null, null, null, null)
           }));
     }
     #endregion
@@ -52,8 +55,9 @@ namespace SydneyOwl.CLHProto.Plugin {
   }
   #region Enums
   public enum Capability {
-    [pbr::OriginalName("wsjtx_message")] WsjtxMessage = 0,
-    [pbr::OriginalName("rig_data")] RigData = 1,
+    [pbr::OriginalName("WSJTX_MESSAGE")] WsjtxMessage = 0,
+    [pbr::OriginalName("RIG_DATA")] RigData = 1,
+    [pbr::OriginalName("CLH_INTERNAL_DATA")] ClhInternalData = 2,
   }
 
   #endregion
@@ -990,6 +994,216 @@ namespace SydneyOwl.CLHProto.Plugin {
             Uuid = input.ReadString();
             break;
           }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// PipeConnectionClosed is sent when CLH is closing plugin connection.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PipeConnectionClosed : pb::IMessage<PipeConnectionClosed>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PipeConnectionClosed> _parser = new pb::MessageParser<PipeConnectionClosed>(() => new PipeConnectionClosed());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PipeConnectionClosed> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeConnectionClosed() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeConnectionClosed(PipeConnectionClosed other) : this() {
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeConnectionClosed Clone() {
+      return new PipeConnectionClosed(this);
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 999;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PipeConnectionClosed);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PipeConnectionClosed other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (timestamp_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PipeConnectionClosed other) {
+      if (other == null) {
+        return;
+      }
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
           case 7994: {
             if (timestamp_ == null) {
               Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
