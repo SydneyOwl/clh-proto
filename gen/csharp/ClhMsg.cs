@@ -25,7 +25,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg1jbGhfbXNnLnByb3RvEhBjbGhfcHJvdG8ucGx1Z2luGh9nb29nbGUvcHJv",
-            "dG9idWYvdGltZXN0YW1wLnByb3RvIuMIChlDbGhRU09VcGxvYWRTdGF0dXND",
+            "dG9idWYvdGltZXN0YW1wLnByb3RvIvEIChlDbGhRU09VcGxvYWRTdGF0dXND",
             "aGFuZ2VkElwKEXVwbG9hZGVkX3NlcnZpY2VzGAEgAygLMkEuY2xoX3Byb3Rv",
             "LnBsdWdpbi5DbGhRU09VcGxvYWRTdGF0dXNDaGFuZ2VkLlVwbG9hZGVkU2Vy",
             "dmljZXNFbnRyeRJ2Ch91cGxvYWRlZF9zZXJ2aWNlc19lcnJvcl9tZXNzYWdl",
@@ -47,23 +47,24 @@ namespace SydneyOwl.CLHProto.Plugin {
             "HQoVYWRpZl9wcm9wYWdhdGlvbl9tb2RlGB0gASgJEhEKCWNsaWVudF9pZBge",
             "IAEoCRIQCghyYXdfZGF0YRggIAEoCRITCgtmYWlsX3JlYXNvbhghIAEoCRI1",
             "Cg11cGxvYWRfc3RhdHVzGCMgASgOMh4uY2xoX3Byb3RvLnBsdWdpbi5VcGxv",
-            "YWRTdGF0dXMSFQoNZm9yY2VkX3VwbG9hZBglIAEoCBo3ChVVcGxvYWRlZFNl",
-            "cnZpY2VzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgIOgI4ARpD",
-            "CiFVcGxvYWRlZFNlcnZpY2VzRXJyb3JNZXNzYWdlRW50cnkSCwoDa2V5GAEg",
-            "ASgJEg0KBXZhbHVlGAIgASgJOgI4ASKZAQoSQ2xoSW50ZXJuYWxNZXNzYWdl",
-            "EkgKEXFzb191cGxvYWRfc3RhdHVzGAIgASgLMisuY2xoX3Byb3RvLnBsdWdp",
-            "bi5DbGhRU09VcGxvYWRTdGF0dXNDaGFuZ2VkSAASLgoJdGltZXN0YW1wGOcH",
-            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCqz",
-            "AQoMVXBsb2FkU3RhdHVzEh0KGVVQTE9BRF9TVEFUVVNfVU5TUEVDSUZJRUQQ",
-            "ABIZChVVUExPQURfU1RBVFVTX1BFTkRJTkcQARIbChdVUExPQURfU1RBVFVT",
-            "X1VQTE9BRElORxACEhkKFVVQTE9BRF9TVEFUVVNfU1VDQ0VTUxADEhYKElVQ",
-            "TE9BRF9TVEFUVVNfRkFJTBAEEhkKFVVQTE9BRF9TVEFUVVNfSUdOT1JFRBAF",
-            "QkpaLGdpdGh1Yi5jb20vc3lkbmV5b3dsL2NsaC1wcm90by9nZW4vZ28vcGx1",
-            "Z2luqgIZU3lkbmV5T3dsLkNMSFByb3RvLlBsdWdpbmIGcHJvdG8z"));
+            "YWRTdGF0dXMSFQoNZm9yY2VkX3VwbG9hZBglIAEoCBIMCgR1dWlkGCYgASgJ",
+            "GjcKFVVwbG9hZGVkU2VydmljZXNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
+            "dWUYAiABKAg6AjgBGkMKIVVwbG9hZGVkU2VydmljZXNFcnJvck1lc3NhZ2VF",
+            "bnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIpkBChJDbGhJ",
+            "bnRlcm5hbE1lc3NhZ2USSAoRcXNvX3VwbG9hZF9zdGF0dXMYAiABKAsyKy5j",
+            "bGhfcHJvdG8ucGx1Z2luLkNsaFFTT1VwbG9hZFN0YXR1c0NoYW5nZWRIABIu",
+            "Cgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
+            "cEIJCgdwYXlsb2FkKrMBCgxVcGxvYWRTdGF0dXMSHQoZVVBMT0FEX1NUQVRV",
+            "U19VTlNQRUNJRklFRBAAEhkKFVVQTE9BRF9TVEFUVVNfUEVORElORxABEhsK",
+            "F1VQTE9BRF9TVEFUVVNfVVBMT0FESU5HEAISGQoVVVBMT0FEX1NUQVRVU19T",
+            "VUNDRVNTEAMSFgoSVVBMT0FEX1NUQVRVU19GQUlMEAQSGQoVVVBMT0FEX1NU",
+            "QVRVU19JR05PUkVEEAVCSlosZ2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXBy",
+            "b3RvL2dlbi9nby9wbHVnaW6qAhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2lu",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.UploadStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged), global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged.Parser, new[]{ "UploadedServices", "UploadedServicesErrorMessage", "OriginalCountryName", "CqZone", "ItuZone", "Continent", "Latitude", "Longitude", "GmtOffset", "Dxcc", "DateTimeOff", "DxCall", "DxGrid", "TxFrequencyInHz", "TxFrequencyInMeters", "Mode", "ParentMode", "ReportSent", "ReportReceived", "TxPower", "Comments", "Name", "DateTimeOn", "OperatorCall", "MyCall", "MyGrid", "ExchangeSent", "ExchangeReceived", "AdifPropagationMode", "ClientId", "RawData", "FailReason", "UploadStatus", "ForcedUpload" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged), global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged.Parser, new[]{ "UploadedServices", "UploadedServicesErrorMessage", "OriginalCountryName", "CqZone", "ItuZone", "Continent", "Latitude", "Longitude", "GmtOffset", "Dxcc", "DateTimeOff", "DxCall", "DxGrid", "TxFrequencyInHz", "TxFrequencyInMeters", "Mode", "ParentMode", "ReportSent", "ReportReceived", "TxPower", "Comments", "Name", "DateTimeOn", "OperatorCall", "MyCall", "MyGrid", "ExchangeSent", "ExchangeReceived", "AdifPropagationMode", "ClientId", "RawData", "FailReason", "UploadStatus", "ForcedUpload", "Uuid" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage), global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage.Parser, new[]{ "QsoUploadStatus", "Timestamp" }, new[]{ "Payload" }, null, null, null)
           }));
     }
@@ -152,6 +153,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       failReason_ = other.failReason_;
       uploadStatus_ = other.uploadStatus_;
       forcedUpload_ = other.forcedUpload_;
+      uuid_ = other.uuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -567,6 +569,18 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
     }
 
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 38;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -616,6 +630,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (FailReason != other.FailReason) return false;
       if (UploadStatus != other.UploadStatus) return false;
       if (ForcedUpload != other.ForcedUpload) return false;
+      if (Uuid != other.Uuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -657,6 +672,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (FailReason.Length != 0) hash ^= FailReason.GetHashCode();
       if (UploadStatus != global::SydneyOwl.CLHProto.Plugin.UploadStatus.Unspecified) hash ^= UploadStatus.GetHashCode();
       if (ForcedUpload != false) hash ^= ForcedUpload.GetHashCode();
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -805,6 +821,10 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(168, 2);
         output.WriteBool(ForcedUpload);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(178, 2);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -945,6 +965,10 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(168, 2);
         output.WriteBool(ForcedUpload);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(178, 2);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1052,6 +1076,9 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (ForcedUpload != false) {
         size += 2 + 1;
+      }
+      if (Uuid.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Uuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1168,6 +1195,9 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (other.ForcedUpload != false) {
         ForcedUpload = other.ForcedUpload;
+      }
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1330,6 +1360,10 @@ namespace SydneyOwl.CLHProto.Plugin {
             ForcedUpload = input.ReadBool();
             break;
           }
+          case 306: {
+            Uuid = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1489,6 +1523,10 @@ namespace SydneyOwl.CLHProto.Plugin {
           }
           case 296: {
             ForcedUpload = input.ReadBool();
+            break;
+          }
+          case 306: {
+            Uuid = input.ReadString();
             break;
           }
         }

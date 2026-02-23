@@ -48,17 +48,14 @@ message ClhQSOUploadStatusChanged {
   string client_id = 30;
   string raw_data = 32;
   string fail_reason = 33;
-
   UploadStatus upload_status = 35;
-
   bool forced_upload = 37;
+  string uuid = 38;
 }
 
 message ClhInternalMessage {
-
   oneof payload {
     ClhQSOUploadStatusChanged qso_upload_status = 2;
   }
-
   google.protobuf.Timestamp timestamp = 999;
 }
