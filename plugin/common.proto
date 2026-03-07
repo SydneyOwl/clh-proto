@@ -5,15 +5,64 @@ package clh_proto.plugin;
 option go_package = "github.com/sydneyowl/clh-proto/gen/go/plugin";
 option csharp_namespace = "SydneyOwl.CLHProto.Plugin";
 
-import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
-import "rig_msg.proto";
 import "wsjtx_msg.proto";
 
 enum Capability{
   WSJTX_MESSAGE = 0;
   RIG_DATA = 1;
   CLH_INTERNAL_DATA = 2;
+  PIPE_CONTROL = 3;
+}
+
+enum DecodeDeliveryMode {
+  DECODE_DELIVERY_MODE_UNSPECIFIED = 0;
+  DECODE_DELIVERY_MODE_BATCHED = 1;
+  DECODE_DELIVERY_MODE_REALTIME = 2;
+  DECODE_DELIVERY_MODE_BOTH = 3;
+}
+
+enum PipeControlCommand {
+  PIPE_CONTROL_COMMAND_UNSPECIFIED = 0;
+  PIPE_CONTROL_COMMAND_GET_SERVER_INFO = 1;
+  PIPE_CONTROL_COMMAND_GET_CONNECTED_PLUGINS = 2;
+  PIPE_CONTROL_COMMAND_SET_WSJTX_SUBSCRIPTION = 3;
+}
+
+enum PipePluginLogLevel {
+  PIPE_PLUGIN_LOG_LEVEL_UNSPECIFIED = 0;
+  PIPE_PLUGIN_LOG_LEVEL_DEBUG = 1;
+  PIPE_PLUGIN_LOG_LEVEL_INFO = 2;
+  PIPE_PLUGIN_LOG_LEVEL_WARN = 3;
+  PIPE_PLUGIN_LOG_LEVEL_ERROR = 4;
+}
+
+message PipeWsjtxSubscription {
+  repeated MessageType message_types = 1;
+  DecodeDeliveryMode decode_delivery_mode = 2;
+}
+
+message PipePluginInfo {
+  string uuid = 1;
+  string name = 2;
+  string version = 3;
+  string description = 4;
+  repeated Capability capabilities = 5;
+  map<string, string> metadata = 6;
+  PipeWsjtxSubscription wsjtx_subscription = 7;
+  google.protobuf.Timestamp registered_at = 8;
+  google.protobuf.Timestamp last_heartbeat = 9;
+}
+
+message PipePluginList {
+  repeated PipePluginInfo plugins = 1;
+}
+
+message PipeServerInfo {
+  string clh_instance_id = 1;
+  string clh_version = 2;
+  uint32 keepalive_timeout_sec = 3;
+  uint32 connected_plugin_count = 4;
 }
 
 message PipeRegisterPluginReq {
@@ -22,6 +71,10 @@ message PipeRegisterPluginReq {
   string version = 3;
   string description = 4;
   repeated Capability capabilities = 6;
+  PipeWsjtxSubscription wsjtx_subscription = 7;
+  map<string, string> metadata = 8;
+  string sdk_name = 9;
+  string sdk_version = 10;
   google.protobuf.Timestamp timestamp = 999;
 }
 
@@ -29,11 +82,40 @@ message PipeRegisterPluginResp {
   bool success = 1;
   string message = 2;
   string clh_instance_id = 3;
+  PipeServerInfo server_info = 4;
   google.protobuf.Timestamp timestamp = 999;
 }
 
 message PipeHeartbeat {
   string uuid = 1;
+  google.protobuf.Timestamp timestamp = 999;
+}
+
+message PipePluginLog {
+  string uuid = 1;
+  PipePluginLogLevel level = 2;
+  string message = 3;
+  map<string, string> fields = 4;
+  google.protobuf.Timestamp timestamp = 999;
+}
+
+message PipeControlRequest {
+  string request_id = 1;
+  PipeControlCommand command = 2;
+  PipeWsjtxSubscription wsjtx_subscription = 3;
+  map<string, string> arguments = 4;
+  google.protobuf.Timestamp timestamp = 999;
+}
+
+message PipeControlResponse {
+  string request_id = 1;
+  bool success = 2;
+  string message = 3;
+  oneof payload {
+    PipeServerInfo server_info = 4;
+    PipePluginList connected_plugins = 5;
+    PipeWsjtxSubscription wsjtx_subscription = 6;
+  }
   google.protobuf.Timestamp timestamp = 999;
 }
 

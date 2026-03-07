@@ -50,22 +50,41 @@ namespace SydneyOwl.CLHProto.Plugin {
             "YWRTdGF0dXMSFQoNZm9yY2VkX3VwbG9hZBglIAEoCBIMCgR1dWlkGCYgASgJ",
             "GjcKFVVwbG9hZGVkU2VydmljZXNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
             "dWUYAiABKAg6AjgBGkMKIVVwbG9hZGVkU2VydmljZXNFcnJvck1lc3NhZ2VF",
-            "bnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIpkBChJDbGhJ",
-            "bnRlcm5hbE1lc3NhZ2USSAoRcXNvX3VwbG9hZF9zdGF0dXMYAiABKAsyKy5j",
-            "bGhfcHJvdG8ucGx1Z2luLkNsaFFTT1VwbG9hZFN0YXR1c0NoYW5nZWRIABIu",
-            "Cgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
-            "cEIJCgdwYXlsb2FkKrMBCgxVcGxvYWRTdGF0dXMSHQoZVVBMT0FEX1NUQVRV",
-            "U19VTlNQRUNJRklFRBAAEhkKFVVQTE9BRF9TVEFUVVNfUEVORElORxABEhsK",
-            "F1VQTE9BRF9TVEFUVVNfVVBMT0FESU5HEAISGQoVVVBMT0FEX1NUQVRVU19T",
-            "VUNDRVNTEAMSFgoSVVBMT0FEX1NUQVRVU19GQUlMEAQSGQoVVVBMT0FEX1NU",
-            "QVRVU19JR05PUkVEEAVCSlosZ2l0aHViLmNvbS9zeWRuZXlvd2wvY2xoLXBy",
-            "b3RvL2dlbi9nby9wbHVnaW6qAhlTeWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2lu",
-            "YgZwcm90bzM="));
+            "bnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIuABChlDbGhQ",
+            "bHVnaW5MaWZlY3ljbGVDaGFuZ2VkEhMKC3BsdWdpbl91dWlkGAEgASgJEhMK",
+            "C3BsdWdpbl9uYW1lGAIgASgJEhYKDnBsdWdpbl92ZXJzaW9uGAMgASgJEg4K",
+            "BnJlYXNvbhgEIAEoCRJBCgpldmVudF90eXBlGAUgASgOMi0uY2xoX3Byb3Rv",
+            "LnBsdWdpbi5DbGhQbHVnaW5MaWZlY3ljbGVFdmVudFR5cGUSLgoKZXZlbnRf",
+            "dGltZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAilgEKFkNs",
+            "aFNlcnZlclN0YXR1c0NoYW5nZWQSFwoPY2xoX2luc3RhbmNlX2lkGAEgASgJ",
+            "EhMKC2NsaF92ZXJzaW9uGAIgASgJEh4KFmNvbm5lY3RlZF9wbHVnaW5fY291",
+            "bnQYAyABKA0SLgoKZXZlbnRfdGltZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1",
+            "Zi5UaW1lc3RhbXAipQIKEkNsaEludGVybmFsTWVzc2FnZRJIChFxc29fdXBs",
+            "b2FkX3N0YXR1cxgCIAEoCzIrLmNsaF9wcm90by5wbHVnaW4uQ2xoUVNPVXBs",
+            "b2FkU3RhdHVzQ2hhbmdlZEgAEkcKEHBsdWdpbl9saWZlY3ljbGUYAyABKAsy",
+            "Ky5jbGhfcHJvdG8ucGx1Z2luLkNsaFBsdWdpbkxpZmVjeWNsZUNoYW5nZWRI",
+            "ABJBCg1zZXJ2ZXJfc3RhdHVzGAQgASgLMiguY2xoX3Byb3RvLnBsdWdpbi5D",
+            "bGhTZXJ2ZXJTdGF0dXNDaGFuZ2VkSAASLgoJdGltZXN0YW1wGOcHIAEoCzIa",
+            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCQoHcGF5bG9hZCqzAQoMVXBs",
+            "b2FkU3RhdHVzEh0KGVVQTE9BRF9TVEFUVVNfVU5TUEVDSUZJRUQQABIZChVV",
+            "UExPQURfU1RBVFVTX1BFTkRJTkcQARIbChdVUExPQURfU1RBVFVTX1VQTE9B",
+            "RElORxACEhkKFVVQTE9BRF9TVEFUVVNfU1VDQ0VTUxADEhYKElVQTE9BRF9T",
+            "VEFUVVNfRkFJTBAEEhkKFVVQTE9BRF9TVEFUVVNfSUdOT1JFRBAFKooCChtD",
+            "bGhQbHVnaW5MaWZlY3ljbGVFdmVudFR5cGUSLworQ0xIX1BMVUdJTl9MSUZF",
+            "Q1lDTEVfRVZFTlRfVFlQRV9VTlNQRUNJRklFRBAAEi0KKUNMSF9QTFVHSU5f",
+            "TElGRUNZQ0xFX0VWRU5UX1RZUEVfQ09OTkVDVEVEEAESMAosQ0xIX1BMVUdJ",
+            "Tl9MSUZFQ1lDTEVfRVZFTlRfVFlQRV9ESVNDT05ORUNURUQQAhIrCidDTEhf",
+            "UExVR0lOX0xJRkVDWUNMRV9FVkVOVF9UWVBFX1RJTUVPVVQQAxIsCihDTEhf",
+            "UExVR0lOX0xJRkVDWUNMRV9FVkVOVF9UWVBFX1JFUExBQ0VEEARCSlosZ2l0",
+            "aHViLmNvbS9zeWRuZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6qAhlT",
+            "eWRuZXlPd2wuQ0xIUHJvdG8uUGx1Z2luYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.UploadStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.UploadStatus), typeof(global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged), global::SydneyOwl.CLHProto.Plugin.ClhQSOUploadStatusChanged.Parser, new[]{ "UploadedServices", "UploadedServicesErrorMessage", "OriginalCountryName", "CqZone", "ItuZone", "Continent", "Latitude", "Longitude", "GmtOffset", "Dxcc", "DateTimeOff", "DxCall", "DxGrid", "TxFrequencyInHz", "TxFrequencyInMeters", "Mode", "ParentMode", "ReportSent", "ReportReceived", "TxPower", "Comments", "Name", "DateTimeOn", "OperatorCall", "MyCall", "MyGrid", "ExchangeSent", "ExchangeReceived", "AdifPropagationMode", "ClientId", "RawData", "FailReason", "UploadStatus", "ForcedUpload", "Uuid" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage), global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage.Parser, new[]{ "QsoUploadStatus", "Timestamp" }, new[]{ "Payload" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleChanged), global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleChanged.Parser, new[]{ "PluginUuid", "PluginName", "PluginVersion", "Reason", "EventType", "EventTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhServerStatusChanged), global::SydneyOwl.CLHProto.Plugin.ClhServerStatusChanged.Parser, new[]{ "ClhInstanceId", "ClhVersion", "ConnectedPluginCount", "EventTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage), global::SydneyOwl.CLHProto.Plugin.ClhInternalMessage.Parser, new[]{ "QsoUploadStatus", "PluginLifecycle", "ServerStatus", "Timestamp" }, new[]{ "Payload" }, null, null, null)
           }));
     }
     #endregion
@@ -79,6 +98,14 @@ namespace SydneyOwl.CLHProto.Plugin {
     [pbr::OriginalName("UPLOAD_STATUS_SUCCESS")] Success = 3,
     [pbr::OriginalName("UPLOAD_STATUS_FAIL")] Fail = 4,
     [pbr::OriginalName("UPLOAD_STATUS_IGNORED")] Ignored = 5,
+  }
+
+  public enum ClhPluginLifecycleEventType {
+    [pbr::OriginalName("CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_CONNECTED")] Connected = 1,
+    [pbr::OriginalName("CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_DISCONNECTED")] Disconnected = 2,
+    [pbr::OriginalName("CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_TIMEOUT")] Timeout = 3,
+    [pbr::OriginalName("CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_REPLACED")] Replaced = 4,
   }
 
   #endregion
@@ -1537,6 +1564,716 @@ namespace SydneyOwl.CLHProto.Plugin {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ClhPluginLifecycleChanged : pb::IMessage<ClhPluginLifecycleChanged>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ClhPluginLifecycleChanged> _parser = new pb::MessageParser<ClhPluginLifecycleChanged>(() => new ClhPluginLifecycleChanged());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ClhPluginLifecycleChanged> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.ClhMsgReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClhPluginLifecycleChanged() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClhPluginLifecycleChanged(ClhPluginLifecycleChanged other) : this() {
+      pluginUuid_ = other.pluginUuid_;
+      pluginName_ = other.pluginName_;
+      pluginVersion_ = other.pluginVersion_;
+      reason_ = other.reason_;
+      eventType_ = other.eventType_;
+      eventTime_ = other.eventTime_ != null ? other.eventTime_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClhPluginLifecycleChanged Clone() {
+      return new ClhPluginLifecycleChanged(this);
+    }
+
+    /// <summary>Field number for the "plugin_uuid" field.</summary>
+    public const int PluginUuidFieldNumber = 1;
+    private string pluginUuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PluginUuid {
+      get { return pluginUuid_; }
+      set {
+        pluginUuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "plugin_name" field.</summary>
+    public const int PluginNameFieldNumber = 2;
+    private string pluginName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PluginName {
+      get { return pluginName_; }
+      set {
+        pluginName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "plugin_version" field.</summary>
+    public const int PluginVersionFieldNumber = 3;
+    private string pluginVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PluginVersion {
+      get { return pluginVersion_; }
+      set {
+        pluginVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 4;
+    private string reason_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Reason {
+      get { return reason_; }
+      set {
+        reason_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "event_type" field.</summary>
+    public const int EventTypeFieldNumber = 5;
+    private global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType eventType_ = global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType EventType {
+      get { return eventType_; }
+      set {
+        eventType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "event_time" field.</summary>
+    public const int EventTimeFieldNumber = 6;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp eventTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp EventTime {
+      get { return eventTime_; }
+      set {
+        eventTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ClhPluginLifecycleChanged);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ClhPluginLifecycleChanged other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PluginUuid != other.PluginUuid) return false;
+      if (PluginName != other.PluginName) return false;
+      if (PluginVersion != other.PluginVersion) return false;
+      if (Reason != other.Reason) return false;
+      if (EventType != other.EventType) return false;
+      if (!object.Equals(EventTime, other.EventTime)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PluginUuid.Length != 0) hash ^= PluginUuid.GetHashCode();
+      if (PluginName.Length != 0) hash ^= PluginName.GetHashCode();
+      if (PluginVersion.Length != 0) hash ^= PluginVersion.GetHashCode();
+      if (Reason.Length != 0) hash ^= Reason.GetHashCode();
+      if (EventType != global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType.Unspecified) hash ^= EventType.GetHashCode();
+      if (eventTime_ != null) hash ^= EventTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (PluginUuid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PluginUuid);
+      }
+      if (PluginName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PluginName);
+      }
+      if (PluginVersion.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PluginVersion);
+      }
+      if (Reason.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Reason);
+      }
+      if (EventType != global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) EventType);
+      }
+      if (eventTime_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(EventTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PluginUuid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PluginUuid);
+      }
+      if (PluginName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PluginName);
+      }
+      if (PluginVersion.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PluginVersion);
+      }
+      if (Reason.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Reason);
+      }
+      if (EventType != global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) EventType);
+      }
+      if (eventTime_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(EventTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (PluginUuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PluginUuid);
+      }
+      if (PluginName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PluginName);
+      }
+      if (PluginVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PluginVersion);
+      }
+      if (Reason.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Reason);
+      }
+      if (EventType != global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EventType);
+      }
+      if (eventTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EventTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ClhPluginLifecycleChanged other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PluginUuid.Length != 0) {
+        PluginUuid = other.PluginUuid;
+      }
+      if (other.PluginName.Length != 0) {
+        PluginName = other.PluginName;
+      }
+      if (other.PluginVersion.Length != 0) {
+        PluginVersion = other.PluginVersion;
+      }
+      if (other.Reason.Length != 0) {
+        Reason = other.Reason;
+      }
+      if (other.EventType != global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType.Unspecified) {
+        EventType = other.EventType;
+      }
+      if (other.eventTime_ != null) {
+        if (eventTime_ == null) {
+          EventTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        EventTime.MergeFrom(other.EventTime);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            PluginUuid = input.ReadString();
+            break;
+          }
+          case 18: {
+            PluginName = input.ReadString();
+            break;
+          }
+          case 26: {
+            PluginVersion = input.ReadString();
+            break;
+          }
+          case 34: {
+            Reason = input.ReadString();
+            break;
+          }
+          case 40: {
+            EventType = (global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            if (eventTime_ == null) {
+              EventTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(EventTime);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            PluginUuid = input.ReadString();
+            break;
+          }
+          case 18: {
+            PluginName = input.ReadString();
+            break;
+          }
+          case 26: {
+            PluginVersion = input.ReadString();
+            break;
+          }
+          case 34: {
+            Reason = input.ReadString();
+            break;
+          }
+          case 40: {
+            EventType = (global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleEventType) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            if (eventTime_ == null) {
+              EventTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(EventTime);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ClhServerStatusChanged : pb::IMessage<ClhServerStatusChanged>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ClhServerStatusChanged> _parser = new pb::MessageParser<ClhServerStatusChanged>(() => new ClhServerStatusChanged());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ClhServerStatusChanged> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.ClhMsgReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClhServerStatusChanged() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClhServerStatusChanged(ClhServerStatusChanged other) : this() {
+      clhInstanceId_ = other.clhInstanceId_;
+      clhVersion_ = other.clhVersion_;
+      connectedPluginCount_ = other.connectedPluginCount_;
+      eventTime_ = other.eventTime_ != null ? other.eventTime_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClhServerStatusChanged Clone() {
+      return new ClhServerStatusChanged(this);
+    }
+
+    /// <summary>Field number for the "clh_instance_id" field.</summary>
+    public const int ClhInstanceIdFieldNumber = 1;
+    private string clhInstanceId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClhInstanceId {
+      get { return clhInstanceId_; }
+      set {
+        clhInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "clh_version" field.</summary>
+    public const int ClhVersionFieldNumber = 2;
+    private string clhVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClhVersion {
+      get { return clhVersion_; }
+      set {
+        clhVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "connected_plugin_count" field.</summary>
+    public const int ConnectedPluginCountFieldNumber = 3;
+    private uint connectedPluginCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConnectedPluginCount {
+      get { return connectedPluginCount_; }
+      set {
+        connectedPluginCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "event_time" field.</summary>
+    public const int EventTimeFieldNumber = 4;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp eventTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp EventTime {
+      get { return eventTime_; }
+      set {
+        eventTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ClhServerStatusChanged);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ClhServerStatusChanged other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ClhInstanceId != other.ClhInstanceId) return false;
+      if (ClhVersion != other.ClhVersion) return false;
+      if (ConnectedPluginCount != other.ConnectedPluginCount) return false;
+      if (!object.Equals(EventTime, other.EventTime)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ClhInstanceId.Length != 0) hash ^= ClhInstanceId.GetHashCode();
+      if (ClhVersion.Length != 0) hash ^= ClhVersion.GetHashCode();
+      if (ConnectedPluginCount != 0) hash ^= ConnectedPluginCount.GetHashCode();
+      if (eventTime_ != null) hash ^= EventTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ClhInstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ClhInstanceId);
+      }
+      if (ClhVersion.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ClhVersion);
+      }
+      if (ConnectedPluginCount != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ConnectedPluginCount);
+      }
+      if (eventTime_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(EventTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ClhInstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ClhInstanceId);
+      }
+      if (ClhVersion.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ClhVersion);
+      }
+      if (ConnectedPluginCount != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ConnectedPluginCount);
+      }
+      if (eventTime_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(EventTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ClhInstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClhInstanceId);
+      }
+      if (ClhVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClhVersion);
+      }
+      if (ConnectedPluginCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConnectedPluginCount);
+      }
+      if (eventTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EventTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ClhServerStatusChanged other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ClhInstanceId.Length != 0) {
+        ClhInstanceId = other.ClhInstanceId;
+      }
+      if (other.ClhVersion.Length != 0) {
+        ClhVersion = other.ClhVersion;
+      }
+      if (other.ConnectedPluginCount != 0) {
+        ConnectedPluginCount = other.ConnectedPluginCount;
+      }
+      if (other.eventTime_ != null) {
+        if (eventTime_ == null) {
+          EventTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        EventTime.MergeFrom(other.EventTime);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ClhInstanceId = input.ReadString();
+            break;
+          }
+          case 18: {
+            ClhVersion = input.ReadString();
+            break;
+          }
+          case 24: {
+            ConnectedPluginCount = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            if (eventTime_ == null) {
+              EventTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(EventTime);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            ClhInstanceId = input.ReadString();
+            break;
+          }
+          case 18: {
+            ClhVersion = input.ReadString();
+            break;
+          }
+          case 24: {
+            ConnectedPluginCount = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            if (eventTime_ == null) {
+              EventTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(EventTime);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ClhInternalMessage : pb::IMessage<ClhInternalMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1551,7 +2288,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SydneyOwl.CLHProto.Plugin.ClhMsgReflection.Descriptor.MessageTypes[1]; }
+      get { return global::SydneyOwl.CLHProto.Plugin.ClhMsgReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1576,6 +2313,12 @@ namespace SydneyOwl.CLHProto.Plugin {
         case PayloadOneofCase.QsoUploadStatus:
           QsoUploadStatus = other.QsoUploadStatus.Clone();
           break;
+        case PayloadOneofCase.PluginLifecycle:
+          PluginLifecycle = other.PluginLifecycle.Clone();
+          break;
+        case PayloadOneofCase.ServerStatus:
+          ServerStatus = other.ServerStatus.Clone();
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -1599,6 +2342,30 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
     }
 
+    /// <summary>Field number for the "plugin_lifecycle" field.</summary>
+    public const int PluginLifecycleFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleChanged PluginLifecycle {
+      get { return payloadCase_ == PayloadOneofCase.PluginLifecycle ? (global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleChanged) payload_ : null; }
+      set {
+        payload_ = value;
+        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.PluginLifecycle;
+      }
+    }
+
+    /// <summary>Field number for the "server_status" field.</summary>
+    public const int ServerStatusFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.ClhServerStatusChanged ServerStatus {
+      get { return payloadCase_ == PayloadOneofCase.ServerStatus ? (global::SydneyOwl.CLHProto.Plugin.ClhServerStatusChanged) payload_ : null; }
+      set {
+        payload_ = value;
+        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.ServerStatus;
+      }
+    }
+
     /// <summary>Field number for the "timestamp" field.</summary>
     public const int TimestampFieldNumber = 999;
     private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
@@ -1616,6 +2383,8 @@ namespace SydneyOwl.CLHProto.Plugin {
     public enum PayloadOneofCase {
       None = 0,
       QsoUploadStatus = 2,
+      PluginLifecycle = 3,
+      ServerStatus = 4,
     }
     private PayloadOneofCase payloadCase_ = PayloadOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1647,6 +2416,8 @@ namespace SydneyOwl.CLHProto.Plugin {
         return true;
       }
       if (!object.Equals(QsoUploadStatus, other.QsoUploadStatus)) return false;
+      if (!object.Equals(PluginLifecycle, other.PluginLifecycle)) return false;
+      if (!object.Equals(ServerStatus, other.ServerStatus)) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       if (PayloadCase != other.PayloadCase) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -1657,6 +2428,8 @@ namespace SydneyOwl.CLHProto.Plugin {
     public override int GetHashCode() {
       int hash = 1;
       if (payloadCase_ == PayloadOneofCase.QsoUploadStatus) hash ^= QsoUploadStatus.GetHashCode();
+      if (payloadCase_ == PayloadOneofCase.PluginLifecycle) hash ^= PluginLifecycle.GetHashCode();
+      if (payloadCase_ == PayloadOneofCase.ServerStatus) hash ^= ServerStatus.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       hash ^= (int) payloadCase_;
       if (_unknownFields != null) {
@@ -1681,6 +2454,14 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(18);
         output.WriteMessage(QsoUploadStatus);
       }
+      if (payloadCase_ == PayloadOneofCase.PluginLifecycle) {
+        output.WriteRawTag(26);
+        output.WriteMessage(PluginLifecycle);
+      }
+      if (payloadCase_ == PayloadOneofCase.ServerStatus) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ServerStatus);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -1699,6 +2480,14 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(18);
         output.WriteMessage(QsoUploadStatus);
       }
+      if (payloadCase_ == PayloadOneofCase.PluginLifecycle) {
+        output.WriteRawTag(26);
+        output.WriteMessage(PluginLifecycle);
+      }
+      if (payloadCase_ == PayloadOneofCase.ServerStatus) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ServerStatus);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -1715,6 +2504,12 @@ namespace SydneyOwl.CLHProto.Plugin {
       int size = 0;
       if (payloadCase_ == PayloadOneofCase.QsoUploadStatus) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(QsoUploadStatus);
+      }
+      if (payloadCase_ == PayloadOneofCase.PluginLifecycle) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PluginLifecycle);
+      }
+      if (payloadCase_ == PayloadOneofCase.ServerStatus) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerStatus);
       }
       if (timestamp_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
@@ -1744,6 +2539,18 @@ namespace SydneyOwl.CLHProto.Plugin {
           }
           QsoUploadStatus.MergeFrom(other.QsoUploadStatus);
           break;
+        case PayloadOneofCase.PluginLifecycle:
+          if (PluginLifecycle == null) {
+            PluginLifecycle = new global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleChanged();
+          }
+          PluginLifecycle.MergeFrom(other.PluginLifecycle);
+          break;
+        case PayloadOneofCase.ServerStatus:
+          if (ServerStatus == null) {
+            ServerStatus = new global::SydneyOwl.CLHProto.Plugin.ClhServerStatusChanged();
+          }
+          ServerStatus.MergeFrom(other.ServerStatus);
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1772,6 +2579,24 @@ namespace SydneyOwl.CLHProto.Plugin {
             }
             input.ReadMessage(subBuilder);
             QsoUploadStatus = subBuilder;
+            break;
+          }
+          case 26: {
+            global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleChanged subBuilder = new global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleChanged();
+            if (payloadCase_ == PayloadOneofCase.PluginLifecycle) {
+              subBuilder.MergeFrom(PluginLifecycle);
+            }
+            input.ReadMessage(subBuilder);
+            PluginLifecycle = subBuilder;
+            break;
+          }
+          case 34: {
+            global::SydneyOwl.CLHProto.Plugin.ClhServerStatusChanged subBuilder = new global::SydneyOwl.CLHProto.Plugin.ClhServerStatusChanged();
+            if (payloadCase_ == PayloadOneofCase.ServerStatus) {
+              subBuilder.MergeFrom(ServerStatus);
+            }
+            input.ReadMessage(subBuilder);
+            ServerStatus = subBuilder;
             break;
           }
           case 7994: {
@@ -1807,6 +2632,24 @@ namespace SydneyOwl.CLHProto.Plugin {
             }
             input.ReadMessage(subBuilder);
             QsoUploadStatus = subBuilder;
+            break;
+          }
+          case 26: {
+            global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleChanged subBuilder = new global::SydneyOwl.CLHProto.Plugin.ClhPluginLifecycleChanged();
+            if (payloadCase_ == PayloadOneofCase.PluginLifecycle) {
+              subBuilder.MergeFrom(PluginLifecycle);
+            }
+            input.ReadMessage(subBuilder);
+            PluginLifecycle = subBuilder;
+            break;
+          }
+          case 34: {
+            global::SydneyOwl.CLHProto.Plugin.ClhServerStatusChanged subBuilder = new global::SydneyOwl.CLHProto.Plugin.ClhServerStatusChanged();
+            if (payloadCase_ == PayloadOneofCase.ServerStatus) {
+              subBuilder.MergeFrom(ServerStatus);
+            }
+            input.ReadMessage(subBuilder);
+            ServerStatus = subBuilder;
             break;
           }
           case 7994: {

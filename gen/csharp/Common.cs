@@ -24,29 +24,92 @@ namespace SydneyOwl.CLHProto.Plugin {
     static CommonReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cgxjb21tb24ucHJvdG8SEGNsaF9wcm90by5wbHVnaW4aG2dvb2dsZS9wcm90",
-            "b2J1Zi9lbXB0eS5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
-            "cm90bxoNcmlnX21zZy5wcm90bxoPd3NqdHhfbXNnLnByb3RvIr0BChVQaXBl",
-            "UmVnaXN0ZXJQbHVnaW5SZXESDAoEdXVpZBgBIAEoCRIMCgRuYW1lGAIgASgJ",
-            "Eg8KB3ZlcnNpb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSMgoMY2Fw",
-            "YWJpbGl0aWVzGAYgAygOMhwuY2xoX3Byb3RvLnBsdWdpbi5DYXBhYmlsaXR5",
-            "Ei4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wIoMBChZQaXBlUmVnaXN0ZXJQbHVnaW5SZXNwEg8KB3N1Y2Nlc3MYASAB",
-            "KAgSDwoHbWVzc2FnZRgCIAEoCRIXCg9jbGhfaW5zdGFuY2VfaWQYAyABKAkS",
-            "LgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
-            "bXAiTQoNUGlwZUhlYXJ0YmVhdBIMCgR1dWlkGAEgASgJEi4KCXRpbWVzdGFt",
-            "cBjnByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIkYKFFBpcGVD",
-            "b25uZWN0aW9uQ2xvc2VkEi4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUu",
-            "cHJvdG9idWYuVGltZXN0YW1wKkQKCkNhcGFiaWxpdHkSEQoNV1NKVFhfTUVT",
-            "U0FHRRAAEgwKCFJJR19EQVRBEAESFQoRQ0xIX0lOVEVSTkFMX0RBVEEQAkJK",
-            "WixnaXRodWIuY29tL3N5ZG5leW93bC9jbGgtcHJvdG8vZ2VuL2dvL3BsdWdp",
-            "bqoCGVN5ZG5leU93bC5DTEhQcm90by5QbHVnaW5iBnByb3RvMw=="));
+            "Cgxjb21tb24ucHJvdG8SEGNsaF9wcm90by5wbHVnaW4aH2dvb2dsZS9wcm90",
+            "b2J1Zi90aW1lc3RhbXAucHJvdG8aD3dzanR4X21zZy5wcm90byKRAQoVUGlw",
+            "ZVdzanR4U3Vic2NyaXB0aW9uEjQKDW1lc3NhZ2VfdHlwZXMYASADKA4yHS5j",
+            "bGhfcHJvdG8ucGx1Z2luLk1lc3NhZ2VUeXBlEkIKFGRlY29kZV9kZWxpdmVy",
+            "eV9tb2RlGAIgASgOMiQuY2xoX3Byb3RvLnBsdWdpbi5EZWNvZGVEZWxpdmVy",
+            "eU1vZGUipQMKDlBpcGVQbHVnaW5JbmZvEgwKBHV1aWQYASABKAkSDAoEbmFt",
+            "ZRgCIAEoCRIPCgd2ZXJzaW9uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJ",
+            "EjIKDGNhcGFiaWxpdGllcxgFIAMoDjIcLmNsaF9wcm90by5wbHVnaW4uQ2Fw",
+            "YWJpbGl0eRJACghtZXRhZGF0YRgGIAMoCzIuLmNsaF9wcm90by5wbHVnaW4u",
+            "UGlwZVBsdWdpbkluZm8uTWV0YWRhdGFFbnRyeRJDChJ3c2p0eF9zdWJzY3Jp",
+            "cHRpb24YByABKAsyJy5jbGhfcHJvdG8ucGx1Z2luLlBpcGVXc2p0eFN1YnNj",
+            "cmlwdGlvbhIxCg1yZWdpc3RlcmVkX2F0GAggASgLMhouZ29vZ2xlLnByb3Rv",
+            "YnVmLlRpbWVzdGFtcBIyCg5sYXN0X2hlYXJ0YmVhdBgJIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXAaLwoNTWV0YWRhdGFFbnRyeRILCgNrZXkY",
+            "ASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIkMKDlBpcGVQbHVnaW5MaXN0EjEK",
+            "B3BsdWdpbnMYASADKAsyIC5jbGhfcHJvdG8ucGx1Z2luLlBpcGVQbHVnaW5J",
+            "bmZvIn0KDlBpcGVTZXJ2ZXJJbmZvEhcKD2NsaF9pbnN0YW5jZV9pZBgBIAEo",
+            "CRITCgtjbGhfdmVyc2lvbhgCIAEoCRIdChVrZWVwYWxpdmVfdGltZW91dF9z",
+            "ZWMYAyABKA0SHgoWY29ubmVjdGVkX3BsdWdpbl9jb3VudBgEIAEoDSKjAwoV",
+            "UGlwZVJlZ2lzdGVyUGx1Z2luUmVxEgwKBHV1aWQYASABKAkSDAoEbmFtZRgC",
+            "IAEoCRIPCgd2ZXJzaW9uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjIK",
+            "DGNhcGFiaWxpdGllcxgGIAMoDjIcLmNsaF9wcm90by5wbHVnaW4uQ2FwYWJp",
+            "bGl0eRJDChJ3c2p0eF9zdWJzY3JpcHRpb24YByABKAsyJy5jbGhfcHJvdG8u",
+            "cGx1Z2luLlBpcGVXc2p0eFN1YnNjcmlwdGlvbhJHCghtZXRhZGF0YRgIIAMo",
+            "CzI1LmNsaF9wcm90by5wbHVnaW4uUGlwZVJlZ2lzdGVyUGx1Z2luUmVxLk1l",
+            "dGFkYXRhRW50cnkSEAoIc2RrX25hbWUYCSABKAkSEwoLc2RrX3ZlcnNpb24Y",
+            "CiABKAkSLgoJdGltZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
+            "aW1lc3RhbXAaLwoNTWV0YWRhdGFFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
+            "dWUYAiABKAk6AjgBIroBChZQaXBlUmVnaXN0ZXJQbHVnaW5SZXNwEg8KB3N1",
+            "Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIXCg9jbGhfaW5zdGFuY2Vf",
+            "aWQYAyABKAkSNQoLc2VydmVyX2luZm8YBCABKAsyIC5jbGhfcHJvdG8ucGx1",
+            "Z2luLlBpcGVTZXJ2ZXJJbmZvEi4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29n",
+            "bGUucHJvdG9idWYuVGltZXN0YW1wIk0KDVBpcGVIZWFydGJlYXQSDAoEdXVp",
+            "ZBgBIAEoCRIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcCL/AQoNUGlwZVBsdWdpbkxvZxIMCgR1dWlkGAEgASgJEjMK",
+            "BWxldmVsGAIgASgOMiQuY2xoX3Byb3RvLnBsdWdpbi5QaXBlUGx1Z2luTG9n",
+            "TGV2ZWwSDwoHbWVzc2FnZRgDIAEoCRI7CgZmaWVsZHMYBCADKAsyKy5jbGhf",
+            "cHJvdG8ucGx1Z2luLlBpcGVQbHVnaW5Mb2cuRmllbGRzRW50cnkSLgoJdGlt",
+            "ZXN0YW1wGOcHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAaLQoL",
+            "RmllbGRzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASLO",
+            "AgoSUGlwZUNvbnRyb2xSZXF1ZXN0EhIKCnJlcXVlc3RfaWQYASABKAkSNQoH",
+            "Y29tbWFuZBgCIAEoDjIkLmNsaF9wcm90by5wbHVnaW4uUGlwZUNvbnRyb2xD",
+            "b21tYW5kEkMKEndzanR4X3N1YnNjcmlwdGlvbhgDIAEoCzInLmNsaF9wcm90",
+            "by5wbHVnaW4uUGlwZVdzanR4U3Vic2NyaXB0aW9uEkYKCWFyZ3VtZW50cxgE",
+            "IAMoCzIzLmNsaF9wcm90by5wbHVnaW4uUGlwZUNvbnRyb2xSZXF1ZXN0LkFy",
+            "Z3VtZW50c0VudHJ5Ei4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUucHJv",
+            "dG9idWYuVGltZXN0YW1wGjAKDkFyZ3VtZW50c0VudHJ5EgsKA2tleRgBIAEo",
+            "CRINCgV2YWx1ZRgCIAEoCToCOAEixQIKE1BpcGVDb250cm9sUmVzcG9uc2US",
+            "EgoKcmVxdWVzdF9pZBgBIAEoCRIPCgdzdWNjZXNzGAIgASgIEg8KB21lc3Nh",
+            "Z2UYAyABKAkSNwoLc2VydmVyX2luZm8YBCABKAsyIC5jbGhfcHJvdG8ucGx1",
+            "Z2luLlBpcGVTZXJ2ZXJJbmZvSAASPQoRY29ubmVjdGVkX3BsdWdpbnMYBSAB",
+            "KAsyIC5jbGhfcHJvdG8ucGx1Z2luLlBpcGVQbHVnaW5MaXN0SAASRQoSd3Nq",
+            "dHhfc3Vic2NyaXB0aW9uGAYgASgLMicuY2xoX3Byb3RvLnBsdWdpbi5QaXBl",
+            "V3NqdHhTdWJzY3JpcHRpb25IABIuCgl0aW1lc3RhbXAY5wcgASgLMhouZ29v",
+            "Z2xlLnByb3RvYnVmLlRpbWVzdGFtcEIJCgdwYXlsb2FkIkYKFFBpcGVDb25u",
+            "ZWN0aW9uQ2xvc2VkEi4KCXRpbWVzdGFtcBjnByABKAsyGi5nb29nbGUucHJv",
+            "dG9idWYuVGltZXN0YW1wKlYKCkNhcGFiaWxpdHkSEQoNV1NKVFhfTUVTU0FH",
+            "RRAAEgwKCFJJR19EQVRBEAESFQoRQ0xIX0lOVEVSTkFMX0RBVEEQAhIQCgxQ",
+            "SVBFX0NPTlRST0wQAyqeAQoSRGVjb2RlRGVsaXZlcnlNb2RlEiQKIERFQ09E",
+            "RV9ERUxJVkVSWV9NT0RFX1VOU1BFQ0lGSUVEEAASIAocREVDT0RFX0RFTElW",
+            "RVJZX01PREVfQkFUQ0hFRBABEiEKHURFQ09ERV9ERUxJVkVSWV9NT0RFX1JF",
+            "QUxUSU1FEAISHQoZREVDT0RFX0RFTElWRVJZX01PREVfQk9USBADKsUBChJQ",
+            "aXBlQ29udHJvbENvbW1hbmQSJAogUElQRV9DT05UUk9MX0NPTU1BTkRfVU5T",
+            "UEVDSUZJRUQQABIoCiRQSVBFX0NPTlRST0xfQ09NTUFORF9HRVRfU0VSVkVS",
+            "X0lORk8QARIuCipQSVBFX0NPTlRST0xfQ09NTUFORF9HRVRfQ09OTkVDVEVE",
+            "X1BMVUdJTlMQAhIvCitQSVBFX0NPTlRST0xfQ09NTUFORF9TRVRfV1NKVFhf",
+            "U1VCU0NSSVBUSU9OEAMqvQEKElBpcGVQbHVnaW5Mb2dMZXZlbBIlCiFQSVBF",
+            "X1BMVUdJTl9MT0dfTEVWRUxfVU5TUEVDSUZJRUQQABIfChtQSVBFX1BMVUdJ",
+            "Tl9MT0dfTEVWRUxfREVCVUcQARIeChpQSVBFX1BMVUdJTl9MT0dfTEVWRUxf",
+            "SU5GTxACEh4KGlBJUEVfUExVR0lOX0xPR19MRVZFTF9XQVJOEAMSHwobUElQ",
+            "RV9QTFVHSU5fTE9HX0xFVkVMX0VSUk9SEARCSlosZ2l0aHViLmNvbS9zeWRu",
+            "ZXlvd2wvY2xoLXByb3RvL2dlbi9nby9wbHVnaW6qAhlTeWRuZXlPd2wuQ0xI",
+            "UHJvdG8uUGx1Z2luYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.RigMsgReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.Capability), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq.Parser, new[]{ "Uuid", "Name", "Version", "Description", "Capabilities", "Timestamp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp.Parser, new[]{ "Success", "Message", "ClhInstanceId", "Timestamp" }, null, null, null, null),
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SydneyOwl.CLHProto.Plugin.WsjtxMsgReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.Capability), typeof(global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode), typeof(global::SydneyOwl.CLHProto.Plugin.PipeControlCommand), typeof(global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription), global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription.Parser, new[]{ "MessageTypes", "DecodeDeliveryMode" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipePluginInfo), global::SydneyOwl.CLHProto.Plugin.PipePluginInfo.Parser, new[]{ "Uuid", "Name", "Version", "Description", "Capabilities", "Metadata", "WsjtxSubscription", "RegisteredAt", "LastHeartbeat" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipePluginList), global::SydneyOwl.CLHProto.Plugin.PipePluginList.Parser, new[]{ "Plugins" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeServerInfo), global::SydneyOwl.CLHProto.Plugin.PipeServerInfo.Parser, new[]{ "ClhInstanceId", "ClhVersion", "KeepaliveTimeoutSec", "ConnectedPluginCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginReq.Parser, new[]{ "Uuid", "Name", "Version", "Description", "Capabilities", "WsjtxSubscription", "Metadata", "SdkName", "SdkVersion", "Timestamp" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp), global::SydneyOwl.CLHProto.Plugin.PipeRegisterPluginResp.Parser, new[]{ "Success", "Message", "ClhInstanceId", "ServerInfo", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeHeartbeat), global::SydneyOwl.CLHProto.Plugin.PipeHeartbeat.Parser, new[]{ "Uuid", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipePluginLog), global::SydneyOwl.CLHProto.Plugin.PipePluginLog.Parser, new[]{ "Uuid", "Level", "Message", "Fields", "Timestamp" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeControlRequest), global::SydneyOwl.CLHProto.Plugin.PipeControlRequest.Parser, new[]{ "RequestId", "Command", "WsjtxSubscription", "Arguments", "Timestamp" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeControlResponse), global::SydneyOwl.CLHProto.Plugin.PipeControlResponse.Parser, new[]{ "RequestId", "Success", "Message", "ServerInfo", "ConnectedPlugins", "WsjtxSubscription", "Timestamp" }, new[]{ "Payload" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SydneyOwl.CLHProto.Plugin.PipeConnectionClosed), global::SydneyOwl.CLHProto.Plugin.PipeConnectionClosed.Parser, new[]{ "Timestamp" }, null, null, null, null)
           }));
     }
@@ -58,11 +121,1257 @@ namespace SydneyOwl.CLHProto.Plugin {
     [pbr::OriginalName("WSJTX_MESSAGE")] WsjtxMessage = 0,
     [pbr::OriginalName("RIG_DATA")] RigData = 1,
     [pbr::OriginalName("CLH_INTERNAL_DATA")] ClhInternalData = 2,
+    [pbr::OriginalName("PIPE_CONTROL")] PipeControl = 3,
+  }
+
+  public enum DecodeDeliveryMode {
+    [pbr::OriginalName("DECODE_DELIVERY_MODE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("DECODE_DELIVERY_MODE_BATCHED")] Batched = 1,
+    [pbr::OriginalName("DECODE_DELIVERY_MODE_REALTIME")] Realtime = 2,
+    [pbr::OriginalName("DECODE_DELIVERY_MODE_BOTH")] Both = 3,
+  }
+
+  public enum PipeControlCommand {
+    [pbr::OriginalName("PIPE_CONTROL_COMMAND_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("PIPE_CONTROL_COMMAND_GET_SERVER_INFO")] GetServerInfo = 1,
+    [pbr::OriginalName("PIPE_CONTROL_COMMAND_GET_CONNECTED_PLUGINS")] GetConnectedPlugins = 2,
+    [pbr::OriginalName("PIPE_CONTROL_COMMAND_SET_WSJTX_SUBSCRIPTION")] SetWsjtxSubscription = 3,
+  }
+
+  public enum PipePluginLogLevel {
+    [pbr::OriginalName("PIPE_PLUGIN_LOG_LEVEL_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("PIPE_PLUGIN_LOG_LEVEL_DEBUG")] Debug = 1,
+    [pbr::OriginalName("PIPE_PLUGIN_LOG_LEVEL_INFO")] Info = 2,
+    [pbr::OriginalName("PIPE_PLUGIN_LOG_LEVEL_WARN")] Warn = 3,
+    [pbr::OriginalName("PIPE_PLUGIN_LOG_LEVEL_ERROR")] Error = 4,
   }
 
   #endregion
 
   #region Messages
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PipeWsjtxSubscription : pb::IMessage<PipeWsjtxSubscription>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PipeWsjtxSubscription> _parser = new pb::MessageParser<PipeWsjtxSubscription>(() => new PipeWsjtxSubscription());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PipeWsjtxSubscription> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeWsjtxSubscription() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeWsjtxSubscription(PipeWsjtxSubscription other) : this() {
+      messageTypes_ = other.messageTypes_.Clone();
+      decodeDeliveryMode_ = other.decodeDeliveryMode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeWsjtxSubscription Clone() {
+      return new PipeWsjtxSubscription(this);
+    }
+
+    /// <summary>Field number for the "message_types" field.</summary>
+    public const int MessageTypesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::SydneyOwl.CLHProto.Plugin.MessageType> _repeated_messageTypes_codec
+        = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::SydneyOwl.CLHProto.Plugin.MessageType) x);
+    private readonly pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.MessageType> messageTypes_ = new pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.MessageType>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.MessageType> MessageTypes {
+      get { return messageTypes_; }
+    }
+
+    /// <summary>Field number for the "decode_delivery_mode" field.</summary>
+    public const int DecodeDeliveryModeFieldNumber = 2;
+    private global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode decodeDeliveryMode_ = global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode DecodeDeliveryMode {
+      get { return decodeDeliveryMode_; }
+      set {
+        decodeDeliveryMode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PipeWsjtxSubscription);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PipeWsjtxSubscription other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!messageTypes_.Equals(other.messageTypes_)) return false;
+      if (DecodeDeliveryMode != other.DecodeDeliveryMode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= messageTypes_.GetHashCode();
+      if (DecodeDeliveryMode != global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode.Unspecified) hash ^= DecodeDeliveryMode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      messageTypes_.WriteTo(output, _repeated_messageTypes_codec);
+      if (DecodeDeliveryMode != global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) DecodeDeliveryMode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      messageTypes_.WriteTo(ref output, _repeated_messageTypes_codec);
+      if (DecodeDeliveryMode != global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) DecodeDeliveryMode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += messageTypes_.CalculateSize(_repeated_messageTypes_codec);
+      if (DecodeDeliveryMode != global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DecodeDeliveryMode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PipeWsjtxSubscription other) {
+      if (other == null) {
+        return;
+      }
+      messageTypes_.Add(other.messageTypes_);
+      if (other.DecodeDeliveryMode != global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode.Unspecified) {
+        DecodeDeliveryMode = other.DecodeDeliveryMode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10:
+          case 8: {
+            messageTypes_.AddEntriesFrom(input, _repeated_messageTypes_codec);
+            break;
+          }
+          case 16: {
+            DecodeDeliveryMode = (global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10:
+          case 8: {
+            messageTypes_.AddEntriesFrom(ref input, _repeated_messageTypes_codec);
+            break;
+          }
+          case 16: {
+            DecodeDeliveryMode = (global::SydneyOwl.CLHProto.Plugin.DecodeDeliveryMode) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PipePluginInfo : pb::IMessage<PipePluginInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PipePluginInfo> _parser = new pb::MessageParser<PipePluginInfo>(() => new PipePluginInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PipePluginInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipePluginInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipePluginInfo(PipePluginInfo other) : this() {
+      uuid_ = other.uuid_;
+      name_ = other.name_;
+      version_ = other.version_;
+      description_ = other.description_;
+      capabilities_ = other.capabilities_.Clone();
+      metadata_ = other.metadata_.Clone();
+      wsjtxSubscription_ = other.wsjtxSubscription_ != null ? other.wsjtxSubscription_.Clone() : null;
+      registeredAt_ = other.registeredAt_ != null ? other.registeredAt_.Clone() : null;
+      lastHeartbeat_ = other.lastHeartbeat_ != null ? other.lastHeartbeat_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipePluginInfo Clone() {
+      return new PipePluginInfo(this);
+    }
+
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 1;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "version" field.</summary>
+    public const int VersionFieldNumber = 3;
+    private string version_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Version {
+      get { return version_; }
+      set {
+        version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "capabilities" field.</summary>
+    public const int CapabilitiesFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::SydneyOwl.CLHProto.Plugin.Capability> _repeated_capabilities_codec
+        = pb::FieldCodec.ForEnum(42, x => (int) x, x => (global::SydneyOwl.CLHProto.Plugin.Capability) x);
+    private readonly pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.Capability> capabilities_ = new pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.Capability>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.Capability> Capabilities {
+      get { return capabilities_; }
+    }
+
+    /// <summary>Field number for the "metadata" field.</summary>
+    public const int MetadataFieldNumber = 6;
+    private static readonly pbc::MapField<string, string>.Codec _map_metadata_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 50);
+    private readonly pbc::MapField<string, string> metadata_ = new pbc::MapField<string, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> Metadata {
+      get { return metadata_; }
+    }
+
+    /// <summary>Field number for the "wsjtx_subscription" field.</summary>
+    public const int WsjtxSubscriptionFieldNumber = 7;
+    private global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription wsjtxSubscription_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription WsjtxSubscription {
+      get { return wsjtxSubscription_; }
+      set {
+        wsjtxSubscription_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "registered_at" field.</summary>
+    public const int RegisteredAtFieldNumber = 8;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp registeredAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp RegisteredAt {
+      get { return registeredAt_; }
+      set {
+        registeredAt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_heartbeat" field.</summary>
+    public const int LastHeartbeatFieldNumber = 9;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp lastHeartbeat_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp LastHeartbeat {
+      get { return lastHeartbeat_; }
+      set {
+        lastHeartbeat_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PipePluginInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PipePluginInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Uuid != other.Uuid) return false;
+      if (Name != other.Name) return false;
+      if (Version != other.Version) return false;
+      if (Description != other.Description) return false;
+      if(!capabilities_.Equals(other.capabilities_)) return false;
+      if (!Metadata.Equals(other.Metadata)) return false;
+      if (!object.Equals(WsjtxSubscription, other.WsjtxSubscription)) return false;
+      if (!object.Equals(RegisteredAt, other.RegisteredAt)) return false;
+      if (!object.Equals(LastHeartbeat, other.LastHeartbeat)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Version.Length != 0) hash ^= Version.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      hash ^= capabilities_.GetHashCode();
+      hash ^= Metadata.GetHashCode();
+      if (wsjtxSubscription_ != null) hash ^= WsjtxSubscription.GetHashCode();
+      if (registeredAt_ != null) hash ^= RegisteredAt.GetHashCode();
+      if (lastHeartbeat_ != null) hash ^= LastHeartbeat.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Uuid);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Version.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Version);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      capabilities_.WriteTo(output, _repeated_capabilities_codec);
+      metadata_.WriteTo(output, _map_metadata_codec);
+      if (wsjtxSubscription_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(WsjtxSubscription);
+      }
+      if (registeredAt_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(RegisteredAt);
+      }
+      if (lastHeartbeat_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(LastHeartbeat);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Uuid);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Version.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Version);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
+      capabilities_.WriteTo(ref output, _repeated_capabilities_codec);
+      metadata_.WriteTo(ref output, _map_metadata_codec);
+      if (wsjtxSubscription_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(WsjtxSubscription);
+      }
+      if (registeredAt_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(RegisteredAt);
+      }
+      if (lastHeartbeat_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(LastHeartbeat);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Uuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Version.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      size += capabilities_.CalculateSize(_repeated_capabilities_codec);
+      size += metadata_.CalculateSize(_map_metadata_codec);
+      if (wsjtxSubscription_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WsjtxSubscription);
+      }
+      if (registeredAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RegisteredAt);
+      }
+      if (lastHeartbeat_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LastHeartbeat);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PipePluginInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Version.Length != 0) {
+        Version = other.Version;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      capabilities_.Add(other.capabilities_);
+      metadata_.MergeFrom(other.metadata_);
+      if (other.wsjtxSubscription_ != null) {
+        if (wsjtxSubscription_ == null) {
+          WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+        }
+        WsjtxSubscription.MergeFrom(other.WsjtxSubscription);
+      }
+      if (other.registeredAt_ != null) {
+        if (registeredAt_ == null) {
+          RegisteredAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        RegisteredAt.MergeFrom(other.RegisteredAt);
+      }
+      if (other.lastHeartbeat_ != null) {
+        if (lastHeartbeat_ == null) {
+          LastHeartbeat = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        LastHeartbeat.MergeFrom(other.LastHeartbeat);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Uuid = input.ReadString();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            Version = input.ReadString();
+            break;
+          }
+          case 34: {
+            Description = input.ReadString();
+            break;
+          }
+          case 42:
+          case 40: {
+            capabilities_.AddEntriesFrom(input, _repeated_capabilities_codec);
+            break;
+          }
+          case 50: {
+            metadata_.AddEntriesFrom(input, _map_metadata_codec);
+            break;
+          }
+          case 58: {
+            if (wsjtxSubscription_ == null) {
+              WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+            }
+            input.ReadMessage(WsjtxSubscription);
+            break;
+          }
+          case 66: {
+            if (registeredAt_ == null) {
+              RegisteredAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RegisteredAt);
+            break;
+          }
+          case 74: {
+            if (lastHeartbeat_ == null) {
+              LastHeartbeat = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(LastHeartbeat);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Uuid = input.ReadString();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            Version = input.ReadString();
+            break;
+          }
+          case 34: {
+            Description = input.ReadString();
+            break;
+          }
+          case 42:
+          case 40: {
+            capabilities_.AddEntriesFrom(ref input, _repeated_capabilities_codec);
+            break;
+          }
+          case 50: {
+            metadata_.AddEntriesFrom(ref input, _map_metadata_codec);
+            break;
+          }
+          case 58: {
+            if (wsjtxSubscription_ == null) {
+              WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+            }
+            input.ReadMessage(WsjtxSubscription);
+            break;
+          }
+          case 66: {
+            if (registeredAt_ == null) {
+              RegisteredAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RegisteredAt);
+            break;
+          }
+          case 74: {
+            if (lastHeartbeat_ == null) {
+              LastHeartbeat = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(LastHeartbeat);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PipePluginList : pb::IMessage<PipePluginList>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PipePluginList> _parser = new pb::MessageParser<PipePluginList>(() => new PipePluginList());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PipePluginList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipePluginList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipePluginList(PipePluginList other) : this() {
+      plugins_ = other.plugins_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipePluginList Clone() {
+      return new PipePluginList(this);
+    }
+
+    /// <summary>Field number for the "plugins" field.</summary>
+    public const int PluginsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::SydneyOwl.CLHProto.Plugin.PipePluginInfo> _repeated_plugins_codec
+        = pb::FieldCodec.ForMessage(10, global::SydneyOwl.CLHProto.Plugin.PipePluginInfo.Parser);
+    private readonly pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.PipePluginInfo> plugins_ = new pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.PipePluginInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::SydneyOwl.CLHProto.Plugin.PipePluginInfo> Plugins {
+      get { return plugins_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PipePluginList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PipePluginList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!plugins_.Equals(other.plugins_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= plugins_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      plugins_.WriteTo(output, _repeated_plugins_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      plugins_.WriteTo(ref output, _repeated_plugins_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += plugins_.CalculateSize(_repeated_plugins_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PipePluginList other) {
+      if (other == null) {
+        return;
+      }
+      plugins_.Add(other.plugins_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            plugins_.AddEntriesFrom(input, _repeated_plugins_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            plugins_.AddEntriesFrom(ref input, _repeated_plugins_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PipeServerInfo : pb::IMessage<PipeServerInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PipeServerInfo> _parser = new pb::MessageParser<PipeServerInfo>(() => new PipeServerInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PipeServerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeServerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeServerInfo(PipeServerInfo other) : this() {
+      clhInstanceId_ = other.clhInstanceId_;
+      clhVersion_ = other.clhVersion_;
+      keepaliveTimeoutSec_ = other.keepaliveTimeoutSec_;
+      connectedPluginCount_ = other.connectedPluginCount_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeServerInfo Clone() {
+      return new PipeServerInfo(this);
+    }
+
+    /// <summary>Field number for the "clh_instance_id" field.</summary>
+    public const int ClhInstanceIdFieldNumber = 1;
+    private string clhInstanceId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClhInstanceId {
+      get { return clhInstanceId_; }
+      set {
+        clhInstanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "clh_version" field.</summary>
+    public const int ClhVersionFieldNumber = 2;
+    private string clhVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClhVersion {
+      get { return clhVersion_; }
+      set {
+        clhVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "keepalive_timeout_sec" field.</summary>
+    public const int KeepaliveTimeoutSecFieldNumber = 3;
+    private uint keepaliveTimeoutSec_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint KeepaliveTimeoutSec {
+      get { return keepaliveTimeoutSec_; }
+      set {
+        keepaliveTimeoutSec_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "connected_plugin_count" field.</summary>
+    public const int ConnectedPluginCountFieldNumber = 4;
+    private uint connectedPluginCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConnectedPluginCount {
+      get { return connectedPluginCount_; }
+      set {
+        connectedPluginCount_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PipeServerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PipeServerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ClhInstanceId != other.ClhInstanceId) return false;
+      if (ClhVersion != other.ClhVersion) return false;
+      if (KeepaliveTimeoutSec != other.KeepaliveTimeoutSec) return false;
+      if (ConnectedPluginCount != other.ConnectedPluginCount) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ClhInstanceId.Length != 0) hash ^= ClhInstanceId.GetHashCode();
+      if (ClhVersion.Length != 0) hash ^= ClhVersion.GetHashCode();
+      if (KeepaliveTimeoutSec != 0) hash ^= KeepaliveTimeoutSec.GetHashCode();
+      if (ConnectedPluginCount != 0) hash ^= ConnectedPluginCount.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ClhInstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ClhInstanceId);
+      }
+      if (ClhVersion.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ClhVersion);
+      }
+      if (KeepaliveTimeoutSec != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(KeepaliveTimeoutSec);
+      }
+      if (ConnectedPluginCount != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ConnectedPluginCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ClhInstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ClhInstanceId);
+      }
+      if (ClhVersion.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ClhVersion);
+      }
+      if (KeepaliveTimeoutSec != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(KeepaliveTimeoutSec);
+      }
+      if (ConnectedPluginCount != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ConnectedPluginCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ClhInstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClhInstanceId);
+      }
+      if (ClhVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClhVersion);
+      }
+      if (KeepaliveTimeoutSec != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KeepaliveTimeoutSec);
+      }
+      if (ConnectedPluginCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConnectedPluginCount);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PipeServerInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ClhInstanceId.Length != 0) {
+        ClhInstanceId = other.ClhInstanceId;
+      }
+      if (other.ClhVersion.Length != 0) {
+        ClhVersion = other.ClhVersion;
+      }
+      if (other.KeepaliveTimeoutSec != 0) {
+        KeepaliveTimeoutSec = other.KeepaliveTimeoutSec;
+      }
+      if (other.ConnectedPluginCount != 0) {
+        ConnectedPluginCount = other.ConnectedPluginCount;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ClhInstanceId = input.ReadString();
+            break;
+          }
+          case 18: {
+            ClhVersion = input.ReadString();
+            break;
+          }
+          case 24: {
+            KeepaliveTimeoutSec = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            ConnectedPluginCount = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            ClhInstanceId = input.ReadString();
+            break;
+          }
+          case 18: {
+            ClhVersion = input.ReadString();
+            break;
+          }
+          case 24: {
+            KeepaliveTimeoutSec = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            ConnectedPluginCount = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class PipeRegisterPluginReq : pb::IMessage<PipeRegisterPluginReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,7 +1387,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[0]; }
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,6 +1412,10 @@ namespace SydneyOwl.CLHProto.Plugin {
       version_ = other.version_;
       description_ = other.description_;
       capabilities_ = other.capabilities_.Clone();
+      wsjtxSubscription_ = other.wsjtxSubscription_ != null ? other.wsjtxSubscription_.Clone() : null;
+      metadata_ = other.metadata_.Clone();
+      sdkName_ = other.sdkName_;
+      sdkVersion_ = other.sdkVersion_;
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -172,6 +1485,53 @@ namespace SydneyOwl.CLHProto.Plugin {
       get { return capabilities_; }
     }
 
+    /// <summary>Field number for the "wsjtx_subscription" field.</summary>
+    public const int WsjtxSubscriptionFieldNumber = 7;
+    private global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription wsjtxSubscription_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription WsjtxSubscription {
+      get { return wsjtxSubscription_; }
+      set {
+        wsjtxSubscription_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "metadata" field.</summary>
+    public const int MetadataFieldNumber = 8;
+    private static readonly pbc::MapField<string, string>.Codec _map_metadata_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 66);
+    private readonly pbc::MapField<string, string> metadata_ = new pbc::MapField<string, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> Metadata {
+      get { return metadata_; }
+    }
+
+    /// <summary>Field number for the "sdk_name" field.</summary>
+    public const int SdkNameFieldNumber = 9;
+    private string sdkName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SdkName {
+      get { return sdkName_; }
+      set {
+        sdkName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "sdk_version" field.</summary>
+    public const int SdkVersionFieldNumber = 10;
+    private string sdkVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SdkVersion {
+      get { return sdkVersion_; }
+      set {
+        sdkVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "timestamp" field.</summary>
     public const int TimestampFieldNumber = 999;
     private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
@@ -204,6 +1564,10 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Version != other.Version) return false;
       if (Description != other.Description) return false;
       if(!capabilities_.Equals(other.capabilities_)) return false;
+      if (!object.Equals(WsjtxSubscription, other.WsjtxSubscription)) return false;
+      if (!Metadata.Equals(other.Metadata)) return false;
+      if (SdkName != other.SdkName) return false;
+      if (SdkVersion != other.SdkVersion) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -217,6 +1581,10 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Version.Length != 0) hash ^= Version.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       hash ^= capabilities_.GetHashCode();
+      if (wsjtxSubscription_ != null) hash ^= WsjtxSubscription.GetHashCode();
+      hash ^= Metadata.GetHashCode();
+      if (SdkName.Length != 0) hash ^= SdkName.GetHashCode();
+      if (SdkVersion.Length != 0) hash ^= SdkVersion.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -253,6 +1621,19 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteString(Description);
       }
       capabilities_.WriteTo(output, _repeated_capabilities_codec);
+      if (wsjtxSubscription_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(WsjtxSubscription);
+      }
+      metadata_.WriteTo(output, _map_metadata_codec);
+      if (SdkName.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(SdkName);
+      }
+      if (SdkVersion.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(SdkVersion);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -284,6 +1665,19 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteString(Description);
       }
       capabilities_.WriteTo(ref output, _repeated_capabilities_codec);
+      if (wsjtxSubscription_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(WsjtxSubscription);
+      }
+      metadata_.WriteTo(ref output, _map_metadata_codec);
+      if (SdkName.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(SdkName);
+      }
+      if (SdkVersion.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(SdkVersion);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -311,6 +1705,16 @@ namespace SydneyOwl.CLHProto.Plugin {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       size += capabilities_.CalculateSize(_repeated_capabilities_codec);
+      if (wsjtxSubscription_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WsjtxSubscription);
+      }
+      size += metadata_.CalculateSize(_map_metadata_codec);
+      if (SdkName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SdkName);
+      }
+      if (SdkVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SdkVersion);
+      }
       if (timestamp_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
       }
@@ -339,6 +1743,19 @@ namespace SydneyOwl.CLHProto.Plugin {
         Description = other.Description;
       }
       capabilities_.Add(other.capabilities_);
+      if (other.wsjtxSubscription_ != null) {
+        if (wsjtxSubscription_ == null) {
+          WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+        }
+        WsjtxSubscription.MergeFrom(other.WsjtxSubscription);
+      }
+      metadata_.MergeFrom(other.metadata_);
+      if (other.SdkName.Length != 0) {
+        SdkName = other.SdkName;
+      }
+      if (other.SdkVersion.Length != 0) {
+        SdkVersion = other.SdkVersion;
+      }
       if (other.timestamp_ != null) {
         if (timestamp_ == null) {
           Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
@@ -383,6 +1800,25 @@ namespace SydneyOwl.CLHProto.Plugin {
           case 50:
           case 48: {
             capabilities_.AddEntriesFrom(input, _repeated_capabilities_codec);
+            break;
+          }
+          case 58: {
+            if (wsjtxSubscription_ == null) {
+              WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+            }
+            input.ReadMessage(WsjtxSubscription);
+            break;
+          }
+          case 66: {
+            metadata_.AddEntriesFrom(input, _map_metadata_codec);
+            break;
+          }
+          case 74: {
+            SdkName = input.ReadString();
+            break;
+          }
+          case 82: {
+            SdkVersion = input.ReadString();
             break;
           }
           case 7994: {
@@ -432,6 +1868,25 @@ namespace SydneyOwl.CLHProto.Plugin {
             capabilities_.AddEntriesFrom(ref input, _repeated_capabilities_codec);
             break;
           }
+          case 58: {
+            if (wsjtxSubscription_ == null) {
+              WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+            }
+            input.ReadMessage(WsjtxSubscription);
+            break;
+          }
+          case 66: {
+            metadata_.AddEntriesFrom(ref input, _map_metadata_codec);
+            break;
+          }
+          case 74: {
+            SdkName = input.ReadString();
+            break;
+          }
+          case 82: {
+            SdkVersion = input.ReadString();
+            break;
+          }
           case 7994: {
             if (timestamp_ == null) {
               Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
@@ -461,7 +1916,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[1]; }
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -484,6 +1939,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       success_ = other.success_;
       message_ = other.message_;
       clhInstanceId_ = other.clhInstanceId_;
+      serverInfo_ = other.serverInfo_ != null ? other.serverInfo_.Clone() : null;
       timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -530,6 +1986,18 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
     }
 
+    /// <summary>Field number for the "server_info" field.</summary>
+    public const int ServerInfoFieldNumber = 4;
+    private global::SydneyOwl.CLHProto.Plugin.PipeServerInfo serverInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.PipeServerInfo ServerInfo {
+      get { return serverInfo_; }
+      set {
+        serverInfo_ = value;
+      }
+    }
+
     /// <summary>Field number for the "timestamp" field.</summary>
     public const int TimestampFieldNumber = 999;
     private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
@@ -560,6 +2028,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Success != other.Success) return false;
       if (Message != other.Message) return false;
       if (ClhInstanceId != other.ClhInstanceId) return false;
+      if (!object.Equals(ServerInfo, other.ServerInfo)) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -571,6 +2040,7 @@ namespace SydneyOwl.CLHProto.Plugin {
       if (Success != false) hash ^= Success.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (ClhInstanceId.Length != 0) hash ^= ClhInstanceId.GetHashCode();
+      if (serverInfo_ != null) hash ^= ServerInfo.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -602,6 +2072,10 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(26);
         output.WriteString(ClhInstanceId);
       }
+      if (serverInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ServerInfo);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -628,6 +2102,10 @@ namespace SydneyOwl.CLHProto.Plugin {
         output.WriteRawTag(26);
         output.WriteString(ClhInstanceId);
       }
+      if (serverInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ServerInfo);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(186, 62);
         output.WriteMessage(Timestamp);
@@ -650,6 +2128,9 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (ClhInstanceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ClhInstanceId);
+      }
+      if (serverInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerInfo);
       }
       if (timestamp_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
@@ -674,6 +2155,12 @@ namespace SydneyOwl.CLHProto.Plugin {
       }
       if (other.ClhInstanceId.Length != 0) {
         ClhInstanceId = other.ClhInstanceId;
+      }
+      if (other.serverInfo_ != null) {
+        if (serverInfo_ == null) {
+          ServerInfo = new global::SydneyOwl.CLHProto.Plugin.PipeServerInfo();
+        }
+        ServerInfo.MergeFrom(other.ServerInfo);
       }
       if (other.timestamp_ != null) {
         if (timestamp_ == null) {
@@ -710,6 +2197,13 @@ namespace SydneyOwl.CLHProto.Plugin {
           }
           case 26: {
             ClhInstanceId = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (serverInfo_ == null) {
+              ServerInfo = new global::SydneyOwl.CLHProto.Plugin.PipeServerInfo();
+            }
+            input.ReadMessage(ServerInfo);
             break;
           }
           case 7994: {
@@ -750,6 +2244,13 @@ namespace SydneyOwl.CLHProto.Plugin {
             ClhInstanceId = input.ReadString();
             break;
           }
+          case 34: {
+            if (serverInfo_ == null) {
+              ServerInfo = new global::SydneyOwl.CLHProto.Plugin.PipeServerInfo();
+            }
+            input.ReadMessage(ServerInfo);
+            break;
+          }
           case 7994: {
             if (timestamp_ == null) {
               Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
@@ -779,7 +2280,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[2]; }
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1008,6 +2509,1207 @@ namespace SydneyOwl.CLHProto.Plugin {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PipePluginLog : pb::IMessage<PipePluginLog>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PipePluginLog> _parser = new pb::MessageParser<PipePluginLog>(() => new PipePluginLog());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PipePluginLog> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipePluginLog() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipePluginLog(PipePluginLog other) : this() {
+      uuid_ = other.uuid_;
+      level_ = other.level_;
+      message_ = other.message_;
+      fields_ = other.fields_.Clone();
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipePluginLog Clone() {
+      return new PipePluginLog(this);
+    }
+
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 1;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 2;
+    private global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel level_ = global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 3;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "fields" field.</summary>
+    public const int FieldsFieldNumber = 4;
+    private static readonly pbc::MapField<string, string>.Codec _map_fields_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 34);
+    private readonly pbc::MapField<string, string> fields_ = new pbc::MapField<string, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> Fields {
+      get { return fields_; }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 999;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PipePluginLog);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PipePluginLog other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Uuid != other.Uuid) return false;
+      if (Level != other.Level) return false;
+      if (Message != other.Message) return false;
+      if (!Fields.Equals(other.Fields)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
+      if (Level != global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel.Unspecified) hash ^= Level.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      hash ^= Fields.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Uuid);
+      }
+      if (Level != global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Level);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Message);
+      }
+      fields_.WriteTo(output, _map_fields_codec);
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Uuid);
+      }
+      if (Level != global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Level);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Message);
+      }
+      fields_.WriteTo(ref output, _map_fields_codec);
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Uuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
+      }
+      if (Level != global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Level);
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      size += fields_.CalculateSize(_map_fields_codec);
+      if (timestamp_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PipePluginLog other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
+      }
+      if (other.Level != global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel.Unspecified) {
+        Level = other.Level;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      fields_.MergeFrom(other.fields_);
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Uuid = input.ReadString();
+            break;
+          }
+          case 16: {
+            Level = (global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            Message = input.ReadString();
+            break;
+          }
+          case 34: {
+            fields_.AddEntriesFrom(input, _map_fields_codec);
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Uuid = input.ReadString();
+            break;
+          }
+          case 16: {
+            Level = (global::SydneyOwl.CLHProto.Plugin.PipePluginLogLevel) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            Message = input.ReadString();
+            break;
+          }
+          case 34: {
+            fields_.AddEntriesFrom(ref input, _map_fields_codec);
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PipeControlRequest : pb::IMessage<PipeControlRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PipeControlRequest> _parser = new pb::MessageParser<PipeControlRequest>(() => new PipeControlRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PipeControlRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeControlRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeControlRequest(PipeControlRequest other) : this() {
+      requestId_ = other.requestId_;
+      command_ = other.command_;
+      wsjtxSubscription_ = other.wsjtxSubscription_ != null ? other.wsjtxSubscription_.Clone() : null;
+      arguments_ = other.arguments_.Clone();
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeControlRequest Clone() {
+      return new PipeControlRequest(this);
+    }
+
+    /// <summary>Field number for the "request_id" field.</summary>
+    public const int RequestIdFieldNumber = 1;
+    private string requestId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RequestId {
+      get { return requestId_; }
+      set {
+        requestId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "command" field.</summary>
+    public const int CommandFieldNumber = 2;
+    private global::SydneyOwl.CLHProto.Plugin.PipeControlCommand command_ = global::SydneyOwl.CLHProto.Plugin.PipeControlCommand.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.PipeControlCommand Command {
+      get { return command_; }
+      set {
+        command_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "wsjtx_subscription" field.</summary>
+    public const int WsjtxSubscriptionFieldNumber = 3;
+    private global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription wsjtxSubscription_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription WsjtxSubscription {
+      get { return wsjtxSubscription_; }
+      set {
+        wsjtxSubscription_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "arguments" field.</summary>
+    public const int ArgumentsFieldNumber = 4;
+    private static readonly pbc::MapField<string, string>.Codec _map_arguments_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 34);
+    private readonly pbc::MapField<string, string> arguments_ = new pbc::MapField<string, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> Arguments {
+      get { return arguments_; }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 999;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PipeControlRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PipeControlRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RequestId != other.RequestId) return false;
+      if (Command != other.Command) return false;
+      if (!object.Equals(WsjtxSubscription, other.WsjtxSubscription)) return false;
+      if (!Arguments.Equals(other.Arguments)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RequestId.Length != 0) hash ^= RequestId.GetHashCode();
+      if (Command != global::SydneyOwl.CLHProto.Plugin.PipeControlCommand.Unspecified) hash ^= Command.GetHashCode();
+      if (wsjtxSubscription_ != null) hash ^= WsjtxSubscription.GetHashCode();
+      hash ^= Arguments.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (RequestId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RequestId);
+      }
+      if (Command != global::SydneyOwl.CLHProto.Plugin.PipeControlCommand.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Command);
+      }
+      if (wsjtxSubscription_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(WsjtxSubscription);
+      }
+      arguments_.WriteTo(output, _map_arguments_codec);
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RequestId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RequestId);
+      }
+      if (Command != global::SydneyOwl.CLHProto.Plugin.PipeControlCommand.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Command);
+      }
+      if (wsjtxSubscription_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(WsjtxSubscription);
+      }
+      arguments_.WriteTo(ref output, _map_arguments_codec);
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (RequestId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RequestId);
+      }
+      if (Command != global::SydneyOwl.CLHProto.Plugin.PipeControlCommand.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Command);
+      }
+      if (wsjtxSubscription_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WsjtxSubscription);
+      }
+      size += arguments_.CalculateSize(_map_arguments_codec);
+      if (timestamp_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PipeControlRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RequestId.Length != 0) {
+        RequestId = other.RequestId;
+      }
+      if (other.Command != global::SydneyOwl.CLHProto.Plugin.PipeControlCommand.Unspecified) {
+        Command = other.Command;
+      }
+      if (other.wsjtxSubscription_ != null) {
+        if (wsjtxSubscription_ == null) {
+          WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+        }
+        WsjtxSubscription.MergeFrom(other.WsjtxSubscription);
+      }
+      arguments_.MergeFrom(other.arguments_);
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            RequestId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Command = (global::SydneyOwl.CLHProto.Plugin.PipeControlCommand) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            if (wsjtxSubscription_ == null) {
+              WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+            }
+            input.ReadMessage(WsjtxSubscription);
+            break;
+          }
+          case 34: {
+            arguments_.AddEntriesFrom(input, _map_arguments_codec);
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            RequestId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Command = (global::SydneyOwl.CLHProto.Plugin.PipeControlCommand) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            if (wsjtxSubscription_ == null) {
+              WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+            }
+            input.ReadMessage(WsjtxSubscription);
+            break;
+          }
+          case 34: {
+            arguments_.AddEntriesFrom(ref input, _map_arguments_codec);
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PipeControlResponse : pb::IMessage<PipeControlResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PipeControlResponse> _parser = new pb::MessageParser<PipeControlResponse>(() => new PipeControlResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PipeControlResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeControlResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeControlResponse(PipeControlResponse other) : this() {
+      requestId_ = other.requestId_;
+      success_ = other.success_;
+      message_ = other.message_;
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      switch (other.PayloadCase) {
+        case PayloadOneofCase.ServerInfo:
+          ServerInfo = other.ServerInfo.Clone();
+          break;
+        case PayloadOneofCase.ConnectedPlugins:
+          ConnectedPlugins = other.ConnectedPlugins.Clone();
+          break;
+        case PayloadOneofCase.WsjtxSubscription:
+          WsjtxSubscription = other.WsjtxSubscription.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PipeControlResponse Clone() {
+      return new PipeControlResponse(this);
+    }
+
+    /// <summary>Field number for the "request_id" field.</summary>
+    public const int RequestIdFieldNumber = 1;
+    private string requestId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RequestId {
+      get { return requestId_; }
+      set {
+        requestId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 2;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 3;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "server_info" field.</summary>
+    public const int ServerInfoFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.PipeServerInfo ServerInfo {
+      get { return payloadCase_ == PayloadOneofCase.ServerInfo ? (global::SydneyOwl.CLHProto.Plugin.PipeServerInfo) payload_ : null; }
+      set {
+        payload_ = value;
+        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.ServerInfo;
+      }
+    }
+
+    /// <summary>Field number for the "connected_plugins" field.</summary>
+    public const int ConnectedPluginsFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.PipePluginList ConnectedPlugins {
+      get { return payloadCase_ == PayloadOneofCase.ConnectedPlugins ? (global::SydneyOwl.CLHProto.Plugin.PipePluginList) payload_ : null; }
+      set {
+        payload_ = value;
+        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.ConnectedPlugins;
+      }
+    }
+
+    /// <summary>Field number for the "wsjtx_subscription" field.</summary>
+    public const int WsjtxSubscriptionFieldNumber = 6;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription WsjtxSubscription {
+      get { return payloadCase_ == PayloadOneofCase.WsjtxSubscription ? (global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription) payload_ : null; }
+      set {
+        payload_ = value;
+        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.WsjtxSubscription;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 999;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    private object payload_;
+    /// <summary>Enum of possible cases for the "payload" oneof.</summary>
+    public enum PayloadOneofCase {
+      None = 0,
+      ServerInfo = 4,
+      ConnectedPlugins = 5,
+      WsjtxSubscription = 6,
+    }
+    private PayloadOneofCase payloadCase_ = PayloadOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PayloadOneofCase PayloadCase {
+      get { return payloadCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPayload() {
+      payloadCase_ = PayloadOneofCase.None;
+      payload_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PipeControlResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PipeControlResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RequestId != other.RequestId) return false;
+      if (Success != other.Success) return false;
+      if (Message != other.Message) return false;
+      if (!object.Equals(ServerInfo, other.ServerInfo)) return false;
+      if (!object.Equals(ConnectedPlugins, other.ConnectedPlugins)) return false;
+      if (!object.Equals(WsjtxSubscription, other.WsjtxSubscription)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      if (PayloadCase != other.PayloadCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RequestId.Length != 0) hash ^= RequestId.GetHashCode();
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (payloadCase_ == PayloadOneofCase.ServerInfo) hash ^= ServerInfo.GetHashCode();
+      if (payloadCase_ == PayloadOneofCase.ConnectedPlugins) hash ^= ConnectedPlugins.GetHashCode();
+      if (payloadCase_ == PayloadOneofCase.WsjtxSubscription) hash ^= WsjtxSubscription.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      hash ^= (int) payloadCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (RequestId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RequestId);
+      }
+      if (Success != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Success);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Message);
+      }
+      if (payloadCase_ == PayloadOneofCase.ServerInfo) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ServerInfo);
+      }
+      if (payloadCase_ == PayloadOneofCase.ConnectedPlugins) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ConnectedPlugins);
+      }
+      if (payloadCase_ == PayloadOneofCase.WsjtxSubscription) {
+        output.WriteRawTag(50);
+        output.WriteMessage(WsjtxSubscription);
+      }
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RequestId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RequestId);
+      }
+      if (Success != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Success);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Message);
+      }
+      if (payloadCase_ == PayloadOneofCase.ServerInfo) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ServerInfo);
+      }
+      if (payloadCase_ == PayloadOneofCase.ConnectedPlugins) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ConnectedPlugins);
+      }
+      if (payloadCase_ == PayloadOneofCase.WsjtxSubscription) {
+        output.WriteRawTag(50);
+        output.WriteMessage(WsjtxSubscription);
+      }
+      if (timestamp_ != null) {
+        output.WriteRawTag(186, 62);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (RequestId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RequestId);
+      }
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (payloadCase_ == PayloadOneofCase.ServerInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerInfo);
+      }
+      if (payloadCase_ == PayloadOneofCase.ConnectedPlugins) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ConnectedPlugins);
+      }
+      if (payloadCase_ == PayloadOneofCase.WsjtxSubscription) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WsjtxSubscription);
+      }
+      if (timestamp_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PipeControlResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RequestId.Length != 0) {
+        RequestId = other.RequestId;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
+      }
+      switch (other.PayloadCase) {
+        case PayloadOneofCase.ServerInfo:
+          if (ServerInfo == null) {
+            ServerInfo = new global::SydneyOwl.CLHProto.Plugin.PipeServerInfo();
+          }
+          ServerInfo.MergeFrom(other.ServerInfo);
+          break;
+        case PayloadOneofCase.ConnectedPlugins:
+          if (ConnectedPlugins == null) {
+            ConnectedPlugins = new global::SydneyOwl.CLHProto.Plugin.PipePluginList();
+          }
+          ConnectedPlugins.MergeFrom(other.ConnectedPlugins);
+          break;
+        case PayloadOneofCase.WsjtxSubscription:
+          if (WsjtxSubscription == null) {
+            WsjtxSubscription = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+          }
+          WsjtxSubscription.MergeFrom(other.WsjtxSubscription);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            RequestId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 26: {
+            Message = input.ReadString();
+            break;
+          }
+          case 34: {
+            global::SydneyOwl.CLHProto.Plugin.PipeServerInfo subBuilder = new global::SydneyOwl.CLHProto.Plugin.PipeServerInfo();
+            if (payloadCase_ == PayloadOneofCase.ServerInfo) {
+              subBuilder.MergeFrom(ServerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ServerInfo = subBuilder;
+            break;
+          }
+          case 42: {
+            global::SydneyOwl.CLHProto.Plugin.PipePluginList subBuilder = new global::SydneyOwl.CLHProto.Plugin.PipePluginList();
+            if (payloadCase_ == PayloadOneofCase.ConnectedPlugins) {
+              subBuilder.MergeFrom(ConnectedPlugins);
+            }
+            input.ReadMessage(subBuilder);
+            ConnectedPlugins = subBuilder;
+            break;
+          }
+          case 50: {
+            global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription subBuilder = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+            if (payloadCase_ == PayloadOneofCase.WsjtxSubscription) {
+              subBuilder.MergeFrom(WsjtxSubscription);
+            }
+            input.ReadMessage(subBuilder);
+            WsjtxSubscription = subBuilder;
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            RequestId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 26: {
+            Message = input.ReadString();
+            break;
+          }
+          case 34: {
+            global::SydneyOwl.CLHProto.Plugin.PipeServerInfo subBuilder = new global::SydneyOwl.CLHProto.Plugin.PipeServerInfo();
+            if (payloadCase_ == PayloadOneofCase.ServerInfo) {
+              subBuilder.MergeFrom(ServerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ServerInfo = subBuilder;
+            break;
+          }
+          case 42: {
+            global::SydneyOwl.CLHProto.Plugin.PipePluginList subBuilder = new global::SydneyOwl.CLHProto.Plugin.PipePluginList();
+            if (payloadCase_ == PayloadOneofCase.ConnectedPlugins) {
+              subBuilder.MergeFrom(ConnectedPlugins);
+            }
+            input.ReadMessage(subBuilder);
+            ConnectedPlugins = subBuilder;
+            break;
+          }
+          case 50: {
+            global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription subBuilder = new global::SydneyOwl.CLHProto.Plugin.PipeWsjtxSubscription();
+            if (payloadCase_ == PayloadOneofCase.WsjtxSubscription) {
+              subBuilder.MergeFrom(WsjtxSubscription);
+            }
+            input.ReadMessage(subBuilder);
+            WsjtxSubscription = subBuilder;
+            break;
+          }
+          case 7994: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   /// <summary>
   /// PipeConnectionClosed is sent when CLH is closing plugin connection.
   /// </summary>
@@ -1026,7 +3728,7 @@ namespace SydneyOwl.CLHProto.Plugin {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[3]; }
+      get { return global::SydneyOwl.CLHProto.Plugin.CommonReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

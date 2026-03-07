@@ -15,6 +15,14 @@ enum UploadStatus {
   UPLOAD_STATUS_IGNORED = 5;
 }
 
+enum ClhPluginLifecycleEventType {
+  CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_UNSPECIFIED = 0;
+  CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_CONNECTED = 1;
+  CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_DISCONNECTED = 2;
+  CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_TIMEOUT = 3;
+  CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_REPLACED = 4;
+}
+
 message ClhQSOUploadStatusChanged {
   map<string, bool> uploaded_services = 1;
   map<string, string> uploaded_services_error_message = 2;
@@ -53,9 +61,27 @@ message ClhQSOUploadStatusChanged {
   string uuid = 38;
 }
 
+message ClhPluginLifecycleChanged {
+  string plugin_uuid = 1;
+  string plugin_name = 2;
+  string plugin_version = 3;
+  string reason = 4;
+  ClhPluginLifecycleEventType event_type = 5;
+  google.protobuf.Timestamp event_time = 6;
+}
+
+message ClhServerStatusChanged {
+  string clh_instance_id = 1;
+  string clh_version = 2;
+  uint32 connected_plugin_count = 3;
+  google.protobuf.Timestamp event_time = 4;
+}
+
 message ClhInternalMessage {
   oneof payload {
     ClhQSOUploadStatusChanged qso_upload_status = 2;
+    ClhPluginLifecycleChanged plugin_lifecycle = 3;
+    ClhServerStatusChanged server_status = 4;
   }
   google.protobuf.Timestamp timestamp = 999;
 }
