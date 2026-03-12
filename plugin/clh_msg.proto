@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package clh_proto.plugin;
-option go_package = "github.com/sydneyowl/clh-proto/gen/go/plugin";
+option go_package = "github.com/SydneyOwl/clh-proto/gen/go/v20260312";
 option csharp_namespace = "SydneyOwl.CLHProto.Plugin";
 
 import "google/protobuf/timestamp.proto";
@@ -23,7 +23,15 @@ enum ClhPluginLifecycleEventType {
   CLH_PLUGIN_LIFECYCLE_EVENT_TYPE_REPLACED = 4;
 }
 
-message ClhQSOUploadStatusChanged {
+enum ClhServiceRunStatus {
+  CLH_SERVICE_RUN_STATUS_UNSPECIFIED = 0;
+  CLH_SERVICE_RUN_STATUS_STARTING = 1;
+  CLH_SERVICE_RUN_STATUS_RUNNING = 2;
+  CLH_SERVICE_RUN_STATUS_STOPPED = 3;
+  CLH_SERVICE_RUN_STATUS_ERROR = 4;
+}
+
+message ClhQSODetail{
   map<string, bool> uploaded_services = 1;
   map<string, string> uploaded_services_error_message = 2;
   string original_country_name = 3;
@@ -61,6 +69,10 @@ message ClhQSOUploadStatusChanged {
   string uuid = 38;
 }
 
+message ClhQSOUploadStatusChanged {
+  ClhQSODetail detail = 1;
+}
+
 message ClhPluginLifecycleChanged {
   string plugin_uuid = 1;
   string plugin_name = 2;
@@ -77,11 +89,37 @@ message ClhServerStatusChanged {
   google.protobuf.Timestamp event_time = 4;
 }
 
+message ClhQsoQueueStatusChanged {
+  uint32 pending_count = 1;
+  uint64 uploaded_total = 2;
+  uint64 failed_total = 3;
+  google.protobuf.Timestamp event_time = 4;
+}
+
+message ClhSettingsChanged {
+  string changed_part = 1;
+  string summary = 2;
+  google.protobuf.Timestamp event_time = 3;
+}
+
+message ClhPluginTelemetryChanged {
+  string plugin_uuid = 1;
+  uint64 received_message_count = 2;
+  uint64 sent_message_count = 3;
+  uint64 control_request_count = 4;
+  uint64 control_error_count = 5;
+  uint32 last_roundtrip_ms = 6;
+  google.protobuf.Timestamp event_time = 7;
+}
+
 message ClhInternalMessage {
   oneof payload {
     ClhQSOUploadStatusChanged qso_upload_status = 2;
     ClhPluginLifecycleChanged plugin_lifecycle = 3;
     ClhServerStatusChanged server_status = 4;
+    ClhQsoQueueStatusChanged qso_queue_status = 7;
+    ClhSettingsChanged settings_changed = 8;
+    ClhPluginTelemetryChanged plugin_telemetry = 9;
   }
   google.protobuf.Timestamp timestamp = 999;
 }

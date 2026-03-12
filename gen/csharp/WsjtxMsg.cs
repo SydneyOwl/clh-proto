@@ -113,9 +113,9 @@ namespace SydneyOwl.CLHProto.Plugin {
             "RUFSX0JBTkRfQUNUSVZJVFkQABIWChJDTEVBUl9SWF9GUkVRVUVOQ1kQARIO",
             "CgpDTEVBUl9CT1RIEAIqZQoMS2V5TW9kaWZpZXJzEg8KC05PX01PRElGSUVS",
             "EAASCQoFU0hJRlQQAhIICgRDVFJMEAQSBwoDQUxUEAgSCAoETUVUQRAQEgoK",
-            "BktFWVBBRBAgEhAKDEdST1VQX1NXSVRDSBBAQkpaLGdpdGh1Yi5jb20vc3lk",
-            "bmV5b3dsL2NsaC1wcm90by9nZW4vZ28vcGx1Z2luqgIZU3lkbmV5T3dsLkNM",
-            "SFByb3RvLlBsdWdpbmIGcHJvdG8z"));
+            "BktFWVBBRBAgEhAKDEdST1VQX1NXSVRDSBBAQk1aL2dpdGh1Yi5jb20vU3lk",
+            "bmV5T3dsL2NsaC1wcm90by9nZW4vZ28vdjIwMjYwMzA5qgIZU3lkbmV5T3ds",
+            "LkNMSFByb3RvLlBsdWdpbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SydneyOwl.CLHProto.Plugin.MessageType), typeof(global::SydneyOwl.CLHProto.Plugin.SpecialOperationMode), typeof(global::SydneyOwl.CLHProto.Plugin.ClearWindow), typeof(global::SydneyOwl.CLHProto.Plugin.KeyModifiers), }, null, new pbr::GeneratedClrTypeInfo[] {

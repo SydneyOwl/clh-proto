@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package clh_proto.plugin;
-option go_package = "github.com/sydneyowl/clh-proto/gen/go/plugin";
+option go_package = "github.com/SydneyOwl/clh-proto/gen/go/v20260312";
 option csharp_namespace = "SydneyOwl.CLHProto.Plugin";
 
 import "google/protobuf/timestamp.proto";
