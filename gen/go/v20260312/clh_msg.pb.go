@@ -1197,7 +1197,7 @@ const file_clh_msg_proto_rawDesc = "" +
 	"\x1fCLH_SERVICE_RUN_STATUS_STARTING\x10\x01\x12\"\n" +
 	"\x1eCLH_SERVICE_RUN_STATUS_RUNNING\x10\x02\x12\"\n" +
 	"\x1eCLH_SERVICE_RUN_STATUS_STOPPED\x10\x03\x12 \n" +
-	"\x1cCLH_SERVICE_RUN_STATUS_ERROR\x10\x04BMZ/github.com/SydneyOwl/clh-proto/gen/go/v20260309\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
+	"\x1cCLH_SERVICE_RUN_STATUS_ERROR\x10\x04BMZ/github.com/SydneyOwl/clh-proto/gen/go/v20260312\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
 
 var (
 	file_clh_msg_proto_rawDescOnce sync.Once

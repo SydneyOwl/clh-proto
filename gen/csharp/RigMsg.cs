@@ -33,7 +33,7 @@ namespace SydneyOwl.CLHProto.Plugin {
             "c3BsaXQYCCABKAhSBXNwbGl0EhQKBXBvd2VyGAkgASgNUgVwb3dlchI5Cgl0",
             "aW1lc3RhbXAY5wcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJ",
             "dGltZXN0YW1wQk1aL2dpdGh1Yi5jb20vU3lkbmV5T3dsL2NsaC1wcm90by9n",
-            "ZW4vZ28vdjIwMjYwMzA5qgIZU3lkbmV5T3dsLkNMSFByb3RvLlBsdWdpbmIG",
+            "ZW4vZ28vdjIwMjYwMzEyqgIZU3lkbmV5T3dsLkNMSFByb3RvLlBsdWdpbmIG",
             "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },

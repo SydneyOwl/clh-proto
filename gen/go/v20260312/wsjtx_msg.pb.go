@@ -2274,7 +2274,7 @@ const file_wsjtx_msg_proto_rawDesc = "" +
 	"\x04META\x10\x10\x12\n" +
 	"\n" +
 	"\x06KEYPAD\x10 \x12\x10\n" +
-	"\fGROUP_SWITCH\x10@BMZ/github.com/SydneyOwl/clh-proto/gen/go/v20260309\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
+	"\fGROUP_SWITCH\x10@BMZ/github.com/SydneyOwl/clh-proto/gen/go/v20260312\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
 
 var (
 	file_wsjtx_msg_proto_rawDescOnce sync.Once

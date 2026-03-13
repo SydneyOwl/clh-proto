@@ -153,7 +153,7 @@ const file_rig_msg_proto_rawDesc = "" +
 	"\amode_rx\x18\a \x01(\tR\amode_rx\x12\x14\n" +
 	"\x05split\x18\b \x01(\bR\x05split\x12\x14\n" +
 	"\x05power\x18\t \x01(\rR\x05power\x129\n" +
-	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampBMZ/github.com/SydneyOwl/clh-proto/gen/go/v20260309\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
+	"\ttimestamp\x18\xe7\a \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampBMZ/github.com/SydneyOwl/clh-proto/gen/go/v20260312\xaa\x02\x19SydneyOwl.CLHProto.Pluginb\x06proto3"
 
 var (
 	file_rig_msg_proto_rawDescOnce sync.Once
