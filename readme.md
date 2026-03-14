@@ -2,6 +2,6 @@
 
 Proto files used at `Cloudlog-Helper` and its plugin.
 
-Please use it as a submodule in your project.
+See [Go SDK](https://github.com/SydneyOwl/clh-plugin-go-sdk) and [C# SDK](https://github.com/SydneyOwl/clh-plugin-csharp-sdk)
 
 Licensed under `The Unlicense`.
