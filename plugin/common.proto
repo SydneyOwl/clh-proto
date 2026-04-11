@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package clh_proto.plugin;
 
-option go_package = "github.com/SydneyOwl/clh-proto/gen/go/v20260312";
+option go_package = "github.com/SydneyOwl/clh-proto/gen/go/v20260411";
 option csharp_namespace = "SydneyOwl.CLHProto.Plugin";
 
 import "google/protobuf/any.proto";
